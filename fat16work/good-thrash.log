@@ -1,0 +1,3773 @@
+a test359.txt 0
+./fsrw a test359.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test359.txt in mode a succeeded.
+./fsrw r test359.txt
+./fsrw c
+FAT checks out; free clusters is 15034 rootfiles 4 totfiles 9
+w test325.txt 128434
+./fsrw w test325.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test325.txt in mode w succeeded.
+./fsrw r test325.txt
+./fsrw c
+FAT checks out; free clusters is 15026 rootfiles 5 totfiles 10
+r test185.txt 330320
+./fsrw r test185.txt
+./fsrw c
+FAT checks out; free clusters is 15026 rootfiles 5 totfiles 10
+w test251.txt 143496
+./fsrw w test251.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test251.txt in mode w succeeded.
+./fsrw r test251.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 6 totfiles 11
+d test489.txt 158302
+./fsrw d test489.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test489.txt in mode d returned 1
+./fsrw r test489.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 6 totfiles 11
+w test428.txt 0
+./fsrw w test428.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test428.txt in mode w succeeded.
+./fsrw r test428.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 7 totfiles 12
+d test525.txt 307200
+./fsrw d test525.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test525.txt in mode d returned 1
+./fsrw r test525.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 7 totfiles 12
+r test591.txt 22900
+./fsrw r test591.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 7 totfiles 12
+d test492.txt 0
+./fsrw d test492.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test492.txt in mode d returned 1
+./fsrw r test492.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 7 totfiles 12
+d test564.txt 438272
+./fsrw d test564.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test564.txt in mode d returned 1
+./fsrw r test564.txt
+./fsrw c
+FAT checks out; free clusters is 15017 rootfiles 7 totfiles 12
+w test247.txt 382407
+./fsrw w test247.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test247.txt in mode w succeeded.
+./fsrw r test247.txt
+./fsrw c
+FAT checks out; free clusters is 14993 rootfiles 8 totfiles 13
+a test480.txt 53001
+./fsrw a test480.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test480.txt in mode a succeeded.
+./fsrw r test480.txt
+./fsrw c
+FAT checks out; free clusters is 14989 rootfiles 9 totfiles 14
+a test270.txt 0
+./fsrw a test270.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test270.txt in mode a succeeded.
+./fsrw r test270.txt
+./fsrw c
+FAT checks out; free clusters is 14989 rootfiles 10 totfiles 15
+r test461.txt 235973
+./fsrw r test461.txt
+./fsrw c
+FAT checks out; free clusters is 14989 rootfiles 10 totfiles 15
+a test107.txt 37251
+./fsrw a test107.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test107.txt in mode a succeeded.
+./fsrw r test107.txt
+./fsrw c
+FAT checks out; free clusters is 14986 rootfiles 11 totfiles 16
+w test599.txt 338432
+./fsrw w test599.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test599.txt in mode w succeeded.
+./fsrw r test599.txt
+./fsrw c
+FAT checks out; free clusters is 14965 rootfiles 12 totfiles 17
+a test396.txt 0
+./fsrw a test396.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test396.txt in mode a succeeded.
+./fsrw r test396.txt
+./fsrw c
+FAT checks out; free clusters is 14965 rootfiles 13 totfiles 18
+w test314.txt 418816
+./fsrw w test314.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test314.txt in mode w succeeded.
+./fsrw r test314.txt
+./fsrw c
+FAT checks out; free clusters is 14939 rootfiles 14 totfiles 19
+a test290.txt 0
+./fsrw a test290.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test290.txt in mode a succeeded.
+./fsrw r test290.txt
+./fsrw c
+FAT checks out; free clusters is 14939 rootfiles 15 totfiles 20
+w test565.txt 0
+./fsrw w test565.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test565.txt in mode w succeeded.
+./fsrw r test565.txt
+./fsrw c
+FAT checks out; free clusters is 14939 rootfiles 16 totfiles 21
+r test104.txt 108032
+./fsrw r test104.txt
+./fsrw c
+FAT checks out; free clusters is 14939 rootfiles 16 totfiles 21
+a test328.txt 286825
+./fsrw a test328.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test328.txt in mode a succeeded.
+./fsrw r test328.txt
+./fsrw c
+FAT checks out; free clusters is 14921 rootfiles 17 totfiles 22
+d test589.txt 290580
+./fsrw d test589.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test589.txt in mode d returned 1
+./fsrw r test589.txt
+./fsrw c
+FAT checks out; free clusters is 14921 rootfiles 17 totfiles 22
+d test251.txt 63689
+./fsrw d test251.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test251.txt in mode d succeeded.
+./fsrw r test251.txt
+./fsrw c
+FAT checks out; free clusters is 14930 rootfiles 16 totfiles 21
+w test103.txt 270336
+./fsrw w test103.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test103.txt in mode w succeeded.
+./fsrw r test103.txt
+./fsrw c
+FAT checks out; free clusters is 14913 rootfiles 17 totfiles 22
+r test248.txt 0
+./fsrw r test248.txt
+./fsrw c
+FAT checks out; free clusters is 14913 rootfiles 17 totfiles 22
+d test145.txt 155648
+./fsrw d test145.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test145.txt in mode d returned 1
+./fsrw r test145.txt
+./fsrw c
+FAT checks out; free clusters is 14913 rootfiles 17 totfiles 22
+w test139.txt 330085
+./fsrw w test139.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test139.txt in mode w succeeded.
+./fsrw r test139.txt
+./fsrw c
+FAT checks out; free clusters is 14892 rootfiles 18 totfiles 23
+r test167.txt 414720
+./fsrw r test167.txt
+./fsrw c
+FAT checks out; free clusters is 14892 rootfiles 18 totfiles 23
+w test103.txt 221386
+./fsrw w test103.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test103.txt in mode w succeeded.
+./fsrw r test103.txt
+./fsrw c
+FAT checks out; free clusters is 14895 rootfiles 18 totfiles 23
+w test463.txt 486648
+./fsrw w test463.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test463.txt in mode w succeeded.
+./fsrw r test463.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 19 totfiles 24
+r test108.txt 382378
+./fsrw r test108.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 19 totfiles 24
+r test130.txt 110956
+./fsrw r test130.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 19 totfiles 24
+d test110.txt 253952
+./fsrw d test110.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test110.txt in mode d returned 1
+./fsrw r test110.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 19 totfiles 24
+w test188.txt 0
+./fsrw w test188.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test188.txt in mode w succeeded.
+./fsrw r test188.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 20 totfiles 25
+d test302.txt 0
+./fsrw d test302.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test302.txt in mode d returned 1
+./fsrw r test302.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 20 totfiles 25
+d test140.txt 238007
+./fsrw d test140.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test140.txt in mode d returned 1
+./fsrw r test140.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 20 totfiles 25
+r test363.txt 0
+./fsrw r test363.txt
+./fsrw c
+FAT checks out; free clusters is 14865 rootfiles 20 totfiles 25
+w test500.txt 417054
+./fsrw w test500.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test500.txt in mode w succeeded.
+./fsrw r test500.txt
+./fsrw c
+FAT checks out; free clusters is 14839 rootfiles 21 totfiles 26
+d test366.txt 250309
+./fsrw d test366.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test366.txt in mode d returned 1
+./fsrw r test366.txt
+./fsrw c
+FAT checks out; free clusters is 14839 rootfiles 21 totfiles 26
+d test326.txt 379392
+./fsrw d test326.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test326.txt in mode d returned 1
+./fsrw r test326.txt
+./fsrw c
+FAT checks out; free clusters is 14839 rootfiles 21 totfiles 26
+w test102.txt 496659
+./fsrw w test102.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test102.txt in mode w succeeded.
+./fsrw r test102.txt
+./fsrw c
+FAT checks out; free clusters is 14808 rootfiles 22 totfiles 27
+r test372.txt 0
+./fsrw r test372.txt
+./fsrw c
+FAT checks out; free clusters is 14808 rootfiles 22 totfiles 27
+w test563.txt 0
+./fsrw w test563.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test563.txt in mode w succeeded.
+./fsrw r test563.txt
+./fsrw c
+FAT checks out; free clusters is 14808 rootfiles 23 totfiles 28
+a test168.txt 0
+./fsrw a test168.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test168.txt in mode a succeeded.
+./fsrw r test168.txt
+./fsrw c
+FAT checks out; free clusters is 14808 rootfiles 24 totfiles 29
+a test198.txt 231424
+./fsrw a test198.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test198.txt in mode a succeeded.
+./fsrw r test198.txt
+./fsrw c
+FAT checks out; free clusters is 14793 rootfiles 25 totfiles 30
+d test123.txt 310484
+./fsrw d test123.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test123.txt in mode d returned 1
+./fsrw r test123.txt
+./fsrw c
+FAT checks out; free clusters is 14793 rootfiles 25 totfiles 30
+a test302.txt 0
+./fsrw a test302.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test302.txt in mode a succeeded.
+./fsrw r test302.txt
+./fsrw c
+FAT checks out; free clusters is 14793 rootfiles 26 totfiles 31
+w test156.txt 426665
+./fsrw w test156.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test156.txt in mode w succeeded.
+./fsrw r test156.txt
+./fsrw c
+FAT checks out; free clusters is 14766 rootfiles 27 totfiles 32
+w test231.txt 464715
+./fsrw w test231.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test231.txt in mode w succeeded.
+./fsrw r test231.txt
+./fsrw c
+FAT checks out; free clusters is 14737 rootfiles 28 totfiles 33
+r test278.txt 299341
+./fsrw r test278.txt
+./fsrw c
+FAT checks out; free clusters is 14737 rootfiles 28 totfiles 33
+w test137.txt 66118
+./fsrw w test137.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test137.txt in mode w succeeded.
+./fsrw r test137.txt
+./fsrw c
+FAT checks out; free clusters is 14732 rootfiles 29 totfiles 34
+w test507.txt 457161
+./fsrw w test507.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test507.txt in mode w succeeded.
+./fsrw r test507.txt
+./fsrw c
+FAT checks out; free clusters is 14704 rootfiles 30 totfiles 35
+a test100.txt 0
+./fsrw a test100.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test100.txt in mode a succeeded.
+./fsrw r test100.txt
+./fsrw c
+FAT checks out; free clusters is 14704 rootfiles 31 totfiles 36
+d test295.txt 437394
+./fsrw d test295.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test295.txt in mode d returned 1
+./fsrw r test295.txt
+./fsrw c
+FAT checks out; free clusters is 14704 rootfiles 31 totfiles 36
+w test340.txt 129024
+./fsrw w test340.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test340.txt in mode w succeeded.
+./fsrw r test340.txt
+./fsrw c
+FAT checks out; free clusters is 14696 rootfiles 32 totfiles 37
+r test434.txt 308544
+./fsrw r test434.txt
+./fsrw c
+FAT checks out; free clusters is 14696 rootfiles 32 totfiles 37
+a test209.txt 451072
+./fsrw a test209.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test209.txt in mode a succeeded.
+./fsrw r test209.txt
+./fsrw c
+FAT checks out; free clusters is 14668 rootfiles 33 totfiles 38
+a test358.txt 0
+./fsrw a test358.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test358.txt in mode a succeeded.
+./fsrw r test358.txt
+./fsrw c
+FAT checks out; free clusters is 14668 rootfiles 34 totfiles 39
+d test264.txt 175324
+./fsrw d test264.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test264.txt in mode d returned 1
+./fsrw r test264.txt
+./fsrw c
+FAT checks out; free clusters is 14668 rootfiles 34 totfiles 39
+a test558.txt 0
+./fsrw a test558.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test558.txt in mode a succeeded.
+./fsrw r test558.txt
+./fsrw c
+FAT checks out; free clusters is 14668 rootfiles 35 totfiles 40
+a test288.txt 441930
+./fsrw a test288.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test288.txt in mode a succeeded.
+./fsrw r test288.txt
+./fsrw c
+FAT checks out; free clusters is 14641 rootfiles 36 totfiles 41
+d test258.txt 121425
+./fsrw d test258.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test258.txt in mode d returned 1
+./fsrw r test258.txt
+./fsrw c
+FAT checks out; free clusters is 14641 rootfiles 36 totfiles 41
+d test262.txt 396794
+./fsrw d test262.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test262.txt in mode d returned 1
+./fsrw r test262.txt
+./fsrw c
+FAT checks out; free clusters is 14641 rootfiles 36 totfiles 41
+d test502.txt 32951
+./fsrw d test502.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test502.txt in mode d returned 1
+./fsrw r test502.txt
+./fsrw c
+FAT checks out; free clusters is 14641 rootfiles 36 totfiles 41
+w test106.txt 0
+./fsrw w test106.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test106.txt in mode w succeeded.
+./fsrw r test106.txt
+./fsrw c
+FAT checks out; free clusters is 14641 rootfiles 37 totfiles 42
+a test417.txt 492202
+./fsrw a test417.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test417.txt in mode a succeeded.
+./fsrw r test417.txt
+./fsrw c
+FAT checks out; free clusters is 14610 rootfiles 38 totfiles 43
+r test396.txt 210885
+./fsrw r test396.txt
+./fsrw c
+FAT checks out; free clusters is 14610 rootfiles 38 totfiles 43
+d test479.txt 449063
+./fsrw d test479.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test479.txt in mode d returned 1
+./fsrw r test479.txt
+./fsrw c
+FAT checks out; free clusters is 14610 rootfiles 38 totfiles 43
+w test118.txt 404755
+./fsrw w test118.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test118.txt in mode w succeeded.
+./fsrw r test118.txt
+./fsrw c
+FAT checks out; free clusters is 14585 rootfiles 39 totfiles 44
+d test206.txt 134656
+./fsrw d test206.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test206.txt in mode d returned 1
+./fsrw r test206.txt
+./fsrw c
+FAT checks out; free clusters is 14585 rootfiles 39 totfiles 44
+d test206.txt 270848
+./fsrw d test206.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test206.txt in mode d returned 1
+./fsrw r test206.txt
+./fsrw c
+FAT checks out; free clusters is 14585 rootfiles 39 totfiles 44
+r test283.txt 0
+./fsrw r test283.txt
+./fsrw c
+FAT checks out; free clusters is 14585 rootfiles 39 totfiles 44
+d test404.txt 0
+./fsrw d test404.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test404.txt in mode d returned 1
+./fsrw r test404.txt
+./fsrw c
+FAT checks out; free clusters is 14585 rootfiles 39 totfiles 44
+a test459.txt 97928
+./fsrw a test459.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test459.txt in mode a succeeded.
+./fsrw r test459.txt
+./fsrw c
+FAT checks out; free clusters is 14579 rootfiles 40 totfiles 45
+w test188.txt 427454
+./fsrw w test188.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test188.txt in mode w succeeded.
+./fsrw r test188.txt
+./fsrw c
+FAT checks out; free clusters is 14552 rootfiles 40 totfiles 45
+d test554.txt 0
+./fsrw d test554.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test554.txt in mode d returned 1
+./fsrw r test554.txt
+./fsrw c
+FAT checks out; free clusters is 14552 rootfiles 40 totfiles 45
+d test261.txt 283436
+./fsrw d test261.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test261.txt in mode d returned 1
+./fsrw r test261.txt
+./fsrw c
+FAT checks out; free clusters is 14552 rootfiles 40 totfiles 45
+w test176.txt 418816
+./fsrw w test176.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test176.txt in mode w succeeded.
+./fsrw r test176.txt
+./fsrw c
+FAT checks out; free clusters is 14526 rootfiles 41 totfiles 46
+a test229.txt 358524
+./fsrw a test229.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test229.txt in mode a succeeded.
+./fsrw r test229.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 42 totfiles 47
+w test152.txt 0
+./fsrw w test152.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test152.txt in mode w succeeded.
+./fsrw r test152.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+d test237.txt 0
+./fsrw d test237.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test237.txt in mode d returned 1
+./fsrw r test237.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+d test384.txt 0
+./fsrw d test384.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test384.txt in mode d returned 1
+./fsrw r test384.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+d test243.txt 0
+./fsrw d test243.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test243.txt in mode d returned 1
+./fsrw r test243.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+d test233.txt 0
+./fsrw d test233.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test233.txt in mode d returned 1
+./fsrw r test233.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+r test333.txt 420024
+./fsrw r test333.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+d test223.txt 315703
+./fsrw d test223.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test223.txt in mode d returned 1
+./fsrw r test223.txt
+./fsrw c
+FAT checks out; free clusters is 14504 rootfiles 43 totfiles 48
+w test416.txt 442880
+./fsrw w test416.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test416.txt in mode w succeeded.
+./fsrw r test416.txt
+./fsrw c
+FAT checks out; free clusters is 14476 rootfiles 44 totfiles 49
+a test560.txt 0
+./fsrw a test560.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test560.txt in mode a succeeded.
+./fsrw r test560.txt
+./fsrw c
+FAT checks out; free clusters is 14476 rootfiles 45 totfiles 50
+a test344.txt 124099
+./fsrw a test344.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test344.txt in mode a succeeded.
+./fsrw r test344.txt
+./fsrw c
+FAT checks out; free clusters is 14468 rootfiles 46 totfiles 51
+w test276.txt 233664
+./fsrw w test276.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test276.txt in mode w succeeded.
+./fsrw r test276.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 47 totfiles 52
+r test334.txt 67031
+./fsrw r test334.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 47 totfiles 52
+r test162.txt 451182
+./fsrw r test162.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 47 totfiles 52
+r test501.txt 0
+./fsrw r test501.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 47 totfiles 52
+d test387.txt 487886
+./fsrw d test387.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test387.txt in mode d returned 1
+./fsrw r test387.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 47 totfiles 52
+r test292.txt 244923
+./fsrw r test292.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 47 totfiles 52
+w test503.txt 0
+./fsrw w test503.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test503.txt in mode w succeeded.
+./fsrw r test503.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 48 totfiles 53
+d test202.txt 366125
+./fsrw d test202.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test202.txt in mode d returned 1
+./fsrw r test202.txt
+./fsrw c
+FAT checks out; free clusters is 14453 rootfiles 48 totfiles 53
+a test414.txt 41138
+./fsrw a test414.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test414.txt in mode a succeeded.
+./fsrw r test414.txt
+./fsrw c
+FAT checks out; free clusters is 14450 rootfiles 49 totfiles 54
+w test448.txt 138019
+./fsrw w test448.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test448.txt in mode w succeeded.
+./fsrw r test448.txt
+./fsrw c
+FAT checks out; free clusters is 14441 rootfiles 50 totfiles 55
+d test549.txt 246272
+./fsrw d test549.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test549.txt in mode d returned 1
+./fsrw r test549.txt
+./fsrw c
+FAT checks out; free clusters is 14441 rootfiles 50 totfiles 55
+d test235.txt 144896
+./fsrw d test235.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test235.txt in mode d returned 1
+./fsrw r test235.txt
+./fsrw c
+FAT checks out; free clusters is 14441 rootfiles 50 totfiles 55
+r test497.txt 70144
+./fsrw r test497.txt
+./fsrw c
+FAT checks out; free clusters is 14441 rootfiles 50 totfiles 55
+w test335.txt 0
+./fsrw w test335.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test335.txt in mode w succeeded.
+./fsrw r test335.txt
+./fsrw c
+FAT checks out; free clusters is 14441 rootfiles 51 totfiles 56
+d test108.txt 10240
+./fsrw d test108.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test108.txt in mode d returned 1
+./fsrw r test108.txt
+./fsrw c
+FAT checks out; free clusters is 14441 rootfiles 51 totfiles 56
+w test269.txt 1534
+./fsrw w test269.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test269.txt in mode w succeeded.
+./fsrw r test269.txt
+./fsrw c
+FAT checks out; free clusters is 14440 rootfiles 52 totfiles 57
+a test550.txt 0
+./fsrw a test550.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test550.txt in mode a succeeded.
+./fsrw r test550.txt
+./fsrw c
+FAT checks out; free clusters is 14440 rootfiles 53 totfiles 58
+d test491.txt 461605
+./fsrw d test491.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test491.txt in mode d returned 1
+./fsrw r test491.txt
+./fsrw c
+FAT checks out; free clusters is 14440 rootfiles 53 totfiles 58
+d test270.txt 127533
+./fsrw d test270.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test270.txt in mode d succeeded.
+./fsrw r test270.txt
+./fsrw c
+FAT checks out; free clusters is 14440 rootfiles 52 totfiles 57
+d test255.txt 199888
+./fsrw d test255.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test255.txt in mode d returned 1
+./fsrw r test255.txt
+./fsrw c
+FAT checks out; free clusters is 14440 rootfiles 52 totfiles 57
+w test238.txt 0
+./fsrw w test238.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test238.txt in mode w succeeded.
+./fsrw r test238.txt
+./fsrw c
+FAT checks out; free clusters is 14440 rootfiles 53 totfiles 58
+a test498.txt 427520
+./fsrw a test498.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test498.txt in mode a succeeded.
+./fsrw r test498.txt
+./fsrw c
+FAT checks out; free clusters is 14413 rootfiles 54 totfiles 59
+w test480.txt 425984
+./fsrw w test480.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test480.txt in mode w succeeded.
+./fsrw r test480.txt
+./fsrw c
+FAT checks out; free clusters is 14391 rootfiles 54 totfiles 59
+r test571.txt 133452
+./fsrw r test571.txt
+./fsrw c
+FAT checks out; free clusters is 14391 rootfiles 54 totfiles 59
+d test413.txt 244461
+./fsrw d test413.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test413.txt in mode d returned 1
+./fsrw r test413.txt
+./fsrw c
+FAT checks out; free clusters is 14391 rootfiles 54 totfiles 59
+r test339.txt 0
+./fsrw r test339.txt
+./fsrw c
+FAT checks out; free clusters is 14391 rootfiles 54 totfiles 59
+d test468.txt 400482
+./fsrw d test468.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test468.txt in mode d returned 1
+./fsrw r test468.txt
+./fsrw c
+FAT checks out; free clusters is 14391 rootfiles 54 totfiles 59
+w test588.txt 100352
+./fsrw w test588.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test588.txt in mode w succeeded.
+./fsrw r test588.txt
+./fsrw c
+FAT checks out; free clusters is 14384 rootfiles 55 totfiles 60
+r test113.txt 278016
+./fsrw r test113.txt
+./fsrw c
+FAT checks out; free clusters is 14384 rootfiles 55 totfiles 60
+r test158.txt 362440
+./fsrw r test158.txt
+./fsrw c
+FAT checks out; free clusters is 14384 rootfiles 55 totfiles 60
+r test208.txt 449536
+./fsrw r test208.txt
+./fsrw c
+FAT checks out; free clusters is 14384 rootfiles 55 totfiles 60
+r test396.txt 135062
+./fsrw r test396.txt
+./fsrw c
+FAT checks out; free clusters is 14384 rootfiles 55 totfiles 60
+a test196.txt 62590
+./fsrw a test196.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test196.txt in mode a succeeded.
+./fsrw r test196.txt
+./fsrw c
+FAT checks out; free clusters is 14380 rootfiles 56 totfiles 61
+d test272.txt 450048
+./fsrw d test272.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test272.txt in mode d returned 1
+./fsrw r test272.txt
+./fsrw c
+FAT checks out; free clusters is 14380 rootfiles 56 totfiles 61
+w test263.txt 0
+./fsrw w test263.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test263.txt in mode w succeeded.
+./fsrw r test263.txt
+./fsrw c
+FAT checks out; free clusters is 14380 rootfiles 57 totfiles 62
+w test109.txt 40614
+./fsrw w test109.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test109.txt in mode w succeeded.
+./fsrw r test109.txt
+./fsrw c
+FAT checks out; free clusters is 14377 rootfiles 58 totfiles 63
+r test333.txt 242859
+./fsrw r test333.txt
+./fsrw c
+FAT checks out; free clusters is 14377 rootfiles 58 totfiles 63
+a test338.txt 454656
+./fsrw a test338.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test338.txt in mode a succeeded.
+./fsrw r test338.txt
+./fsrw c
+FAT checks out; free clusters is 14349 rootfiles 59 totfiles 64
+a test494.txt 482574
+./fsrw a test494.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test494.txt in mode a succeeded.
+./fsrw r test494.txt
+./fsrw c
+FAT checks out; free clusters is 14319 rootfiles 60 totfiles 65
+w test202.txt 25088
+./fsrw w test202.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test202.txt in mode w succeeded.
+./fsrw r test202.txt
+./fsrw c
+FAT checks out; free clusters is 14317 rootfiles 61 totfiles 66
+a test565.txt 74843
+./fsrw a test565.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test565.txt in mode a succeeded.
+./fsrw r test565.txt
+./fsrw c
+FAT checks out; free clusters is 14312 rootfiles 61 totfiles 66
+d test285.txt 0
+./fsrw d test285.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test285.txt in mode d returned 1
+./fsrw r test285.txt
+./fsrw c
+FAT checks out; free clusters is 14312 rootfiles 61 totfiles 66
+d test378.txt 193407
+./fsrw d test378.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test378.txt in mode d returned 1
+./fsrw r test378.txt
+./fsrw c
+FAT checks out; free clusters is 14312 rootfiles 61 totfiles 66
+w test522.txt 134656
+./fsrw w test522.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test522.txt in mode w succeeded.
+./fsrw r test522.txt
+./fsrw c
+FAT checks out; free clusters is 14303 rootfiles 62 totfiles 67
+w test458.txt 0
+./fsrw w test458.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test458.txt in mode w succeeded.
+./fsrw r test458.txt
+./fsrw c
+FAT checks out; free clusters is 14303 rootfiles 63 totfiles 68
+a test278.txt 0
+./fsrw a test278.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test278.txt in mode a succeeded.
+./fsrw r test278.txt
+./fsrw c
+FAT checks out; free clusters is 14303 rootfiles 64 totfiles 69
+w test131.txt 192512
+./fsrw w test131.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test131.txt in mode w succeeded.
+./fsrw r test131.txt
+./fsrw c
+FAT checks out; free clusters is 14291 rootfiles 65 totfiles 70
+a test454.txt 277482
+./fsrw a test454.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test454.txt in mode a succeeded.
+./fsrw r test454.txt
+./fsrw c
+FAT checks out; free clusters is 14274 rootfiles 66 totfiles 71
+w test217.txt 325120
+./fsrw w test217.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test217.txt in mode w succeeded.
+./fsrw r test217.txt
+./fsrw c
+FAT checks out; free clusters is 14254 rootfiles 67 totfiles 72
+r test301.txt 0
+./fsrw r test301.txt
+./fsrw c
+FAT checks out; free clusters is 14254 rootfiles 67 totfiles 72
+w test291.txt 402529
+./fsrw w test291.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test291.txt in mode w succeeded.
+./fsrw r test291.txt
+./fsrw c
+FAT checks out; free clusters is 14229 rootfiles 68 totfiles 73
+w test113.txt 396677
+./fsrw w test113.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test113.txt in mode w succeeded.
+./fsrw r test113.txt
+./fsrw c
+FAT checks out; free clusters is 14204 rootfiles 69 totfiles 74
+w test289.txt 184210
+./fsrw w test289.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test289.txt in mode w succeeded.
+./fsrw r test289.txt
+./fsrw c
+FAT checks out; free clusters is 14192 rootfiles 70 totfiles 75
+r test441.txt 412360
+./fsrw r test441.txt
+./fsrw c
+FAT checks out; free clusters is 14192 rootfiles 70 totfiles 75
+r test512.txt 295535
+./fsrw r test512.txt
+./fsrw c
+FAT checks out; free clusters is 14192 rootfiles 70 totfiles 75
+w test242.txt 92654
+./fsrw w test242.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test242.txt in mode w succeeded.
+./fsrw r test242.txt
+./fsrw c
+FAT checks out; free clusters is 14186 rootfiles 71 totfiles 76
+w test332.txt 499351
+./fsrw w test332.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test332.txt in mode w succeeded.
+./fsrw r test332.txt
+./fsrw c
+FAT checks out; free clusters is 14155 rootfiles 72 totfiles 77
+a test146.txt 163604
+./fsrw a test146.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test146.txt in mode a succeeded.
+./fsrw r test146.txt
+./fsrw c
+FAT checks out; free clusters is 14145 rootfiles 73 totfiles 78
+w test213.txt 273408
+./fsrw w test213.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test213.txt in mode w succeeded.
+./fsrw r test213.txt
+./fsrw c
+FAT checks out; free clusters is 14128 rootfiles 74 totfiles 79
+a test125.txt 117248
+./fsrw a test125.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test125.txt in mode a succeeded.
+./fsrw r test125.txt
+./fsrw c
+FAT checks out; free clusters is 14120 rootfiles 75 totfiles 80
+a test577.txt 249374
+./fsrw a test577.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test577.txt in mode a succeeded.
+./fsrw r test577.txt
+./fsrw c
+FAT checks out; free clusters is 14104 rootfiles 76 totfiles 81
+r test178.txt 385
+./fsrw r test178.txt
+./fsrw c
+FAT checks out; free clusters is 14104 rootfiles 76 totfiles 81
+a test483.txt 0
+./fsrw a test483.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test483.txt in mode a succeeded.
+./fsrw r test483.txt
+./fsrw c
+FAT checks out; free clusters is 14104 rootfiles 77 totfiles 82
+w test414.txt 152240
+./fsrw w test414.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test414.txt in mode w succeeded.
+./fsrw r test414.txt
+./fsrw c
+FAT checks out; free clusters is 14097 rootfiles 77 totfiles 82
+w test553.txt 203596
+./fsrw w test553.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test553.txt in mode w succeeded.
+./fsrw r test553.txt
+./fsrw c
+FAT checks out; free clusters is 14084 rootfiles 78 totfiles 83
+a test255.txt 340508
+./fsrw a test255.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test255.txt in mode a succeeded.
+./fsrw r test255.txt
+./fsrw c
+FAT checks out; free clusters is 14063 rootfiles 79 totfiles 84
+r test113.txt 16896
+./fsrw r test113.txt
+./fsrw c
+FAT checks out; free clusters is 14063 rootfiles 79 totfiles 84
+r test105.txt 435712
+./fsrw r test105.txt
+./fsrw c
+FAT checks out; free clusters is 14063 rootfiles 79 totfiles 84
+a test474.txt 231424
+./fsrw a test474.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test474.txt in mode a succeeded.
+./fsrw r test474.txt
+./fsrw c
+FAT checks out; free clusters is 14048 rootfiles 80 totfiles 85
+w test287.txt 0
+./fsrw w test287.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test287.txt in mode w succeeded.
+./fsrw r test287.txt
+./fsrw c
+FAT checks out; free clusters is 14048 rootfiles 81 totfiles 86
+w test324.txt 0
+./fsrw w test324.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test324.txt in mode w succeeded.
+./fsrw r test324.txt
+./fsrw c
+FAT checks out; free clusters is 14048 rootfiles 82 totfiles 87
+d test214.txt 0
+./fsrw d test214.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test214.txt in mode d returned 1
+./fsrw r test214.txt
+./fsrw c
+FAT checks out; free clusters is 14048 rootfiles 82 totfiles 87
+r test438.txt 0
+./fsrw r test438.txt
+./fsrw c
+FAT checks out; free clusters is 14048 rootfiles 82 totfiles 87
+w test104.txt 198656
+./fsrw w test104.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test104.txt in mode w succeeded.
+./fsrw r test104.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 83 totfiles 88
+d test183.txt 361472
+./fsrw d test183.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test183.txt in mode d returned 1
+./fsrw r test183.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 83 totfiles 88
+w test455.txt 0
+./fsrw w test455.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test455.txt in mode w succeeded.
+./fsrw r test455.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 84 totfiles 89
+r test181.txt 353280
+./fsrw r test181.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 84 totfiles 89
+w test359.txt 0
+./fsrw w test359.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test359.txt in mode w succeeded.
+./fsrw r test359.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 84 totfiles 89
+r test261.txt 433664
+./fsrw r test261.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 84 totfiles 89
+r test355.txt 237568
+./fsrw r test355.txt
+./fsrw c
+FAT checks out; free clusters is 14035 rootfiles 84 totfiles 89
+a test335.txt 359437
+./fsrw a test335.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test335.txt in mode a succeeded.
+./fsrw r test335.txt
+./fsrw c
+FAT checks out; free clusters is 14013 rootfiles 84 totfiles 89
+d test397.txt 60918
+./fsrw d test397.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test397.txt in mode d returned 1
+./fsrw r test397.txt
+./fsrw c
+FAT checks out; free clusters is 14013 rootfiles 84 totfiles 89
+w test577.txt 116724
+./fsrw w test577.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test577.txt in mode w succeeded.
+./fsrw r test577.txt
+./fsrw c
+FAT checks out; free clusters is 14021 rootfiles 84 totfiles 89
+d test577.txt 410112
+./fsrw d test577.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test577.txt in mode d succeeded.
+./fsrw r test577.txt
+./fsrw c
+FAT checks out; free clusters is 14029 rootfiles 83 totfiles 88
+r test591.txt 0
+./fsrw r test591.txt
+./fsrw c
+FAT checks out; free clusters is 14029 rootfiles 83 totfiles 88
+w test417.txt 309826
+./fsrw w test417.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test417.txt in mode w succeeded.
+./fsrw r test417.txt
+./fsrw c
+FAT checks out; free clusters is 14041 rootfiles 83 totfiles 88
+a test548.txt 358400
+./fsrw a test548.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test548.txt in mode a succeeded.
+./fsrw r test548.txt
+./fsrw c
+FAT checks out; free clusters is 14019 rootfiles 84 totfiles 89
+a test388.txt 94115
+./fsrw a test388.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test388.txt in mode a succeeded.
+./fsrw r test388.txt
+./fsrw c
+FAT checks out; free clusters is 14013 rootfiles 85 totfiles 90
+d test171.txt 48640
+./fsrw d test171.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test171.txt in mode d returned 1
+./fsrw r test171.txt
+./fsrw c
+FAT checks out; free clusters is 14013 rootfiles 85 totfiles 90
+d test580.txt 3531
+./fsrw d test580.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test580.txt in mode d returned 1
+./fsrw r test580.txt
+./fsrw c
+FAT checks out; free clusters is 14013 rootfiles 85 totfiles 90
+a test544.txt 327280
+./fsrw a test544.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test544.txt in mode a succeeded.
+./fsrw r test544.txt
+./fsrw c
+FAT checks out; free clusters is 13993 rootfiles 86 totfiles 91
+w test160.txt 466944
+./fsrw w test160.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test160.txt in mode w succeeded.
+./fsrw r test160.txt
+./fsrw c
+FAT checks out; free clusters is 13964 rootfiles 87 totfiles 92
+r test534.txt 0
+./fsrw r test534.txt
+./fsrw c
+FAT checks out; free clusters is 13964 rootfiles 87 totfiles 92
+w test568.txt 40960
+./fsrw w test568.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test568.txt in mode w succeeded.
+./fsrw r test568.txt
+./fsrw c
+FAT checks out; free clusters is 13961 rootfiles 88 totfiles 93
+a test410.txt 215552
+./fsrw a test410.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test410.txt in mode a succeeded.
+./fsrw r test410.txt
+./fsrw c
+FAT checks out; free clusters is 13947 rootfiles 89 totfiles 94
+d test121.txt 470047
+./fsrw d test121.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test121.txt in mode d returned 1
+./fsrw r test121.txt
+./fsrw c
+FAT checks out; free clusters is 13947 rootfiles 89 totfiles 94
+w test255.txt 0
+./fsrw w test255.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test255.txt in mode w succeeded.
+./fsrw r test255.txt
+./fsrw c
+FAT checks out; free clusters is 13968 rootfiles 89 totfiles 94
+w test513.txt 0
+./fsrw w test513.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test513.txt in mode w succeeded.
+./fsrw r test513.txt
+./fsrw c
+FAT checks out; free clusters is 13968 rootfiles 90 totfiles 95
+r test487.txt 383174
+./fsrw r test487.txt
+./fsrw c
+FAT checks out; free clusters is 13968 rootfiles 90 totfiles 95
+r test397.txt 0
+./fsrw r test397.txt
+./fsrw c
+FAT checks out; free clusters is 13968 rootfiles 90 totfiles 95
+d test286.txt 40474
+./fsrw d test286.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test286.txt in mode d returned 1
+./fsrw r test286.txt
+./fsrw c
+FAT checks out; free clusters is 13968 rootfiles 90 totfiles 95
+d test189.txt 0
+./fsrw d test189.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test189.txt in mode d returned 1
+./fsrw r test189.txt
+./fsrw c
+FAT checks out; free clusters is 13968 rootfiles 90 totfiles 95
+w test183.txt 295239
+./fsrw w test183.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test183.txt in mode w succeeded.
+./fsrw r test183.txt
+./fsrw c
+FAT checks out; free clusters is 13949 rootfiles 91 totfiles 96
+w test340.txt 114515
+./fsrw w test340.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test340.txt in mode w succeeded.
+./fsrw r test340.txt
+./fsrw c
+FAT checks out; free clusters is 13950 rootfiles 91 totfiles 96
+d test536.txt 0
+./fsrw d test536.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test536.txt in mode d returned 1
+./fsrw r test536.txt
+./fsrw c
+FAT checks out; free clusters is 13950 rootfiles 91 totfiles 96
+r test520.txt 318464
+./fsrw r test520.txt
+./fsrw c
+FAT checks out; free clusters is 13950 rootfiles 91 totfiles 96
+w test175.txt 0
+./fsrw w test175.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test175.txt in mode w succeeded.
+./fsrw r test175.txt
+./fsrw c
+FAT checks out; free clusters is 13950 rootfiles 92 totfiles 97
+a test155.txt 16167
+./fsrw a test155.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test155.txt in mode a succeeded.
+./fsrw r test155.txt
+./fsrw c
+FAT checks out; free clusters is 13949 rootfiles 93 totfiles 98
+w test240.txt 6656
+./fsrw w test240.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test240.txt in mode w succeeded.
+./fsrw r test240.txt
+./fsrw c
+FAT checks out; free clusters is 13948 rootfiles 94 totfiles 99
+d test111.txt 189273
+./fsrw d test111.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test111.txt in mode d returned 1
+./fsrw r test111.txt
+./fsrw c
+FAT checks out; free clusters is 13948 rootfiles 94 totfiles 99
+a test470.txt 234496
+./fsrw a test470.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test470.txt in mode a succeeded.
+./fsrw r test470.txt
+./fsrw c
+FAT checks out; free clusters is 13933 rootfiles 95 totfiles 100
+r test213.txt 488448
+./fsrw r test213.txt
+./fsrw c
+FAT checks out; free clusters is 13933 rootfiles 95 totfiles 100
+a test107.txt 57856
+./fsrw a test107.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test107.txt in mode a succeeded.
+./fsrw r test107.txt
+./fsrw c
+FAT checks out; free clusters is 13930 rootfiles 95 totfiles 100
+a test184.txt 465408
+./fsrw a test184.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test184.txt in mode a succeeded.
+./fsrw r test184.txt
+./fsrw c
+FAT checks out; free clusters is 13901 rootfiles 96 totfiles 101
+a test276.txt 353192
+./fsrw a test276.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test276.txt in mode a succeeded.
+./fsrw r test276.txt
+./fsrw c
+FAT checks out; free clusters is 13880 rootfiles 96 totfiles 101
+a test588.txt 81855
+./fsrw a test588.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test588.txt in mode a succeeded.
+./fsrw r test588.txt
+./fsrw c
+FAT checks out; free clusters is 13875 rootfiles 96 totfiles 101
+d test243.txt 425984
+./fsrw d test243.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test243.txt in mode d returned 1
+./fsrw r test243.txt
+./fsrw c
+FAT checks out; free clusters is 13875 rootfiles 96 totfiles 101
+r test455.txt 382464
+./fsrw r test455.txt
+./fsrw c
+FAT checks out; free clusters is 13875 rootfiles 96 totfiles 101
+w test498.txt 41984
+./fsrw w test498.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test498.txt in mode w succeeded.
+./fsrw r test498.txt
+./fsrw c
+FAT checks out; free clusters is 13899 rootfiles 96 totfiles 101
+r test231.txt 496313
+./fsrw r test231.txt
+./fsrw c
+FAT checks out; free clusters is 13899 rootfiles 96 totfiles 101
+d test231.txt 0
+./fsrw d test231.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test231.txt in mode d succeeded.
+./fsrw r test231.txt
+./fsrw c
+FAT checks out; free clusters is 13928 rootfiles 95 totfiles 100
+d test182.txt 0
+./fsrw d test182.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test182.txt in mode d returned 1
+./fsrw r test182.txt
+./fsrw c
+FAT checks out; free clusters is 13928 rootfiles 95 totfiles 100
+w test397.txt 0
+./fsrw w test397.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test397.txt in mode w succeeded.
+./fsrw r test397.txt
+./fsrw c
+FAT checks out; free clusters is 13928 rootfiles 96 totfiles 101
+w test371.txt 4197
+./fsrw w test371.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test371.txt in mode w succeeded.
+./fsrw r test371.txt
+./fsrw c
+FAT checks out; free clusters is 13927 rootfiles 97 totfiles 102
+d test579.txt 0
+./fsrw d test579.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test579.txt in mode d returned 1
+./fsrw r test579.txt
+./fsrw c
+FAT checks out; free clusters is 13927 rootfiles 97 totfiles 102
+a test540.txt 0
+./fsrw a test540.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test540.txt in mode a succeeded.
+./fsrw r test540.txt
+./fsrw c
+FAT checks out; free clusters is 13927 rootfiles 98 totfiles 103
+w test578.txt 257024
+./fsrw w test578.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test578.txt in mode w succeeded.
+./fsrw r test578.txt
+./fsrw c
+FAT checks out; free clusters is 13911 rootfiles 99 totfiles 104
+r test369.txt 0
+./fsrw r test369.txt
+./fsrw c
+FAT checks out; free clusters is 13911 rootfiles 99 totfiles 104
+r test387.txt 414069
+./fsrw r test387.txt
+./fsrw c
+FAT checks out; free clusters is 13911 rootfiles 99 totfiles 104
+a test149.txt 96431
+./fsrw a test149.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test149.txt in mode a succeeded.
+./fsrw r test149.txt
+./fsrw c
+FAT checks out; free clusters is 13905 rootfiles 100 totfiles 105
+d test165.txt 181200
+./fsrw d test165.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test165.txt in mode d returned 1
+./fsrw r test165.txt
+./fsrw c
+FAT checks out; free clusters is 13905 rootfiles 100 totfiles 105
+a test232.txt 193169
+./fsrw a test232.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test232.txt in mode a succeeded.
+./fsrw r test232.txt
+./fsrw c
+FAT checks out; free clusters is 13893 rootfiles 101 totfiles 106
+w test419.txt 0
+./fsrw w test419.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test419.txt in mode w succeeded.
+./fsrw r test419.txt
+./fsrw c
+FAT checks out; free clusters is 13893 rootfiles 102 totfiles 107
+r test336.txt 124450
+./fsrw r test336.txt
+./fsrw c
+FAT checks out; free clusters is 13893 rootfiles 102 totfiles 107
+w test471.txt 246303
+./fsrw w test471.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test471.txt in mode w succeeded.
+./fsrw r test471.txt
+./fsrw c
+FAT checks out; free clusters is 13877 rootfiles 103 totfiles 108
+d test161.txt 0
+./fsrw d test161.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test161.txt in mode d returned 1
+./fsrw r test161.txt
+./fsrw c
+FAT checks out; free clusters is 13877 rootfiles 103 totfiles 108
+d test186.txt 188928
+./fsrw d test186.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test186.txt in mode d returned 1
+./fsrw r test186.txt
+./fsrw c
+FAT checks out; free clusters is 13877 rootfiles 103 totfiles 108
+a test257.txt 93184
+./fsrw a test257.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test257.txt in mode a succeeded.
+./fsrw r test257.txt
+./fsrw c
+FAT checks out; free clusters is 13871 rootfiles 104 totfiles 109
+w test566.txt 16376
+./fsrw w test566.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test566.txt in mode w succeeded.
+./fsrw r test566.txt
+./fsrw c
+FAT checks out; free clusters is 13870 rootfiles 105 totfiles 110
+r test560.txt 199680
+./fsrw r test560.txt
+./fsrw c
+FAT checks out; free clusters is 13870 rootfiles 105 totfiles 110
+d test183.txt 370688
+./fsrw d test183.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test183.txt in mode d succeeded.
+./fsrw r test183.txt
+./fsrw c
+FAT checks out; free clusters is 13889 rootfiles 104 totfiles 109
+r test140.txt 327290
+./fsrw r test140.txt
+./fsrw c
+FAT checks out; free clusters is 13889 rootfiles 104 totfiles 109
+a test237.txt 0
+./fsrw a test237.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test237.txt in mode a succeeded.
+./fsrw r test237.txt
+./fsrw c
+FAT checks out; free clusters is 13889 rootfiles 105 totfiles 110
+w test165.txt 0
+./fsrw w test165.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test165.txt in mode w succeeded.
+./fsrw r test165.txt
+./fsrw c
+FAT checks out; free clusters is 13889 rootfiles 106 totfiles 111
+r test227.txt 447608
+./fsrw r test227.txt
+./fsrw c
+FAT checks out; free clusters is 13889 rootfiles 106 totfiles 111
+r test216.txt 358520
+./fsrw r test216.txt
+./fsrw c
+FAT checks out; free clusters is 13889 rootfiles 106 totfiles 111
+a test463.txt 368128
+./fsrw a test463.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test463.txt in mode a succeeded.
+./fsrw r test463.txt
+./fsrw c
+FAT checks out; free clusters is 13866 rootfiles 106 totfiles 111
+w test214.txt 409654
+./fsrw w test214.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test214.txt in mode w succeeded.
+./fsrw r test214.txt
+./fsrw c
+FAT checks out; free clusters is 13840 rootfiles 107 totfiles 112
+w test237.txt 311296
+./fsrw w test237.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test237.txt in mode w succeeded.
+./fsrw r test237.txt
+./fsrw c
+FAT checks out; free clusters is 13821 rootfiles 107 totfiles 112
+r test314.txt 116224
+./fsrw r test314.txt
+./fsrw c
+FAT checks out; free clusters is 13821 rootfiles 107 totfiles 112
+d test342.txt 172458
+./fsrw d test342.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test342.txt in mode d returned 1
+./fsrw r test342.txt
+./fsrw c
+FAT checks out; free clusters is 13821 rootfiles 107 totfiles 112
+a test277.txt 194048
+./fsrw a test277.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test277.txt in mode a succeeded.
+./fsrw r test277.txt
+./fsrw c
+FAT checks out; free clusters is 13809 rootfiles 108 totfiles 113
+d test506.txt 0
+./fsrw d test506.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test506.txt in mode d returned 1
+./fsrw r test506.txt
+./fsrw c
+FAT checks out; free clusters is 13809 rootfiles 108 totfiles 113
+r test215.txt 77260
+./fsrw r test215.txt
+./fsrw c
+FAT checks out; free clusters is 13809 rootfiles 108 totfiles 113
+a test599.txt 438105
+./fsrw a test599.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test599.txt in mode a succeeded.
+./fsrw r test599.txt
+./fsrw c
+FAT checks out; free clusters is 13782 rootfiles 108 totfiles 113
+r test422.txt 240336
+./fsrw r test422.txt
+./fsrw c
+FAT checks out; free clusters is 13782 rootfiles 108 totfiles 113
+r test472.txt 159744
+./fsrw r test472.txt
+./fsrw c
+FAT checks out; free clusters is 13782 rootfiles 108 totfiles 113
+r test444.txt 26632
+./fsrw r test444.txt
+./fsrw c
+FAT checks out; free clusters is 13782 rootfiles 108 totfiles 113
+r test155.txt 284160
+./fsrw r test155.txt
+./fsrw c
+FAT checks out; free clusters is 13782 rootfiles 108 totfiles 113
+a test593.txt 0
+./fsrw a test593.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test593.txt in mode a succeeded.
+./fsrw r test593.txt
+./fsrw c
+FAT checks out; free clusters is 13782 rootfiles 109 totfiles 114
+a test104.txt 78848
+./fsrw a test104.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test104.txt in mode a succeeded.
+./fsrw r test104.txt
+./fsrw c
+FAT checks out; free clusters is 13778 rootfiles 109 totfiles 114
+a test529.txt 92672
+./fsrw a test529.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test529.txt in mode a succeeded.
+./fsrw r test529.txt
+./fsrw c
+FAT checks out; free clusters is 13772 rootfiles 110 totfiles 115
+w test443.txt 334294
+./fsrw w test443.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test443.txt in mode w succeeded.
+./fsrw r test443.txt
+./fsrw c
+FAT checks out; free clusters is 13751 rootfiles 111 totfiles 116
+r test165.txt 16896
+./fsrw r test165.txt
+./fsrw c
+FAT checks out; free clusters is 13751 rootfiles 111 totfiles 116
+r test530.txt 69572
+./fsrw r test530.txt
+./fsrw c
+FAT checks out; free clusters is 13751 rootfiles 111 totfiles 116
+a test120.txt 101376
+./fsrw a test120.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test120.txt in mode a succeeded.
+./fsrw r test120.txt
+./fsrw c
+FAT checks out; free clusters is 13744 rootfiles 112 totfiles 117
+d test577.txt 30195
+./fsrw d test577.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test577.txt in mode d returned 1
+./fsrw r test577.txt
+./fsrw c
+FAT checks out; free clusters is 13744 rootfiles 112 totfiles 117
+w test548.txt 400896
+./fsrw w test548.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test548.txt in mode w succeeded.
+./fsrw r test548.txt
+./fsrw c
+FAT checks out; free clusters is 13741 rootfiles 112 totfiles 117
+a test111.txt 55717
+./fsrw a test111.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test111.txt in mode a succeeded.
+./fsrw r test111.txt
+./fsrw c
+FAT checks out; free clusters is 13737 rootfiles 113 totfiles 118
+d test171.txt 0
+./fsrw d test171.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test171.txt in mode d returned 1
+./fsrw r test171.txt
+./fsrw c
+FAT checks out; free clusters is 13737 rootfiles 113 totfiles 118
+d test175.txt 0
+./fsrw d test175.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test175.txt in mode d succeeded.
+./fsrw r test175.txt
+./fsrw c
+FAT checks out; free clusters is 13737 rootfiles 112 totfiles 117
+w test136.txt 152438
+./fsrw w test136.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test136.txt in mode w succeeded.
+./fsrw r test136.txt
+./fsrw c
+FAT checks out; free clusters is 13727 rootfiles 113 totfiles 118
+r test356.txt 81354
+./fsrw r test356.txt
+./fsrw c
+FAT checks out; free clusters is 13727 rootfiles 113 totfiles 118
+r test384.txt 113271
+./fsrw r test384.txt
+./fsrw c
+FAT checks out; free clusters is 13727 rootfiles 113 totfiles 118
+w test485.txt 0
+./fsrw w test485.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test485.txt in mode w succeeded.
+./fsrw r test485.txt
+./fsrw c
+FAT checks out; free clusters is 13727 rootfiles 114 totfiles 119
+a test252.txt 0
+./fsrw a test252.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test252.txt in mode a succeeded.
+./fsrw r test252.txt
+./fsrw c
+FAT checks out; free clusters is 13727 rootfiles 115 totfiles 120
+a test539.txt 66650
+./fsrw a test539.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test539.txt in mode a succeeded.
+./fsrw r test539.txt
+./fsrw c
+FAT checks out; free clusters is 13722 rootfiles 116 totfiles 121
+w test137.txt 33280
+./fsrw w test137.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test137.txt in mode w succeeded.
+./fsrw r test137.txt
+./fsrw c
+FAT checks out; free clusters is 13724 rootfiles 116 totfiles 121
+d test429.txt 0
+./fsrw d test429.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test429.txt in mode d returned 1
+./fsrw r test429.txt
+./fsrw c
+FAT checks out; free clusters is 13724 rootfiles 116 totfiles 121
+w test469.txt 0
+./fsrw w test469.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test469.txt in mode w succeeded.
+./fsrw r test469.txt
+./fsrw c
+FAT checks out; free clusters is 13724 rootfiles 117 totfiles 122
+d test541.txt 184993
+./fsrw d test541.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test541.txt in mode d returned 1
+./fsrw r test541.txt
+./fsrw c
+FAT checks out; free clusters is 13724 rootfiles 117 totfiles 122
+d test470.txt 54155
+./fsrw d test470.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test470.txt in mode d succeeded.
+./fsrw r test470.txt
+./fsrw c
+FAT checks out; free clusters is 13739 rootfiles 116 totfiles 121
+a test483.txt 0
+./fsrw a test483.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test483.txt in mode a succeeded.
+./fsrw r test483.txt
+./fsrw c
+FAT checks out; free clusters is 13739 rootfiles 116 totfiles 121
+r test289.txt 91648
+./fsrw r test289.txt
+./fsrw c
+FAT checks out; free clusters is 13739 rootfiles 116 totfiles 121
+r test379.txt 445383
+./fsrw r test379.txt
+./fsrw c
+FAT checks out; free clusters is 13739 rootfiles 116 totfiles 121
+w test550.txt 90251
+./fsrw w test550.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test550.txt in mode w succeeded.
+./fsrw r test550.txt
+./fsrw c
+FAT checks out; free clusters is 13733 rootfiles 116 totfiles 121
+w test167.txt 190568
+./fsrw w test167.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test167.txt in mode w succeeded.
+./fsrw r test167.txt
+./fsrw c
+FAT checks out; free clusters is 13721 rootfiles 117 totfiles 122
+a test302.txt 172707
+./fsrw a test302.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test302.txt in mode a succeeded.
+./fsrw r test302.txt
+./fsrw c
+FAT checks out; free clusters is 13710 rootfiles 117 totfiles 122
+a test385.txt 0
+./fsrw a test385.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test385.txt in mode a succeeded.
+./fsrw r test385.txt
+./fsrw c
+FAT checks out; free clusters is 13710 rootfiles 118 totfiles 123
+a test138.txt 0
+./fsrw a test138.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test138.txt in mode a succeeded.
+./fsrw r test138.txt
+./fsrw c
+FAT checks out; free clusters is 13710 rootfiles 119 totfiles 124
+r test468.txt 102225
+./fsrw r test468.txt
+./fsrw c
+FAT checks out; free clusters is 13710 rootfiles 119 totfiles 124
+w test403.txt 348672
+./fsrw w test403.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test403.txt in mode w succeeded.
+./fsrw r test403.txt
+./fsrw c
+FAT checks out; free clusters is 13688 rootfiles 120 totfiles 125
+r test374.txt 0
+./fsrw r test374.txt
+./fsrw c
+FAT checks out; free clusters is 13688 rootfiles 120 totfiles 125
+a test513.txt 349696
+./fsrw a test513.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test513.txt in mode a succeeded.
+./fsrw r test513.txt
+./fsrw c
+FAT checks out; free clusters is 13666 rootfiles 120 totfiles 125
+d test485.txt 157184
+./fsrw d test485.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test485.txt in mode d succeeded.
+./fsrw r test485.txt
+./fsrw c
+FAT checks out; free clusters is 13666 rootfiles 119 totfiles 124
+a test534.txt 382631
+./fsrw a test534.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test534.txt in mode a succeeded.
+./fsrw r test534.txt
+./fsrw c
+FAT checks out; free clusters is 13642 rootfiles 120 totfiles 125
+a test176.txt 0
+./fsrw a test176.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test176.txt in mode a succeeded.
+./fsrw r test176.txt
+./fsrw c
+FAT checks out; free clusters is 13642 rootfiles 120 totfiles 125
+r test138.txt 241463
+./fsrw r test138.txt
+./fsrw c
+FAT checks out; free clusters is 13642 rootfiles 120 totfiles 125
+a test139.txt 96107
+./fsrw a test139.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test139.txt in mode a succeeded.
+./fsrw r test139.txt
+./fsrw c
+FAT checks out; free clusters is 13636 rootfiles 120 totfiles 125
+d test410.txt 409416
+./fsrw d test410.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test410.txt in mode d succeeded.
+./fsrw r test410.txt
+./fsrw c
+FAT checks out; free clusters is 13650 rootfiles 119 totfiles 124
+a test516.txt 208063
+./fsrw a test516.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test516.txt in mode a succeeded.
+./fsrw r test516.txt
+./fsrw c
+FAT checks out; free clusters is 13637 rootfiles 120 totfiles 125
+a test279.txt 144896
+./fsrw a test279.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test279.txt in mode a succeeded.
+./fsrw r test279.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 121 totfiles 126
+d test587.txt 0
+./fsrw d test587.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test587.txt in mode d returned 1
+./fsrw r test587.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 121 totfiles 126
+d test458.txt 113525
+./fsrw d test458.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test458.txt in mode d succeeded.
+./fsrw r test458.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 120 totfiles 125
+d test116.txt 0
+./fsrw d test116.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test116.txt in mode d returned 1
+./fsrw r test116.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 120 totfiles 125
+d test418.txt 0
+./fsrw d test418.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test418.txt in mode d returned 1
+./fsrw r test418.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 120 totfiles 125
+r test191.txt 83130
+./fsrw r test191.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 120 totfiles 125
+d test228.txt 307616
+./fsrw d test228.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test228.txt in mode d returned 1
+./fsrw r test228.txt
+./fsrw c
+FAT checks out; free clusters is 13628 rootfiles 120 totfiles 125
+w test329.txt 438784
+./fsrw w test329.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test329.txt in mode w succeeded.
+./fsrw r test329.txt
+./fsrw c
+FAT checks out; free clusters is 13601 rootfiles 121 totfiles 126
+w test433.txt 383489
+./fsrw w test433.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test433.txt in mode w succeeded.
+./fsrw r test433.txt
+./fsrw c
+FAT checks out; free clusters is 13577 rootfiles 122 totfiles 127
+d test343.txt 0
+./fsrw d test343.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test343.txt in mode d returned 1
+./fsrw r test343.txt
+./fsrw c
+FAT checks out; free clusters is 13577 rootfiles 122 totfiles 127
+a test216.txt 0
+./fsrw a test216.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test216.txt in mode a succeeded.
+./fsrw r test216.txt
+./fsrw c
+FAT checks out; free clusters is 13577 rootfiles 123 totfiles 128
+w test343.txt 0
+./fsrw w test343.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test343.txt in mode w succeeded.
+./fsrw r test343.txt
+./fsrw c
+FAT checks out; free clusters is 13577 rootfiles 124 totfiles 129
+r test553.txt 138752
+./fsrw r test553.txt
+./fsrw c
+FAT checks out; free clusters is 13577 rootfiles 124 totfiles 129
+d test237.txt 72872
+./fsrw d test237.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test237.txt in mode d succeeded.
+./fsrw r test237.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 123 totfiles 128
+a test159.txt 0
+./fsrw a test159.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test159.txt in mode a succeeded.
+./fsrw r test159.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 124 totfiles 129
+r test301.txt 453204
+./fsrw r test301.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 124 totfiles 129
+w test346.txt 0
+./fsrw w test346.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test346.txt in mode w succeeded.
+./fsrw r test346.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 125 totfiles 130
+r test495.txt 0
+./fsrw r test495.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 125 totfiles 130
+r test399.txt 497177
+./fsrw r test399.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 125 totfiles 130
+r test278.txt 137621
+./fsrw r test278.txt
+./fsrw c
+FAT checks out; free clusters is 13596 rootfiles 125 totfiles 130
+a test534.txt 262144
+./fsrw a test534.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test534.txt in mode a succeeded.
+./fsrw r test534.txt
+./fsrw c
+FAT checks out; free clusters is 13580 rootfiles 125 totfiles 130
+a test170.txt 351847
+./fsrw a test170.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test170.txt in mode a succeeded.
+./fsrw r test170.txt
+./fsrw c
+FAT checks out; free clusters is 13558 rootfiles 126 totfiles 131
+d test243.txt 351232
+./fsrw d test243.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test243.txt in mode d returned 1
+./fsrw r test243.txt
+./fsrw c
+FAT checks out; free clusters is 13558 rootfiles 126 totfiles 131
+r test518.txt 156757
+./fsrw r test518.txt
+./fsrw c
+FAT checks out; free clusters is 13558 rootfiles 126 totfiles 131
+w test570.txt 146693
+./fsrw w test570.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test570.txt in mode w succeeded.
+./fsrw r test570.txt
+./fsrw c
+FAT checks out; free clusters is 13549 rootfiles 127 totfiles 132
+a test389.txt 128445
+./fsrw a test389.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test389.txt in mode a succeeded.
+./fsrw r test389.txt
+./fsrw c
+FAT checks out; free clusters is 13541 rootfiles 128 totfiles 133
+w test457.txt 163233
+./fsrw w test457.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test457.txt in mode w succeeded.
+./fsrw r test457.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 129 totfiles 134
+r test576.txt 328026
+./fsrw r test576.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 129 totfiles 134
+w test586.txt 0
+./fsrw w test586.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test586.txt in mode w succeeded.
+./fsrw r test586.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 130 totfiles 135
+d test251.txt 9942
+./fsrw d test251.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test251.txt in mode d returned 1
+./fsrw r test251.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 130 totfiles 135
+r test258.txt 223149
+./fsrw r test258.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 130 totfiles 135
+d test560.txt 15992
+./fsrw d test560.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test560.txt in mode d succeeded.
+./fsrw r test560.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 129 totfiles 134
+r test270.txt 218885
+./fsrw r test270.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 129 totfiles 134
+a test388.txt 0
+./fsrw a test388.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test388.txt in mode a succeeded.
+./fsrw r test388.txt
+./fsrw c
+FAT checks out; free clusters is 13531 rootfiles 129 totfiles 134
+a test198.txt 211950
+./fsrw a test198.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test198.txt in mode a succeeded.
+./fsrw r test198.txt
+./fsrw c
+FAT checks out; free clusters is 13518 rootfiles 129 totfiles 134
+w test199.txt 80574
+./fsrw w test199.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test199.txt in mode w succeeded.
+./fsrw r test199.txt
+./fsrw c
+FAT checks out; free clusters is 13513 rootfiles 130 totfiles 135
+r test160.txt 0
+./fsrw r test160.txt
+./fsrw c
+FAT checks out; free clusters is 13513 rootfiles 130 totfiles 135
+r test461.txt 171766
+./fsrw r test461.txt
+./fsrw c
+FAT checks out; free clusters is 13513 rootfiles 130 totfiles 135
+w test402.txt 0
+./fsrw w test402.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test402.txt in mode w succeeded.
+./fsrw r test402.txt
+./fsrw c
+FAT checks out; free clusters is 13513 rootfiles 131 totfiles 136
+a test104.txt 313456
+./fsrw a test104.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test104.txt in mode a succeeded.
+./fsrw r test104.txt
+./fsrw c
+FAT checks out; free clusters is 13493 rootfiles 131 totfiles 136
+a test486.txt 473085
+./fsrw a test486.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test486.txt in mode a succeeded.
+./fsrw r test486.txt
+./fsrw c
+FAT checks out; free clusters is 13464 rootfiles 132 totfiles 137
+r test361.txt 218450
+./fsrw r test361.txt
+./fsrw c
+FAT checks out; free clusters is 13464 rootfiles 132 totfiles 137
+r test588.txt 65418
+./fsrw r test588.txt
+./fsrw c
+FAT checks out; free clusters is 13464 rootfiles 132 totfiles 137
+a test194.txt 165376
+./fsrw a test194.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test194.txt in mode a succeeded.
+./fsrw r test194.txt
+./fsrw c
+FAT checks out; free clusters is 13453 rootfiles 133 totfiles 138
+d test484.txt 419969
+./fsrw d test484.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test484.txt in mode d returned 1
+./fsrw r test484.txt
+./fsrw c
+FAT checks out; free clusters is 13453 rootfiles 133 totfiles 138
+r test438.txt 424320
+./fsrw r test438.txt
+./fsrw c
+FAT checks out; free clusters is 13453 rootfiles 133 totfiles 138
+r test510.txt 0
+./fsrw r test510.txt
+./fsrw c
+FAT checks out; free clusters is 13453 rootfiles 133 totfiles 138
+a test108.txt 174255
+./fsrw a test108.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test108.txt in mode a succeeded.
+./fsrw r test108.txt
+./fsrw c
+FAT checks out; free clusters is 13442 rootfiles 134 totfiles 139
+w test560.txt 0
+./fsrw w test560.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test560.txt in mode w succeeded.
+./fsrw r test560.txt
+./fsrw c
+FAT checks out; free clusters is 13442 rootfiles 135 totfiles 140
+a test388.txt 0
+./fsrw a test388.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test388.txt in mode a succeeded.
+./fsrw r test388.txt
+./fsrw c
+FAT checks out; free clusters is 13442 rootfiles 135 totfiles 140
+r test299.txt 236363
+./fsrw r test299.txt
+./fsrw c
+FAT checks out; free clusters is 13442 rootfiles 135 totfiles 140
+w test564.txt 309434
+./fsrw w test564.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test564.txt in mode w succeeded.
+./fsrw r test564.txt
+./fsrw c
+FAT checks out; free clusters is 13423 rootfiles 136 totfiles 141
+r test527.txt 419242
+./fsrw r test527.txt
+./fsrw c
+FAT checks out; free clusters is 13423 rootfiles 136 totfiles 141
+r test376.txt 0
+./fsrw r test376.txt
+./fsrw c
+FAT checks out; free clusters is 13423 rootfiles 136 totfiles 141
+w test514.txt 278014
+./fsrw w test514.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test514.txt in mode w succeeded.
+./fsrw r test514.txt
+./fsrw c
+FAT checks out; free clusters is 13406 rootfiles 137 totfiles 142
+r test287.txt 57925
+./fsrw r test287.txt
+./fsrw c
+FAT checks out; free clusters is 13406 rootfiles 137 totfiles 142
+w test199.txt 225276
+./fsrw w test199.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test199.txt in mode w succeeded.
+./fsrw r test199.txt
+./fsrw c
+FAT checks out; free clusters is 13397 rootfiles 137 totfiles 142
+w test300.txt 0
+./fsrw w test300.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test300.txt in mode w succeeded.
+./fsrw r test300.txt
+./fsrw c
+FAT checks out; free clusters is 13397 rootfiles 138 totfiles 143
+a test332.txt 91080
+./fsrw a test332.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test332.txt in mode a succeeded.
+./fsrw r test332.txt
+./fsrw c
+FAT checks out; free clusters is 13391 rootfiles 138 totfiles 143
+r test345.txt 0
+./fsrw r test345.txt
+./fsrw c
+FAT checks out; free clusters is 13391 rootfiles 138 totfiles 143
+r test171.txt 341590
+./fsrw r test171.txt
+./fsrw c
+FAT checks out; free clusters is 13391 rootfiles 138 totfiles 143
+r test551.txt 29365
+./fsrw r test551.txt
+./fsrw c
+FAT checks out; free clusters is 13391 rootfiles 138 totfiles 143
+a test321.txt 491437
+./fsrw a test321.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test321.txt in mode a succeeded.
+./fsrw r test321.txt
+./fsrw c
+FAT checks out; free clusters is 13361 rootfiles 139 totfiles 144
+d test366.txt 0
+./fsrw d test366.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test366.txt in mode d returned 1
+./fsrw r test366.txt
+./fsrw c
+FAT checks out; free clusters is 13361 rootfiles 139 totfiles 144
+d test232.txt 0
+./fsrw d test232.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test232.txt in mode d succeeded.
+./fsrw r test232.txt
+./fsrw c
+FAT checks out; free clusters is 13373 rootfiles 138 totfiles 143
+d test273.txt 293376
+./fsrw d test273.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test273.txt in mode d returned 1
+./fsrw r test273.txt
+./fsrw c
+FAT checks out; free clusters is 13373 rootfiles 138 totfiles 143
+d test459.txt 269312
+./fsrw d test459.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test459.txt in mode d succeeded.
+./fsrw r test459.txt
+./fsrw c
+FAT checks out; free clusters is 13379 rootfiles 137 totfiles 142
+d test265.txt 0
+./fsrw d test265.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test265.txt in mode d returned 1
+./fsrw r test265.txt
+./fsrw c
+FAT checks out; free clusters is 13379 rootfiles 137 totfiles 142
+w test390.txt 296035
+./fsrw w test390.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test390.txt in mode w succeeded.
+./fsrw r test390.txt
+./fsrw c
+FAT checks out; free clusters is 13360 rootfiles 138 totfiles 143
+r test399.txt 279552
+./fsrw r test399.txt
+./fsrw c
+FAT checks out; free clusters is 13360 rootfiles 138 totfiles 143
+a test386.txt 363520
+./fsrw a test386.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test386.txt in mode a succeeded.
+./fsrw r test386.txt
+./fsrw c
+FAT checks out; free clusters is 13337 rootfiles 139 totfiles 144
+d test392.txt 408450
+./fsrw d test392.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test392.txt in mode d returned 1
+./fsrw r test392.txt
+./fsrw c
+FAT checks out; free clusters is 13337 rootfiles 139 totfiles 144
+d test230.txt 36660
+./fsrw d test230.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test230.txt in mode d returned 1
+./fsrw r test230.txt
+./fsrw c
+FAT checks out; free clusters is 13337 rootfiles 139 totfiles 144
+r test484.txt 0
+./fsrw r test484.txt
+./fsrw c
+FAT checks out; free clusters is 13337 rootfiles 139 totfiles 144
+a test202.txt 0
+./fsrw a test202.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test202.txt in mode a succeeded.
+./fsrw r test202.txt
+./fsrw c
+FAT checks out; free clusters is 13337 rootfiles 139 totfiles 144
+d test421.txt 372224
+./fsrw d test421.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test421.txt in mode d returned 1
+./fsrw r test421.txt
+./fsrw c
+FAT checks out; free clusters is 13337 rootfiles 139 totfiles 144
+a test250.txt 323809
+./fsrw a test250.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test250.txt in mode a succeeded.
+./fsrw r test250.txt
+./fsrw c
+FAT checks out; free clusters is 13317 rootfiles 140 totfiles 145
+w test224.txt 265863
+./fsrw w test224.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test224.txt in mode w succeeded.
+./fsrw r test224.txt
+./fsrw c
+FAT checks out; free clusters is 13300 rootfiles 141 totfiles 146
+d test598.txt 4096
+./fsrw d test598.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test598.txt in mode d returned 1
+./fsrw r test598.txt
+./fsrw c
+FAT checks out; free clusters is 13300 rootfiles 141 totfiles 146
+w test165.txt 482231
+./fsrw w test165.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test165.txt in mode w succeeded.
+./fsrw r test165.txt
+./fsrw c
+FAT checks out; free clusters is 13270 rootfiles 141 totfiles 146
+d test191.txt 244819
+./fsrw d test191.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test191.txt in mode d returned 1
+./fsrw r test191.txt
+./fsrw c
+FAT checks out; free clusters is 13270 rootfiles 141 totfiles 146
+r test530.txt 146333
+./fsrw r test530.txt
+./fsrw c
+FAT checks out; free clusters is 13270 rootfiles 141 totfiles 146
+w test219.txt 0
+./fsrw w test219.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test219.txt in mode w succeeded.
+./fsrw r test219.txt
+./fsrw c
+FAT checks out; free clusters is 13270 rootfiles 142 totfiles 147
+w test393.txt 138240
+./fsrw w test393.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test393.txt in mode w succeeded.
+./fsrw r test393.txt
+./fsrw c
+FAT checks out; free clusters is 13261 rootfiles 143 totfiles 148
+a test410.txt 449991
+./fsrw a test410.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test410.txt in mode a succeeded.
+./fsrw r test410.txt
+./fsrw c
+FAT checks out; free clusters is 13233 rootfiles 144 totfiles 149
+r test251.txt 6891
+./fsrw r test251.txt
+./fsrw c
+FAT checks out; free clusters is 13233 rootfiles 144 totfiles 149
+w test268.txt 98439
+./fsrw w test268.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test268.txt in mode w succeeded.
+./fsrw r test268.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 145 totfiles 150
+r test303.txt 347027
+./fsrw r test303.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 145 totfiles 150
+r test188.txt 0
+./fsrw r test188.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 145 totfiles 150
+r test421.txt 0
+./fsrw r test421.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 145 totfiles 150
+r test456.txt 0
+./fsrw r test456.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 145 totfiles 150
+r test459.txt 0
+./fsrw r test459.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 145 totfiles 150
+d test471.txt 0
+./fsrw d test471.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test471.txt in mode d succeeded.
+./fsrw r test471.txt
+./fsrw c
+FAT checks out; free clusters is 13242 rootfiles 144 totfiles 149
+a test218.txt 73216
+./fsrw a test218.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test218.txt in mode a succeeded.
+./fsrw r test218.txt
+./fsrw c
+FAT checks out; free clusters is 13237 rootfiles 145 totfiles 150
+d test475.txt 278150
+./fsrw d test475.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test475.txt in mode d returned 1
+./fsrw r test475.txt
+./fsrw c
+FAT checks out; free clusters is 13237 rootfiles 145 totfiles 150
+a test171.txt 148209
+./fsrw a test171.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test171.txt in mode a succeeded.
+./fsrw r test171.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 146 totfiles 151
+a test116.txt 0
+./fsrw a test116.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test116.txt in mode a succeeded.
+./fsrw r test116.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 147 totfiles 152
+r test290.txt 190550
+./fsrw r test290.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 147 totfiles 152
+r test236.txt 452802
+./fsrw r test236.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 147 totfiles 152
+d test331.txt 207872
+./fsrw d test331.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test331.txt in mode d returned 1
+./fsrw r test331.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 147 totfiles 152
+r test153.txt 0
+./fsrw r test153.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 147 totfiles 152
+d test411.txt 186658
+./fsrw d test411.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test411.txt in mode d returned 1
+./fsrw r test411.txt
+./fsrw c
+FAT checks out; free clusters is 13227 rootfiles 147 totfiles 152
+w test184.txt 156160
+./fsrw w test184.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test184.txt in mode w succeeded.
+./fsrw r test184.txt
+./fsrw c
+FAT checks out; free clusters is 13246 rootfiles 147 totfiles 152
+a test254.txt 0
+./fsrw a test254.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test254.txt in mode a succeeded.
+./fsrw r test254.txt
+./fsrw c
+FAT checks out; free clusters is 13246 rootfiles 148 totfiles 153
+d test208.txt 76170
+./fsrw d test208.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test208.txt in mode d returned 1
+./fsrw r test208.txt
+./fsrw c
+FAT checks out; free clusters is 13246 rootfiles 148 totfiles 153
+w test439.txt 326986
+./fsrw w test439.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test439.txt in mode w succeeded.
+./fsrw r test439.txt
+./fsrw c
+FAT checks out; free clusters is 13226 rootfiles 149 totfiles 154
+a test124.txt 87902
+./fsrw a test124.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test124.txt in mode a succeeded.
+./fsrw r test124.txt
+./fsrw c
+FAT checks out; free clusters is 13220 rootfiles 150 totfiles 155
+r test401.txt 123207
+./fsrw r test401.txt
+./fsrw c
+FAT checks out; free clusters is 13220 rootfiles 150 totfiles 155
+r test211.txt 166912
+./fsrw r test211.txt
+./fsrw c
+FAT checks out; free clusters is 13220 rootfiles 150 totfiles 155
+a test487.txt 349184
+./fsrw a test487.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test487.txt in mode a succeeded.
+./fsrw r test487.txt
+./fsrw c
+FAT checks out; free clusters is 13198 rootfiles 151 totfiles 156
+w test149.txt 282196
+./fsrw w test149.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test149.txt in mode w succeeded.
+./fsrw r test149.txt
+./fsrw c
+FAT checks out; free clusters is 13186 rootfiles 151 totfiles 156
+r test277.txt 83968
+./fsrw r test277.txt
+./fsrw c
+FAT checks out; free clusters is 13186 rootfiles 151 totfiles 156
+w test471.txt 484003
+./fsrw w test471.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test471.txt in mode w succeeded.
+./fsrw r test471.txt
+./fsrw c
+FAT checks out; free clusters is 13156 rootfiles 152 totfiles 157
+a test530.txt 0
+./fsrw a test530.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test530.txt in mode a succeeded.
+./fsrw r test530.txt
+./fsrw c
+FAT checks out; free clusters is 13156 rootfiles 153 totfiles 158
+r test180.txt 254464
+./fsrw r test180.txt
+./fsrw c
+FAT checks out; free clusters is 13156 rootfiles 153 totfiles 158
+a test533.txt 381952
+./fsrw a test533.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test533.txt in mode a succeeded.
+./fsrw r test533.txt
+./fsrw c
+FAT checks out; free clusters is 13132 rootfiles 154 totfiles 159
+a test327.txt 205243
+./fsrw a test327.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test327.txt in mode a succeeded.
+./fsrw r test327.txt
+./fsrw c
+FAT checks out; free clusters is 13119 rootfiles 155 totfiles 160
+d test135.txt 86966
+./fsrw d test135.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test135.txt in mode d returned 1
+./fsrw r test135.txt
+./fsrw c
+FAT checks out; free clusters is 13119 rootfiles 155 totfiles 160
+w test255.txt 359714
+./fsrw w test255.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test255.txt in mode w succeeded.
+./fsrw r test255.txt
+./fsrw c
+FAT checks out; free clusters is 13097 rootfiles 155 totfiles 160
+d test595.txt 406868
+./fsrw d test595.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test595.txt in mode d returned 1
+./fsrw r test595.txt
+./fsrw c
+FAT checks out; free clusters is 13097 rootfiles 155 totfiles 160
+r test312.txt 159232
+./fsrw r test312.txt
+./fsrw c
+FAT checks out; free clusters is 13097 rootfiles 155 totfiles 160
+d test412.txt 415728
+./fsrw d test412.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test412.txt in mode d returned 1
+./fsrw r test412.txt
+./fsrw c
+FAT checks out; free clusters is 13097 rootfiles 155 totfiles 160
+w test244.txt 242688
+./fsrw w test244.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test244.txt in mode w succeeded.
+./fsrw r test244.txt
+./fsrw c
+FAT checks out; free clusters is 13082 rootfiles 156 totfiles 161
+d test574.txt 168960
+./fsrw d test574.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test574.txt in mode d returned 1
+./fsrw r test574.txt
+./fsrw c
+FAT checks out; free clusters is 13082 rootfiles 156 totfiles 161
+d test528.txt 311808
+./fsrw d test528.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test528.txt in mode d returned 1
+./fsrw r test528.txt
+./fsrw c
+FAT checks out; free clusters is 13082 rootfiles 156 totfiles 161
+w test199.txt 487188
+./fsrw w test199.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test199.txt in mode w succeeded.
+./fsrw r test199.txt
+./fsrw c
+FAT checks out; free clusters is 13066 rootfiles 156 totfiles 161
+w test319.txt 228717
+./fsrw w test319.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test319.txt in mode w succeeded.
+./fsrw r test319.txt
+./fsrw c
+FAT checks out; free clusters is 13052 rootfiles 157 totfiles 162
+d test586.txt 271132
+./fsrw d test586.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test586.txt in mode d succeeded.
+./fsrw r test586.txt
+./fsrw c
+FAT checks out; free clusters is 13052 rootfiles 156 totfiles 161
+r test176.txt 434069
+./fsrw r test176.txt
+./fsrw c
+FAT checks out; free clusters is 13052 rootfiles 156 totfiles 161
+a test132.txt 366205
+./fsrw a test132.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test132.txt in mode a succeeded.
+./fsrw r test132.txt
+./fsrw c
+FAT checks out; free clusters is 13029 rootfiles 157 totfiles 162
+w test532.txt 43008
+./fsrw w test532.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test532.txt in mode w succeeded.
+./fsrw r test532.txt
+./fsrw c
+FAT checks out; free clusters is 13026 rootfiles 158 totfiles 163
+a test187.txt 0
+./fsrw a test187.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test187.txt in mode a succeeded.
+./fsrw r test187.txt
+./fsrw c
+FAT checks out; free clusters is 13026 rootfiles 159 totfiles 164
+a test337.txt 321536
+./fsrw a test337.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test337.txt in mode a succeeded.
+./fsrw r test337.txt
+./fsrw c
+FAT checks out; free clusters is 13006 rootfiles 160 totfiles 165
+r test119.txt 4146
+./fsrw r test119.txt
+./fsrw c
+FAT checks out; free clusters is 13006 rootfiles 160 totfiles 165
+r test194.txt 283136
+./fsrw r test194.txt
+./fsrw c
+FAT checks out; free clusters is 13006 rootfiles 160 totfiles 165
+r test424.txt 98649
+./fsrw r test424.txt
+./fsrw c
+FAT checks out; free clusters is 13006 rootfiles 160 totfiles 165
+a test519.txt 133272
+./fsrw a test519.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test519.txt in mode a succeeded.
+./fsrw r test519.txt
+./fsrw c
+FAT checks out; free clusters is 12997 rootfiles 161 totfiles 166
+a test324.txt 454144
+./fsrw a test324.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test324.txt in mode a succeeded.
+./fsrw r test324.txt
+./fsrw c
+FAT checks out; free clusters is 12969 rootfiles 161 totfiles 166
+d test165.txt 364336
+./fsrw d test165.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test165.txt in mode d succeeded.
+./fsrw r test165.txt
+./fsrw c
+FAT checks out; free clusters is 12999 rootfiles 160 totfiles 165
+r test112.txt 0
+./fsrw r test112.txt
+./fsrw c
+FAT checks out; free clusters is 12999 rootfiles 160 totfiles 165
+d test165.txt 0
+./fsrw d test165.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test165.txt in mode d returned 1
+./fsrw r test165.txt
+./fsrw c
+FAT checks out; free clusters is 12999 rootfiles 160 totfiles 165
+w test271.txt 243225
+./fsrw w test271.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test271.txt in mode w succeeded.
+./fsrw r test271.txt
+./fsrw c
+FAT checks out; free clusters is 12984 rootfiles 161 totfiles 166
+w test550.txt 59888
+./fsrw w test550.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test550.txt in mode w succeeded.
+./fsrw r test550.txt
+./fsrw c
+FAT checks out; free clusters is 12986 rootfiles 161 totfiles 166
+d test445.txt 440320
+./fsrw d test445.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test445.txt in mode d returned 1
+./fsrw r test445.txt
+./fsrw c
+FAT checks out; free clusters is 12986 rootfiles 161 totfiles 166
+r test153.txt 372224
+./fsrw r test153.txt
+./fsrw c
+FAT checks out; free clusters is 12986 rootfiles 161 totfiles 166
+w test470.txt 250368
+./fsrw w test470.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test470.txt in mode w succeeded.
+./fsrw r test470.txt
+./fsrw c
+FAT checks out; free clusters is 12970 rootfiles 162 totfiles 167
+w test185.txt 0
+./fsrw w test185.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test185.txt in mode w succeeded.
+./fsrw r test185.txt
+./fsrw c
+FAT checks out; free clusters is 12970 rootfiles 163 totfiles 168
+r test265.txt 420052
+./fsrw r test265.txt
+./fsrw c
+FAT checks out; free clusters is 12970 rootfiles 163 totfiles 168
+a test220.txt 0
+./fsrw a test220.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test220.txt in mode a succeeded.
+./fsrw r test220.txt
+./fsrw c
+FAT checks out; free clusters is 12970 rootfiles 164 totfiles 169
+d test131.txt 0
+./fsrw d test131.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test131.txt in mode d succeeded.
+./fsrw r test131.txt
+./fsrw c
+FAT checks out; free clusters is 12982 rootfiles 163 totfiles 168
+a test565.txt 353743
+./fsrw a test565.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test565.txt in mode a succeeded.
+./fsrw r test565.txt
+./fsrw c
+FAT checks out; free clusters is 12960 rootfiles 163 totfiles 168
+d test357.txt 0
+./fsrw d test357.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test357.txt in mode d returned 1
+./fsrw r test357.txt
+./fsrw c
+FAT checks out; free clusters is 12960 rootfiles 163 totfiles 168
+d test105.txt 141312
+./fsrw d test105.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test105.txt in mode d returned 1
+./fsrw r test105.txt
+./fsrw c
+FAT checks out; free clusters is 12960 rootfiles 163 totfiles 168
+a test133.txt 0
+./fsrw a test133.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test133.txt in mode a succeeded.
+./fsrw r test133.txt
+./fsrw c
+FAT checks out; free clusters is 12960 rootfiles 164 totfiles 169
+d test520.txt 48336
+./fsrw d test520.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test520.txt in mode d returned 1
+./fsrw r test520.txt
+./fsrw c
+FAT checks out; free clusters is 12960 rootfiles 164 totfiles 169
+w test440.txt 131795
+./fsrw w test440.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test440.txt in mode w succeeded.
+./fsrw r test440.txt
+./fsrw c
+FAT checks out; free clusters is 12951 rootfiles 165 totfiles 170
+a test168.txt 275161
+./fsrw a test168.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test168.txt in mode a succeeded.
+./fsrw r test168.txt
+./fsrw c
+FAT checks out; free clusters is 12934 rootfiles 165 totfiles 170
+d test296.txt 79872
+./fsrw d test296.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test296.txt in mode d returned 1
+./fsrw r test296.txt
+./fsrw c
+FAT checks out; free clusters is 12934 rootfiles 165 totfiles 170
+a test310.txt 80896
+./fsrw a test310.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test310.txt in mode a succeeded.
+./fsrw r test310.txt
+./fsrw c
+FAT checks out; free clusters is 12929 rootfiles 166 totfiles 171
+d test340.txt 96925
+./fsrw d test340.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test340.txt in mode d succeeded.
+./fsrw r test340.txt
+./fsrw c
+FAT checks out; free clusters is 12936 rootfiles 165 totfiles 170
+w test415.txt 0
+./fsrw w test415.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test415.txt in mode w succeeded.
+./fsrw r test415.txt
+./fsrw c
+FAT checks out; free clusters is 12936 rootfiles 166 totfiles 171
+d test478.txt 192465
+./fsrw d test478.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test478.txt in mode d returned 1
+./fsrw r test478.txt
+./fsrw c
+FAT checks out; free clusters is 12936 rootfiles 166 totfiles 171
+a test375.txt 0
+./fsrw a test375.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test375.txt in mode a succeeded.
+./fsrw r test375.txt
+./fsrw c
+FAT checks out; free clusters is 12936 rootfiles 167 totfiles 172
+w test150.txt 0
+./fsrw w test150.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test150.txt in mode w succeeded.
+./fsrw r test150.txt
+./fsrw c
+FAT checks out; free clusters is 12936 rootfiles 168 totfiles 173
+w test245.txt 272229
+./fsrw w test245.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test245.txt in mode w succeeded.
+./fsrw r test245.txt
+./fsrw c
+FAT checks out; free clusters is 12919 rootfiles 169 totfiles 174
+d test353.txt 0
+./fsrw d test353.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test353.txt in mode d returned 1
+./fsrw r test353.txt
+./fsrw c
+FAT checks out; free clusters is 12919 rootfiles 169 totfiles 174
+r test448.txt 261709
+./fsrw r test448.txt
+./fsrw c
+FAT checks out; free clusters is 12919 rootfiles 169 totfiles 174
+r test553.txt 127789
+./fsrw r test553.txt
+./fsrw c
+FAT checks out; free clusters is 12919 rootfiles 169 totfiles 174
+a test158.txt 446074
+./fsrw a test158.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test158.txt in mode a succeeded.
+./fsrw r test158.txt
+./fsrw c
+FAT checks out; free clusters is 12891 rootfiles 170 totfiles 175
+w test259.txt 123077
+./fsrw w test259.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test259.txt in mode w succeeded.
+./fsrw r test259.txt
+./fsrw c
+FAT checks out; free clusters is 12883 rootfiles 171 totfiles 176
+w test380.txt 62976
+./fsrw w test380.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test380.txt in mode w succeeded.
+./fsrw r test380.txt
+./fsrw c
+FAT checks out; free clusters is 12879 rootfiles 172 totfiles 177
+w test593.txt 472576
+./fsrw w test593.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test593.txt in mode w succeeded.
+./fsrw r test593.txt
+./fsrw c
+FAT checks out; free clusters is 12850 rootfiles 172 totfiles 177
+w test562.txt 442353
+./fsrw w test562.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test562.txt in mode w succeeded.
+./fsrw r test562.txt
+./fsrw c
+FAT checks out; free clusters is 12823 rootfiles 173 totfiles 178
+d test230.txt 0
+./fsrw d test230.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test230.txt in mode d returned 1
+./fsrw r test230.txt
+./fsrw c
+FAT checks out; free clusters is 12823 rootfiles 173 totfiles 178
+r test519.txt 13984
+./fsrw r test519.txt
+./fsrw c
+FAT checks out; free clusters is 12823 rootfiles 173 totfiles 178
+d test314.txt 267047
+./fsrw d test314.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test314.txt in mode d succeeded.
+./fsrw r test314.txt
+./fsrw c
+FAT checks out; free clusters is 12849 rootfiles 172 totfiles 177
+w test457.txt 236544
+./fsrw w test457.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test457.txt in mode w succeeded.
+./fsrw r test457.txt
+./fsrw c
+FAT checks out; free clusters is 12844 rootfiles 172 totfiles 177
+r test425.txt 352890
+./fsrw r test425.txt
+./fsrw c
+FAT checks out; free clusters is 12844 rootfiles 172 totfiles 177
+a test592.txt 0
+./fsrw a test592.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test592.txt in mode a succeeded.
+./fsrw r test592.txt
+./fsrw c
+FAT checks out; free clusters is 12844 rootfiles 173 totfiles 178
+a test426.txt 435712
+./fsrw a test426.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test426.txt in mode a succeeded.
+./fsrw r test426.txt
+./fsrw c
+FAT checks out; free clusters is 12817 rootfiles 174 totfiles 179
+w test321.txt 400959
+./fsrw w test321.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test321.txt in mode w succeeded.
+./fsrw r test321.txt
+./fsrw c
+FAT checks out; free clusters is 12822 rootfiles 174 totfiles 179
+w test164.txt 348742
+./fsrw w test164.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test164.txt in mode w succeeded.
+./fsrw r test164.txt
+./fsrw c
+FAT checks out; free clusters is 12800 rootfiles 175 totfiles 180
+w test262.txt 0
+./fsrw w test262.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test262.txt in mode w succeeded.
+./fsrw r test262.txt
+./fsrw c
+FAT checks out; free clusters is 12800 rootfiles 176 totfiles 181
+a test253.txt 0
+./fsrw a test253.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test253.txt in mode a succeeded.
+./fsrw r test253.txt
+./fsrw c
+FAT checks out; free clusters is 12800 rootfiles 177 totfiles 182
+r test404.txt 330748
+./fsrw r test404.txt
+./fsrw c
+FAT checks out; free clusters is 12800 rootfiles 177 totfiles 182
+w test535.txt 360960
+./fsrw w test535.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test535.txt in mode w succeeded.
+./fsrw r test535.txt
+./fsrw c
+FAT checks out; free clusters is 12777 rootfiles 178 totfiles 183
+w test137.txt 0
+./fsrw w test137.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test137.txt in mode w succeeded.
+./fsrw r test137.txt
+./fsrw c
+FAT checks out; free clusters is 12780 rootfiles 178 totfiles 183
+d test554.txt 322048
+./fsrw d test554.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test554.txt in mode d returned 1
+./fsrw r test554.txt
+./fsrw c
+FAT checks out; free clusters is 12780 rootfiles 178 totfiles 183
+w test179.txt 423147
+./fsrw w test179.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test179.txt in mode w succeeded.
+./fsrw r test179.txt
+./fsrw c
+FAT checks out; free clusters is 12754 rootfiles 179 totfiles 184
+a test389.txt 21678
+./fsrw a test389.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test389.txt in mode a succeeded.
+./fsrw r test389.txt
+./fsrw c
+FAT checks out; free clusters is 12752 rootfiles 179 totfiles 184
+r test518.txt 0
+./fsrw r test518.txt
+./fsrw c
+FAT checks out; free clusters is 12752 rootfiles 179 totfiles 184
+w test456.txt 0
+./fsrw w test456.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test456.txt in mode w succeeded.
+./fsrw r test456.txt
+./fsrw c
+FAT checks out; free clusters is 12752 rootfiles 180 totfiles 185
+w test402.txt 118784
+./fsrw w test402.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test402.txt in mode w succeeded.
+./fsrw r test402.txt
+./fsrw c
+FAT checks out; free clusters is 12744 rootfiles 180 totfiles 185
+d test581.txt 496975
+./fsrw d test581.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test581.txt in mode d returned 1
+./fsrw r test581.txt
+./fsrw c
+FAT checks out; free clusters is 12744 rootfiles 180 totfiles 185
+w test190.txt 354562
+./fsrw w test190.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test190.txt in mode w succeeded.
+./fsrw r test190.txt
+./fsrw c
+FAT checks out; free clusters is 12722 rootfiles 181 totfiles 186
+a test574.txt 182395
+./fsrw a test574.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test574.txt in mode a succeeded.
+./fsrw r test574.txt
+./fsrw c
+FAT checks out; free clusters is 12710 rootfiles 182 totfiles 187
+a test506.txt 47769
+./fsrw a test506.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test506.txt in mode a succeeded.
+./fsrw r test506.txt
+./fsrw c
+FAT checks out; free clusters is 12707 rootfiles 183 totfiles 188
+r test194.txt 338432
+./fsrw r test194.txt
+./fsrw c
+FAT checks out; free clusters is 12707 rootfiles 183 totfiles 188
+w test128.txt 256639
+./fsrw w test128.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test128.txt in mode w succeeded.
+./fsrw r test128.txt
+./fsrw c
+FAT checks out; free clusters is 12691 rootfiles 184 totfiles 189
+a test527.txt 453994
+./fsrw a test527.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test527.txt in mode a succeeded.
+./fsrw r test527.txt
+./fsrw c
+FAT checks out; free clusters is 12663 rootfiles 185 totfiles 190
+d test224.txt 0
+./fsrw d test224.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test224.txt in mode d succeeded.
+./fsrw r test224.txt
+./fsrw c
+FAT checks out; free clusters is 12680 rootfiles 184 totfiles 189
+d test476.txt 0
+./fsrw d test476.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test476.txt in mode d returned 1
+./fsrw r test476.txt
+./fsrw c
+FAT checks out; free clusters is 12680 rootfiles 184 totfiles 189
+a test369.txt 454423
+./fsrw a test369.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test369.txt in mode a succeeded.
+./fsrw r test369.txt
+./fsrw c
+FAT checks out; free clusters is 12652 rootfiles 185 totfiles 190
+d test424.txt 199014
+./fsrw d test424.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test424.txt in mode d returned 1
+./fsrw r test424.txt
+./fsrw c
+FAT checks out; free clusters is 12652 rootfiles 185 totfiles 190
+d test241.txt 0
+./fsrw d test241.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test241.txt in mode d returned 1
+./fsrw r test241.txt
+./fsrw c
+FAT checks out; free clusters is 12652 rootfiles 185 totfiles 190
+d test366.txt 409982
+./fsrw d test366.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test366.txt in mode d returned 1
+./fsrw r test366.txt
+./fsrw c
+FAT checks out; free clusters is 12652 rootfiles 185 totfiles 190
+w test124.txt 159257
+./fsrw w test124.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test124.txt in mode w succeeded.
+./fsrw r test124.txt
+./fsrw c
+FAT checks out; free clusters is 12648 rootfiles 185 totfiles 190
+a test248.txt 0
+./fsrw a test248.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test248.txt in mode a succeeded.
+./fsrw r test248.txt
+./fsrw c
+FAT checks out; free clusters is 12648 rootfiles 186 totfiles 191
+a test494.txt 331054
+./fsrw a test494.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test494.txt in mode a succeeded.
+./fsrw r test494.txt
+./fsrw c
+FAT checks out; free clusters is 12628 rootfiles 186 totfiles 191
+w test161.txt 125889
+./fsrw w test161.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test161.txt in mode w succeeded.
+./fsrw r test161.txt
+./fsrw c
+FAT checks out; free clusters is 12620 rootfiles 187 totfiles 192
+w test485.txt 95986
+./fsrw w test485.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test485.txt in mode w succeeded.
+./fsrw r test485.txt
+./fsrw c
+FAT checks out; free clusters is 12614 rootfiles 188 totfiles 193
+w test572.txt 260483
+./fsrw w test572.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test572.txt in mode w succeeded.
+./fsrw r test572.txt
+./fsrw c
+FAT checks out; free clusters is 12598 rootfiles 189 totfiles 194
+d test104.txt 0
+./fsrw d test104.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test104.txt in mode d succeeded.
+./fsrw r test104.txt
+./fsrw c
+FAT checks out; free clusters is 12635 rootfiles 188 totfiles 193
+d test291.txt 0
+./fsrw d test291.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test291.txt in mode d succeeded.
+./fsrw r test291.txt
+./fsrw c
+FAT checks out; free clusters is 12660 rootfiles 187 totfiles 192
+w test217.txt 413860
+./fsrw w test217.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test217.txt in mode w succeeded.
+./fsrw r test217.txt
+./fsrw c
+FAT checks out; free clusters is 12654 rootfiles 187 totfiles 192
+d test300.txt 464896
+./fsrw d test300.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test300.txt in mode d succeeded.
+./fsrw r test300.txt
+./fsrw c
+FAT checks out; free clusters is 12654 rootfiles 186 totfiles 191
+a test303.txt 388882
+./fsrw a test303.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test303.txt in mode a succeeded.
+./fsrw r test303.txt
+./fsrw c
+FAT checks out; free clusters is 12630 rootfiles 187 totfiles 192
+d test383.txt 158041
+./fsrw d test383.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test383.txt in mode d returned 1
+./fsrw r test383.txt
+./fsrw c
+FAT checks out; free clusters is 12630 rootfiles 187 totfiles 192
+w test175.txt 203813
+./fsrw w test175.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test175.txt in mode w succeeded.
+./fsrw r test175.txt
+./fsrw c
+FAT checks out; free clusters is 12617 rootfiles 188 totfiles 193
+d test232.txt 35328
+./fsrw d test232.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test232.txt in mode d returned 1
+./fsrw r test232.txt
+./fsrw c
+FAT checks out; free clusters is 12617 rootfiles 188 totfiles 193
+r test547.txt 372841
+./fsrw r test547.txt
+./fsrw c
+FAT checks out; free clusters is 12617 rootfiles 188 totfiles 193
+r test320.txt 465038
+./fsrw r test320.txt
+./fsrw c
+FAT checks out; free clusters is 12617 rootfiles 188 totfiles 193
+r test471.txt 0
+./fsrw r test471.txt
+./fsrw c
+FAT checks out; free clusters is 12617 rootfiles 188 totfiles 193
+r test432.txt 43520
+./fsrw r test432.txt
+./fsrw c
+FAT checks out; free clusters is 12617 rootfiles 188 totfiles 193
+d test175.txt 0
+./fsrw d test175.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test175.txt in mode d succeeded.
+./fsrw r test175.txt
+./fsrw c
+FAT checks out; free clusters is 12630 rootfiles 187 totfiles 192
+w test184.txt 486400
+./fsrw w test184.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test184.txt in mode w succeeded.
+./fsrw r test184.txt
+./fsrw c
+FAT checks out; free clusters is 12610 rootfiles 187 totfiles 192
+r test527.txt 0
+./fsrw r test527.txt
+./fsrw c
+FAT checks out; free clusters is 12610 rootfiles 187 totfiles 192
+d test277.txt 274386
+./fsrw d test277.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test277.txt in mode d succeeded.
+./fsrw r test277.txt
+./fsrw c
+FAT checks out; free clusters is 12622 rootfiles 186 totfiles 191
+d test183.txt 446642
+./fsrw d test183.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test183.txt in mode d returned 1
+./fsrw r test183.txt
+./fsrw c
+FAT checks out; free clusters is 12622 rootfiles 186 totfiles 191
+d test197.txt 307041
+./fsrw d test197.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test197.txt in mode d returned 1
+./fsrw r test197.txt
+./fsrw c
+FAT checks out; free clusters is 12622 rootfiles 186 totfiles 191
+r test202.txt 429114
+./fsrw r test202.txt
+./fsrw c
+FAT checks out; free clusters is 12622 rootfiles 186 totfiles 191
+d test397.txt 319983
+./fsrw d test397.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test397.txt in mode d succeeded.
+./fsrw r test397.txt
+./fsrw c
+FAT checks out; free clusters is 12622 rootfiles 185 totfiles 190
+w test435.txt 304092
+./fsrw w test435.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test435.txt in mode w succeeded.
+./fsrw r test435.txt
+./fsrw c
+FAT checks out; free clusters is 12603 rootfiles 186 totfiles 191
+w test409.txt 324608
+./fsrw w test409.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test409.txt in mode w succeeded.
+./fsrw r test409.txt
+./fsrw c
+FAT checks out; free clusters is 12583 rootfiles 187 totfiles 192
+a test149.txt 489764
+./fsrw a test149.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test149.txt in mode a succeeded.
+./fsrw r test149.txt
+./fsrw c
+FAT checks out; free clusters is 12553 rootfiles 187 totfiles 192
+a test247.txt 203923
+./fsrw a test247.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test247.txt in mode a succeeded.
+./fsrw r test247.txt
+./fsrw c
+FAT checks out; free clusters is 12541 rootfiles 187 totfiles 192
+a test502.txt 189523
+./fsrw a test502.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test502.txt in mode a succeeded.
+./fsrw r test502.txt
+./fsrw c
+FAT checks out; free clusters is 12529 rootfiles 188 totfiles 193
+w test568.txt 107520
+./fsrw w test568.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test568.txt in mode w succeeded.
+./fsrw r test568.txt
+./fsrw c
+FAT checks out; free clusters is 12525 rootfiles 188 totfiles 193
+a test316.txt 369037
+./fsrw a test316.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test316.txt in mode a succeeded.
+./fsrw r test316.txt
+./fsrw c
+FAT checks out; free clusters is 12502 rootfiles 189 totfiles 194
+r test280.txt 273682
+./fsrw r test280.txt
+./fsrw c
+FAT checks out; free clusters is 12502 rootfiles 189 totfiles 194
+d test155.txt 0
+./fsrw d test155.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test155.txt in mode d succeeded.
+./fsrw r test155.txt
+./fsrw c
+FAT checks out; free clusters is 12503 rootfiles 188 totfiles 193
+a test404.txt 374910
+./fsrw a test404.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test404.txt in mode a succeeded.
+./fsrw r test404.txt
+./fsrw c
+FAT checks out; free clusters is 12480 rootfiles 189 totfiles 194
+a test270.txt 131738
+./fsrw a test270.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test270.txt in mode a succeeded.
+./fsrw r test270.txt
+./fsrw c
+FAT checks out; free clusters is 12471 rootfiles 190 totfiles 195
+r test161.txt 240381
+./fsrw r test161.txt
+./fsrw c
+FAT checks out; free clusters is 12471 rootfiles 190 totfiles 195
+r test437.txt 487369
+./fsrw r test437.txt
+./fsrw c
+FAT checks out; free clusters is 12471 rootfiles 190 totfiles 195
+a test350.txt 0
+./fsrw a test350.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test350.txt in mode a succeeded.
+./fsrw r test350.txt
+./fsrw c
+FAT checks out; free clusters is 12471 rootfiles 191 totfiles 196
+a test304.txt 91185
+./fsrw a test304.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test304.txt in mode a succeeded.
+./fsrw r test304.txt
+./fsrw c
+FAT checks out; free clusters is 12465 rootfiles 192 totfiles 197
+d test107.txt 0
+./fsrw d test107.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test107.txt in mode d succeeded.
+./fsrw r test107.txt
+./fsrw c
+FAT checks out; free clusters is 12471 rootfiles 191 totfiles 196
+r test571.txt 21504
+./fsrw r test571.txt
+./fsrw c
+FAT checks out; free clusters is 12471 rootfiles 191 totfiles 196
+w test278.txt 134434
+./fsrw w test278.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test278.txt in mode w succeeded.
+./fsrw r test278.txt
+./fsrw c
+FAT checks out; free clusters is 12462 rootfiles 191 totfiles 196
+w test327.txt 0
+./fsrw w test327.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test327.txt in mode w succeeded.
+./fsrw r test327.txt
+./fsrw c
+FAT checks out; free clusters is 12475 rootfiles 191 totfiles 196
+d test285.txt 75776
+./fsrw d test285.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test285.txt in mode d returned 1
+./fsrw r test285.txt
+./fsrw c
+FAT checks out; free clusters is 12475 rootfiles 191 totfiles 196
+a test152.txt 169742
+./fsrw a test152.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test152.txt in mode a succeeded.
+./fsrw r test152.txt
+./fsrw c
+FAT checks out; free clusters is 12464 rootfiles 191 totfiles 196
+a test542.txt 359883
+./fsrw a test542.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test542.txt in mode a succeeded.
+./fsrw r test542.txt
+./fsrw c
+FAT checks out; free clusters is 12442 rootfiles 192 totfiles 197
+w test235.txt 0
+./fsrw w test235.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test235.txt in mode w succeeded.
+./fsrw r test235.txt
+./fsrw c
+FAT checks out; free clusters is 12442 rootfiles 193 totfiles 198
+r test592.txt 136054
+./fsrw r test592.txt
+./fsrw c
+FAT checks out; free clusters is 12442 rootfiles 193 totfiles 198
+d test408.txt 0
+./fsrw d test408.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test408.txt in mode d returned 1
+./fsrw r test408.txt
+./fsrw c
+FAT checks out; free clusters is 12442 rootfiles 193 totfiles 198
+d test169.txt 239616
+./fsrw d test169.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test169.txt in mode d returned 1
+./fsrw r test169.txt
+./fsrw c
+FAT checks out; free clusters is 12442 rootfiles 193 totfiles 198
+w test350.txt 0
+./fsrw w test350.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test350.txt in mode w succeeded.
+./fsrw r test350.txt
+./fsrw c
+FAT checks out; free clusters is 12442 rootfiles 193 totfiles 198
+a test192.txt 103928
+./fsrw a test192.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test192.txt in mode a succeeded.
+./fsrw r test192.txt
+./fsrw c
+FAT checks out; free clusters is 12435 rootfiles 194 totfiles 199
+d test464.txt 408129
+./fsrw d test464.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test464.txt in mode d returned 1
+./fsrw r test464.txt
+./fsrw c
+FAT checks out; free clusters is 12435 rootfiles 194 totfiles 199
+r test407.txt 387072
+./fsrw r test407.txt
+./fsrw c
+FAT checks out; free clusters is 12435 rootfiles 194 totfiles 199
+d test360.txt 0
+./fsrw d test360.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test360.txt in mode d returned 1
+./fsrw r test360.txt
+./fsrw c
+FAT checks out; free clusters is 12435 rootfiles 194 totfiles 199
+w test549.txt 94720
+./fsrw w test549.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test549.txt in mode w succeeded.
+./fsrw r test549.txt
+./fsrw c
+FAT checks out; free clusters is 12429 rootfiles 195 totfiles 200
+w test485.txt 151040
+./fsrw w test485.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test485.txt in mode w succeeded.
+./fsrw r test485.txt
+./fsrw c
+FAT checks out; free clusters is 12425 rootfiles 195 totfiles 200
+a test389.txt 0
+./fsrw a test389.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test389.txt in mode a succeeded.
+./fsrw r test389.txt
+./fsrw c
+FAT checks out; free clusters is 12425 rootfiles 195 totfiles 200
+a test400.txt 435235
+./fsrw a test400.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test400.txt in mode a succeeded.
+./fsrw r test400.txt
+./fsrw c
+FAT checks out; free clusters is 12398 rootfiles 196 totfiles 201
+w test189.txt 356151
+./fsrw w test189.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test189.txt in mode w succeeded.
+./fsrw r test189.txt
+./fsrw c
+FAT checks out; free clusters is 12376 rootfiles 197 totfiles 202
+w test361.txt 383737
+./fsrw w test361.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test361.txt in mode w succeeded.
+./fsrw r test361.txt
+./fsrw c
+FAT checks out; free clusters is 12352 rootfiles 198 totfiles 203
+w test356.txt 0
+./fsrw w test356.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test356.txt in mode w succeeded.
+./fsrw r test356.txt
+./fsrw c
+FAT checks out; free clusters is 12352 rootfiles 199 totfiles 204
+d test247.txt 0
+./fsrw d test247.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test247.txt in mode d succeeded.
+./fsrw r test247.txt
+./fsrw c
+FAT checks out; free clusters is 12388 rootfiles 198 totfiles 203
+a test269.txt 0
+./fsrw a test269.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test269.txt in mode a succeeded.
+./fsrw r test269.txt
+./fsrw c
+FAT checks out; free clusters is 12388 rootfiles 198 totfiles 203
+r test482.txt 419531
+./fsrw r test482.txt
+./fsrw c
+FAT checks out; free clusters is 12388 rootfiles 198 totfiles 203
+a test569.txt 149504
+./fsrw a test569.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test569.txt in mode a succeeded.
+./fsrw r test569.txt
+./fsrw c
+FAT checks out; free clusters is 12378 rootfiles 199 totfiles 204
+w test376.txt 476556
+./fsrw w test376.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test376.txt in mode w succeeded.
+./fsrw r test376.txt
+./fsrw c
+FAT checks out; free clusters is 12348 rootfiles 200 totfiles 205
+d test202.txt 0
+./fsrw d test202.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test202.txt in mode d succeeded.
+./fsrw r test202.txt
+./fsrw c
+FAT checks out; free clusters is 12350 rootfiles 199 totfiles 204
+a test548.txt 129574
+./fsrw a test548.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test548.txt in mode a succeeded.
+./fsrw r test548.txt
+./fsrw c
+FAT checks out; free clusters is 12342 rootfiles 199 totfiles 204
+d test506.txt 20756
+./fsrw d test506.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test506.txt in mode d succeeded.
+./fsrw r test506.txt
+./fsrw c
+FAT checks out; free clusters is 12345 rootfiles 198 totfiles 203
+w test585.txt 0
+./fsrw w test585.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test585.txt in mode w succeeded.
+./fsrw r test585.txt
+./fsrw c
+FAT checks out; free clusters is 12345 rootfiles 199 totfiles 204
+d test390.txt 333010
+./fsrw d test390.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test390.txt in mode d succeeded.
+./fsrw r test390.txt
+./fsrw c
+FAT checks out; free clusters is 12364 rootfiles 198 totfiles 203
+r test554.txt 158208
+./fsrw r test554.txt
+./fsrw c
+FAT checks out; free clusters is 12364 rootfiles 198 totfiles 203
+r test545.txt 465407
+./fsrw r test545.txt
+./fsrw c
+FAT checks out; free clusters is 12364 rootfiles 198 totfiles 203
+a test289.txt 214016
+./fsrw a test289.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test289.txt in mode a succeeded.
+./fsrw r test289.txt
+./fsrw c
+FAT checks out; free clusters is 12351 rootfiles 198 totfiles 203
+d test413.txt 464384
+./fsrw d test413.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test413.txt in mode d returned 1
+./fsrw r test413.txt
+./fsrw c
+FAT checks out; free clusters is 12351 rootfiles 198 totfiles 203
+w test231.txt 110409
+./fsrw w test231.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test231.txt in mode w succeeded.
+./fsrw r test231.txt
+./fsrw c
+FAT checks out; free clusters is 12344 rootfiles 199 totfiles 204
+a test251.txt 240263
+./fsrw a test251.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test251.txt in mode a succeeded.
+./fsrw r test251.txt
+./fsrw c
+FAT checks out; free clusters is 12329 rootfiles 200 totfiles 205
+r test142.txt 209249
+./fsrw r test142.txt
+./fsrw c
+FAT checks out; free clusters is 12329 rootfiles 200 totfiles 205
+a test405.txt 178775
+./fsrw a test405.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test405.txt in mode a succeeded.
+./fsrw r test405.txt
+./fsrw c
+FAT checks out; free clusters is 12318 rootfiles 201 totfiles 206
+r test307.txt 195584
+./fsrw r test307.txt
+./fsrw c
+FAT checks out; free clusters is 12318 rootfiles 201 totfiles 206
+w test389.txt 33280
+./fsrw w test389.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test389.txt in mode w succeeded.
+./fsrw r test389.txt
+./fsrw c
+FAT checks out; free clusters is 12325 rootfiles 201 totfiles 206
+r test104.txt 111032
+./fsrw r test104.txt
+./fsrw c
+FAT checks out; free clusters is 12325 rootfiles 201 totfiles 206
+w test241.txt 350988
+./fsrw w test241.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test241.txt in mode w succeeded.
+./fsrw r test241.txt
+./fsrw c
+FAT checks out; free clusters is 12303 rootfiles 202 totfiles 207
+w test217.txt 0
+./fsrw w test217.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test217.txt in mode w succeeded.
+./fsrw r test217.txt
+./fsrw c
+FAT checks out; free clusters is 12329 rootfiles 202 totfiles 207
+a test291.txt 153600
+./fsrw a test291.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test291.txt in mode a succeeded.
+./fsrw r test291.txt
+./fsrw c
+FAT checks out; free clusters is 12319 rootfiles 203 totfiles 208
+a test260.txt 329728
+./fsrw a test260.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test260.txt in mode a succeeded.
+./fsrw r test260.txt
+./fsrw c
+FAT checks out; free clusters is 12298 rootfiles 204 totfiles 209
+d test371.txt 218624
+./fsrw d test371.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test371.txt in mode d succeeded.
+./fsrw r test371.txt
+./fsrw c
+FAT checks out; free clusters is 12299 rootfiles 203 totfiles 208
+d test529.txt 0
+./fsrw d test529.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test529.txt in mode d succeeded.
+./fsrw r test529.txt
+./fsrw c
+FAT checks out; free clusters is 12305 rootfiles 202 totfiles 207
+w test370.txt 197632
+./fsrw w test370.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test370.txt in mode w succeeded.
+./fsrw r test370.txt
+./fsrw c
+FAT checks out; free clusters is 12292 rootfiles 203 totfiles 208
+a test582.txt 74052
+./fsrw a test582.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test582.txt in mode a succeeded.
+./fsrw r test582.txt
+./fsrw c
+FAT checks out; free clusters is 12287 rootfiles 204 totfiles 209
+w test424.txt 175012
+./fsrw w test424.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test424.txt in mode w succeeded.
+./fsrw r test424.txt
+./fsrw c
+FAT checks out; free clusters is 12276 rootfiles 205 totfiles 210
+w test541.txt 0
+./fsrw w test541.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test541.txt in mode w succeeded.
+./fsrw r test541.txt
+./fsrw c
+FAT checks out; free clusters is 12276 rootfiles 206 totfiles 211
+a test539.txt 422443
+./fsrw a test539.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test539.txt in mode a succeeded.
+./fsrw r test539.txt
+./fsrw c
+FAT checks out; free clusters is 12251 rootfiles 206 totfiles 211
+d test197.txt 118945
+./fsrw d test197.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test197.txt in mode d returned 1
+./fsrw r test197.txt
+./fsrw c
+FAT checks out; free clusters is 12251 rootfiles 206 totfiles 211
+a test199.txt 182272
+./fsrw a test199.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test199.txt in mode a succeeded.
+./fsrw r test199.txt
+./fsrw c
+FAT checks out; free clusters is 12240 rootfiles 206 totfiles 211
+w test582.txt 270759
+./fsrw w test582.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test582.txt in mode w succeeded.
+./fsrw r test582.txt
+./fsrw c
+FAT checks out; free clusters is 12228 rootfiles 206 totfiles 211
+w test156.txt 320000
+./fsrw w test156.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test156.txt in mode w succeeded.
+./fsrw r test156.txt
+./fsrw c
+FAT checks out; free clusters is 12235 rootfiles 206 totfiles 211
+r test449.txt 18432
+./fsrw r test449.txt
+./fsrw c
+FAT checks out; free clusters is 12235 rootfiles 206 totfiles 211
+a test442.txt 0
+./fsrw a test442.txt
+Sectors 499611 root entries 512 sectorspercluster 32 clusters 15608
+Opening test442.txt in mode a succeeded.
+./fsrw r test442.txt
+./fsrw c
+FAT checks out; free clusters is 12235 rootfiles 207 totfiles 212

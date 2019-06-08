@@ -1,0 +1,12 @@
+void writeblock2(int n, char *b) {
+   writeblock(n, b) ;
+   if (n >= fat1 && n < fat1 + sectorsperfat)
+      writeblock(n+sectorsperfat, b) ;
+}
+
+to
+
+pub writeblock2(n, b)
+   writeblock(n, b)
+   if (n => fat1 && n < fat1 + sectorsperfeat)
+      writeblock(n+sectorsperfat, b)

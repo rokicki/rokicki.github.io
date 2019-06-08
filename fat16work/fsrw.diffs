@@ -1,0 +1,562 @@
+6,9d5
+< #define bytemove(a,b,c) memcpy((a),(b),(c))
+< #define longmove(a,b,c) memcpy((a),(b),4*(c))
+< #define asint(a) ((int)(a))
+< #define min(a,b) ((a)<(b)?(a):(b))
+11d6
+< #define shared
+13c8
+< //   fsrw 2.3 Copyright 2009  Tomas Rokicki and Jonathan Dummer
+---
+> //   fsrw.spin 1.6  Copyright 2008   Radical Eye Software
+17c12
+< //   This object provides FAT16/32 file read/write access on a block device.
+---
+> //   This object provides FAT16 file read/write access on a block device.
+41d35
+< //       v2.1  12 July 2009      FAT32, SDHC, multiblock, bug fixes
+51d44
+< int pclose() ;
+95,96c88
+< //   Variables used when mounting to describe the FAT layout of the card
+< //   (moved to the end of the file in the Spin version).
+---
+> //   Variables used when mounting to describe the FAT layout of the card.
+98,106c90,96
+< shared int filesystem ; // 0 = unmounted, 1 = fat16, 2 = fat32
+< shared int rootdir ; // the byte address of the start of the root directory
+< shared int rootdirend ; // the byte immediately following the root directory.
+< shared int dataregion ; // the start of the data region, offset by two sectors
+< shared int clustershift ; // log base 2 of blocks per cluster
+< shared int fat1 ; // the block address of the fat1 space
+< shared int totclusters ; // how many clusters in the volume
+< shared int sectorsperfat ; // how many sectors per fat
+< shared int endofchain ; // end of chain marker (with a 0 at the end)
+---
+> int rootdir ; // the byte address of the start of the root directory
+> int rootdirend ; // the byte immediately following the root directory.
+> int dataregion ; // the start of the data region, offset by two sectors
+> int clustershift ; // log base 2 of blocks per cluster
+> int fat1 ; // the block address of the fat1 space
+> int totclusters ; // how many clusters in the volume
+> int sectorsperfat ; // how many sectors per fat
+110,111c100,101
+< shared int lastread ; // the block address of the buf2 contents
+< shared int dirty ; // nonzero if buf2 is dirty
+---
+> int lastread ; // the block address of the buf2 contents
+> int dirty ; // nonzero if buf2 is dirty
+118,119c108,109
+< shared char buf2[SECTORSIZE] ; // main metadata buffer
+< shared char padname[11] ; // filename buffer
+---
+> char buf2[SECTORSIZE] ; // main metadata buffer
+> char padname[11] ; // filename buffer
+127,129c117,118
+<    if (n >= fat1)
+<      if (n < fat1 + sectorsperfat)
+<        writeblock(n+sectorsperfat, b) ;
+---
+>    if (n >= fat1 && n < fat1 + sectorsperfat)
+>       writeblock(n+sectorsperfat, b) ;
+163,172d151
+< pri int brclust(char *b) {
+< //
+< //   Read a cluster entry.
+< //
+<   if (filesystem == 1) {
+<     return brword(b) ;
+<   } else {
+<     return brlong(b) ;
+<   }
+< }
+190,209c169
+< pri void brwclust(char *w, int v) {
+< //
+< //   Write a cluster entry.
+<    if (filesystem == 1) {
+<      brwword(w, v) ;
+<    } else {
+<      brwlong(w, v) ;
+<    }
+< }
+<   
+< pri int getfstype() { int r=0 ;
+<    if (brlong(buf+0x36) == constant('F' + ('A' << 8) + ('T' << 16) + ('1' << 24)) && buf[0x3a]=='6') {
+<      return 1 ;
+<    }
+<    if (brlong(buf+0x52) == constant('F' + ('A' << 8) + ('T' << 16) + ('3' << 24)) && buf[0x56]=='2') {
+<      return 2 ;
+<    }
+<    return r ;
+< }
+< int mount_explicit(int DO, int CLK, int DI, int CS) { int r=0, start, sectorspercluster, reserved, rootentries, sectors ;
+---
+> int mount(int basepin) { int start, sectorspercluster, reserved, rootentries, sectors ;
+215,216c175
+<    unmount();
+<    //SPIN sdspi.start_explicit(DO, CLK, DI, CS) ;
+---
+>    //SPIN sdspi.start(basepin) ;
+220,221c179,180
+<    if (getfstype() > 0) {
+<      start = 0 ;
+---
+>    if (brlong(buf+0x36) == constant('F' + ('A' << 8) + ('T' << 16) + ('1' << 24))) {
+>       start = 0 ;
+223,224c182,183
+<      start = brlong(buf+0x1c6) ;
+<      readblock(start, buf) ;
+---
+>       start = brlong(buf+0x1c6) ;
+>       readblock(start, buf) ;
+226,228c185,186
+<    filesystem = getfstype() ;
+<    if (filesystem == 0)
+<       spinabort(-20) ; // not a fat16 or fat32 volume
+---
+>    if (brlong(buf+0x36) != constant('F' + ('A' << 8) + ('T' << 16) + ('1' << 24)) || buf[0x3a] != '6')
+>       spinabort(-20) ; // not a fat16 volume
+242a201
+>    rootentries = brword(buf+0x11) ;
+245,261c204,205
+<      sectors = brlong(buf+0x20) ;
+<    fat1 = start + reserved ;
+<    if (filesystem == 2) {
+<       rootentries = 16 << clustershift ;
+<       sectorsperfat = brlong(buf+0x24) ;
+<       dataregion = (fat1 + 2 * sectorsperfat) - 2 * sectorspercluster ;
+<       rootdir = (dataregion + (brword(buf+0x2c) << clustershift)) << SECTORSHIFT ;
+<       rootdirend = rootdir + (rootentries << DIRSHIFT) ;
+<       endofchain = 0xffffff0 ;
+<    } else {
+<       rootentries = brword(buf+0x11) ;
+<       sectorsperfat = brword(buf+0x16) ;
+<       rootdir = (fat1 + 2 * sectorsperfat) << SECTORSHIFT ;
+<       rootdirend = rootdir + (rootentries << DIRSHIFT) ;
+<       dataregion = 1 + ((rootdirend - 1) >> SECTORSHIFT) - 2 * sectorspercluster ;
+<       endofchain = 0xfff0 ;
+<    }
+---
+>       sectors = brlong(buf+0x20) ;
+>    sectorsperfat = brword(buf+0x16) ;
+263c207,211
+<      spinabort(-24) ; // bad FAT signature
+---
+>       spinabort(-24) ; // bad FAT signature
+>    fat1 = start + reserved ;
+>    rootdir = (fat1 + 2 * sectorsperfat) << SECTORSHIFT ;
+>    rootdirend = rootdir + (rootentries << DIRSHIFT) ;
+>    dataregion = 1 + ((rootdirend - 1) >> SECTORSHIFT) - 2 * sectorspercluster ;
+264a213,214
+>    if (totclusters > 0xfff0)
+>       spinabort(-25) ; // too many clusters
+266,279c216
+<    return r ;
+< }
+< //
+< //   For compatibility, a single pin.
+< //
+< int mount(int basepin) { int r=0, start, sectorspercluster, reserved, rootentries, sectors ;
+<    return mount_explicit(basepin, basepin+1, basepin+2, basepin+3) ;
+< }
+< //
+< //   This may do more complicated stuff later.
+< //
+< void unmount() {
+<   pclose() ;
+<   //SPIN sdspi.stop
+---
+>    return 0 ;
+294c231
+<    fatptr = (fat1 << SECTORSHIFT) + (clust << filesystem) ;
+---
+>    fatptr = (fat1 << SECTORSHIFT) + (clust << 1) ;
+297c234
+< pri int followchain() { int r=0 ;
+---
+> pri int followchain() { int clust ;
+301c238
+<    r = brclust(readfat(fclust)) ;
+---
+>    clust = brword(readfat(fclust)) ;
+303c240
+<    return r ;
+---
+>    return clust ;
+305c242
+< pri int nextcluster() { int r=0 ;
+---
+> pri int nextcluster() { int clust ;
+311,312c248,249
+<    r = followchain() ;
+<    if (r < 2 || r >= totclusters)
+---
+>    clust = followchain() ;
+>    if (clust < 2 || clust >= totclusters)
+314c251
+<    return r ;
+---
+>    return clust ;
+319c256
+< //   Assumes the pointer has already been cleared/set to end of chain.
+---
+> //   Assumes the pointer has already been cleared/set to 0xffff.
+321c258
+<    while (clust < endofchain) {
+---
+>    while (clust < 0xfff0) {
+325,326c262,263
+<       clust = brclust(bp) ;
+<       brwclust(bp, 0) ;
+---
+>       clust = brword(bp) ;
+>       brwword(bp, 0) ;
+344c281
+< pri int pflushbuf(int rcnt, int metadata) { int r=0, cluststart, newcluster, count, i ;
+---
+> pri int pflushbuf(int r, int metadata) { int cluststart, newcluster, count, i ;
+353c290
+<    if (rcnt > 0) { // must *not* allocate cluster if flushing an empty buffer
+---
+>    if (r > 0) { // must *not* allocate cluster if flushing an empty buffer
+358c295
+<          cluststart = fclust & (~((SECTORSIZE >> filesystem) - 1)) ;
+---
+>          cluststart = fclust & constant(~((SECTORSIZE >> 1) - 1)) ;
+362,381c299,304
+<             for (i=0; i<SECTORSIZE; i+=1<<filesystem)
+<               if (buf2[i] == 0) {
+<                 if (brclust(buf2+i) == 0) {
+<                    newcluster = cluststart + (i >> filesystem) ;
+<                    if (newcluster >= totclusters)
+<                       newcluster = -1 ;
+<                    break ;
+<                 }
+<               }
+<             if (newcluster > 1) {
+<                brwclust(buf2+i, endofchain+0xf) ;
+<                if (writelink == 0) {
+<                   brwword(readbytec(direntry)+0x1a, newcluster) ;
+<                   writelink = (direntry&(SECTORSIZE-filesystem)) ;
+<                   brwlong(buf2+writelink+0x1c, floc+bufat) ;
+<                   if (filesystem == 2) {
+<                      brwword(buf2+writelink+0x14, newcluster>>16) ;
+<                   }
+<                } else {
+<                   brwclust(readbytec(writelink), newcluster) ;
+---
+>             for (i=0; i<SECTORSIZE; i+=2)
+>                if (buf2[i]==0 && buf2[i+1]==0) {
+>                   newcluster = cluststart + (i >> 1) ;
+>                   if (newcluster >= totclusters)
+>                      newcluster = -1 ;
+>                   break ;
+382a306,308
+>             if (newcluster > 1) {
+>                brwword(buf2+i, -1) ;
+>                brwword(readbytec(writelink), newcluster) ;
+388c314
+<                cluststart += (SECTORSIZE >> filesystem) ;
+---
+>                cluststart += constant(SECTORSIZE >> 1) ;
+392,393c318,319
+<                   if (rcnt < 0) {
+<                      rcnt = -5 ; // No space left on device
+---
+>                   if (count < 0) {
+>                      r = -5 ; // No space left on device
+402,404c328,330
+<          if (rcnt == SECTORSIZE) {  // full buffer, clear it
+<             floc += rcnt ;
+<             frem -= rcnt ;
+---
+>          if (r == SECTORSIZE) {  // full buffer, clear it
+>             floc += r ;
+>             frem -= r ;
+406c332,334
+<             bufend = rcnt ;
+---
+>             bufend = r ;
+>          } else {
+>             // not a full block; leave pointers alone
+410c338
+<    if (rcnt < 0 || metadata) { // update metadata even if error
+---
+>    if (r < 0 || metadata) { // update metadata even if error
+412c340
+<       brwlong(buf2+(direntry & (SECTORSIZE-filesystem))+0x1c, floc+bufat) ;
+---
+>       brwlong(buf2+(direntry & constant(SECTORSIZE-1))+28, floc+bufat) ;
+415,417c343,345
+<    if (rcnt < 0)
+<       spinabort(rcnt) ;
+<    return rcnt ;
+---
+>    if (r < 0)
+>       spinabort(r) ;
+>    return r ;
+426c354
+< pri int pfillbuf() { int r=0 ;
+---
+> pri int pfillbuf() { int r ;
+436c364,366
+<       frem = min(SECTORSIZE << clustershift, filesize - floc) ;
+---
+>       frem = SECTORSIZE << clustershift ;
+>       if (frem + floc > filesize)
+>          frem = filesize - floc ;
+448c378
+< int pclose() { int r=0 ;
+---
+> int pclose() { int r ;
+452a383
+>    r = 0 ;
+463d393
+<    //SPIN sdspi.release
+470c400
+< //   software was created on (July 27, 2009).  You can change this 
+---
+> //   software was created on (April 7, 2007).  You can change this 
+474c404
+<    return constant(((2009-1980) << 25) + (1 << 21) + (27 << 16) + (7 << 11)) ;
+---
+>    return constant(((2007-1980) << 25) + (1 << 21) + (7 << 16) + (4 << 11)) ;
+476c406
+< int popen(char *s, char mode) { int r=0, i, sentinel, dirptr, freeentry ;
+---
+> int popen(char *s, char mode) { int i, sentinel, dirptr, freeentry ;
+514,516d443
+<          if (filesystem == 2) {
+<             fclust += brword(s+0x14) << 16 ;
+<          }
+519c446,448
+<             frem = min(SECTORSIZE << clustershift, filesize) ;
+---
+>             frem = SECTORSIZE << clustershift ;
+>             if (frem > filesize)
+>                frem = filesize ;
+526,527c455
+<             if (fclust)
+<                freeclusters(fclust) ;
+---
+>             freeclusters(fclust) ;
+532,535c460,462
+<             brwword(s+0x1a, 0) ;
+<             brwword(s+0x14, 0) ;
+<             brwlong(s+0x1c, 0) ;
+<             writelink = 0 ;
+---
+>             brwword(s+26, -1) ;
+>             brwlong(s+28, 0) ;
+>             writelink = dirptr + 26 ;
+537,538c464
+<             if (fclust)
+<                freeclusters(fclust) ;
+---
+>             freeclusters(fclust) ;
+548c474
+<             if (fclust >= endofchain)
+---
+>             if (fclust >= 0xfff0)
+559c485
+<             writelink = 0 ;
+---
+>             writelink = dirptr + 26 ;
+587,588c513
+<    brwword(s+0x1a, 0) ;
+<    brwword(s+0x14, 0) ;
+---
+>    brwword(s+26, -1) ;
+595c520
+<    writelink = 0 ;
+---
+>    writelink = direntry + 26 ;
+598,601c523
+<    return r ;
+< }
+< int get_filesize() {
+<    return filesize ;
+---
+>    return 0 ;
+603c525
+< int pread(char *ubuf, int count) { int r=0, t ;
+---
+> int pread(char *ubuf, int count) { int r, t ;
+608a531
+>    r = 0 ;
+614,615c537
+< // parens below prevent this from being optimized out
+<               return (r) ;
+---
+>                return r ;
+619,623c541,544
+<       t = min(bufend - bufat, count) ;
+<       if ((t | asint(ubuf) | bufat) & 3)
+<          bytemove(ubuf, buf+bufat, t) ;
+<       else
+<          longmove(ubuf, buf+bufat, t>>2) ;
+---
+>       t = bufend - bufat ;
+>       if (t > count)
+>          t = count ;
+>       memcpy(ubuf, buf+bufat, t) ;
+644c565
+< int pwrite(char *ubuf, int count) { int r=0, t ;
+---
+> int pwrite(char *ubuf, int count) { int r, t ;
+649a571
+>    t = 0 ;
+652,657c574,578
+<          pflushbuf(bufat, 0) ;
+<       t = min(bufend - bufat, count) ;
+<       if ((t | asint(ubuf) | bufat) & 3)
+<          bytemove(buf+bufat, ubuf, t) ;
+<       else
+<          longmove(buf+bufat, ubuf, t>>2) ;
+---
+>          t = pflushbuf(bufat, 0) ;
+>       t = bufend - bufat ;
+>       if (t > count)
+>          t = count ;
+>       memcpy(buf+bufat, ubuf, t) ;
+663c584
+<    return r ;
+---
+>    return t ;
+665,671c586
+< //{
+< //   Write a null-terminated string to the file.
+< //}
+< int pputs(char *b) {
+<   return pwrite(b, strlen(b)) ;
+< }
+< int pputc(int c) { int r=0 ;
+---
+> int pputc(int c) {
+677,678c592
+<      if (pflushbuf(SECTORSIZE, 0) < 0)
+<        return -1 ;
+---
+>       pflushbuf(SECTORSIZE, 0) ;
+680c594,623
+<    return r ;
+---
+>    return 0 ;
+> }
+> //{
+> //   Seek.  Right now will only seek within the current cluster.
+> //   Added for PrEdit so he can debug; do not use with files larger
+> //   than one cluster (and make that cluster size 32K please.)
+> //
+> //   Returns -1 on failure.  Make sure to check this return code!
+> //
+> //   We only support reads right now (but writes won't be too hard to
+> //   add).
+> //}
+> int seek(int pos) { int delta ;
+>    if (direntry || pos < 0 || pos > filesize)
+>       return -1 ;
+>    delta = (floc - bufend) & - (SECTORSIZE << clustershift) ;
+>    if (pos < delta || pos > delta + (SECTORSIZE << clustershift))
+>       return -1 ;
+>    if (pos < floc - bufend || pos >= floc - bufend + SECTORSIZE) {
+>       // must change buffer
+>       delta = floc + frem ;
+>       floc = pos & - SECTORSIZE ;
+>       frem = delta - floc ;
+>       pfillbuf() ;
+>    }
+>    bufat = pos & (SECTORSIZE - 1) ;
+>    return 0 ;
+> }
+> int tell() {
+>    return floc + bufat - bufend ;
+735,743d677
+< //{
+< //   Utility routines; may be removed.
+< //}
+< int getclustersize() {
+<   return 512 << clustershift ;
+< }
+< int getclustercount() {
+<   return totclusters ;
+< }
+745c679
+< struct fatinfo {
+---
+> struct {
+749c683
+< } fatdata[1000000] ;
+---
+> } fatdata[65536] ;
+752c686
+<    while (clust != 0 && clust != endofchain+0xf && clust != endofchain+8) {
+---
+>    while (clust != 0xffff && clust != 0xfff8) {
+765c699
+<       int cc = brclust(readfat(i)) ;
+---
+>       int cc = brword(readfat(i)) ;
+770c704
+<       if (cc == 1 || (cc >= totclusters && cc != endofchain + 0xf && cc != endofchain+8))
+---
+>       if (cc == 1 || (cc >= totclusters && cc != 0xffff && cc != 0xfff8))
+785,786d718
+<       if (filesystem == 2)
+<          fclust += brword(at+0x14) << 16 ;
+788,790c720
+<       if ((fclust == 0) != (filesize == 0))
+<          error("! filesize null and fclust null inconsistency") ;
+<       if (fclust != 0) {
+---
+>       if (fclust != 0xffff && fclust != 0xfff8) {
+823a754,793
+> #define SEEKSIZE (100000)
+> unsigned char seekfile[SEEKSIZE] ;
+> void testseek() {
+>    popen("seek.txt", 'w') ;
+>    for (int i=0; i<SEEKSIZE; i++) {
+>       seekfile[i] = ' ' + (int)(95*drand48()) ;
+>       pputc(seekfile[i]) ;
+>    }
+>    pclose() ;
+>    popen("seek.txt", 'r') ;
+>    pgetc() ;
+>    while (1) {
+>       int pos = tell() ;
+>       printf("Position is %d\n", pos) ;
+>       int npos = (int)((SEEKSIZE+1) * drand48()) ;
+>       printf("Trying to seek to %d\n", npos) ;
+>       int r = seek(npos) ;
+>       if (r < 0) {
+>          printf("Seek failure; continuing\n") ;
+>       } else {
+>          int c = pgetc() ;
+>          if (c < 0) {
+>             if (npos == SEEKSIZE) {
+>                printf("Successfully got to EOF\n") ;
+>             } else {
+>                printf("Failed to getchar after seek\n") ;
+>                exit(10) ;
+>             }
+>          } else {
+>             if (seekfile[npos] != c) {
+>                printf("Bad char; saw '%c' wanted '%c'\n",
+>                                                   c, seekfile[npos]) ;
+>                exit(10) ;
+>             } else {
+>                printf("Saw correct char '%c'\n", c) ;
+>             }
+>          }
+>       }
+>    }
+> }
+831c801
+<       if (*mode != 'c' && *mode != 'l') {
+---
+>       if (*mode != 's' && *mode != 'c' && *mode != 'l') {
+846a817,819
+> case 's':
+>          testseek() ;
+>          break ;

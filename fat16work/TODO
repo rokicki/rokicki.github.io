@@ -1,0 +1,12 @@
+Add waitcnt in assembly to reduce power consumption
+Add example that also explains all the error codes in text
+Test with no card; make sure that doesn't "mount"
+
+Write thrash in spin; run on prop
+
+Make sure we have timeouts right
+   on mount
+   on read/write/etc.
+Test multiblock vs singleblock
+Test preerase
+See how long a card can last

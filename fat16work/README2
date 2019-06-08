@@ -1,0 +1,97 @@
+Great!  Let me tell you my target, my status, and my plans.
+
+My target is:
+
+   FAT16 (no FAT32 or FAT12)
+   SD only (no MMC, but micro and mini SD)
+   Card sizes of 2M -> 2GB (no HDSD or whatever the 4GB+ cards are)
+   Also, just low-level block/IO so you can ignore the file system if you want
+      (This is just a tiny set of routines)
+   Routines to get the sector locations of files so you can use the FAT layer
+      to set up a COG to load a new file into the chip without needing the
+      FAT layer in that COG
+   No VFAT, no directory structure except the root
+   Single file open for reading or writing
+   FAT layer supports reading, writing, appending, deleting, list root dir
+   Minimal buffering (uses two 512-byte buffers)
+   Relatively slow version entirely in SPIN (no extra cog needed)
+   Moderately fast version using small amounts of assembly (dedicated cog)
+   Fastest version taking more memory and using more assembly (dedicated cog)
+   Full timeouts for all operations
+   "Safe"---you will always have a valid card and filesystem, even if you as a
+       programmer mess up (for instance, calling write on a file open only
+       for reading, or powering the machine off in the middle of a write, or
+       whatever other things you can do to break things).
+ 
+Right now I have the block I/O (both read and write) working in several
+different versions, and I have the FAT16 layer working on top of that.
+I am currently testing a number of things:
+
+1.  Thrashing the heck out of the FAT16 layer, trying to get it to fail.
+     This means non-stop reading/writing/append random files and
+     make sure at all times all data is correct.
+
+2.  Rewriting the SDSPI low-level layer to have a cleaner interface.
+
+3.  Using the low-level block I/O to bully an SD card; I'm trying to get a
+     card to fail by continuously writing all over it.
+
+Right now, when writing, your data is written as needed, but the metadata
+(FAT pointers and directory entries) are only updated when you call
+pclose or pflush.  (Of course you can call pflush at any time).  While this
+guarantees that the FAT structure on the card is always legal (that is, I'll
+never make the format of the disk, even temporarily, be invalid), if you
+pull a card in the middle of a write operation, or before you call a flush,
+the file size in the directory will be too short and the FAT chain might not
+be complete (but it will still be legal and consistent).
+
+The issue I'm struggling with is how to automate this.  If I let people call
+flush all the time, some will literally do that---after every character, they
+will call flush.  This will mean two block writes for every character, and it
+will be *so* slow and it will thrash the heck out of the card.
+
+Others will never call flush, write four weeks of data to a card (say, 100MB
+of data), then pull the card or power cycle and see a zero-length file.
+
+There are a number of possibilities I am considering to solve this.
+
+1.  Have the FAT layer force a metadata update every so many bytes
+     (say, 4K or some such) so the most you can lose is bounded.
+
+2.  Have the FAT layer or the COG layer implement a lazy update.
+     In the FAT layer, for instance, on every call, if there is still dirty
+     metadata and the dirty metadata is one second or more older, flush
+     the metadata.  (This could get tricky because the count wraps but
+     I still think I can do it.)  The problem with this approach is, if you
+     stop calling the FAT layer (say you're done but you forget to close or
+     flush), I'll never get another call to get control to do the flush.
+
+3.  Do nothing; put the onus on the users to do the right thing.
+
+Thoughts are appreciated.  I can send you code anytime.  For
+wiring instructions, see the SD read code I posted back in May (but
+leave off the current limiting resistors; for high speed operation,
+they cause signal degradation).
+
+I'm also looking at the performance front, so I'll be experimenting with
+multiblock reads (even though we only buffer a block at a time, I'll
+just leave the card in the middle of a multiblock read and resume if
+the next block *happens* to be the right one), and multiblock writes,
+and pre-write erase commands, and setting the erase-ahead parameter.
+I'm not sure how this will work out, but I've accumulated a large set of
+cards to experiment with.
+
+I'm also checking things with both miniSD and microSD (no problems
+so far) so for people that need even *tinier* solutions we'll be good.
+
+[quote="
+ Originally Sent : 12/20/2006 9:15:40 PM GMT by Mike Cook"][2]
+rokick,
+
+I'm very interested in you SD reader/writer routines. I have ordered the www.sparkfun.com break out board for SD-MMC cards, today. It should be here before the first of the year. Let me know if you need someone else to 'beat up' on the routines.
+
+Thanks
+
+Mike
+[/2]
+[/quote]

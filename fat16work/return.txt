@@ -1,0 +1,23 @@
+Return codes:
+
+In general, 0 or positive is successful.  Negative numbers are
+unsuccessful.  The -1 will be returned literally, but all other
+values will abort.
+
+ 0:  success
+-1:  EOF (on read); file not found (on open) (nonfatal)
+-2:  No empty directory entry
+-3:  Bad argument
+-5:  No space left on device
+-6:  No permission to write
+-9:  Bad cluster value (nonfatal)
+-20:  Not a FAT16 volume
+-21:  Bad bytes per sector
+-22:  Bad sectors per cluster
+-23:  Not precisely two FATs
+-24:  Bad FAT signature
+-25:  Too many clusters
+-26:  Bad cluster number
+-27:  Attempted to write when not open for writing
+
+Values of -40 and below are reserved for the block layer.
