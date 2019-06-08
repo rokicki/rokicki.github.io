@@ -1,0 +1,182 @@
+<html><head><title>RedTeam:  ICFP 2003 Programming Contest Team</title>
+<base href="http://www.radicaleye.com/icfp2003/"></head>
+<body>
+<h1>RedTeam:  ICFP 2003 Programming Contest Team</h1>
+
+<center><table><tr>
+<td><img src="john.jpg"></td>
+<td><img src="stefan.jpg"></td>
+<td><img src="tom.jpg"></td>
+<td><img src="joe.jpg"></td>
+<td><img src="ben.jpg"></td>
+<td><img src="dan.jpg"></td>
+</tr>
+<td align="center">John</td>
+<td align="center">Stefan</td>
+<td align="center">Tom</td>
+<td align="center">Joe</td>
+<td align="center">Ben</td>
+<td align="center">Daniel</td>
+</table></center>
+<h3>The RedTeam is:</h3>
+<img src="curve.jpg" align="right">
+<ul>
+<li>John Dethridge</li>
+<li>Stefan Pochmann</li>
+<li>Tomas Rokicki</li>
+<li>Josef Rokicki</li>
+<li>Ben Wilhelm</li>
+<li>Daniel M. Wright</li>
+</ul>
+
+Flash:  We won second place overall!
+<p>
+We're six coders who met on TopCoder
+(<a href="http://www.topcoder.com">check it out</a>).
+Including coders in Germany, the United States, Australia, and Texas allowed
+us to work around the clock.
+
+<h3>Initial Strategy</h3>
+
+In prior years some of us have had success with AIM and CVS, so we
+decided to use these as our basic communication and source-control
+infrastructure.  Putting the CVS tree on the web automatically
+enabled us to keep track of status and share ideas and writeups.
+One of us even kept a log of all AIM communications in our chat room
+over the 72 hours, so we could easily catch up with what had happened
+overnight.  We agreed to write all common code in C++.
+<p>
+At the start of the contest, one of us quickly (really, shockingly
+quickly) got a simulator up and running.  It was this simulator that
+was to become the basis of all of our code.  While this was being
+written the rest of us (who were up and online) studied and thought
+about the problem.
+<p>
+We observed that the 16-bit arithmetic was in fact quite precise,
+sufficiently precise that we felt a good division of the problem was
+to write one program to find a good continuous solution, and another
+program to turn that continuous solution into a discrete solution.
+Yet a third effort would be to do microoptimizations on a discrete
+solution (that is, try to improve an existing solution by making
+mostly local modifications).
+<p>
+<a href="sample.gif"><img src="samples.gif" align="right"></a>
+In addition to these efforts, we wanted some good visualization of
+the traces including a graph of velocity,
+acceleration and braking, and requested turns.  We also wanted a
+trace management process, where as we generated traces for the
+various tracks, we could check them in and they would be automatically
+verified by the simulator, ranked against each other, and the current
+status web page updated.  One of the advantages of having such a large
+team is that we were able to pursue such parallel efforts.
+
+<h3>Linear Subsequences</h3>
+Our efforts at a continuous solution got off to a great start.  
+We decided that (even for the discrete optimizer) it made little
+sense to consider strings of relatively random moves.  Instead, we
+felt any particular "short enough" subsequence of an optimal trace
+would show some straightforward characteristics, and we called such
+a sequence a "linear subsequence":
+<ul>
+<li>One that does not have *both* braking and acceleration;</li>
+<li>One that does not have *both* right and left turns;</li>
+<li>One for which the different moves are evenly distributed.</li>
+</ul>
+For instance, one linear sequence of moves would be
+<pre>
+   a.r.a.r.a.r.a.r.a.r.a.r.
+</pre>
+Here we are alternately accelerating and turning right, so we are
+accelerating about 50% of the time and turning right about 50% of the
+time.  We could also for instance
+<pre>
+   ar.a.ar.a.ar.a.
+</pre>
+where we are accelerating 100% of the time and turning right 50% of the
+time.
+<p>
+We felt that using long linear subsequences allowed us to reduce the
+search space significantly, while still permitting us to find
+near-optimal solutions.
+<p>
+<img src="base.gif" align="left">
+Indeed, we can generalize such linear subsequences in two dimensions
+by allowing any arbitrary fraction of acceleration/braking
+or turning.  The lower two
+quadrants look like triangles because you cannot brake
+and turn in the same move.  We observed that any optimal solution
+almost certainly consisted of linear subsequences that were
+on the border of the five-sided figure.  If the sequence
+were not on the border, it could be split into two shorter
+sequences that followed the same path, pretty much exactly,
+but in less time.  Thus, the a.r.a.r.a.r... example above would
+never occur in a real optimal trace.
+<p>
+The simple case is if the path is a simple straight line.
+Any straight line (with a specific entrance and exit velocity)
+is best traversed by maximally accelerating and then maximally
+braking.  That is, there should never be a sequence of just
+"rolling".  For a curve, the same is true; for any particular
+turning radius, there's a maximum speed at which the car can
+maintain that path.  The optimal path accelerates as close
+to that speed as it can, and then brakes as much as it needs to
+at the end to meet the required exit velocity.
+<p>
+Thus, when deciding what linear subsequences to consider, we
+never need to consider (for instance) 50% acceleration and
+50% turning.  This reduced the set of paths to consider by
+an entire dimension.
+
+<h3>Good in theory, but . . .</h3>
+<img src="tomcar.jpg" align="right">
+Beyond this, our search for globally optimal continuous
+solutions stumbled.  We were able to get to the point
+that we could calculate the maximum traversal speed of any path
+described by arcs of a circle, portions of spirals generated by linear
+subsequences, and lines very very quickly,
+but were unable to put this into an optimization framework
+in time.
+<p>
+Meanwhile, work was progressing on our discrete optimizer and
+on our microoptimizer.  For various reasons, the microoptimizer
+was not generating very good traces, and neither was the discrete
+optimizer (although we were getting some traces).
+<p>
+Then, all of the sudden, the discrete optimizer started generating
+(what looked like to us at the time) very reasonable traces.
+The discrete optimizer worked by maintaining a set of current
+candidate solutions, advancing them by different sets of ten moves
+(all subsequences on the envelope), culling the now much larger set
+into a smaller set, and repeating until we had a solution.  Much
+work went into tuning this algorithm, and we scurried around to
+find machines to run it on.
+<p>
+<a href="2_Hairpins_eqp.gif"><img src="2_Hairpins_eqps.gif" align="left"></a>
+While those traces were being run (very late in the contest), one
+of us came up with the idea of taking the result we had found so
+far, and eliminating all portions of the map that were more than
+some number of pixels away from that path, and rerunning the
+discrete optimization on this new, constrained map.  This improved
+our results even more.
+<p>
+Very late in the contest, really kind of embarrassingly late, we
+realized how much the simulator (which formed the heart of our
+discrete optimizer) could be sped up by replacing most of the
+calculations by simple table lookups.  This change was too late to
+have an impact on our results, and that's too bad because it
+could have increased our effective computational power
+significantly.
+<p>
+In the end, we submitted what we felt were a very nice set of
+traces.  We are not sharing these traces at this point in time
+because we do not want to ruin the suspense of the contest,
+although we are quite certain we did not place.
+
+<h3>Never Satisfied.</h3>
+
+One of us has spent significant time after the contest writing
+yet another discrete optimizer; the results of this are at
+<a href="http://king-of-the-hill.rad-eye.com/cgi-bin/king.pl/view"
+>http://king-of-the-hill.rad-eye.com/cgi-bin/king.pl/view</a>.
+Please submit any further improved traces here, if you care.
+</body></html>

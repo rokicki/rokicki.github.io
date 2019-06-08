@@ -1,0 +1,68 @@
+This note is to report a bug in Illustrator 8.0 and 9.0;
+its use of %%BeginData does not conform to the DSC
+specification.
+
+Specifically, in the thumbnail section at the top of the
+document comments section, it includes comments such as
+
+   %%BeginData: 4312 Hex Bytes
+
+According to the specification (PostScript Language Reference
+Manual, Second Edition, page 648, describing the %%BeginData
+DSC):
+
+   "Note that <numberof> indicates the bytes of
+    *physical* data, which vary from the bytes
+    of *virtual* data in some cases.  With hex,
+    each byte of *virtual* data is represented
+    by two ASCII characters (two bytes of
+    *physical* data).  Although the PostScript
+    interpreter ignores white space in hex data,
+    these count toward the byte count.
+
+   "For example,
+
+   "FD 10 2A 05
+
+   "is 11 bytes of *physical* data (8 bytes hex,
+    3 spaces) and 4 binary bytes of *virtual*
+    data."
+
+I am enclosing two such broken files sent to me by two
+of my users (of dvips).  In both cases, the byte count
+seems to be the total number of valid hex characters,
+not including the extraneous % character that Illustrator
+inserts at the beginning of the line, nor the line
+terminators.  A simple analysis of the file shows that,
+in the data section, we have:
+
+   Total bytes: 4531
+   Hex:  4312  White:  146  Misc:  73
+
+So the DSC comment *should* be
+
+   %%BeginData: 4531 Hex Bytes
+
+The example on the following page (649) clearly indicates
+that the byte count, even for hex, should include *all*
+characters (the example they give includes an image
+operator, and they specifically mention that all five
+characters of "image", plus the newline following it, must
+be included in the byte count).
+
+The impact on my users is that, for a very widespread
+version of dvips, they cannot include Illustrator files
+when they are using certain combinations of options.
+I am currently testing a workaround for the next release
+of dvips, but clearly Illustrator must be fixed.
+
+I am always happy to help in any way, so contact me at
+
+   rokicki@cs.stanford.edu
+
+if you have any further questions or if there is any way
+I can be of help.
+
+Thanks!
+
+Tomas Rokicki

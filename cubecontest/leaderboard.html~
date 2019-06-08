@@ -1,0 +1,11 @@
+<html><head><title>Tom's Cube Contest Leaderboard</title></head>
+<body>
+<a href="/cubecontest/">Main Page</a><br>
+<h3>Tom's Cube Contest Leaders</h3>
+<table border=1>
+<tr><td>Name</td><td>Location</td><td>Score</td><td>Date and Time</td></tr>
+<tr><td>Stefan Pochmann</td><td>Darmstadt, Germany</td><td>138,909</td>
+<td>Fri Jan 16 07:10:08 2004</td></tr>
+</table>
+<a href="/cubecontest/">Main Page</a>
+</body></html>

@@ -1,0 +1,672 @@
+#!/usr/bin/perl -w
+use strict ;
+#
+my $timelimit = shift || 24 * 60 * 60 ;
+$timelimit *= 0.8 ; # pretend we can be this fast; use 80% of time to think
+$timelimit += time() ;
+#
+my $inf = 10_000_000 ;
+#
+#   Find the relevant bits from a character.
+#
+sub relevant {
+   my $st = shift ;
+   return 0xffff if ($st & 0x80) ;
+   return 0xf70 if ($st & 0xf080) == 0xe000 ;
+   return 0xff70 ;
+}
+sub congruent {
+   my ($st1, $st2) = @_ ;
+   my $rel = relevant($st1) & relevant($st2) ;
+   return !(($st1 ^ $st2) & $rel) ;
+}
+#
+#   If right side wrapped by pl, then treat it as nonprintable (space)
+#   since the pl prevents any of the right side attributes from
+#   shining through!
+#
+sub refinepl {
+   my ($st1, $st2) = @_ ;
+   $st2 &= 0xff00 ; # clear printable char bit and other bits (uu etc)
+   my $rel = relevant($st1) ;
+   return (($st1 & $rel) | ($st2 & ~$rel)) & 0xffff ;
+}
+my @simpcost ;
+my $st ;
+for ($st=0; $st<128; $st++) {
+   $simpcost[$st] = (($st & 0x10) ? 9 : 0) + (($st & 8) ? 7 : 0) +
+                    (($st & 4) ? 7 : 0) + ((($st & 0xa) == 2) ? 9 : 0) +
+                    (($st & 1) ? 7 : 0) + ((($st & 0x60) >> 5) * 7) ;
+}
+#
+#   The min cost of a transition between two states, assuming we have
+#   full control over all external states.
+#
+sub mincost {
+   my ($st1, $st2) = @_ ;
+   my $rel = relevant($st1) & relevant($st2) ;
+   my $reldiff = ($st1 ^ $st2) & $rel ;
+   my $sum = 0 ;
+   if ($reldiff & 0xf000) {
+      if ((($st1 & 0xf000) != 0xe000) &&
+          (($st2 & 0xf000) != 0xe000)) {
+         $sum += 7 ;
+      }
+   }
+   $sum += 7 if ($reldiff & 0xf00) ;
+   my $uudiff = (($st1 & 0x60) - ($st2 & 0x60)) / 32 ;
+   $uudiff = - $uudiff if ($uudiff < 0) ;
+   my $pl1 = 9 + $simpcost[$st1 & 127] ;
+   my $pl2 = 9 + $simpcost[$st2 & 127] ;
+   my $sc = $simpcost[($uudiff << 5) | ($reldiff & 0x1f)] ;
+   return $sc + $sum if $sc < $pl1 && $sc < $pl2 ;
+   return $pl1 + $sum if $pl1 < $pl2 ;
+   return $pl2 + $sum ;
+}
+sub transcost {
+   my ($st1, $st2) = @_ ;
+   my $rel = relevant($st1) & relevant($st2) ;
+   my $reldiff = ($st1 ^ $st2) & $rel ;
+   my $cost = 0 ;
+   if ($reldiff & 0xf000) {
+      if (($st2 & 0xf000) != 0xe000) {
+         if (($st2 & 0xf000) == 0xf000) {
+            return $inf ;
+         }
+         $cost = 7 ;
+      }
+   }
+   if ($reldiff & 0xf00) {
+      if (($st2 & 0xf00) == 0xf00) {
+         return $inf ;
+      }
+      $cost += 7 ;
+   }
+   my $uudiff = (($st2 & 0x60) - ($st1 & 0x60)) / 32 ;
+   if ((($reldiff & $st1 & ~$st2) & 0x1d) || $uudiff < 0) {
+      return $cost + 9 + $simpcost[$st2 & 127] ;
+   }
+   return $cost + $simpcost[($uudiff << 5) + ($reldiff & 0x1f)] ;
+}
+sub adj_slow {
+   my ($st1, $st2) = @_ ;
+   my $rel = relevant($st1) & relevant($st2) ;
+   my $reldiff = ($st1 ^ $st2) & $rel ;
+   my $charbit = ($st1 | $st2) & 0x80 ;
+   my @plpossib = () ;
+   my $pl1 = 9 + $simpcost[$st1 & 127] ;
+   my $pl2 = 9 + $simpcost[$st2 & 127] ;
+   if ((($st1 ^ $st2) & 0x7f) == 0) {
+      push @plpossib, [($st1 & 0x7f) | $charbit, 0] ;
+   } else {
+      my $uudiff = (($st1 & 0x60) - ($st2 & 0x60)) / 32 ;
+      my $uustate = 0 ;
+      my $othercost = 0 ;
+      if ($uudiff < 0) {
+         $othercost = -7 * $uudiff ;
+         $uustate = $st1 & 0x60 ;
+      } else {
+         $othercost = 7 * $uudiff ;
+         $uustate = $st2 & 0x60 ;
+      }
+      $uustate |= $charbit ;
+#  four possibilities:  st1 using pl2, st2 using pl1,
+#  st1 & st2 using simpcost,
+#  ((st1 & st2) ^ em) using simpcost iff ((st1 ^ st2) & em)
+#  these might overlap.  Each with own cost.
+      my $sc = $simpcost[$reldiff & 0x1f] + $othercost ;
+      push @plpossib, [refinepl($st1, $st2) & 0xff, $pl2] ;
+      push @plpossib, [refinepl($st2, $st1) & 0xff, $pl1] ;
+      if (($reldiff & 0xa) == 0xa) { # then neither is space
+         push @plpossib, [($st1 & $st2 & 0x1f) | 2 | $uustate, $sc] ;
+      } elsif (($st1 & 0x80) == 0) {
+         push @plpossib, [(($st1 | 0xf) & $st2 & 0x1f) | $uustate, $sc] ;
+      } elsif (($st2 & 0x80) == 0) {
+         push @plpossib, [(($st2 | 0xf) & $st1 & 0x1f) | $uustate, $sc] ;
+      } else {
+         push @plpossib, [($rel & $st1 & $st2 & 0x1f) | $uustate, $sc] ;
+         push @plpossib, [(($st1 & $st2 & 0x1f) ^ 2) | $uustate, $sc]
+                                                     if ($reldiff & 0xa) == 2 ;
+      }
+      my $i ;
+      my $j ;
+      for ($i=0; $i<@plpossib; $i++) {
+         for ($j=0; $j<@plpossib; $j++) {
+            next if ($i == $j) ;
+            next if $plpossib[$i][1] < $plpossib[$j][1] ;
+            my $cost = 0 ;
+            if ($plpossib[$i][0] == $plpossib[$j][0]) {
+               $cost = $plpossib[$j][1] ;
+            } else {
+               $cost = transcost($plpossib[$i][0], $plpossib[$j][0]) +
+                                 $plpossib[$j][1] ;
+            }
+            if ($cost <= $plpossib[$i][1]) {
+               splice(@plpossib, $i, 1) ;
+               $i-- ;
+               last ;
+            }
+         }
+      }
+   }
+   return @plpossib ;
+}
+my @adj_cache ;
+sub adj {
+   my ($st1, $st2) = @_ ;
+   my $lookup = (($st1 & 255) << 8) + ($st2 & 255) ;
+   my $r = $adj_cache[$lookup] ;
+   if (!defined($r)) {
+      $r = $adj_cache[$lookup] =
+      $adj_cache[(($st2 & 255) << 8) + ($st1 & 255)] = [adj_slow($st1, $st2)] ;
+   }
+   return @{$r} ;
+}
+#
+#   Return the adjacency states and costs.  Might be up to 16 states!
+#   2x for color, 2x for size, and 4x for the stupid em bit and different
+#   ways of using pl.  And there might be a bunch of different costs.
+#
+sub adjstates {
+   my ($st1, $st2) = @_ ;
+   my $rel = relevant($st1) & relevant($st2) ;
+   my $reldiff = ($st1 ^ $st2) & $rel ;
+   my @colorpossib = ($st1 & 0xf000) ;
+   my $colorcost = 0 ;
+   if (($st1 ^ $st2) & 0xf000) {
+      if (($st1 & 0xf000) == 0xe000) {
+         @colorpossib = ($st2 & 0xf000) ;
+      } elsif (($st2 & 0xf000) == 0xe000) {
+         @colorpossib = ($st1 & 0xf000) ;
+      } elsif (($st1 & 0xf000) == 0xf000 || ($st2 & 0xf000) == 0xf000) {
+         $colorcost = 7 ;
+         @colorpossib = (0xf000) ;
+      } else {
+         $colorcost = 7 ;
+         @colorpossib = (($st1 & 0xf000), ($st2 & 0xf000)) ;
+      }
+   }
+   my @sizepossib = ($st1 & 0xf00) ;
+   my $sizecost = 0 ;
+   if ($reldiff & 0xf00) {
+      $sizecost = 7 ;
+      if (($st1 & 0xf00) == 0xf00 || ($st2 & 0xf00) == 0xf00) {
+         @sizepossib = (0xf00) ;
+      } else {
+         @sizepossib = (($st1 & 0xf00), ($st2 & 0xf00)) ;
+      }
+   }
+   my @plpossib = adj($st1, $st2) ;
+   my @r = () ;
+   my $i ;
+   for $i (@colorpossib) {
+      my $j ;
+      for $j (@sizepossib) {
+         my $bits = $i | $j ;
+         for (@plpossib) {
+            push @r, [$_->[0] | $bits, $_->[1] + $colorcost + $sizecost] ;
+         }
+      }
+   }
+   return @r ;
+}
+#
+#
+my %ops = (B=>sub{$_[0]|1}, EM=>sub{($_[0]&8)?$_[0]:($_[0]^2)}, I=>sub{$_[0]|4},
+        PL=>sub{$_[0]&0xff80}, S=>sub{(($_[0]|8)&~2)}, TT=>sub{$_[0]|0x10},
+        U=>sub{($_[0]&0x60)==0x60?$_[0]:($_[0]&0xff9f)|((($_[0]&0x60)+0x20)&0x60)},
+        0=>sub{($_[0]&0xF0FF)|0x000},
+        1=>sub{($_[0]&0xF0FF)|0x100},
+        2=>sub{($_[0]&0xF0FF)|0x200},
+        3=>sub{($_[0]&0xF0FF)|0x300},
+        4=>sub{($_[0]&0xF0FF)|0x400},
+        5=>sub{($_[0]&0xF0FF)|0x500},
+        6=>sub{($_[0]&0xF0FF)|0x600},
+        7=>sub{($_[0]&0xF0FF)|0x700},
+        8=>sub{($_[0]&0xF0FF)|0x800},
+        9=>sub{($_[0]&0xF0FF)|0x900},
+        r=>sub{($_[0]&0x0FFF)|0x0000},
+        g=>sub{($_[0]&0x0FFF)|0x1000},
+        b=>sub{($_[0]&0x0FFF)|0x2000},
+        c=>sub{($_[0]&0x0FFF)|0x3000},
+        m=>sub{($_[0]&0x0FFF)|0x4000},
+        y=>sub{($_[0]&0x0FFF)|0x5000},
+        k=>sub{($_[0]&0x0FFF)|0x6000},
+        w=>sub{($_[0]&0x0FFF)|0x7000}) ;
+binmode STDIN ;
+binmode STDOUT ;
+my @states = () ;
+my @scopestack = () ;
+my $children = () ;
+my @outscope = () ;
+my @stateat ;
+my $begscope = 0 ;
+my @str ;
+my @reduceseq ;
+my @combstate ;
+my $pos = 1 ;
+my $outputdepth = -1 ;
+my $node = -1 ;
+my $state = 0xff00 ;
+my @output = ($state | 0x80) ; # beginning sentinel
+$str[0] = "" ;
+$outscope[1] = 0 ;
+my $c ;
+my $lastspacedec = -1 ;
+while (<STDIN>) {
+ my $line = $_ ;
+ my $cp = 0 ;
+ my $len = length($line) ;
+ while ($cp < $len) {
+   $c = substr($line, $cp++, 1) ;
+   if ($c eq '<') {
+      my $id = substr($line, $cp++, 1) ;
+      if ($id eq '/') {
+         $state = pop @states ;
+         push @{$children->[$scopestack[-1]]}, $begscope ;
+         $begscope = pop @scopestack ;
+      } else {
+         push @states, $state ;
+         push @scopestack, $begscope ;
+         $begscope = $pos++ ;
+      }
+      while (($c = substr($line, $cp++, 1)) ne '>') {
+         $id .= $c ;
+      }
+      if (substr($id, 0, 1) ne '/') {
+         $state = $ops{$id}->($state) ;
+      }
+      $stateat[$begscope] = $state ;
+   } elsif ($c le ' ') {
+      my $wstate = ($state & 0xfff0) ;
+      if (($state & 0x60) == 0) {
+         $wstate &= 0xfff ;
+         $wstate |= 0xe000 ; # set whitespace color don't care
+      }
+      if (@output == 0 || !congruent($output[-1], $wstate)) {
+         push @output, $wstate ;
+         $outscope[@output] = $begscope ;
+         $str[@output-1] .= $c ;
+         $lastspacedec = $wstate ;
+      } else {
+         if ($lastspacedec != $wstate || $wstate & 0x10) {
+            $str[@output-1] .= $c ;
+            $lastspacedec = $wstate ;
+         }
+      }
+   } else {
+      my $cstate = $state | 0x80 ;
+      if (@output == 0 || !congruent($output[-1], $cstate)) {
+         push @output, $cstate ;
+      } else {
+         $output[-1] = $cstate ;
+      }
+      $outscope[@output] = $begscope ;
+      $str[@output-1] .= $c ;
+      $lastspacedec = -1 ;
+   }
+ }
+}
+my $cstate = $state | 0x80 ;
+if (@output == 0 || !congruent($output[-1], $cstate)) {
+   push @output, $cstate ;
+} else {
+   $output[-1] = $cstate ;
+}
+$outscope[@output] = $begscope ;
+$str[@output-1] .= "" ;
+my $i=0 ;
+my $nodepull = 0 ;
+sub collapse {
+   my $begscope = shift ;
+   my $stateat = $stateat[$begscope] ;
+   my $sawchar = 0 ;
+   my $testchar ;
+   my @nodes = () ;
+   while (1) {
+      my $twonode = -1 ;
+      # is the next node the next child of this?
+      if ($nodepull < @output && $outscope[$nodepull+1] == $begscope) {
+         $twonode = $nodepull++ ;
+         $sawchar |= ($output[$twonode] & 0x80) ;
+      } elsif (defined($children->[$begscope]) && @{$children->[$begscope]}) {
+         my $childscope = shift @{$children->[$begscope]} ;
+         ($twonode, $testchar) = collapse($childscope) ;
+         $sawchar |= $testchar ;
+         redo if $twonode == -1 ;
+      } else {
+         last ;
+      }
+      push @nodes, $twonode if $twonode != -1 ;
+   }
+   return collapseseq($stateat | $sawchar, @nodes) ;
+}
+my @atlen ;
+my @atstate ;
+my $opt ;
+for ($i=0; $i<@output; $i++) {
+   $opt->[$i][1]{$output[$i]} = [0] ;
+   $atstate[$i] = $output[$i] ;
+   $atlen[$i] = 1 ;
+}
+sub findbestadj {
+   my($leftstate, $rightstate, $thisstate) = @_ ;
+#printf STDERR ("In findbestadj %x %x %x\n", $leftstate, $rightstate, $thisstate) ;
+   my @possib = adjstates($leftstate, $rightstate) ;
+   my $best = $inf ;
+   my $midstate = $thisstate ;
+   for (@possib) {
+      my $cost = transcost($thisstate, $_->[0]) + $_->[1] ;
+#printf STDERR ("  Considering state %x; cost is %d\n", $_->[0], $cost) ;
+      if ($cost < $best) {
+         $best = $cost ;
+         $midstate = $_->[0] ;
+      }
+   }
+   return ($midstate, $best) ;
+}
+sub collapseseq {
+   my ($stateat, @nodes) = @_ ;
+   while (1) {
+      return (-1, $stateat & 0x80) if (@nodes == 0) ;
+      return ($nodes[0], $stateat & 0x80) if (@nodes == 1) ;
+      my @r = () ;
+      my $r = 0 ;
+      for ($r=0; $r+1<@nodes; $r += 2) {
+         my $onenode = $nodes[$r] ;
+         my $twonode = $nodes[$r+1] ;
+         my $newlen = $atlen[$onenode] + $atlen[$twonode] ;
+         my ($midstate, $cost) =
+                findbestadj($atstate[$onenode], $atstate[$twonode], $stateat) ;
+         $cost += $opt->[$onenode][$atlen[$onenode]]{$atstate[$onenode]}->[0] +
+                  $opt->[$twonode][$atlen[$twonode]]{$atstate[$twonode]}->[0] ;
+         $cost -= transcost($stateat, $midstate) ;
+         $opt->[$onenode][$newlen]{$midstate} =
+                                  [$cost, $atlen[$onenode], 'a',
+                                   $atstate[$onenode], $atstate[$twonode], 1] ;
+         $atlen[$onenode] = $newlen ;
+         $atstate[$onenode] = $midstate ;
+         push @r, $onenode ;
+      }
+      push @r, $nodes[$r] if ($r < @nodes) ;
+      @nodes = @r ;
+   }
+}
+collapse(0, 0) ;
+@scopestack = () ;
+$children = 0 ;
+@outscope = () ;
+@stateat = () ;
+$begscope = 0 ;
+@atstate = () ;
+@atlen = () ;
+#
+my $line = "" ;
+my @a = @output ;
+@output = () ;
+print STDERR "Peep: $opt->[0][@a]{0xff80}[0]\n" ;
+my $hashkeymap = "" ;
+#
+#   First a[i][i+1] = (state => 0)
+#
+my ($len, $j) ;
+my @costat ;
+my $s = 0 ;
+for ($i=0; $i<@a; $i++) {
+   vec($hashkeymap, $i, 16) = $a[$i] ;
+   $costat[$i] = $s ;
+   if ($i + 1 < @a) {
+      $s += mincost($a[$i], $a[$i+1]) ;
+   }
+}
+my %strbegin ;
+my @nosplit ;
+my @combined ;
+sub elim {
+   my $res = shift ;
+   my ($m, $n) ;
+   my $elim = 0 ;
+   my $best = $inf ;
+   my @keys = keys %{$res} ;
+   my $beststate = 0 ;
+   for $m (@keys) {
+      if ($res->{$m}[0] < $best) {
+         $beststate = $m ;
+         $best = $res->{$m}[0] ;
+      }
+   }
+   $beststate += 0 ;
+   for $m (@keys) {
+      $m += 0 ;
+      my $cost ;
+      if ($m != $beststate && 
+          ($cost = transcost($m, $beststate) + $best) <= $res->{$m}[0]) {
+         $elim++ ;
+         if (defined($res->{$m}[5])) {
+            if ($cost < $res->{$m}[0]) {
+               my $old = $res->{$beststate} ;
+               $res->{$m} = [$cost, $old->[1], $old->[2],
+                             $old->[3], $old->[4], 1] ;
+            }
+         } else {
+            delete $res->{$m} ;
+         }
+         last ;
+      }
+   }
+   return $res ;
+}
+#
+#   Optimize for $len at position $i.
+#
+sub optimize {
+   my ($i, $len) = @_ ;
+   my $j ;
+   my $res = $opt->[$i][$len] ;
+   $res = {} if !defined($res) ;
+   for ($j=1; $j<$len; $j++) {
+      next if $nosplit[$i+$j] ;
+      my $g1 = $opt->[$i][$j] ;
+      my $g2 = $opt->[$i+$j][$len-$j] ;
+      next if 0 == scalar keys %{$g1} || 0 == scalar keys %{$g2} ;
+      my @ks1 = keys %{$g1} ;
+      my @ks2 = keys %{$g2} ;
+      my ($k1, $k2) ;
+#   Now adjacency.  This will kill us!
+      for $k1 (@ks1) {
+         $k1 += 0 ;
+         for $k2 (@ks2) {
+            $k2 += 0 ;
+            my @r = adjstates($k1, $k2) ;
+            for (@r) {
+               my ($state, $cost) = @{$_} ;
+               $cost += $g1->{$k1}[0] + $g2->{$k2}[0] ;
+               if ((!defined($res->{$state}) || $res->{$state}[0] >= $cost)) {
+                  $res->{$state} = [$cost,$j,'a',$k1,$k2,$res->{$state}[5] ? (1) : ()] ;
+               }
+            }
+         }
+      }
+   }
+   return $res ;
+}
+#
+#   Now longer lengths.
+#
+for ($len=2; $len<=@a; $len++) {
+   my $longhash = 0 ;
+   @combined = () ;
+   for ($i=0; $i+$len<=@a; $i++) {
+      next if $nosplit[$i] || $nosplit[$i+$len] ;
+      goto GONE if time() > $timelimit ;
+      my $key = substr($hashkeymap, 2 * $i, 2 * $len) ;
+      my $w = $strbegin{$key} ;
+      if (defined($w)) {
+         for $j (keys %{$opt->[$i][$len]}) {
+            if (defined($opt->[$w][$len]{$j})) {
+               if ($opt->[$i][$len]{$j}[0] < $opt->[$w][$len]{$j}[0]) {
+                  if (defined($opt->[$i][$len]{$j}[5])) {
+                     $opt->[$w][$len]{$j} = [@{$opt->[$i][$len]{$j}}, 1] ;
+                  } else {
+                     $opt->[$w][$len]{$j} = $opt->[$i][$len]{$j} ;
+                  }
+               } elsif (defined($opt->[$i][$len]{$j}[5])) {
+                  $opt->[$i][$len]{$j}[5]++ ;
+               }
+            } else {
+               $opt->[$w][$len]{$j} = $opt->[$i][$len]{$j} ;
+            }
+         }
+         $opt->[$i][$len] = $opt->[$w][$len] ;
+         if ($combined[$w]) {
+            for ($j=1; $j<$len; $j++) {
+               $nosplit[$i+$j]++ ;
+            }
+         }
+         next ;
+      }
+      $strbegin{$key} = $i ;
+      $opt->[$i][$len] = optimize($i, $len) ;
+      my $hlen = scalar keys %{$opt->[$i][$len]} ;
+      if ($hlen > $longhash) {
+         $longhash = $hlen ;
+      }
+      if ($a[$i] == $a[$i+$len-1] && ($a[$i] & 0x80) != 0 &&
+          defined($opt->[$i][$len]{$a[$i]}) &&
+          $costat[$i+$len-1] - $costat[$i] == 2 * $opt->[$i][$len]{$a[$i]}[0]) {
+         for ($j=1; $j<$len; $j++) {
+            $nosplit[$i+$j]++ ;
+         }
+         $combined[$i]++ ;
+      }
+   }
+   print STDERR "$len:$longhash " ;
+}
+#
+#   There should only be one value at the top level.
+#
+my $done ;
+$done++ ; # if we skip this, we didn't optmize fully!
+GONE:
+print STDERR "Best: $opt->[0][@a]{0xff80}[0]\n" ;
+#
+#   Always concrete states here for the first one.
+#
+my @colorcode = qw(r g b c m y k w) ;
+my $outsize = 0 ;
+sub transition {
+   my ($st1, $st2) = @_ ;
+   my @results = () ;
+   my $diff = $st1 ^ $st2 ;
+   if (($st2 & 0x80) == 0) {
+      $diff &= 0xff70 ;
+   }
+   if (($diff & 0xf000) != 0 && # on e to f do nothing, or f to e
+       (($st1 & 0xf000) < 0xe000 || ($st2 & 0xf000) < 0xe000) &&
+        (($st2 & 0xf000) != 0xe000)) {
+      die "Color reduction $st1 $st2\n" if (($st2 & 0xf000) >= 0x8000) ;
+      push @results, $colorcode[$st2 >> 12] ;
+   }
+   if (($diff & 0xf00) != 0) {
+      die "Space reduction $st1 $st2\n" if (($st2 & 0xf00) == 0xf00) ;
+      push @results, ($st2 >> 8) & 0xf ;
+   }
+   my $uudiff = (($st2 & 0x60) - ($st1 & 0x60)) / 32 ;
+   if ($uudiff < 0 || ($diff & $st1 & ~$st2 & 0x1d)) {
+      push @results, 'PL' ;
+      $diff = $st2 & 0x1f ;
+      $uudiff = ($st2 & 0x60) / 32 ;
+   }
+   if ($uudiff != 0) {
+      die "Bad uu transition?" if $uudiff < 0 ;
+      while ($uudiff--) {
+         push @results, 'U' ;
+      }
+   }
+   if ($diff & 0x10) {
+      push @results, 'TT' ;
+   }
+   if ($diff & 8) {
+      push @results, 'S' ;
+   }
+   if ($diff & 4) {
+      push @results, 'I' ;
+   }
+   if (($diff & 0xa) == 2) {
+      push @results, 'EM' ;
+   }
+   if ($diff & 1) {
+      push @results, 'B' ;
+   }
+   my $s = 0 ;
+   for (@results) { $s += 2 * length($_) + 5 ; }
+   $outsize += $s ;
+   return @results ;
+}
+my @pendingclosetags = () ;
+sub tagflush {
+   print map { "</$_>" } reverse @pendingclosetags ;
+   @pendingclosetags = () ;
+}
+sub forward {
+   my @tags = @_ ;
+   while (@tags && @pendingclosetags &&
+          $tags[0] eq $pendingclosetags[0]) {
+      shift @tags ;
+      shift @pendingclosetags ;
+   }
+   if (@tags) {
+      tagflush() ;
+      print map { "<$_>" } @tags ;
+   }
+}
+sub backward {
+   my @tags = @_ ;
+   @pendingclosetags = (@tags, @pendingclosetags) ;
+}
+sub genoutput {
+   my ($thisstate, $start, $len) = @_ ;
+   my $data = $opt->[$start][$len]{$thisstate} ;
+   if ($len == 1) {
+      my @tags = transition($thisstate, $a[$start]) ;
+      forward(@tags) ;
+      tagflush() ;
+      print $str[$start] ;
+      backward(@tags) ;
+   } else {
+ if (!defined($data)) {
+   print STDERR "Can't generate output for $start $len $thisstate\n" ;
+   print STDERR "States we have include [", keys %{$opt->[$start][$len]}, "]\n" ;
+   my $i ;
+   for ($i=$start; $i<$start+$len; $i++) {
+     printf STDERR (" %x", $a[$i]) ;
+   }
+   print STDERR "\n" ;
+ }
+      my ($cost, $j, $op, $leftstate, $rightstate) = @{$data} ;
+      {
+         my ($midstate, $cost) =
+                             findbestadj($leftstate, $rightstate, $thisstate) ;
+         my @tags2 = transition($thisstate, $midstate) ;
+         forward(@tags2) ;
+         my @tags = transition($midstate, $leftstate) ;
+         forward(@tags) ;
+         genoutput($leftstate, $start, $j) ;
+         backward(@tags) ;
+         @tags = transition($midstate, $rightstate) ;
+         forward(@tags) ;
+         genoutput($rightstate, $start+$j, $len-$j) ;
+         backward(@tags) ;
+         backward(@tags2) ;
+      }
+   }
+}
+genoutput(0xff80, 0, scalar @a) ;
+tagflush() ;
+if ($outsize != $opt->[0][@a]{0xff80}[0]) {
+   warn "Outsize should have been $opt->[0][@a]{0xff80}[0] but was $outsize\n" ;
+   if ($outsize > $opt->[0][@a]{0xff80}[0]) {
+      print " " x 1000 ;
+      die "Huh?" ;
+   }
+}

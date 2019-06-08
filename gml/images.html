@@ -1,0 +1,58 @@
+<html><title>RadicalEye's CFP images</title>
+<body>
+<h1>The Good, the Bad, and the Ugly</h1>
+Here are the images my renderer generated.  I'm including three
+images for each:  what the submitted code generated, what
+the `fixed' code generated, and what it should have generated.
+I've converted all the files to GIF, which means that they have
+been quantized down to 256 colors, so there may be subtle
+imperfections that aren't in the original PPM files.
+
+<h3>Spheres</h3>
+No problem with this one.<br>
+<image src="spheres-old.gif">
+<image src="spheres-new.gif">
+<image src="spheres-good.gif">
+<h3>Spheres2</h3>
+There is a very subtle problem
+with the lighting; can you find it?<br>
+<image src="spheres2-old.gif">
+<image src="spheres2-new.gif">
+<image src="spheres2-good.gif">
+<h3>Reflect</h3>
+No problem with this one.<br>
+<image src="reflect-old.gif">
+<image src="reflect-new.gif">
+<image src="reflect-good.gif">
+<h3>Fib</h3>
+No problem with this one.<br>
+<image src="fib-old.gif">
+<image src="fib-new.gif">
+<image src="fib-good.gif">
+<h3>Checked Cube</h3>
+This one I had no trouble with at all.<br>
+<image src="checked-cube-old.gif">
+<image src="checked-cube-new.gif">
+<image src="checked-cube-good.gif">
+<h3>Dice</h3>
+My error in speculative lighting shows up in the first (bad)
+image.  The z buffer error is also clear from the leftmost
+cube.  The second image isn't correct because I don't implement
+the CSG operators properly (but I do recognize and do *something*
+with them).<br>
+<image src="dice-old.gif">
+<image src="dice-new.gif">
+<image src="dice-good.gif">
+<h3>Spotlight</h3>
+I don't really implement spots; I approximate them with point
+lights, and this is the result.<br>
+<image src="spotlight-old.gif">
+<image src="spotlight-new.gif">
+<image src="spotlight-good.gif">
+<h3>Golf</h3>
+The lack of CSG does me in here.  Notice the problems with the
+zbuffer in the original image, too.<br>
+<image src="golf-old.gif">
+<image src="golf-new.gif">
+<image src="golf-good.gif">
+</body></html>

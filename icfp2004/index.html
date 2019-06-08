@@ -1,0 +1,71 @@
+<html><head><title>ICFP 2004 Entries</title></head><body>
+This is a placeholder for what will become the description of
+our ICFP2004 contest entry.<br>
+
+The Red Team is:<br>
+
+Lars Backstrom<br>
+John Dethridge<br>
+Jon McAlister<br>
+Stefan Pochmann<br>
+Josef Rokicki<br>
+Tom Rokicki<br>
+Daniel Wright<br>
+
+We used Java, C++, Perl, and m4.<p>
+
+The first submission has traps in the home base, and tries to surround the enemy base.
+It is from rmdm4_outer_encloseZ.antc.
+The second submission tries to set traps around the enemy base, and surround it at the same time.
+It is from surround_2.antc.<br>
+
+<a href="Red_Team_lightning_submission.tar.gz">Lightning entry</a><br>
+<a href="Red_Team_Submission_Final.tar.gz">Final entry</a><br>
+<a href="s.txt">Current tourney standings (our ants only)</a><br>
+
+
+The first thing we did was develop some pretty good tools.  John wrote the simulator, Lars wrote the Visualizer, and Tom wrote an awesome compiler (to turn ant calculus into ant machine code).  They were all pretty good after about 4 hours, and we were quickly able to start working on ants, though we made many improvements.  Joe also ran CVS and logged all our chat on AIM, so coordination was very smooth.<p>
+
+The ability to use ||, && and ! was greatly beneficial.  For example, to go in a counterclockwise circle around the enemy base in ant calculus is:
+circle:
+<pre>
+	while ! sense leftahead foehome || sense ahead foehome {
+		turn left
+	}
+	while true {
+		while sense leftahead foehome {
+			move
+		}
+		turn left
+	}
+</pre>
+The visualizer was a great help in debugging our ants.  It displayed all of the cells in the map, and color coded the different trails.  It also allowed us to zoom and and out, and if we stopped the simulation, we could mouseover a cell to get more information.  In all, I think our biggest edge was our excellent tools.
+<p>
+We tried a great number of strategies with varied success.  Early on we realized that using the scent markers was the key to ant navigation.  We realized that by alternating 3 different combinations of markers, we could leave directed trails.  Thus, our lightning round submission ants made thin trails away from the base, and then once an ant found food, it could use these trails to quickly get home.  We also thought that it would be good to prevent the enemy from stealing our food, so we implemented 'squatters' to sit on our food in our base, and protect it.
+
+<p>
+The next step in the evolution of our ants was to increase the number of trails leading back to the base.  To do this, we observed that we could build concentric hexagons of the same scent type around the center of our base.  So, we started with an initialization step to put down some of these scents.  This greatly improved our performance, and became standard for all ants.  Another important initialization device was developed by Stephan, who worked out a way to quickly identify each of the 91 ants by number, so we could give each its own program.
+
+<p>
+A couple other strategies that seemed to work well were: setting traps in your own base, setting traps outside the enemies base, making short trails around food, and trying to surround the enemy base.  In the end, we submitted ants that used all of these strategies to some extent.  We found that snapping traps were effect within our base.  The food would lure the enemy ants in, and we would attack like so:
+<pre>
+ # # ->
+# . F
+ # # ->
+</pre>
+As soon as the enemy stepped on the food, we attacked, and since this was within our base, we gained the three food.
+<p>
+At the end, we ran a large tournament overnight, and submitted two of the best ants.  The best one had traps in the base that attacked ants which tried to steal food.  It also tried to surround the enemy base, while using trails to find its way around.
+<p>
+The second ant we submitted tried to set up traps outside the enemy anthill.  These traps were shaped like bowties:
+<pre>
+ # #
+E # E
+ # #
+</pre>
+The friendly ants are #, and the enemy is an E.  If an E comes to one of the locations shown, the top and bottom slide to swallow it up.  Unfortunately, we never found a good way to reliably deliver all the kill food to our hill.
+<p>
+An amusing, but ultimately unsuccessful strategy is to have all of your ants move back and forth in one direction, and pause if they see an ant.  This often lead to killing over half the enemy ants, but didn't score high enough to be useful.
+<p>
+Another technically interesting navigation strategy we tried was to use the markers to encode a binary number that indicated the distance from some target.  For example, we tried writing these numbers as we left food, and if later ants saw them, they would follow decreasing numbers to the food.  This strategy was very successful, and robust, but we were ultimately able to make the trails of three alternating markers robust enough to work for food, and they are more efficient than binary markers.
+</body></html>

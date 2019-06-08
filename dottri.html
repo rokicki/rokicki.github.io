@@ -1,0 +1,252 @@
+<html><head><title>Dots and Triangles</title>
+<style>
+html {
+  touch-action: manipulation;
+}
+</style>
+<script>
+function getCanvas() {
+   return document.getElementById("canvas") ;
+}
+var bx = 1 ;
+var by = 0 ;
+var b = 12 ;
+var w = 1 ;
+var h = 1 ;
+var cs = b - 2 ;
+var edges = [
+   1,2,0, 1,3,1, 2,4,2, 2,5,3, 2,3,4, 3,5,5, 3,6,6, 4,7,7, 4,8,8, 4,5,9,
+   5,8,10, 5,9,11, 5,6,12, 6,9,13, 6,10,14, 7,8,15, 8,9,16, 9,10,17
+] ;
+var triangle_edges = [
+   0,1,4, 2,3,9, 5,6,12, 7,8,15, 3,4,5, 10,11,16, 13,14,17, 8,9,10, 11,12,13
+] ;
+var triangles = [] ;
+var xc = [] ;
+var yc = [] ;
+var owner = [] ;
+var board = 0 ;
+function deltascore(b1, b2) {
+   var r = 0 ;
+   for (var i=0; i<9; i++) {
+      var m = triangles[i] ;
+      if ((b1 & m) != m && (b2 & m) == m)
+         r++ ;
+   }
+   return r ;
+}
+function owntriangles(b1, b2, who) {
+   var r = 0 ;
+   for (var i=0; i<9; i++) {
+      var m = triangles[i] ;
+      if ((b1 & m) != m && (b2 & m) == m) {
+         r++ ;
+         owner[i] = who ;
+      }
+   }
+   return r ;
+}
+var dp = [] ;
+function iterate() {
+   dp[(1<<18)-1] = 0 ;
+   for (var board=(1<<18)-2; board>=0; board--) {
+      var r = -1000 ;
+      for (var e=0; e<18; e++) {
+         if (0 != ((board >> e) & 1))
+            continue ; // edge is used
+         var nboard = board | (1 << e) ;
+         var s = deltascore(board, nboard) ;
+         var t ;
+         if (s > 0) // same player moves
+            t = s + dp[nboard] ;
+         else // other player moves
+            t = - dp[nboard] ;
+         r = Math.max(t, r) ;
+      }
+      dp[board] = r ;
+   }
+}
+function redraw() {
+   var c = getCanvas() ;
+   var ctx = c.getContext("2d");
+   w = c.width ;
+   h = c.height ;
+   ctx.clearRect(0, 0, w, h) ;
+   ctx.font = "30px helvetica"; 
+   ctx.save() ;
+   ctx.translate(b, b) ;
+   for (var i=0; i<18; i++) {
+      var v1 = edges[3*i] ;
+      var v2 = edges[3*i+1] ;
+      ctx.beginPath() ;
+      ctx.moveTo((w-2*b)*xc[v1], (h-2*b)*yc[v1]) ;
+      ctx.lineTo((w-2*b)*xc[v2], (h-2*b)*yc[v2]) ;
+      ctx.closePath() ;
+      if ((board >> i) & 1) {
+         ctx.strokeStyle = "#000000" ;
+      } else {
+         ctx.strokeStyle = "#dddddd" ;
+      }
+      ctx.stroke() ;
+   }
+   ctx.strokeStyle = "#000000" ;
+   ctx.fillStyle = "#ffffff" ;
+   for (var i=1; i<=10; i++) {
+      ctx.beginPath();
+      ctx.arc((w-2*b)*xc[i], (h-2*b)*yc[i], cs, 0, 6.283) ;
+      ctx.closePath() ;
+      ctx.save() ;
+      ctx.fill() ;
+      ctx.restore() ;
+      ctx.stroke() ;
+   }
+   ctx.textAlign = "center" ;
+   ctx.fillStyle = "#000000" ;
+   for (var i=0; i<9; i++) {
+      if (owner[i]) {
+         var sx = 0 ;
+         var sy = 0 ;
+         for (var j=0; j<18; j++) {
+            if ((triangles[i] >> j) & 1) {
+               sx += xc[edges[j*3]] + xc[edges[j*3+1]] ;
+               sy += yc[edges[j*3]] + yc[edges[j*3+1]] ;
+            }
+         }
+         sx = (w - 2 * b) * sx / 6 ;
+         sy = (h - 2 * b) * sy / 6 + 20 ;
+         ctx.fillText(owner[i], sx, sy) ;
+      }
+   }
+   ctx.textAlign = "left" ;
+   ctx.fillText("Score " + score, 0, 20+b) ;
+   if (board == 0) {
+      ctx.textAlign = "right" ;
+      ctx.fillText("Pass", w-2*b, 20+b) ;
+   }
+   ctx.restore() ;
+}
+function getMousePosition(c, e) {
+   var r = c.getBoundingClientRect() ;
+   var x = e.clientX - r.left ;
+   var y = e.clientY - r.top ;
+   return {x:x, y:y} ;
+}
+function mouse(e, click) {
+   if (board + 1 == 1 << 18) {
+      startgame() ;
+      return ;
+   }
+   var c = getCanvas() ;
+   var downxy = getMousePosition(c, e) ;
+   var x = downxy.x ;
+   var y = downxy.y ;
+   clicked = -1 ;
+   var ed = -1 ;
+   var dd = 2 * w ;
+   for (var i=0; i<18; i++) {
+      var v1 = edges[3*i] ;
+      var v2 = edges[3*i+1] ;
+      var tx = (w-2*b)*(xc[v1]+xc[v2])/2-x ;
+      var ty = (h-2*b)*(yc[v1]+yc[v2])/2-y ;
+      var td = Math.hypot(tx, ty) ;
+      if (td < dd) {
+         dd = td ;
+         ed = i ;
+      }
+   }
+   if (ed < 0 || dd > w / 3 || (board >> ed) & 1) {
+      if (board == 0 && x >= 2*w/3 && y <= h/3) {
+         doclick(-1) ; // pass move
+      } else {
+         // nothing
+      }
+   } else {
+      doclick(ed) ;
+   }
+   redraw() ;
+}
+function mouseclick(e) {
+   mouse(e, 1) ;
+}
+function domove(ed) {
+   var nboard ;
+   var ds = 0 ;
+   if (ed >= 0) {
+      nboard = board | (1 << ed) ;
+      ds = owntriangles(board, nboard, 'H') ;
+      board = nboard ;
+      score += ds ;
+   }
+   if (ds == 0) {
+      while (true) {
+         if (board + 1 == (1 << 18))
+            break ;
+         var goodmoves = [] ;
+         var allmoves = [] ;
+         for (var ed=0; ed<18; ed++) {
+            if ((board >> ed) & 1)
+               continue ;
+            allmoves.push(ed) ;
+            nboard = board | (1 << ed) ;
+            ds = deltascore(board, nboard) ;
+            var t = 0 ;
+            if (ds == 0) {
+               t = -score - dp[nboard] ;
+            } else {
+               t = -score + ds + dp[nboard] ;
+            }
+            if (t > 0)
+               goodmoves.push(ed) ;
+         }
+         if (goodmoves.length > 0) {
+            t = goodmoves[Math.floor(Math.random() * goodmoves.length)] ;
+         } else {
+            t = allmoves[Math.floor(Math.random() * allmoves.length)] ;
+         }
+         nboard = board | (1 << t) ;
+         ds = owntriangles(board, nboard, 'C') ;
+         score -= ds ;
+         board = nboard ;
+         if (ds == 0)
+            break ;
+      }
+   }
+}
+function doclick(ed) {
+   domove(ed) ;
+   update() ;
+}
+function startgame() {
+   board = 0 ;
+   owner = new Array(9) ;
+   score = 0 ;
+   redraw() ;
+}
+function start() {
+   triangles = new Array(9) ;
+   for (var i=0; i<9; i++)
+      triangles[i] = 0 ;
+   for (var i=0; i<27; i++)
+      triangles[Math.floor(i/3)] |= 1<<triangle_edges[i] ;
+   dp = new Array(1<<18) ;
+   iterate() ;
+   var vn = 1 ;
+   for (var y=0; y<=3; y++) {
+      for (var x=0; x<=y; x++) {
+         xc[vn] = (x + (3 - y) / 2) / 3 ;
+         yc[vn] = y / 3 ;
+         vn++ ;
+      }
+   }
+   var c = getCanvas() ;
+   c.addEventListener("mousedown", mouseclick, false) ;
+   startgame() ;
+}
+function update() {
+   redraw() ;
+}
+</script><body onload="start();">
+Dots and triangles.  Can you win even this simple game?<br>
+<canvas id="canvas" width="600" height="600" tabindex=1>
+</canvas><br>
+</body></html>

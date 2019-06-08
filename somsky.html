@@ -1,0 +1,257 @@
+<html><head><title>Somsky Solver</title>
+<script>
+function getval(name) {
+   return ~~document.forms[0][name].value ;
+}
+function setval(name, val) {
+   document.forms[0][name].value = val ;
+}
+function random(hi) {
+   return Math.floor(hi*Math.random()) ;
+}
+var d, a, p00, p01, p10, p11 ;
+function randomize() {
+   var dd = 50 + random(50) ;
+   setval('d', dd) ;
+   var aa = 10 + random(dd-40) ;
+   setval('a', aa) ;
+   setval('b', 2 + random(Math.floor((dd-aa-4)/2))) ;
+   setval('c', 2 + random(Math.floor((dd-aa-4)/2))) ;
+}
+var PI = Math.PI ;
+function getvals() {
+   d = getval('d') ;
+   a = getval('a') ;
+   p00 = getval('b') ;
+   p01 = d - a - p00 ;
+   p10 = getval('c') ;
+   p11 = d - a - p10 ;
+}
+function solv(y, b, top) {
+   var db2 = (d - b) * (d - b) ;
+   var ab2 = (a + b) * (a + b) ;
+   var cosalpha = ((db2 - ab2) / y + y) / (2 * (d - b)) ;
+   var cosbeta = ((ab2 - db2) / y + y) / (2 * (a + b)) ;
+   var alpha = Math.acos(cosalpha) ;
+   var beta = Math.acos(cosbeta) ;
+   var delta = PI - alpha - beta ;
+   var bx = (d - b) * Math.sin(alpha) ;
+   var by = -(d - b) * Math.cos(alpha) ;
+   var alen = (alpha + beta) * b + beta * a + (PI - alpha) * d ;
+   var ang = alpha * (d / b - 1) ;
+   if (top && (d % 2) != b % 2) {
+      ang += PI / b ;
+   }
+   ang2 = ang * (b / a) + (PI - beta) * (b / a + 1) ;
+   if (b % 2)
+      ang2 += PI / a ;
+   return [alen, bx, by, ang] ;
+}
+var teeth = 0 ;
+function solve2(y) {
+    circles = [] ;
+    circles.push([0, -y, a, 0]) ;
+    var t = solv(y, p00, 1) ;
+    var len0 = t[0] ;
+    var bx0 = t[1] ;
+    var by0 = t[2] ;
+    var ang0 = t[3] ;
+    t = solv(y, p10, 1) ;
+    var len1 = t[0] ;
+    var bx1 = t[1] ;
+    var by1 = t[2] ;
+    var ang1 = t[3] ;
+    bx0 = - bx0 ;
+    circles.push([bx0, by0, p00, ang0]) ;
+    circles.push([bx1, by1, p10, -ang1]) ;
+    teeth = (len0 + len1) / (2 * PI) ;
+    t = solv(-y, p01, 0) ;
+    var len2 = t[0] ;
+    var cx0 = t[1] ;
+    var cy0 = t[2] ;
+    var ang2 = t[3] ;
+    t = solv(-y, p11, 0) ;
+    var len3 = t[0] ;
+    var cx1 = t[1] ;
+    var cy1 = t[2] ;
+    var ang3 = t[3] ;
+    cx1 = - cx1 ;
+    cy0 = - cy0 ;
+    cy1 = - cy1 ;
+    circles.push([cx0, cy0, p01, ang2]) ;
+    circles.push([cx1, cy1, p11, -ang3]) ;
+    teeth2 = (len2 + len3) / (2 * PI) ;
+    return teeth ;
+}
+var mingap ;
+function solveto(tgoal) {
+   var yhi = d-a ;
+   var ylo = d - (2*p00+a) ;
+   if (ylo < d - (2*p10 + a))
+      ylo = d - (2*p10 + a) ;
+   if (ylo < 0)
+      ylo = 0 ;
+   for (var trial=0; trial<54; trial++) {
+       y = (yhi + ylo) / 2 ;
+       var t = solve2(y) ;
+       if (t < tgoal) {
+           yhi = y ;
+       } else {
+           ylo = y ;
+       }
+   }
+   mingap = d - a - y ;
+   for (var i=1; i<circles.length; i++) {
+       for (var j=i+1; j<circles.length; j++) {
+           var dx = circles[i][0]-circles[j][0] ;
+           var dy = circles[i][1]-circles[j][1] ;
+           var rr = circles[i][2]+circles[j][2] ;
+           var dd = Math.sqrt(dx * dx + dy * dy) ;
+           var gap = dd - rr ;
+           if (gap < mingap)
+              mingap = gap ;
+       }
+   }
+   return teeth ;
+}
+var context ;
+var phase = 0 ;
+function drawcirc(x, y, r, ang, ph) {
+   context.save() ;
+   context.beginPath();
+   context.translate(x, y) ;
+   context.arc(0, 0, r, 0, 2 * PI, false);
+   context.stroke();
+   context.rotate(ang+ph/r) ;
+   for (var i=0; i<r; i++) {
+      context.beginPath();
+      context.moveTo(0, r-2) ;
+      context.lineTo(0, r+2) ;
+      context.stroke() ;
+      context.rotate(2*Math.PI/r) ;
+   }
+   context.restore() ;
+}
+function setinfo(info) {
+   document.getElementById("info").innerHTML = info ;
+}
+var labels = ["A", "B", "C", "B'", "C'"] ;
+function drawit() {
+   if (failed)
+      return ;
+   var canvas = document.getElementById("canvas");
+   context = canvas.getContext('2d');
+   context.save() ;
+   context.clearRect(0, 0, canvas.width, canvas.height) ;
+   var centerX = canvas.width / 2;
+   var centerY = canvas.height / 2;
+   var radius = 70;
+   context.translate(centerX, centerY) ;
+   var sc = canvas.height / (2 * d + 12) ;
+   context.scale(sc, sc) ;
+   drawcirc(0,0,d,0, phase);
+   circles[0][3] = ang2 ;
+   for (var i=0; i<circles.length; i++) {
+      drawcirc(circles[i][0], circles[i][1], circles[i][2], circles[i][3],
+         i == 0 ? -phase : phase) ;
+   }
+   context.restore() ;
+   var info = "offset = " + y + " mingap=" + mingap + "<br>" +
+      "D: r=" + d + " x=0 y=0<br>" ;
+   for (var i=0; i<circles.length; i++) {
+      info = info + labels[i] + ": r=" + circles[i][2] + " x=" +
+         circles[i][0] + " y=" + circles[i][1] + "<br>" ;
+   }
+   setinfo(info) ;
+}
+var curteeth ;
+var teethlow ;
+var teethhigh ;
+var failed = 0 ;
+function solvevals() {
+   getvals() ;
+   failed = 1 ;
+   if (p00 * 2 + a >= d) {
+      setinfo("The value for b is too large (it must be at most " + ((d-a)/2-1) + ".)") ;
+      return ;
+   }
+   if (p10 * 2 + a >= d) {
+      setinfo("The value for c is too large (it must be at most " + ((d-a)/2-1) + ".)") ;
+      return ;
+   }
+   failed = 0 ;
+   teethlow = solveto(0) ;
+   teethhigh = solveto(10*(a+d)) ;
+   var bestgap = -1e99 ;
+   var bestteeth = 0 ;
+   for (var tgoal=Math.ceil(teethlow); tgoal <= Math.floor(teethhigh); tgoal++) {
+      solveto(tgoal) ;
+      if (mingap > bestgap) {
+         bestgap = mingap ;
+         bestteeth = tgoal ;
+      }
+   }
+   curteeth = bestteeth ;
+}
+function newteeth() {
+   solveto(curteeth) ;
+   drawit() ;
+}
+function newvals() {
+   solvevals() ;
+   newteeth() ;
+}
+function randomizeaction() {
+   randomize() ;
+   newvals() ;
+}
+function changeteeth(delta) {
+   var teeth2 = curteeth + delta ;
+   if (teeth2 >= teethlow && teeth2 <= teethhigh) {
+      curteeth = teeth2
+      newteeth() ;
+   }
+}
+var interval = 80 ;
+function again() {
+   phase = phase + 0.1 ;
+   if (phase > 2 * PI)
+      phase -= 2 * PI ;
+   setTimeout(again, interval) ;
+   drawit() ;
+}
+function startup() {
+   randomizeaction() ;
+   setTimeout(again, interval) ;
+}
+</script>
+</head>
+<body onload="startup()">
+<h1>Meshing Sets of Somsky Gears</h1>
+<canvas id="canvas" width="400" height="400">
+</canvas><br>
+<form action="">
+d <input type=text name=d value=98> Outer gear radius<br>
+a <input type=text name=a value=25> Sun gear radius<br>
+b <input type=text name=b value=34> Planet pair 1, smaller planet radius<br>
+c <input type=text name=c value=35> Planet pair 2, smaller planet radius<br>
+<input type=button value=solve onclick="newvals()">
+<input type=button value=randomize onclick="randomizeaction()">
+<input type=button value=spread onClick="changeteeth(-1)">
+<input type=button value=narrow onClick="changeteeth(1)"><br>
+<div id=info></div>
+</form>
+Somsky gears are sets of meshing gears that obey the Somsky
+condition: the sum of the diameters of three gears spanning an outer gear
+must equal the diameter of that outer gear.  With this condition
+met, the central or "sun" gear has significant freedom of motion.
+This freedom of motion allows us to mesh two distinct pairs of
+Somsky planet gears around the sun gear, and this page computes
+the locations of the gears given the input values.
+<p>
+There are almost always multiple solutions; the "spread" and "narrow"
+buttons permit you to explore the different solutions.  The minimum
+gap between gears is displayed as "mingap".  The offset of the
+center of the sun gear with respect to the center of the outer gear
+is displayed as "offset".
+</body></html>

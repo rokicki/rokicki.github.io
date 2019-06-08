@@ -1,0 +1,32 @@
+Meet Les.  Les is a bot who was once oblivious, but learned basic tactics
+and strategy.  He is 20% learning, 30% money and 50% traveling.  Les's
+hobbies include gold mining, scavaging and weight lifting.  He abhors
+swimming, but is not afraid of pushing his buddy bots in the pool.
+
+Les would like to take a moment to thank his sponsors: a professional, a 
+student, and a layman; hackers from Silicon Valley, without whom he could
+not have made it as far as he did.
+
+To put Les into action, invoke him as follows:
+
+   ./runme <hostname> <portnumber>
+
+Les is actually a lazy bot, likes to sit around and think more than move.
+If you would like Les to move faster just tell him:
+
+   -m <integer number of moves per second>
+
+If you want Les to be more loquacious, you can use
+
+   -v
+
+but be prepared for the torrent!  To save the moves that Les makes,
+perhaps for replay, you can use
+
+   -s <savefile>
+
+These and all other options must come before the hostname and portnumber.
+
+Les is a very functional robot.
+
+Team Radical Too

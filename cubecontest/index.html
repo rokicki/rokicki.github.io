@@ -1,0 +1,182 @@
+<html><head><title>Short Cube Program Contest</title></head><body>
+<a href="http://groups.yahoo.com/group/toms-cube-contest/">Discussion
+Group</a> -
+<a href="/cgi-bin/cube-gen.pl">Generate Example Cases</a> -
+<a href="winners.html">Winners</a><br>
+<h3><a href="winners.html">The winners are announced!</a></h3>
+<h3>Contest to Find a Short Program to Solve the Cube</h3>
+
+The goal of this contest is to determine the shortest
+algorithmic solution to the cube.
+<p>
+All submissions must be uploaded <a href="/cgi-bin/cube-upload.pl"
+>here</a> by midnight US Pacific Time, 29 February 2004.
+<p>
+You may use any of the following languages:
+<ul>
+   <li>C</li>
+   <li>C++</li>
+   <li>Java</li>
+   <li>Perl</li>
+   <li>Python</li>
+</ul>
+The program must return a sequence in less than three
+seconds of runtime (on average over all test cases)
+on a Pentium 4 machine running at 2.8 GHz with 2 GB of RAM,
+running RedHat Linux 9.
+<p>
+The sequence returned must be shorter than 1,000 moves.
+<p>
+Only the standard libraries provided with a language may be
+used.  That is, you can't simply say
+<pre>
+   use Cube::Solver ;
+   print solve @ARGV ;
+</pre>
+and say that Cube::Solver is on CPAN.
+<p>
+The input format will be the same as that of Mike Reid's
+cube solver.  A solved cube is represented by the input
+<pre>
+UF UR UB UL DF DR DB DL FR FL BR BL UFR URB UBL ULF DRF DFL DLB DBR
+</pre>
+This input is given on the command line.  The first 12
+values are the edge cubies, and the next eight are the
+corners.  The faces are called U(p), D(own), R(ight),
+L(eft), F(ront), and B(ack).
+First the cubie that's in the UF position is given,
+by the color (in UFRDBL notation) that's on top first,
+and then the other color next.  And so on.
+For instance, starting with a solved cube, the move U+ results in
+<pre>
+UR UB UL UF DF DR DB DL FR FL BR BL URB UBL ULF UFR DRF DFL DLB DBR
+</pre>
+Starting with a solved cube, the move F+ results in
+<pre>
+LF UR UB UL RF DR DB DL FU FD BR BL LFU URB UBL LDF RUF RFD DLB DBR
+</pre>
+Starting with a solved cube, the moves F- U+ F- D- L- D- F- U- L2 D-
+results in
+<pre>
+RU LF UB DR DL BL UL FU BD RF BR FD LDF LBD FUL RFD UFR RDB UBL RBU
+</pre>
+For this input, a valid solution would be the inverse of the above
+sequence, or
+<pre>
+D+ L2 U+ F+ D+ L+ D+ F+ U- F+
+</pre>
+Of course there are many other valid output sequences.
+<p>
+The program need not detect malformed input, nor terminate
+or give any particular response if the input is malformed
+in any way, including bad characters, bad length, or bad
+cube parity.  All input sequences the programs are tested
+on will be valid.
+<p>
+The output sequence should be in the face turn metric,
+and should include only the characters ufrdblUFRDBL123+-', space,
+and newline.  1 and + (and no suffix) mean a clockwise
+turn, 2 means a half turn, and 3, ', and - mean a counterclockwise
+turn.  Spaces may be provided for clarity or omitted.
+The length of a sequence is the number of moves in the
+half-turn metric, not the number of characters in the
+output description.  The output sequence should be written to
+stdout, and it should be the only output of the program to
+stdout (any output to stderr is acceptable and will be ignored).
+<p>
+To test your cube solver, click
+<a href="http://tomas.rokicki.com/cgi-bin/cube-gen.pl">here</a>
+to access a script
+that generates a random cube position, and takes a solution
+you generate and says whether it is correct or not.
+<p>
+The size of the program will be determined by counting the number
+of non-whitespace, non-comment characters, except that identifiers
+and keywords only count as a single character.  Whitespace in
+strings will count as characters, as will literal data in strings
+and literal numbers.  For some languages (Perl) this determination
+will probably have to be largely a manual process.  Note that
+the Perl phrase $foo will count as two characters (the $
+will be considered syntax); the C++ phrase cube::rotate will
+be considered four characters (that's two identifiers separated by
+the double-colon syntax).  The purpose of this rule is to prevent
+programs from being overly obfuscated.  When you submit a program,
+I will reply with an email containing the character count and
+which characters counted.  I reserve the right to refine these
+rules as necessary, if people come up with particularly crazy ways
+to reduce the character count.  For instance, having thousands of
+blank lines just to be able to use __LINE__ as a one-character
+integer literal is unacceptable.
+<p>
+<p>
+The score will be the product of:
+<ul>
+   <li>The length of the program, in bytes (see above);</li>
+   <li>The average speed of the program, plus 0.5 seconds;</li>
+   <li>The average length of output sequence over the test cases.</li>
+</ul>
+Thus, if I have 100 test cases, and a submission with 1314
+non-whitespace, non-comment bytes averages 0.103 seconds for
+each solution, and the average length of the output sequence
+is 53 (in the half turn metric), then the score for this
+program will be
+<p>
+   1314 * (0.5 + 0.103) * 53
+<p>
+or 41,994.  Lower scores are better.  The 0.5 addend for time is due to
+a couple of reasons; first, it's hard to measure execution time from
+the command line very accurately because it's somewhat nondeterministic,
+and this also somewhat negates the speed advantage some languages may
+have.  I will do nothing else to compensate for language choice; it
+should be straightforward to solve this problem in under a tenth of a
+second for any of the above languages, including Java with its large
+JVM.
+<p>
+Prizes are as follows:
+<ul>
+<li>Grand prize:  best program.  US $100.</li>
+<li>Judge's prize:  most clear or elegant program (taking into account
+the supporting documentation); this program must also score
+reasonably well against the other programs:  $50.</li>
+<li>Second prize:  $30.</li>
+<li>Third prize:  $20.</li>
+</ul>
+All prizewinners will also receive a certificate suitable for
+framing.  You may enter as often as you wish, but you can only
+win one prize.  The contest writeup will note any nonwinning notable
+solutions, however, so feel free to submit multiple languages,
+strategies, or techniques if you wish.
+<p>
+If I do not receive at valid solutions from at least four
+different people, some lower prizes may not be awarded.
+<p>
+All programs submitted must be submitted with the understanding
+that they will be published on my web site and made freely
+available by anyone for any use whatsoever.
+<p>
+Every entry should include a README with the programmer's name and an email
+address I can use to contact the winners, the city and country
+the programmmer lives in, the source code, compilation instructions
+if any, how to run the program, and any additional information
+about the program.  The program should be packaged up in a gzip'ed
+tar archive, or a ZIP archive.  Note that I will be testing the
+program on an x86 linux machine running RedHat 9.  If you request,
+I will obliterate the email address in your README before publishing
+your solution.  The solution should be uploaded
+<a href="/cgi-bin/cube-upload.pl"
+>here</a> by midnight US Pacific Time, 29 February 2004.
+<p>
+Questions and answers will be posted in the yahoo group
+<a href="http://groups.yahoo.com/group/toms-cube-contest/"><code
+>toms-cube-contest@yahoo.com</code></a>.  If desired, private
+mail can be sent to <code>rokicki@cs.stanford.edu</code>.
+<p>
+All judge's decisions are final.  This contest is an entirely
+private affair run by me and only by me and has no relation to
+any other organization.
+<p>
+<a href="http://groups.yahoo.com/group/toms-cube-contest/">Discussion
+Group</a> -
+<a href="/cgi-bin/cube-gen.pl">Generate Example Cases</a> -
+<a href="winners.html">Winners</a><br>
+</body></html>

@@ -1,0 +1,1489 @@
+<I>foo</I><S><U> </U>Test </S><b>dfs<r><I><B>bla bla </B>barfoo</I></r></b><B>2</B><0><U><TT>f</TT></U><I><EM><B>fd<PL><I>d</I><B>fd</B><U><TT><S><B>fd</B>d</S><I><EM><B>fd</B></EM>d</I></TT></U></PL>fd<PL><I>d</I><B>fd</B><U>d</U></PL>fd</B></EM>d</I><B>fd</B><S><B>fd</B>d</S></0><b>aa </b>.<I><TT><S>foo<PL> bar </PL> gee<PL><U><U><U>fsdfs<PL><U>a</U> <U>a</U><B>hi</B>kill<B>die</B><I>foo	</I><r><B>hello</B></r>a b<r>aaa<g>bbb<b>ccc</b>ddd</g>eee <TT> </TT></r><U><B>test</B>m</U><r>1<g>2</g>34</r><TT>  </TT>"<TT>  </TT> "<r>First<b>Second</b>Last</r>"""</PL>aa<PL>"<r>First<b>Second</b>Third<b>Forth</b><g>Fifth</g>Sixth<b>Last</b></r><B><I>123456789<PL>a</PL>123456789<PL>" hello<B>test</B>"<r>First<b>Second</b>Third<b>Forth</b><g>Fifth</g>Sixth<b>Last</b></r>How about</PL>bla bla<TT>foo bar<PL>into<B><I>bla bla</I><TT><I>foo bar<PL>& on & on ... &lt; infinity though.<B>a a</B><r>RRRRR</r><b>BB<c>CC</c>BB<r>RRRRR</r>BBBBB<r><g>GGGGG</g>RRRRR</r>BBBB</b>" "" " <r>xxx <b>yyy </b></r><B>hi</B><EM>hi</EM>"<U> </U> "
+" "<I><B>bla bla<TT>foo bar <PL><TT>truc<PL><B>Test<r>Test</r>Test</B><S>TEST</S><EM>Test</EM><b>hi</b><S>TEST</S><r>hi</r><S>toto </S><b>yyy </b><EM><S>toto</S>ta<S>ti</S>to</EM><TT><I>heh<S><PL><b>yyy hello</b><2>hi</2><1>kill</1><b>yyy</b>testfileequivalent<B>foofoo<I>foofoo</I>bla bla<I>fghfh<PL><b><r>xxx </r>yyy <r>xxx </r>yyy </b><EM>xxx </EM>yyy <EM>zzz xxx </EM>yyy <EM>zzz </EM><B>xxx yyy xxx yyy </B><r>xxx yyy xxx yyy </r><EM>xxx <S>yyy </S>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I>not equivalent:<b><TT><r>  xxx  </r>yyy  <r><PL></PL> xxx    </r>yyy </TT></b><B>xxx <I>yyy </I>zzz xxx </B><I>yyy </I><B>zzz </B><U> xxx <U> yyy <PL><U> xxx yyy </U><r><U> xxx <b> </b> yyy </U><U> xxx yyy </U></r>hi<EM>A<S>hi<PL>foo <b>bar</b></PL>hi</S>gh</EM>ake tut<k>ake tut</k><U>xxx <b> z </b> yyy</U>xxx <b>z </b>yyy<I>x</I>hello"of anus mater"<b>"of anus mater"</b><U>xxx <b> z </b> yyy</U>xxx <b>z </b>yyy<3> </3> <9> </9>x y"<b>a </b>"<r>RR<y>Y</y><g>G<y>Y<c>CCC<b>BB</b>CC<b>BB<r>RRRRR</r>BBBBB</b></c></y>GGGGG</g>RRRRR<b>BBBB</b></r><B>Hello</B></PL>hi</U></U><b> stuff </b><r>more stuff </r>redundancy elimination</PL>foofoo<PL>overlap inversion</PL>bla bla<TT>foo bar </TT><PL><TT>truc</TT></PL>bla bla<TT>foo bar </TT></I></B><TT>truc</TT>PL shortcut</PL>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee</S></I></TT>whitespace simplification<r><I><B>bla bla </B>barfoo<B>bla bla </B>barfoo</I></r>EM elimination<S>foo bar </S>foo .<S>foo bar </S>foo .color nesting<r>aaa<g>bbb<b>ccc</b>ddd</g>eeeaaa<g>bbb<b>ccc</b>ddd</g>eee</r></PL>aaa</TT></PL>bbb</TT>ccc</B></I>"<b>Nathan</b>12345"</PL>           foo  </I>bar  </TT></B> </PL>asdsadf  asdf</TT></I>foo <TT><U> foo </U> bar  </TT>foobarfoo barfoo</B>bar<B>foo</B><b>foo</b><U> I </U>a<U> I </U>ba<B>I</B>ba</PL>I<PL>b <B>foo </B><I>bar </I>aaa bbb test <b>test</b></PL>blah<PL><B> aaa</B>"<B>foo bar </B>"</PL>foobar<PL> " <r>hello <TT>   bye </TT> bye </r>"toto<I><B>a<PL>truc a la creme</PL>z<PL>" <r>foo</r>"toto<I><U><S><B>a<PL>truc a la creme</PL>z</B></S></U> xxx xxx </I>yyy <I>zzz </I>aa<U>my name is Derek</U></PL> toto</B></I>toto <B>xxx yyy </B>" <B>xxx yyy </B>""<w><U><b> </b> </U></w>""<w><U><b> </b> </U></w> "</PL>toto<PL>" <U> <b> </b></U>""<TT><b><r>  xxx  </r>yyy  </b><PL>"<r>aaa<B>bbb<1>ccc</1></B></r>ddd" a""a "<b>Blue<r>Red</r>Blue</b><1>Size 1<2>Size 2</2>Size 1</1><w><U> </U></w>" <U> </U> "" <U><b><r> </r> </b> </U> "" "</PL> e</TT><S> foo bar </S>foo .foo.ThisisSpaced" foo "</PL>3<PL><6>hi</6><k>asdfasd</k>aksd<r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r>asdf<k>asdfasd<b>test test <r><U> xxx yyy xxx <b> </b> yyy </U></r>lalalala</b></k>f<I><B>bla bla<TT>foo bar <PL><TT>truc<PL><I>hello </I>a<U>b<U>c<U>de </U> <U> </U> <r> <U> r </U> </r> </U> <U> <U><PL><B> Test <I>T</I>Test</B><S>A</S>ICFP 2001 Programming ContestChallenge Taskversion 2************************************************************************************************************<7>Test</7><7>Test Again</7><B><7>ICFP 2001 Programming ContestChallenge Taskversion 2</7></B><5>Damien Doligez, Luc Maranget, Pierre Weis</5><I>This document is also available as <U><B>PDF</B></U>, <U><B>Postcript</B></U> and <U><B>plain text</B></U>.</I>0<U> 1 <U> 2 <U> 3 33 3b </U> 2b <U> 3c </U> 2c <r> <U> r </U> </r> </U> 1b </U> 0z0<U> 1 <U> 2 <U> 3 33 3B </U> 2B <U> 3C </U>2C <r> 2CR <B>x </B><U> 3DR </U> </r> 2D </U> 1B </U> 0z"<I>Test </I>""<EM>Test </EM>""<r>Test </r>"<g><U><b> </b> </U> </g><U> </U><b>ggg </b>j" <B>asd</B>""<U> </U>"" "<I>A </I><B>B</B><EM>This document was translated from L<c>A</c>T<g>E</g>X by<b><U>H<c><2>E</2><b>V</b><2>E</2></c>A</U></b>.</EM><B>a b</B>" foo"<U> <g> </g> <U> </U> <U> <U> </U> </U> </U>PL shortcut<TT><S><I>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee<B><PL></PL>foo<PL><B> bar </B></PL> gee</B></I></S></TT>ICFP 2001 Programming ContestChallenge Taskversion 2</PL>4under3under<PL>************************************************************************************************************<7>Test</7><7>Test Again</7><B><7>ICFP 2001 Programming ContestChallenge Taskversion 2</7></B><5>Damien Doligez, Luc Maranget, Pierre Weis</5><I>This document is also available as <b><U>PDF</U></b>, <b><U>Postcript</U></b> and <b><U>plain text</U></b>.</I><U> <U> <U> aaaa </U> </U> </U>1 <TT> 2 </TT> 3<B>xxxyyyxxx </B><I>yyy<B>ab<g>a</g>b<PL>" <S>foo bar </S>foo ."PL shortcut<S><TT><I>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee<PL><B><U>fpp<TT><S><I>foo</I></S></TT> bar <TT><S><I> gee</I></S></TT>fpoo</U></B>" <S>foo bar </S>foo ."" e <b>ddd<r>eee </r>.</b>d"" e <b>ddd<r>eee </r>. r </b>d"Redundancy elimination<I><B>foofoo<PL><TT>
+
+</TT>overlap inversion</PL>bla bla<TT>foo bar </TT><PL><TT>truc</TT></PL>bla bla<TT>foo bar </TT></B></I><TT>truc</TT></PL>
+
+<PL>PL Shortcut</PL>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee<PL><TT>
+
+</TT>whitespace simplification<r><I><B>bla bla </B>barfoo<B>bla bla </B>barfoo</I></r></PL>
+
+<PL>EM Elimination<S>foo bar </S>foo .<S>foo bar </S>foo .</PL>
+
+<PL>Color nesting<r>aaa<g>bbb<b>ccc</b>ddd</g>eeeaaa<g>bbb<b>ccc</b>ddd</g>eeexxx yyy </r>foo barboz bif<S>foo</S>000HEY <TT> duh<PL>Is this <r>WORKING </r>?<B>coucouencore</B><I>yop<TT>ya</TT><r><B>bla bla </B>barfoo</r><B>foobla bla<TT>foo bar </TT></B></I></PL>truc</TT></PL>foo<PL> bar </PL> gee</I></TT>foo bar </S>foo <r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r><B>hihi haha <I>ho </I>huhu yahou </B><b>000HEY <TT> duh</TT>Is this <r>WORKING </r>?</b></PL>foo </B></I><EM><TT>a</TT><EM><B>a a <U>a </U></B></EM> xxx <EM>yyy </EM>zzz </EM></PL><g><B>1</B></g></U></U>2<g><U><B>3</B></U></g></U><EM> xxx </EM><S>yyy </S></PL><r>  xxx  <b>yyy  </b></r><PL><U> <r> xxx <b> </b> yyy </r></U>" <r>xxx yyy </r>"</PL>TestSpoon</TT><B>ab<TT>
+</TT>ab</B></PL>
+</TT></B>ab<TT>
+</TT>ba</I><TT>
+</TT></PL>ab</U>c</U>d</U></PL>
+<PL><U>a<U>b<U>cd</U><PL><TT>
+ab
+ba
+<PL><S>ab<TT>
+</TT>ab</S></PL>
+</TT><0> </0> <U> <g> </g></U>"a a"<I><B><0> </0> <U> </U><g><U> </U>a</g>b</B></I><g>red greena </g><TT>
+t
+a
+x
+</TT>x<U> <r><0><g> <1> </1> </g> </0></r></U>axxxx<B><7>dd</7><I>Spoon </I></B>" <S>foo bar </S>foo "<7><B>ICFP 2001 Programming ContestChallenge Taskversion 2</B><1> bob</1></7> bob"foo <TT> bar</TT>"anani sitiimb b </PL> <PL><0><r> a </r><U> <g> </g></U><r> a </r><U> <g> </g></U></0><I><B><g> a</g>b</B></I><g>red greena </g><TT>
+t
+a
+x
+</TT>x<U> <r><0><g> <1> </1> </g> </0></r></U><b>asdfasd</b>asdfaxxxx<g><B><TT>
+</TT>green <r>red </r></B>green </g>.. . <U> </U></PL> </U></U><B> xxx <I>yyy </I>zzz </B>So <g>this <I>is <U>an <8>attempt <PL> to write </PL> some <TT> real ?    <4>ugly</4>   ass </TT>shit </8> and I think <EM>I'm doing </EM>a damn </U> good </I>job <b>of it </b>!</g><B>This is a more complex test file for the SML/NG<U>thing</U></B><I>Paragraph 1</I><TT> space tab	newline
+newline
+<B>three bolds... (<I>should be only one bold</I>)</B></TT><c>cyan</c><U><I>underlined and italicized but... </I></U>should be reset now , and this PL is not necessary<U></U><5>size five and again size five</5><U>uuu<U>uuu<U>uuuuuuuuuuuuuuu</U>uuu</U>uuu</U>uuu<U>uuu<U>uuu<U>uuuuuuuuuuuuuuu</U>uuu</U>uuu</U>u xxx" hello"<B>asdfas</B>df<B>gh</B></PL>foo<PL><B> bar</B></PL> gee<PL><b>help </b><B>foo</B><I>bar</I>" <r>xxx <b>yyy </b></r>"" <EM>xxx </EM>yyy <EM>zzz </EM>"" <B>xxx yyy </B>"" <r>xxx yyy </r>"" <EM>xxx </EM><S>yyy </S>"" <I>xxx </I>yyy <I>zzz </I>"" a "" <B>a </B>"<B><I>bla bla </I>aaaa<b><I>bla bla </I></b>aaaa</B>abcd <TT> gh </TT>abcdabcd <I><B><1>gh</1><PL>abcd <b>a <EM>a </EM>fsejkef </b><B>sdfsk </B><TT> fsejkef </TT><B> sdfsk </B><b>abba abba a bba a bba </b><EM><B>xxx <PL><b><TT> a bba   </TT><EM> a bba </EM></b><B>t<S>test</S>est t e st</B><TT>  </TT> <TT> </TT><U>eh</U><1>eheh</1><2>eh</2>a <U> </U>ba b<U> </U>ba<U> </U>b<EM>A</EM>B<EM>C<S>D</S>EThis document was translated from L<c>A</c>T<g>E</g>X by<b><U>H<c><2>E</2><b>V</b><2>E</2></c>A</U></b>.</EM>"For example, the following pairs of documents are equivalent: <r>xxx <b>yyy </b>xxx <b>yyy </b></r><EM>xxx </EM>yyy <EM>zzz xxx </EM>yyy <EM>zzz </EM><B>xxx yyy xxx yyy </B><r>xxx yyy xxx yyy </r><EM>xxx <S>yyy </S>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I>The following pairs of documents are not equivalent: <b><TT><r>  xxx  </r>yyy  <r><PL></PL> xxx    </r>yyy </TT></b>Reason: multiple spaces are significant within TT.<B>xxx <I>yyy </I>zzz xxx </B><I>yyy </I><B>zzz </B>"<B>toto <I>titi <PL><TT><B> <PL>tata<B>bla bla</B></PL>foo bar </B>truc</TT></PL>A<TT>B</TT><PL><TT>C</TT></PL>A<U>B</U></I></B><U>C</U><B>Hi there yo
+<I>foo
+</I></B>Hello there!How are you?<B>Bold </B>testing!and here is some <EM>emphasis</EM>! too!</PL>foobar <3>baz</3><PL>hello </PL>eat my shorts<PL>l<r>xxx <b>yyy </b>xxx <b>yyy </b></r><EM>xxx </EM>yyy <EM>zzz xxx </EM>yyy <EM>zzz </EM><B>xxx yyy xxx yyy </B><r>xxx yyy xxx yyy </r><EM>xxx <S>yyy </S>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I><b><TT><r>  xxx  </r>yyy  <r><PL></PL> xxx    </r>yyy </TT></b><B>xxx <I>yyy </I>zzz xxx </B><I>yyy </I><B>zzz </B><U> xxx <U> yyy </U></U><U> xxx yyy </U><r><U> xxx <b> </b> yyy </U><U> xxx yyy </U></r>ab </PL>xxx </B></EM><1>a<2>b</2>a</1><EM> xxx </EM>yyy <EM>zzz </EM><B>xxx yyy </B><r>xxx yyy </r><EM>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz <B>foobla bla<TT>foo bar <PL><TT>truc</TT><I><TT><S>foo<PL> bar </PL> gee<PL><r><I><B>bla bla </B>barfoo</I></r><S>foo bar </S>foo .<r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r>"<0> </0>""hello" <0><B><1><9><k>aa</k><3>a	<y><2>b
+b</2></y> </3></9>ab<k>b	</k><2>	b	a	</2><TT>ba<3><PL><2> </2>	bb	a b<c><U>b</U></c>bab
+</PL>ab
+	
+ a</3></TT></1>b<S>baa
+aab <U> a</U> a
+ba	b	bb	a	<3>a</3></S><TT>	 </TT>
+</B></0><y> a <EM>a<U>aa</U><k>aa </k>a</EM><b><1> </1> aa</b><0>a</0>a </y><2>aa</2>a<I>aa<b>a <k>a a <4>aa</4>a </k></b><1>a </1> <8> <6>a </6></8>a</I>aaa<5><EM> a</EM>aa</5><k> a </k><3>a</3>a <0> a <5>a<m>a </m>a</5></0><c><U>a<y>a</y><2> a</2> </U> aa<EM>aa </EM>a </c><w>a<b>aa <g>a</g>a</b>a </w><B><5>a</5> a</B>a<4>aaa a </4><I>aaa </I><2>Hel<3>lo World</3></2>a has \n \r \t some features <TT> 
+    \n  \r<PL> <9>A</9></PL>x<9>  <8> </8></9></TT> x<I>this is italics<B>this is bold italics!<PL>this is so plain!<EM>this is em'ed<U>This is em'ed and Underlined</U></EM>This is plain again!<S>and now s?<U></U>nnn </S><r>xxx </r><b>yyy </b><TT>   b       c      d      </TT> aaa<g>xxx<r>yyy<b>uuu</b></r>zzz</g></PL>xxx</B>yyy <B>bla bla <TT>          foo bar </TT><PL><TT>truc</TT></PL>foofoo <PL><y>a <EM>a<U>aa</U><k>aa </k>a</EM><b><1> </1> aa</b><0>a</0>a </y><2>aa</2>a<I>aa<b>a <k>a a <4>aa</4>a </k></b><1>a </1> <8> <6>a </6></8>a</I>aaa<5><EM> a</EM>aa</5><k> a </k><3>a</3>a <0> a <5>a<m>a </m>a</5></0><c><U>a<y>a</y><2> a</2> </U> aa<EM>aa </EM>a </c><w>a<b>aa <g>a</g>a</b>a </w><B><5>a</5> a</B>a<4>aaa a </4><I>aaa </I><B>h ello </B>hello<B>1some text2some text3some text4some text</B><EM>t</EM><B>1some text2some text3some text4some text</B>l<B>someTExTsome text</B>T T<B><b>b</b>f</B>Hey<c>test<k>Yo</k></c><9>x</9><8>x</8>	<m><9><0><7>rat
+hat <S>the cat<8>barhat	bazthe	foohat<I>rat hat foo	ratthewas
+ratrat
+</I></8></S>hadfoo<w><TT><c>bar
+rat
+baris
+</c>hadbaz
+	foo cat</TT></w></7>	baron	hat was</0><U>waswascatwas</U><y>isonbazcat</y>cathad
+isthe	</9><g>
+wason
+<7><EM><r><m><1>hatbazcaton</1>had bar </m><U>bazhadisbar
+</U>baz the	</r><8><EM>bazon
+</EM><w>hadhat bazcat </w>hadthe iscat</8><2><TT>the
+barratwas
+</TT><U>baz is
+foohad	</U></2>ratis<TT>on
+baz
+foofoo	</TT></EM><2> fooon
+</2></7></g><U>
+foohat	</U><9><EM>fooiswaswas
+</EM>theon<0><S><6>bar
+foo
+hatthe </6>barcathad baz</S></0><U><5>cathat
+ratis	<y>hadhad rat baz</y></5><g><TT>hadwasbar cat		</TT><EM>	on
+cat haton</EM></g></U></9><r><9>
+cathad foohad <7>hadon	barbaz
+</7></9> hat	hat	</r>had
+foo	baz on </m>abcdef </PL>hello, </B>world </I><TT><B>  foo   bar 	<PL>
+<U>a<U>b<U>cdefg</U>h</U>i</U>
+</PL>   <PL> .
+<B>xyz </B><S>xyz xyz </S></PL> <PL> .
+<I><B>bla bla<TT>foo bar <PL><TT>truc</TT><I><B>bla bla<TT>foo bar <PL><TT>truc</TT> <I><TT><S>foo<PL> bar </PL> gee</S></TT><r><B>bla bla </B>barfoo <B>bla bla </B>barfoo </r></I><S>foo bar </S>foo .<S>foo bar </S>foo . <r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r>" "<U> <r> </r> <g> </g></U><c><3><I>hello</I></3> hello </c><S><1><U><5>hello<U>hello</U><TT>  <r>  </r></TT>hello</5> hello </U></1><TT> <U>  <U><U><PL>hello hellohello</PL><c><9>hello hello<PL><U> hello</U><7><TT> </TT></7><5><r><b>hello </b><6><S> <0><TT> </TT></0>hello</S></6></r> <1> </1>hellohello<2>hello <U> <U><U><TT> </TT></U></U></U></2> </5></PL>hello</9>hello</c><PL><TT><U><c> </c>hello</U><B>hellohello hello<PL><I><B> hello, </B>world </I></PL>  foo   bar 	</B><PL>
+<2>x</2><1>x</1><B>	A</B><7><y>AA
+AAAA </y>AA AAA
+A<3>
+A	A</3> A	A <8>	</8></7><w><U>
+AAA
+A</U>A
+A
+A
+</w><b>A	A </b>A	A<g><I><m><c><1><6><TT><4><3>		</3>	
+
+	A</4>  
+AA</TT>AA	A</6>	AAA<9> </9></1>A
+A </c>A
+A	A
+</m>A </I><0>
+A
+A</0><5>	A
+A</5>AAAA</g><9><g><5>A <6><EM>AA </EM><4>
+AA</4><2><r><B><k>
+AAA</k>A
+A </B>A	AAA
+</r>A
+</2><y>A
+</y><c>A A AAA	</c>AAAA
+AA	AAA</6></5>AA	A	<7>
+AA A
+</7>A
+AA <1><S><TT>A </TT><I><8><4>
+AA</4>A
+A A</8> AAA
+</I>A</S>A
+</1><w><I>	AA
+A	</I><EM>A	A
+AAAAAA
+</EM><1>
+A
+</1><I><6>AA </6>
+A	A</I><U>
+AAA A</U>
+AA</w><k>A
+A</k><EM><6> AAAA
+<7>
+AAAA</7></6>
+A	</EM><I><B><c>A	A A	</c><PL>A
+</PL><0> A</0>AA A </B></I>A	</g>A
+AA</9><b>A
+AA A
+A</b>A </PL> </TT> <4>AA </4><b><2><TT>
+AAA</TT>AA
+<g>A
+</g></2></b>
+</PL> </U></U></U></TT></S> hello<1> </1>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1></PL> </TT> <TT> <PL><1> </1>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1> <U> <U>hey there <U> xxx </U><B> yyy </B></U> </U>POr lo visto	yacomprimeespacios<TT>
+	Pero claro dentro de TT no
+		</TT>Por fuera funciona.</PL> 
+</TT>foo </B></I>eol</PL>
+</TT>bla bla</B></I></PL><I>foo bar </I></B>truc</TT> eol</PL>
+foo<PL> bar </PL> gee <PL> eol</PL>
+</S></TT><r><B>bla bla </B>barfoo </r></I>eol</PL>
+<PL><S> foo bar </S>foo eol<TT>
+<PL><r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r>eol</PL>
+</TT>asdfasfd asdfasdf sad </PL>
+</TT>
+hello, </B>world I'm </I><B>Alive </B></PL>hello, </B>world <B><TT> 
+</TT> hello, world <TT> 
+</TT> hello, <PL>world <TT> 
+</TT></PL> hello, </B>world <B><TT> 
+</TT> hello, </B>world <B><TT> 
+</TT> hello, </B>world I'm </I><B>Alive <I><TT> 
+</TT>bla bla<TT>foo bar </TT></I></B><TT>truc</TT> eol</PL>
+foo<PL> bar </PL> gee <PL> eol</PL>
+<PL>
+<1> </1>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+</PL>
+                   
+                    
+                     
+                      <U>
+                       
+                        <9>  
+                        </9>
+                       
+                      </U>
+                     
+                    
+                   
+                  <PL> <1> </1>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<U>
+<4>
+<TT>
+                   
+                    
+                     
+                      <U>
+                       
+                        <9>  
+                        </9>
+                       
+                      </U>
+                     
+                    
+                   
+                  </TT>
+</4>
+</U>
+<1> </1>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<U>
+<U>
+<U>
+<4>
+<TT>
+                   
+                    
+                     
+                      
+                       
+                        <9>  
+                        </9>
+                       
+                      
+                     
+                    
+                   
+                  </TT>
+</4>
+</U>
+</U>
+</U>
+<4> <1> </1></4>
+<1> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+<1> <2> </2> </1>
+</PL>
+             
+             
+             <3>
+              
+               <U>
+               </U>
+              
+
+
+               
+                <U>
+                <U>
+                <U>
+                
+                 <4>
+                  
+                   
+                    
+                     
+                      
+                       
+                        <9>  
+                        </9>
+                       
+                      
+                     
+                    
+                   
+                  
+                 </4>
+                
+                </U>
+                </U>
+                </U>
+               
+              </3>
+             <PL><6> aaa </6> <c><2>W</2></c> <U><U><U>foobar<PL> <6> aaa </6><c> <2>W </2></c>abc<I><B>foo foo bla bla<TT>foo bar <PL><TT>truc</TT><I><B>bla bla<TT>foo bar <PL><TT>truc</TT><S><TT><I>foo<PL> bar </PL> gee<PL> </PL>foo<PL> bar </PL> gee<PL><r><I><B> bla bla </B>barfoo <B>bla bla </B>barfoo </I></r><S>foo bar </S>foo . <S>foo bar </S>foo .<r>aaa<g>bbb<b>ccc</b>ddd</g>eee aaa<g>bbb<b>ccc</b>ddd</g>eee </r><5><B>Short <b>Text <EM>emph </EM><S>strong Still <r>strong</r></S>Not em <EM>em</EM></b></B></5><I><7>Italic</7></I><7><B>ICFP 2001 </B>Programming <S>Contest</S>Challenge Task<B>version 2</B></7><r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r><S>foo bar </S>foo .<I><r><B>bla bla </B>barfoo</r><TT><S>foo<PL> bar </PL> gee</S></TT><B>bla bla<TT>foo bar </TT><PL><TT>truc</TT></PL>fooabcabc<PL>ab<TT> </TT>c<1>	barcat</1><r><2><7><U><4><6>	hat isbar foo </6>	hadthe	hadfoo</4>hatcat rat	cathatbaz	fooon</U><2>barbaz</2><9><I>catratthecat</I>hadbaz	<0>hatwas onis</0></9><k>hadthefoohad</k><g><U>wasbazbazbar	</U><5> barhad	hadhad</5></g>catthe	</7><b>onbaz	</b>bazbar	hatbaz <g><3><0><U>hadwas	bazis </U>ratthe</0>hadrat</3>cathad hatwas	<9><TT>rat was<7><k>is	is	barhat</k><PL>ratbazbarhat</PL><4> washat		<I>baz baz wasrat</I></4></7></TT></9><5><EM>baz</EM></5></g></2><4><U> </U></4></r></PL>foo<PL>.
+</PL>bla bla<TT>foo bar </TT></B></I><TT>truc</TT>.
+</PL>foo<PL> bar </PL> gee</I><PL>.
+<r><I><B>bla bla </B>barfoo</I></r>.
+<S>foo bar </S>foo .
+<r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r>.
+<S>HITHERE</S><5><B>Short <b>Text <EM>emph </EM><S>strong Still <r>strong</r></S>Not em <EM>em</EM></b></B></5><7><I>Italic</I></7><7><B>ICFP 2001 </B>Programming <S>Contest</S>Challenge Task<B>version 2</B></7></PL>    A B C <PL> S </PL>
+</TT>
+<U>
+<w>
+<7>
+<b>
+<g>
+</g>
+<U>
+</U>
+</b> <1>
+<U>
+</U>
+<TT>
+                   </TT>
+</1>
+hello
+<3>
+</3>
+</7> </w>
+</U>
+<TT>
+           </TT>
+<U>
+<w>
+<7>
+<b>
+<g>
+</g>
+<U>
+</U>
+</b> <1>
+<U>
+</U>
+<TT>
+                   </TT>
+</1>
+hello
+<3>
+</3>
+</7> </w>
+</U></S>
+</PL>
+          </TT><S>
+a<PL>b</PL>c</S></B></I>d
+</PL>
+           <PL><S><w>
+<U>
+<7>
+<b>
+<g>
+</g>
+<U>
+</U>
+</b> <1>
+<U>
+</U>
+<TT>
+                   </TT>
+</1>
+hello
+<3>
+</3>
+</7> </U>
+</w><TT><I>
+          <PL><b>
+<2>
+</2>
+abc<0>de<c>f<1>hed</1>n</c>ef</0>lala
+</b><B><5>
+</5>
+<5>
+</5>
+<5>
+</5>
+<5>
+</5>
+<5>
+hello
+</5>
+<5>
+</5>
+<5>
+hello <U>
+</U>
+<U>
+</U>
+</5></B>
+"For example, the following pairs of documents are equivalent: <r>xxx <b>yyy </b>xxx <b>yyy </b></r><EM>xxx </EM>yyy <EM>zzz xxx </EM>yyy <EM>zzz </EM><B>xxx yyy xxx yyy </B><r>xxx yyy xxx yyy </r><EM>xxx <S>yyy </S>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I>The following pairs of documents are not equivalent: <TT><b><r>  xxx  </r>yyy  <r><PL></PL> xxx    </r>yyy </b><PL>Reason: multiple spaces are significant within TT.<B>xxx <I>yyy </I>zzz xxx </B><I>yyy </I><B>zzz </B>changing <S>foo bar </S>foo . into <S>foo bar </S>foo . "<B>coucouencore</B><I>yop<TT>ya</TT><r><B>bla bla </B>barfoo</r><B>foobla bla<TT>foo bar </TT></B></I></PL>truc</TT></PL>foo<PL> bar </PL> gee</I></TT>foo bar </S>foo <r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r><B>hihi haha <I>ho </I>huhu yahou </B><TT> hehe       hoho </TT>
+<5><B>
+hello </B></5><EM>
+toto
+</EM><U><3><U><U>o</U></U></3></U></PL>
+ 
+  <4>
+   <7>
+   </7> 
+  </4>
+  
+  
+   
+   
+ 
+</TT></B>
+<TT>
+  
+   <4>
+    <7>
+     <U>
+      
+      
+       
+       
+     </U>
+    </7>
+   </4>
+  
+ <PL>
+" "
+</PL>
+  
+   <4>
+    <7>
+     <U>
+      
+      
+       
+       <c>
+        <3>
+         
+         
+         <w>
+          
+          
+         </w>
+        </3>
+       </c>
+        
+     </U>
+    </7> 
+   </4>
+   
+   
+    
+    
+  
+ <PL><B>
+ab<TT>
+</TT>ab</B></PL>
+</TT>ab<TT>
+</TT>ba</I><TT>
+</TT></PL>ab</U>c</U>d</U></PL>
+<PL><U>a<U>b<U>cd</U></U></U><TT>
+ab
+ba
+</TT><S>ab<TT>
+</TT>ab<TT>
+<PL><B>ab cd<TT>
+</TT>abcd<TT>
+</TT>ab cd</B></PL>
+<PL><I>ab </I><B>cd</B><TT>
+</TT><I>ab </I><B>cd<TT>
+</TT><2>
+</2>
+<5>
+hello <U>
+<2>
+<PL>
+</PL>
+<k>
+<w> <g>
+<m> </m>
+</g>
+</w>
+</k>
+</2>
+</U>
+</5></B>
+" mundo "<r>a<g>b<b>c</b></g>d<g>e<b>f</b></g></r><TT>
+  test   with   spaces
+  <PL>
+something else
+</PL>
+and  again  spaces  and   such
+<PL>
+<TT>
+       test   with   spaces
+  </TT>
+something else
+</PL>
+      and  again  spaces  and   such
+</TT>
+</PL> 
+       
+        <w><3>
+         
+
+          <PL><B>
+<5>
+hello <U>
+<2>
+<PL>
+</PL>
+<k>
+</k> <g>
+<m> </m>
+</g>
+<k>
+</k>
+</2>
+</U>
+</5>
+</B></PL>
+
+         
+        </3></w>
+       
+      </TT> <U>
+</U> <U>
+<5>
+hello
+<U>
+<b>
+</b>hello
+<TT>
+       
+       
+      </TT>
+</U>
+<TT>
+      <U>
+      </U>  
+      
+      
+      <r>
+        
+         
+        
+       
+      </r>
+     </TT>
+<TT>
+    </TT>hello
+<1> hello
+<8>
+<5>
+</5>
+</8>
+</1>
+</5>
+</U></S><r>
+hola<g>mundo </g>feliz </r></PL>foo<PL> bar </PL> gee<PL><6>This is a test</6><b><B>Whatever</B></b>hi<m><0> </0> yx? y
+?z	<w>x	xz</w>y ? <k>zxyz x <r>? y?
+</r></k></m>whitespace simplification<r><I><B>bla bla </B>barfoo<B>bla bla </B>barfoo</I></r><B>xxxyyy</B>zzzzz <y>zzzz <g>zzzz </g>zzzz <g>zzzz </g>zzzz <g>zzzz </g>zzzz <g>zzzz </g>zzzz <g>z <m>? <r>zx<k>y	z
+y<m>yy ? </m>?	<b>xy </b></k>y	? </r>?<c>y x	</c>z
+</m></g>z?
+?<g>?	<m>?
+?
+</m>x y	<r>z </r>z? </g>z <c>z	xz z	<r>xx ?	x
+z <m>z
+<k>z <c>z
+<w>y <b>x	<r>?
+<m>? <c>y	y
+<g>z?	<y>x </y></g>zxz
+<w>y
+zy </w></c>x </m>? <g>y	</g>?<y>x </y></r>z y
+</b></w></c>x<y>y	y<c>? ?</c></y>y <g>z? </g></k></m>yx	</r>??
+<g>y
+<r>?y
+?
+</r>x </g></c>y	<w>y</w>yy
+y<m>z <g>y z</g>?
+<k>y	y <c>xz </c></k></m></y>y
+<w>??y <m>xzy	</m></w>?	<w>xy <m>z
+<k>z ?	<g>? <y>x
+</y></g>z <c>x </c></k>z	<c>x	<g>x <b>y <w>? </w></b></g>x ?
+</c>?
+<y>?
+</y></m>z <y>? <k>y
+<g>?<c>? </c></g></k></y>?
+<r>y	?x
+<c><I><3>hello
+</3> </I><m><U>
+</U>
+</m><5>
+</5>
+hello </c></r></w><3><U><U><U> hi </U></U></U></3> ___ ___<4>_4_ _4_<7>
+_7_ _7__7_<5>	_5_ <2> <8>_8__8__8_ _8_	_8_	<1>_1_</1>_8__8_	</8></2></5></7> <9>_9_<5>_5__5_</5> <6>
+_6_ <1>_1__1_<3> _3__3_<0>_0_<5>	_5_	_5__5__5_</5></0></3></1></6></9>_4__4__4_ _4_<7> <6> _6_
+</6>
+<0> </0>_7_ _7_</7></4><I><B><EM> hi there </EM>No emphasis <PL><0>aaa<1>bbb<2>ccc</2>ddd</1>eee</0>
+* Test 6 *<B>foobla bla foo bar </B>trucfoo bar gee<B>bla bla </B>barfoofoo bar fooaaabbbcccdddeee" <S>f</S>"<b><3>b
+cd </3><EM> e
+f </EM><2><r>g	hi</r>jkl</2></b><3><EM>	m
+no	</EM></3><g><6><4>	pqr	s</4>t	u v
+</6><r><B>wx	y za </B></r><6>
+b</6><k><0><EM>cd	ef </EM></0></k></g><U> g
+<7> h
+</7></U><b><S>	i</S></b>j kl	mn
+o <m>p
+qrs	</m><4>
+t	uvwx</4><U><k><I>y
+z a</I></k> bc d</U><w><6>e	f
+</6></w>	g
+h
+<m>i </m><TT><S>j klm
+		 	
+n	
+</S><r>o
+	
+
+</r></TT><9><k>p
+<c>q
+r
+</c></k><S>s	t u</S><6>v
+</6> wx
+yz ab</9><b><2><k> bcd	</k>ef	g</2><m><S>	hi
+</S></m><9>	jk
+<g>l</g></9><r> xxx </r>yyy </b><EM>xxx </EM>yyy <EM>zzz </EM><B>xxx yyy </B><r>xxx yyy xxx yyy </r><EM>xxx <S>yyy <PL><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I><B>123 </B><g><B>456 </B>789 </g><4>b	c	d
+ef	gh
+</4><5><r>
+i	j</r><6>k</6><k>l
+mn o	p
+q </k><U>r	st
+u</U>v w x
+y
+<m><0><U> z	a	b</U></0><g>c d e
+</g>f	g <g><4>h	</4><TT>	
+		i
+j</TT>
+k	lmn	opqr stuvw</g></m><k><6><U> </U></6></k>	<b><3>x yz
+ab</3></b><y><9><B>	c	</B></9></y></5>xxx
+x xxx
+xx xx
+x
+xxx
+xxxx
+xxxx
+xxx xxxxxx xxxxx xx xx <w>x
+x x xxxxx xxxxx x xxx xxxx x
+xxxxx
+xx
+x xxxxxxx xxxxxx x xxxx xx </w>xxxxx x<B>xx xx xxxx
+xx xx x x
+xx xx xx x x xxxxxxxx xx
+x xxxxx
+x
+x <I>x xx x<r>x x x xxxxx
+xxx xxxx</r>x xxxxxxxxx x x
+xxxx x
+xxxxxx
+xx x
+x
+xxxxxxx xxxxxxxxx x x xx xx x xx
+xxxx xxxxxxx x xxx
+xxxxxx xxxxxxx x
+xxxxx xx xx
+xx x
+xx </I>xxxxx
+xxxxxxxxx x
+xxxxx
+</B>xx xx x x x
+xxx xxxxxx
+x x xxxx
+xx x
+xx x
+x xx<7> xxx xxx xx</7> xxxxxxxxxxxx
+xxxxx
+x xx xxxxx<r>xxxx
+<g>x
+xxxxx
+xx xxxxxx <8>x xxxxxxx x xx<6>x
+xxxxxx </6>xx xx xxx
+xxx
+xx
+x xx xx xxxxx xx<4> x xx x
+x</4>x
+<m>xxxxxxx xx
+x x
+xxx xx xxxxxxx xx
+x
+xx x xxxx
+xx
+</m>xxx x
+xx
+x xxxxxxx</8>x x </g>x x x x x xxxxx
+x x x<g>xxx x <w>x </w>xx
+xxx xxxx
+x xx x x<6>x
+x x xx xx xx
+xx
+xx
+xx xxx xx xxxxx
+</6>xxxxxx xx
+x xxx xxx xxxx xx<U>xxxxx xxx xx xx
+xxxxxx x
+xxxx</U>xx x
+xx</g>xxx<U>xxx
+xxxx x xxxxxxx </U></r><6>bc d	</6><1> efg
+</1><U><B><8>
+h </8><PL><4><c><5><U> b	c
+de
+f	<w> ghi
+j</w>	k</U><w>	l	</w>mn o</5></c> p
+q <EM>rst</EM>uv <r>b	cde	fghijk
+l	m
+<6><m><3><g>
+n	o	pq	</g><I>r
+</I></3> b
+</m><7>	cdef g </7><c>hi jk
+</c><k><U><5><S><I>
+lm</I></S><TT> n		 	</TT></5>	o	p</U></k></6></r></4>****** ****** **	*	***
+*	*****</PL><I><m><6>*</6></m><PL><k><2>****
+*
+***
+*
+******	*****	*****
+</2>
+<TT>
+   </TT>
+</k><6><I>hello
+</I></6><g>
+<1>*
+*
+*	</1></g>*
+* *
+*** **
+******* ****
+**********	**********
+*********
+****<TT><EM>*</EM></TT>******* ***</PL><U><S><6>***	</6><PL><S>testing is fun</S>****</PL></S><U><TT><r><6>	
+</6></r><PL>
+**** *****<EM><g><2><S><I>*
+**
+</I></S></2></g>*	</EM></PL><k><7> ******</7></k></TT></U></U></I></B></U>
+** <TT><S><3>***	
+
+* *****************	***</3><PL><m><1>**</1></m>*** **	************** *<U>**</U>* *****
+*	<r>*	***	***	**
+**********</r>******	*
+**********<S>*
+</S>**<8><y> b
+</y>cdefghi<5><w><y>jk
+</y>l	</w><0>m	</0><S><c><y>
+no	<9> pq	</9>
+r
+s	</y><TT>tu v 	</TT></c>w
+<g>x <3><TT> 
+yz ab
+
+c 	d
+e </TT></3><k><7><U> f
+g	</U></7></k></g> hi	jk
+lm n	op	q
+</S><6><I>
+r </I></6>	<b><U><S><B>stuvw</B></S></U></b> </5></8>*
+*
+*********<c>*</c>**	***** ***	********
+*
+**
+*
+*** **** ***<1><U><TT>*</TT></U></1><w>bc<7><b>	d
+</b>e	fgh	<k><EM>ij </EM></k></7><g><S>	klmno
+pqr </S><5>s t
+uv
+</5><S>
+wx</S></g><y>y <r>z
+<8>
+abcde	f</8></r></y> g </w><m><9>h i
+jk</9></m><EM><g><5>lm
+no<1>
+p
+q </1>r
+s
+t
+uvwx yz
+</5></g><U><r><U> a
+b</U><y>c</y><3><EM>d	e</EM></3></r><PL> *********</PL><I><B><TT><y><1>*</1></y><PL>** * ****
+****** *****
+**
+**
+****** <k><8> bc
+d<7><EM><TT>  </TT>e
+f	g</EM></7>
+</8></k>***	**** *****************
+*	*</PL></TT><m><S>**	******<1>*</1>***</S></m></B></I>*******</U></EM><w>
+bc<EM>d
+e	f	g	</EM><6><b>	hi<8>j k</8></b><7>l
+mn	</7><k><U><I><U>o</U><c>pq
+r
+s
+</c>
+t<2>	u</2></I></U><c><0><m> v </m>w	</0></c></k><S><U><TT>
+ xy		z </TT><r><8>	</8></r></U><9> </9><0>
+</0>	ab	</S>cd e<k><S>f	g	</S></k></6><I><EM>hi	jk	l	</EM></I><5>mnop </5></w>*	* **	* * *********** *******	******
+** ******	*****<2><S>* ****</S></2>* *</PL><U><I><r>**	</r><PL><c>*</c>*****************	**	**
+**	*********** *<TT>****</TT><g><4>** ******** * *****
+*************** *******</4></g>*
+********	******</PL></I><U><m>*</m><PL>**
+*******	*
+<9><I>*****	</I></9>***</PL><r><3><B>******** *****</B></3></r></U></U></S></TT>**	****<c><TT>******	* ***** *</TT></c></PL><r><1><I>*****
+*****</I></1></r></S>
+Hello!
+</EM><S>FOO BAR BAZ </S>"For example, the following pairs of documents are equivalent: <r>xxx <b>yyy </b>xxx <b>yyy </b></r><EM>xxx </EM>yyy <EM>zzz xxx </EM>yyy <EM>zzz </EM><B>xxx yyy xxx yyy </B><r>xxx yyy xxx yyy </r><EM>xxx <S>yyy </S>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I>The following pairs of documents are not equivalent: <b><TT><r>  xxx  </r>yyy  <r><PL></PL> xxx    </r>yyy </TT></b>Reason: multiple spaces are significant within TT.<B>xxx <I>yyy </I>zzz xxx </B><I>yyy </I><B>zzz </B>changing <S>foo bar </S>foo . into <S>foo bar </S>foo . color nestingchanging <r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r>into <r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r>"kb
+redundancy elimination</PL>foofoo<PL>overlap inversion</PL>bla bla<TT>foo bar </TT><PL><TT>truc</TT></PL>bla bla<TT>foo bar </TT></B></I><TT>truc</TT>PL shortcut</PL>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee<U><B><PL>whitespace simplification<r><I><B>bla bla </B>barfoo<B>bla bla </B>barfoo</I></r><B>xxxyyyxxxyyy</B>EM elimination<S>foo bar </S>foo .<S>foo bar </S>foo .color nesting<r>aaa<g>bbb<b>ccc</b>ddd</g>eeeaaa<g>bbb<b>ccc</b>ddd</g>eee<b>test </b></r>one<r>hola<g>mundo </g></r><B>xxx yyyxxx yyy</B><1>aaa<2>bbb<3>ccc</3>ddd</2>eee</1><B><I>Test </I>no. 2</B>Hello.<r><I><S>foo </S>bar<B>bold
+</B></I></r><B>B B </B>a<EM>b<3>c<EM>d</EM>e</3>f</EM>g <S>foo bar </S>foo a <EM>b <3> c <EM>d </EM>e </3> f </EM>g
+a <EM>b <3> c </3> </EM><3> d </3><EM> <3> e </3> f </EM>g
+a <EM>b <k>c <EM>d </EM>e </k>f </EM>g
+a <EM>b <k>c <EM>d </EM>e </k>f </EM>g
+' <S>foo bar </S>foo .<b>test this<TT>test this</TT></b><B>foo </B>bar<r><B>foo </B>bar</r><9><B>foo </B>bar</9></PL><0>
+aaa
+
+bbb</0><PL>
+</PL><0>
+aaa
+
+bbb
+</0><PL><m>
+<8>x<S>J</S><B>?<g><U><U>qS<2>t</2>!bC<2>Y</2></U></U></g></B></8></m><TT> </TT> redundancy elimination<I><B>foofoo<PL>overlap inversion</PL>bla bla<TT>foo bar </TT><PL><TT>truc</TT></PL>bla bla<TT>foo bar <PL><TT>truc</TT>PL shortcut<I><TT><S>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee<B><PL>whitespace simplification<r><I><B>bla bla </B>barfoo<B>bla bla </B>barfoo</I></r><B>xxxyyyxxxyyy</B>EM elimination<S>foo bar </S>foo .<S>foo bar </S>foo .color nesting<r>aaa<g>bbb<b>ccc</b>ddd</g>eeeaaa<g>bbb<b>ccc</b>ddd</g>eee</r>a <EM>b <3> c <EM>d </EM>e </3> f </EM>g
+a <EM>b <3> c </3> </EM><3> d </3><EM> <3> e </3> f </EM>g
+a <EM>b <k>c <EM>d </EM>e </k>f </EM>g
+a <EM>b <k>c <EM>d </EM>e </k>f </EM>g
+x
+x <EM>xxx </EM>yyy <EM>zzz </EM>yyy <EM>zzz xxx </EM>zzz <EM><B>zzz<EM>a</EM></B>iiii<B><EM>a</EM>zzz</B></EM>Blah!
+Blah!
+Blah!
+<0>
+Blah!
+<m>Blah!
+Blah!
+Blah!
+Blah!
+Blah!
+Blah!
+</m></0>Blah!
+<6>Blah!
+</6>Blah!
+Blah!
+Blah!
+<TT><B>
+      Blah!
+Blah!
+</B>Blah!
+Blah!
+</TT>Blah!
+Blah!
+<r>Blah!
+<2> Blah!
+</2>Blah!
+</r>Blah!
+Blah!
+<8> <6>Blah!
+Blah!
+<c>Blah!
+Blah!
+</c></6><1> Blah!
+Blah!
+</1>
+Blah!
+Blah!
+<m>Blah!
+Blah!
+Blah!
+<c>Blah!
+<0>Blah!
+<b>Blah!
+Blah!
+Blah!
+</b>Blah!
+Blah!
+<S>Blah!
+</S>Blah!
+Blah!
+Blah!
+Blah!
+Blah!
+Blah!
+</0><B><7><3><EM>
+Blah!
+</EM>Blah!
+</3>Blah!
+</7>Blah!
+<g><9>Blah!
+Blah!
+</9>Blah!
+<TT><EM>   Blah!
+ Blah!
+ Blah!
+Blah!
+Blah!
+   <PL> Blah!
+Blah!
+Blah!
+Blah!
+Blah!
+Blah!
+</PL>Blah!
+ Blah!
+Blah!
+Blah!
+Blah!
+<6>   
+</6>Blah!
+Blah!
+
+<m>Blah!
+</m><2>Blah!
+Blah!
+Blah!
+Blah!
+   <I><1>Blah!
+     </1>Blah!
+</I>Blah!
+</2>Blah!
+<w>Blah!
+    <3>Blah!
+</3>  Blah!
+Blah!
+Blah!
+
+<0>Blah!
+</0></w></EM></TT></g></B></c></m></8>
+EOF
+x</PL><0>
+aaa
+<PL>
+</PL>
+bbb
+</0><PL>
+</PL><0>
+aaa
+<PL>
+</PL>
+bbb
+</0></B><PL><b><r><0>
+</0>
+aaa<g>bbb</g></r>ccc<r>ddd<g>eee</g></r>fff<0><B><1>abc</1>de<c>f<1><S>hed</S></1>n</c>ef</B></0></b> -<r>aaa<b>bbb</b>ccc<b>ddd</b>eeeaaa<b>bbb<g>ccc</g></b>ddd<b>eee</b>aaa<g>bbb<b>ccc<r>ddd</r>eee</b>fff</g></r><B><b>This <r>is</r><2> a </2></b><2><S>SML</S></2> File <I>foobla bla<TT>foo bar </TT></I></B><TT>truc</TT></PL>foo<PL> bar </PL> gee</S></TT><r><B>bla bla </B>barfoo </r></I><S>foo bar </S>foo .<r>aaa<g>bbb<b>ccc</b>ddd</g>eeeK2h*}k"%Ksu2FRGCswQld&:!DSoS_7S</r></PL>foo<PL> bar <S>gee </S></PL>gnu</TT><TT><r>foo</r><PL> bar <S>gee </S></PL>gnu</TT></B></I><r>K2h*}k"%Ksu2FRGCswQld&:!DSoS_7S<3>C#cy#q</3>A-f[</r></PL><0>
+aaa
+
+bbb
+
+ccc
+
+ddd
+</0></B></U><PL><r>
+<9>K2h*}k"%Ksu2FRGCswQld&:!DSoS_7S<3>C#cy#q</3>A-f[</9></r><U><U><U>a<PL>
+aaa
+bbb
+<0>
+aaa
+bbb
+</0>
+aaa<g><I><B>xxx</B><r>yyy</r></I><b>uuu</b>zzz</g><I><B>blahblah</B>This <b><U>PDF</U></b>, <b><U>Postcript</U></b> and <b><U>plain text</U></b>.This<U><TT>PDF<PL><I>, </I></PL>Postcript<PL><I> and </I></PL>plain </TT></U><r><B>bla bla </B>barfoo</r></I>x<B><7>ICFP 2001 Programming ContestChallenge Taskversion 2</7><7>ICFP 2001 Programming ContestChallenge Taskversion 2</7></B>abc<I>XXX<b>YYY</b></I><r>xxx yyyzzz <b>aaa </b></r><B><b>This <r>is</r><2> a </2></b><2><S>SML</S></2> File </B><TT>
+</TT><U>C<U>D <TT>  </TT></U></U> </PL>AB<PL><TT>
+</TT><0>a</0><1>bc</1><b><1>cd<0>e</0></1> def<TT>
+</TT>abc<0>cde</0> def</b><r><I><B>bla bla </B>barfoo</I></r><U>aaabbb</U>aaa<U>bbb<g><I><U><B>xxx</B></U><r>yyy</r></I><b><U>uuu</U></b>zzz</g></U><U><9><r>E0</r>K+J*Ge</9></U></PL><r> aaa </r><PL>
+foo <EM><b>bar
+</b>noodle </EM>'
+'<0> <1> <2> </2></1></0>
+<U>
+foo
+<r>more
+<3>large</3>
+</r>
+</U><I><B> toto<S><U> <PL><S> titi<r><TT>  <PL><b>a </b>b<9><S>K2h*}k"%Ksu2FRGCswQld&:!DSoS_7S<3>C#cy#q</3>A-f[</S></9></PL>r
+`bW+VD/zocx3j</TT></r><I>k*/<PL>aa <EM>bb <S>cc </S></EM><b>b </b><B>a </B>bEBCC <U>BC</U>BED<8><B>CDDDDDDD</B>EC<w><U>B</U><b>DEE</b>BC CCECE<b>D</b>C BEBDC</w>CDC</8>DDDD ED<y><B>DDBEBB <TT>B</TT>CBCBB <w>E</w></B>BDDEB<b>BB<3>DC</3><k><U>C</U><r>CB </r>EDD </k>C</b>B CE <9> DD<r>D</r></9> BDB <6>ECECE </6>D<5><w> DC<7>BCE</7></w><1><g><7><EM>CCDCBCB<U>EB<8>DB<0>E </0></8>D</U> </EM></7>B CCB B <U>BE</U></g> EDBBDCE<4>BCCEB B </4><b>B<6>D</6><U><U>E<9>BCBC</9></U></U></b></1></5></y>EBCC <U>BC</U>BED<8><B>CDDDDDDD</B>EC<w><U>B</U><b>DEE</b>BC CCECE<b>D</b>C BEBDC</w>CDC</8>DDDD ED<y><B>DDBEBB <TT>B</TT>CBCBB <w>E</w></B>BDDEB<b>BB<3>DC</3><k><U>C</U><r>CB </r>EDD </k>C</b>B CE <9>DD<r>D</r></9> BDB <6>ECECE </6>D<5><w> DC<7>BCE</7></w><1><g><7><EM>CCDCBCB<U>EB<8>DB<0>E </0></8>D</U> </EM></7>B CCB B <U>BE</U></g> EDBBDCE<4>BCCEB B </4><b>B<6>D</6><U><U>E<9>BCBC</9></U></U><6>jhF\<c>$3 vK8Xt.i1 JR^v3XGBFD\K<4>,S/f:g}o7t'elXnpK+ j;$;</4><S> )|n;fRjnYh?<2>Mq(W6yYM<7>6jW&^;k#My]k6</7>-GiONo*IB?Dx,{`oJ;GbHpPC4?cIo.]jF0</2>{- )9xB{4";)a:x=a4.;kr$*jt@F</S>^L=?sy]J</c></6></b></1></5></y><0>C/DAO<c>+*cRW@3W</c><S><c><2>y/]*I0"V-(LC[b#5ov-" g0u$IT</2></c>Bq+y:'J9:x "lFh1gRT]sJ2T+*4`"<r>kfF]]io </r>E e.Iki<w>llPtl</w>;33+$^rT*D 8nBH/*`}<I><U><1>)bkcb*/)5LHux#i@GbU</1>Qj}a'"If}:r^MKuz=|i</U><B>K,Q,yT<y>5 cZK.7PysTQ%t3`jB36g6!4B0=@ap</y>|Zk)9h%5p02j|</B><y><9>fFyY<U>eca %4</U>4s`dzJZO48cQ\OO?N</9><k>8tB4SK</k></y>yiCp</I><9>"s|'f-G(QiC qO<I>#}d)3Sr[cMxs5</I><3>,{Tlj c</3>;FZgbH8B=bcm|e ]PICxegU <w>M</w>vZ{)a6</9>]I{:h^6^;a|ufMB0GUN`*@J </S><2># Bv+AfCRx3+[Qg;TnuUs<g>-KV,]aKld(9m </g>@mUq[#L?X</2>NgS{</0><3><c><k><m>![g;g8yRS?w`X:L$K.n wF2%k(d </m><EM>rt{N0`b-c(d </EM>eH</k><EM>7aw2HFwZewe</EM></c>r6oYM5cKP;hs-{27F3^{T\Y8"jj</3>" <U><b><r> </r> </b> </U> "<2>q?Dw/XY<3>rQe\|_8*5orksE<7>A'v	d6<4>*9TVIG3eJ_(zYh#</4></7>&5:iA]8_H|K"PLR{yR[SaFqBeP<6><S><4>Tx9]5f' n+#gBe</4>}yP=Mqqox!X</S></6>ofE)p<4>F["rN@whV97K[}_.[` 0B;"A+<b><2><5><8>v# </8>G$Xv<1><m>Z</m>Yd!u	e1)i,/k<EM>\ EO84Nw	P-1d=jP{Ee.<0>b']*"?6ML!<k><I>$k&=k)</I></k>2@U{rtO7K`IwI'{;6QQhH</0></EM></1>/^Bj</5>#n?p5w];q`dq!s</2><r>]Gtv	</r>PE+dJ4)K{$dj('%86asZA$ry4GXeh(M hN Py"`pgzTQ!T]E.</b>17o2:I</4></3>cc$mwflBtYYr0q/Zfyl2 <0>9E@2o	;_[PFD</0></2>aa<I>test </I>test<U>1Y6^J`<y>0`|.%@9,/EsPwP	</y><7>B$"?mR6v+,6QY|Koy^</7></U><8>Ha`f,gsT*<4>eBo=2x?'s</4>"m&<w>U5Te/vFFXcH,touPev8?wC</w>eH`M\xusPY%2{7QBbjh</8><k>|N, x"wbL@g<1>36\)Ld{QDQT jjG<g>o{%/hY wZus	Hz=</g><2><I><5>T(\.bNZM+t{1kF:m2</5>?bbV5POS&=sJl*niT=j</I></2></1>:q&ZSi:(iZy5</k><I><0>z	S|jz@/</0>LsC:l[P902p%# </I><B>steuse some </B>efe <I>fef</I>real words<6> wqerw </6><B> please fewr</B>rr <U> xxx yyy <b> xxx yyy xxx<r> yyy </r></b><U><U>abcdef ggg</U> <U>iiii<TT> hhhh h </TT></U></U></U><I><B>bla bla<TT>foo bar </TT></B></I><TT>truc</TT></PL>
+<TT>foo<PL> bar </PL> gee<PL><r><I><B>
+bla bla </B>barfoo
+</I></r><S>foo bar </S>foo <r>aaa<g>bbb<b>ccc</b>ddd</g>eee
+</r>This is
+some whitespace.h rAA<TT>
+     		AA 	
+
+<PL><g>I\PqdaTZ	IMBPoOA_HdMrhb	</g><0>Pp\VnF</0><y><EM> mYm</EM></y>mIRL^DApT	K[cYoQUTV\ _KGOKX\ V </PL>
+ 
+ <7><EM>YbifXt<PL></PL>
+	<5>DpFITJg
+   
+
+Q	nsZr^oaqt</5>V
+ igQbnWcfN
+	</EM></7>	  <1></1>	<PL>	LDBOCJcP<c><g><EM><6><m><S><I><7> </7>	<TT>	 <5>	</5>	</TT><5>x</5></I></S></m><U><U>x</U><w><8><TT><S><I>x</I></S></TT></8></w></U></6> </EM><2><TT>
+ <5>	
+</5><6>
+	</6>	 <8>		</8> 			 
+ 	<1></1>				J_baI\  	</TT></2></g>WBFnIX	W]A<k><8>	</8>R<6></6>	skJX
+]`f
+<EM>onQIXNeaOgKQ	</EM>Rrg U`[MUmd	eYJG\b<7><I>
+<5>
+fH</5><m><0>NpO`b <c><9>LUYp_j`JC	<0><U> </U></0><k><6>
+</6>pUn	</k>^`RsmfdP
+IRNP]QtZQOXLGAr<2>
+</2>	LrrkSRblDaDa\d\NI</9>	</c><1>	KEbrgUJqZ <U>	</U>	</1>	H]S	</0></m> tUidJVFcN
+<m><0>
+</0>\ighBmj
+</m><g><5><9> VKT]mgi	</9><U><8><4>
+</4>
+</8>tQfVJ
+<U>	<c>	</c> TXdAFqNlFDo<B>s<r>
+</r>\U_ap</B><c> </c></U></U></5></g></I></7></k></c>M{*!P9<5><k>I+#G</k><8>mbMk<m>K)x1]tpXw`Y</m></8><w><7>R&KWl
+</7></w></5><b>;XgNUY)AT6</b>@7_ <5><B>zLUynhg</B><1>uo~mgm</1></5>l*!T5[-.UuojlFRX<3><U> </U><y>y</y></3><k><3>$S]ks%/;`#<7>"4^v[Y-@\rK[t</7></3><U>wH</U>p.L_;8gBKu<c>_,juQweKr{</c><m><3><B>)Sz</B>yX!Xn;:</3></m><6><S><y><7><B>
+<4>.i.I)ss_</4>BB#xjf/!-p(\</B><g><6><m>4lpW
+</m>mRxK<m>4g2</m>G3?o</6></g><B>3zK'WJc@n|6%7:bQu=;vG[</B><b><U>g9@%;]gO[</U></b><6>j5CDNH\</6>A8)'</7>	<1><B> <4>%%;kC}ZGz</4><b>P}prQz6gXAYxxdf</b><4><w>vFY+%</w>ku9VVvnay{</4></B></1></y>D"Z<w>]iK^FIwbA/7):	<c><3>s(c,VGc	</3>e@(X%<8> </8>HcZY]Oz:</c></w><I>hM[</I>:7-<w><I>!h!~HdHZ</I></w></S></6></k><1><B>4h^"$g[(}</B><k><8><EM>3/{m[%</EM></8></k></1><b>y7</b>WL5MA2mUG<I>DuF`RQt^OsO`</I><0><U>~6"dDJr</U></0><I><B>foobla bla<TT>foo bar </TT></B></I></PL>truc</TT></PL>foo</TT>
+<0><r>aaa</r><B>bla bla</B><TT><B>foo bar </B>truc</TT><g>bbb </g></0><TT><PL>
+bar </PL> gee<PL><r><I><B>bla bla </B>barfoo </I></r><S>foo bar</S></PL> gee<PL> foo .<r>aaa<g>bbb<b>ccc</b>ddd</g>eee
+</r><I><B>foo
+<1><r><PL>aaa</PL></r>bla bla<TT>foo bar </TT><PL><TT>truc</TT><g>bbb </g></PL></1>
+bla bla<TT>foo bar </TT></B></I><TT>truc</TT></PL>foo<PL> bar </PL> gee<PL><r><I><B>bla bla </B>barfoo </I></r><S>foo bar </S>foo .<r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r><EM>bar</EM></PL> gee<PL> <0><r>aaa</r><I><B>bla bla<TT>foo bar </TT></B></I><TT>truc</TT><g>bbb </g></0><b>foo </b>bar <r>xxx </r><B>aaa</B><9>ggg</9><B>
+aaa</B>ggg
+<B>aaa</B><EM>ooo<EM><9>ggg</9>
+"blaat"<r>a b </r><S>foo bar </S>foo <r>a <U> b</U>a<U> b</U></r>foo </EM><b>bar
+</b><TT> foo   </TT> noodle </EM><r>a <EM>b </EM></r></PL> </TT></I></S> <TT> </TT> <TT> </TT> <TT> </TT> a <r>xxx <b>yyy </b>xxx <b>yyy </b></r><EM>xxx <EM>yyy </EM>zzz xxx <EM>yyy </EM>zzz
+<EM><B>xxx yyy xxx yyy </B><r>xxx yyy xxx yyy </r></EM>xxx <S>yyy </S>xxx <S>yyy
+<PL><I>xxx </I>yyy <I>zzz xxx </I>yyy <I>zzz </I>Are not equiv:
+<b><TT><r>  xxx  </r>yyy   <r>xxx    </r>yyy </TT></b>Reason: multiple spaces are significant
+within TT. <B>xxx <I>yyy </I>zzz xxx </B><I>yyy </I><B>zzz </B>Reason: yyy is both in italics
+and in bold in the first document but only in italics in the second one. <U> xxx <U> yyy
+</U></U> <U> xxx yyy </U> Reason: yyy is underlined twice in the first document but only once
+in the second one. <U> <r>xxx yyy <PL> </PL> xxx yyy </r></U> a <b>b <U> c <g> d <m> e </m> f </g> g </U> h </b>i <b><B><r>a s df <U> sf</U>dsd fsfs d </r>fs</B></b><I><S>text0</S>text1 </I><S><B><I>text2 </I>text3</B><I>text4</I></S><B><S>text5</S>test </B></PL>test </S>test</EM><B>test </B></PL>test<PL><EM><B> test<r><I><EM>A</EM></I><U>B</U></r></B></EM><b><U><TT><3><U><I><g><1><S>C<PL><S>D</S></PL></S></1></g><U><B>E</B></U></I></U></3>F</TT></U></b></PL></U><g><1>G</1></g><PL>testSo. <U> underline<U> nochmehr <g>hehe</g> <U> dreimal plain viermalnixplain dreimal </U>zweimal</U>einmal</U> keinmal<S>test
+</S>[inNqQbAYM	<I>tnmYe ^	<EM><S>N
+</S><0> </0> Voek</EM><8>
+</8></I><U>
+n </U>	GH[`cN	YpWjZdPH
+mOYsNEAYg<I>B`HcFZe\teiSFfqlmmBcpCTsi\p<4>BlocLg[
+</4></I><y> BMqaQtKJX </y><1>p[	</1>
+<9>UdF</9>aJIrQXY	^JkAbq	LHPJl^<k>CUOK_CZMJages[	meEZBP<y>Rhokf</y></k>j_IK_NC	jVrMKmIs	<7>	ijhE
+</7><y><0>
+LqmL	U]f<8>
+krRCYik </8>	</0><g><U><9><TT><S><I>q</I></S></TT></9><r>a</r> </U>xyz </g></y><TT>aaa</TT><w><2><TT>bbb</TT>ccc</2></w><g><U> </U></g></PL>aaa<r><3><TT>bbb<PL><TT>ccc</TT></PL></TT></3></r></S><b>bla bla </b></B><r>barfoo
+</r><B>Foo <PL>and
+</PL>Bar
+</B></I></PL>Underline</U> test</U> yeh</U>
+End
+<EM>This document was translated from L<c>A</c>T<g>E</g>X by
+<b><U>H<c><2>E</2><b>V</b><2>E</2></c>A</U></b>.
+</EM><I>This document is also available as <b><U>PDF</U></b>, <b><U>Postcript</U></b> and <b><U>plain text</U></b>.
+<B>1 2<TT>3 4 </TT><PL><TT>5</TT><b>
+a<c>b</c>c
+</b></PL>1 <U>2</U><TT>3 4 </TT></B></I><TT>5</TT><EM>
+This whole line should stay.<S>This EM should disappearEM should be gone <B>bold here</B>No tags here...</S>Wild stuff... </EM>What a great test...<EM>more text here...Stuff here<S>WhateverThis EM Gone</S>More stuff</EM><r>RED<b>BLUE<y>YELLOW<g>GREEN</g></y>BLUE</b>REDRED</r>!<1></1>"#$%&'(	)*+,-./0<I><4>12<8>3</8></4></I><5> </5> 456789:;=?@ABCDEFGHIJKLMNO<g><7><r><8><9>PQRST<4>UVWXY Z[\]</4><b>	^_`</b>abcdefghi	jklmno</9><y><U> </U>pqrst</y></8>uvwxy<S><6><U><0><3>z{|</3><m>}~</m></0>!</U></6><5>"#$%&'</5></S> <6><I>()*+</I>,-./0</6><4><U><EM> 12345<9>	</9></EM></U></4></r><5>6789:<y>;=?@A<k><6><S>BCDEFGH</S></6></k></y>IJKL</5><I> MNO<B><m>PQRSTU	</m>VWXYZ</B>[\]^_`</I></7></g><TT>  </TT> a <B>bold <I>italics bold italics <PL>" <r>red <g><I>green </I><b>blue </b></g>red </r>""<TT>       fdfdk  <r>red  <B>boldred  </B>redagain  </r>all typewritered </TT> "" <r>red<b>blue<g>green<y>yellow</y>green</g>blue
+</b></r>""<r>red<b>blue<g>green<r>red</r>green</g>blue</b>red
+</r>"a <TT>    </TT> a<U> </U> ba <U> </U> b<g><U><r>a</r> x</U>yz<U><r>a</r> x</U>yz</g>"<B>bold </B>""</PL>foo
+</I></B>""</PL>foo<PL> bar </PL> gee<PL> ""<r><I><B>bla bla </B>barfoo
+</I></r>"<g><r><B>foo</B></r>bar <b><9><EM>K</EM></9><w><I><m>|J</m><8> <3>a</3></8></I></w> <c><U><S><B><5><w><k> <1> </1></k><7><U> </U></7><c> <0>U</0></c><y><4>
+</4>
+</y>
+</w>
+<4>
+<6>
+</6></4></5>
+</B></S></U></c>
+<9> <8><TT><I>hG</I><S><0><r><U><c>  </c><2>h</2></U></r><1>zl</1></0>XZ    </S><r>`</r>X</TT></8> </9></b></g><0>
+<3>
+</3>
+</0>
+" <b>blue blue <EM><y>yellow</y>blue<m>magenta</m></EM><r>red
+</r></b>"" <EM><I><k>k colour </k><EM>italic </EM>em it </I><EM>""<B>rob</B>"" </EM>i am em </EM>i am not <EM>i am </EM>""<g>green<b>blue</b><B><b>bluebold</b>greenbold
+</B></g>""<g>green <b>blue </b></g>""<g>green<b><I>blueitialic</I><S>bluestrong not em </S></b>green
+</g>"<B><7>ICFP 2001 Programming Contest Challenge Task version 2</7> </B><5>Damien Doligez, Luc Maranget, Pierre Weis</5>"<I><B>bla bla<TT>foo bar </TT><PL><TT>truc</TT> "" <S>foo bar </S>foo .
+""<U>Hals und <U>Bein brechen. </U><r> </r></U>
+""<B>owned</B></PL>besessen</B>possede
+</I>""<B>owned<I>besessen<PL><I>possese </I>""<B>owned</B><r><B>besessen</B>possede </r>"<g><9><b> <8><TT><I>hG</I><S><0><r><U><c>  </c><2>h</2></U></r><1>zl</1></0>XZ    </S><r>`</r>X</TT></8> </b><0><B><EM>
+<9>K</9></EM> |J<w><8> </8>a </w><U><S><5><9> </9><k> <1> </1></k><7><U> </U></7> </5><c>U</c></S></U>
+<3>
+</3>
+</B></0></9></g>
+"Test for underline:
+<U>u1<U>u2<U>u3<PL>
+</PL>illegalu4 shuld be u3<PL>
+1<U><U>1<U>2</U></U>3<U>4<U>5</U></U>6 7</U>8</PL>910<PL>11
+"<g><I>xx<r>bla bla barfoo</r>yy</I></g><0>
+<3>|J<w><8> <3>a<g><0>
+</0>|J</g></3> </8>a</w></3>
+</0>"<r>foo<I>bar<g>baz
+</g></I></r>"<g><0>
+<3>|J<w><8> </8>a</w></3>
+</0><r> i </r><b>l </b></g><B>test </B><EM><S>test </S>test<B><EM>test </EM><U><S><I>test</I></S></U> test</B></EM><r>test test</r><EM>test <S>test<TT><I>test default case<PL> bar </PL> gee<PL></PL>test already shortened with PL <PL> bar </PL> gee<PL></PL>test bloated PL bar gee<PL></PL>test with heavier left</I><PL> bar </PL> gee</TT><TT>test with heavier right<I><PL> bar </PL> gee<PL></PL>test with heavier middle<PL><I> bar </I></PL> gee</I></TT></S></EM><B> toto <I>titi </I>bla</B>tata<B>foobar goo<I><S>good</S>morning vietnaaam </I><r>foo</r></B><g>bar</g>" <r>i <b>l </b></r>""<B>xx</B><U><I>ers<B>sfdd<U>fd</U></B> <PL>"<B>xx</B></PL>ers<B>sfdd<U>fd</U></B> </I></U><r>
+test test<TT>test test</TT></r>" <b><U> </U></b>" <1> xxx <2> yyy </2></1></PL>foobar<PL><r><c>asdasdas</c>asdasd</r><6> aaa </6><c><2>W </2></c> </PL>foobar</U></U></U><6> aaa </6><c><2>W </2></c><EM>abcd <TT>a<b><U> ef <PL>xyz </PL></U></b>ghi </TT></EM>"</PL>bla bla<TT>foo bar </TT></I></B><TT>truc</TT> </PL>foo<PL> bar </PL> gee</S></TT><r><B> bla bla </B>barfoo </r></I><TT>	        
+
+	</TT> "<2>Caml is a <k>strongly<8>-<9>typed f<y>u<TT>nc</TT><B>t</B><w>iona<0><U>l</U> </0>pr<b>ogramming <I>langua<7>g</7><r>e</r></I><5> from th<4>e ML f</4></5></b></w></y><3>a<S>mily. </S><6>Objective Ca<r>m<b><B>l</B><2> and C<U>aml Lig</U><g>ht</g></2></b></r></6></3> </9></8></k><g><4>ar</4></g><TT>e two 
+<y>open so<4>urce</4><PL><I> im</I><c>pl</c></PL><w>ement<I>ations</I><8> of Cam<6>l </6>developed <c>at <B><0><S><PL>pr</PL>o</S></0><w>jet 
+Cr</w></B><EM><2>ista</2>l</EM><m>.
+</m></c></8></w></y></TT></2>jiggyfoo
+<r>jiggy</r>jiggy <g>barfoo</g>jiggybar	<y><2>	jiggy
+bar<4>stuffbarfoo
+</4></2>foobarbar</y>bar<U>
+foo<S><b>foo</b>jiggy
+bar
+<B>foo
+</B><r><4>barfoo<g> bar</g></4></r></S>foo
+bar</U>bar bar <B>bla bla<I>foo<PL><EM>abcd <TT>a<b><U> ef <PL>xyz <I><B>a </B></I></PL></U></b>ghi </TT></EM>~</PL>bla bla<TT>foo bar </TT><PL><TT>truc<PL>|barbarjiggyjiggyjiggyfoo<9><B>bar </B>foostuff<c><8>bar<2>	foostuff</2></8></c></9>stuff<r><0>jiggy	<8>stuff</8>	foo jiggy<TT>foo</TT>
+</0><m>	foo </m><g>bar</g></r>stuff</PL>			<y><7>foo</7></y><r><4>    jiggybar</4></r>		stufffoo stuff</TT></PL>bla bla<TT>foo bar</TT></I></B><TT>truc</TT>
+" <S>aaa bbb </S>ccc . <S>ddd eee </S>fff ."<I>a <B>b<PL>This is plain<B>This is bold.<I>This is bold and italicized.This is also bold & italicsThis too is b and i</I>This is just bold.</B>This is plain :(This is plain<U>This is bold.<U>This is bold and italicized.<U>This is also bold & italicsThis is also bold & italicsThis is also bold & italics</U>This too is b and i</U>This is just bold.</U>This is plain :(<2>XXX</2><g>
+YYY
+<0> <3>|J<w><8> </8>a</w></3> </0></g></PL>hi there <PL>yo </PL>wierd <PL>cool </PL>x<PL><r>a<B>a</B>aaa<B>a</B>a</r>a b<1>hoge<y>hoge</y>hoge<9>hoge<w>hoge</w>hoge<4>hoge</4>hoge<3>hoge</3>hoge</9>hoge<S>hoge</S>hogehoge <g>hoge<b>hoge</b>hoge</g>hoge<b>hoge</b>hogehoge<c>hoge<8>hoge</8>hogehogehoge<EM>hoge</EM>hoge<6>hoge</6> hoge</c>hoge<c>hoge</c></1><S>foo bar </S>foo <0>a<B>a</B>aaa<B>a</B>a</0> test <EM>i am a good doc <S>I'm even better no change yo </S>dude </EM>em toggle <EM>there <S>foobar<3>stuffjiggy
+foo<2><r>bar</r><8>stuffstuff <I>foo</I></8><6></6></2>bar</3></S></EM><7>bar</7>jiggyfoo<m><5>	stuffbarstuffbar</5><y>
+stuffstuff</y></m>stuff<r><5><B><m><9> stuffbar</9></m>	foobar </B></5></r><S> foo bar baz <b>gleep </b></S>"S <U> underline<U> nochmehr <7>hehe</7> <U> dreimal plain viermalnixplain dreimal <g> </g></U>zweimal</U>e</U> "<r>red<b>blueplain<g>greenstill plain</g></b></r>foobazbar	foofoo<S><I>foo</I></S><U>bazbarbar<S>foobarbar	baz<U>foo</U>bazfoo	barbazfoofoofoobaz<TT>bazfoo</TT>barfoo	baz<I>foo	</I>baz<B>foobarbar<U><U>barfoobarbarbazfoobar	bazbar</U>foofoo<PL>foo</PL>foo</U></B></S></U><r> xxx <b>yyy </b></r></PL>bla bla<TT>foo bar </TT><PL><TT>truc<PL><I><S><TT>foo<PL> bar </PL> gee</TT></S><r><B>bla bla </B>barfoo</r></I><S>foo bar </S>foo <r>aaa<g>bbb<b>ccc</b>ddd</g>eee<w><0> <3><g>|J</g><8> </8>a</3> </0></w></r>bazfoobarfoobarbazbazbaz	barfoobarbaz barbaz<B>bazfoobazfoobar</B><r>red</r><b>blueplain<c>cyan<U>underlined<g>green<PL>still plain</PL></g></U></c></b><EM>bar	</EM>bar foobarbarbarfoo<EM>foo</EM>foo<U>foo</U></PL><S>barbaz		
+<B>bar
+
+ </B><U>bar
+</U>baz
+bazbaz	 
+bazbazfoobazbar	
+ 	 
+baz 	barbaz
+barfoo<I>barbar
+foo
+bar	
+
+foofoofoofoobaz
+<PL>"	blop<2>squeak</2>	""<1>foobar
+<I>squeak</I></1>"<r><U> xxx <b> </b> yyy </U></r><I><B><EM><U>1<PL>a</PL>2</U><PL><U>abcd</U><I><B>foobla bla<TT>foo bar </TT></B></I><TT>truc</TT><I><S><TT>foo<PL> bar </PL> gee</TT>foo </S>bar gee<TT><S>foo<PL> bar<U>blah</U> </PL> gee</S></TT><r><B>bla bla </B>barfoo</r></I><S>foo bar </S>foo <r>aaa<g>bbb<b>ccc</b>ddd</g>eeeaaa<g>bbb<b>c<r>c</r>c</b>ddd</g>eeeaaa<g>bbb<b>c<r>c</r>c</b>ddd</g>eee</r><U>a<U>b<U>cdefg</U>h</U>i</U><r><TT><b>0</b>1<g>2</g>3</TT><TT>1<g>2</g>3</TT><TT><b>0</b>1<g>2</g>3</TT>1<g>2</g>3<g>4</g>5</r><U>aaa<7> bbb <6> ccc <4>ddd <TT> eee   <EM>fff <w>  ggg<g> hhh<U>  iii   jjj <m>kkk lll   mmm <2>nnn</2> ooo  ppp  qqq</m>rrr   sss </U>ttt  </g>  uuu  </w>  vvv </EM>www </TT> xxx</4> yyy </6> zzz </7>AAA </U>BBBbazbazbaz <EM>foo </EM><TT>bar
+
+<EM><I><PL> </PL>baz
+<EM>bazbazfoofoo		<U>baz bazfoofoo	barfoo
+foobarbaz 	baz
+
+</U></EM>	bar<PL> bar <S>foobar barfoo foo <U>bar bazbaz<TT> <U>bazbaz</U>bazbar	foobar<PL> "<EM><2><7>barbar</7></2>foo</EM>"	<y>stufffoo</y>"<y><I><m>blub</m>bas</I></y>""blop<EM>blub<EM>hmmmbar<0>
+</0>""foo<U>
+moo<9>foobar</9></U>""blop<8><S>	<3>bar</3></S></8>""<8>	</8>""
+<y><6>moo <b><9>blopblat</9></b></6></y>"" moo<9> </9>"<I>a <B>b </B></I>"<9>fooblop</9>
+""	<b><EM>bar</EM>blop</b>""	squeak
+<b><B>blop</B></b>""blub
+splatfoobar<4></4>blub	squeak""	<2>blub<EM>foobar</EM>mooblub</2>"" <r>foo</r><6></6>""squeak<4>	foobarfoo</4>""<6>hmmm	blub
+</6> ""mooblub<1>moohmmm	</1>""<3><B> hmmm</B>hmmm</3>foobarbar"" splat	<1>blopbas</1>""
+blat <TT>blubfoo</TT>""blub
+splat<m>blatblubhmmm	</m>""splat hmmm</EM>blop</EM></PL>
+
+
+
+
+
+</TT></U></S>""bas	squeak
+""hmmm<k><3><S>	cow</S></3></k>""
+<r><1>	<0>foobar</0></1></r>"" blopsqueak
+<g><6> moo</6></g>""<S>bar
+<8>blopsplat</8></S><2></2>"abc<2>def<3>ghi</3><TT><3>jkl</3>mno</TT>pqr</2>stu
+This test case tests EM and S
+abc<EM>def<S>ghi</S>jkl</EM>mno
+abc<EM>def<S>ghi<PL>jkl
+def</PL>ghi</S>jkl</EM>mno
+def<S>ghi</S>jkl
+This test case tests U
+abc<U>def<U>ghi<U>jklnmopqrstuvwx</U>yz</U>abc</U>def
+abc<EM>def</EM>mno
+abc<EM>def</EM>jkl
+"PL Shortcut:
+<B><S><I>foo<PL>bar</PL>foo
+</I></S>1 2<I>3 4 <U>5</U>6<EM><PL>7<U><B>8 9</B></U>10
+"</PL>abc<PL>def</PL>ghi<PL>jkl
+</PL>abc<PL>def</PL>ghi<PL>jkl
+</PL>abc<PL>def</PL>ghi<PL>jkl
+</PL>abc<PL>def</PL>ghi<PL>jkl
+</PL>abc<PL>def</PL>ghi<PL>jkl
+</PL>abc<PL>def</PL>ghi</EM>1</I>2</B>jkl
+jiggystuff"Whitespace compression blah
+bpoo
+bla
+sdf
+foo
+<TT>
+        blah blah
+        
+        blah
+        </TT>
+emd
+"<c>barbarstuff foo</c>"EM Elimination
+<EM><S>foobarblah</S>emphasised<S>blahstrongpoo
+</S>blah
+</EM>blah
+<S>foo
+foo
+foo
+</S>"<EM>MMM<S>SSS</S>MMM</EM>.<B>asdf</B>asdf "foo"
+<r><I>barfoo<B>bla bla </B></I></r>"<U>one <U>two <U>three still three three </U>two </U> one</U>
+""<0>zero <1>one <2>two <3>three <4>four <5>five <6>six <7>seven <8>eight <9>nine </9>eight </8>seven </7>six </6>five </5>four </4>three </3>two </2>one </1>zero </0>
+""<c>cyan <m>magenta </m>cyan <y>yellow <k>black </k>yellow <w>white </w></y>cyan </c>"<B>bold</B>"<g>bar </g>foo"<B>bold</B><U></U>"<B>bold
+bold
+</B>""<I><g>green italics</g>italics </I>"</PL><S>test default case<PL> bar </PL> gee<PL></PL>test already shortened with PL <PL> bar </PL> gee<PL>"<EM>emph<S>strong</S>hello world<B><U>underline</U>bold </B></EM>""
+jiggy	jiggyfoo<I>stuffstuff</I>"
+foofoo jiggy	bar"
+jiggy	jiggyfoo<I>stuffstuff</I>"
+foofoo jiggy	bar"
+barbar"
+stuffbar	jiggystuff	<9>stuff</9>bar<9>jiggy	</9><y> bar	stuffjiggy</y>abc <I><B>foobla bla<TT>foo bar </TT></B></I><TT>truc</TT></PL>foo<PL> bar </PL> gee<PL><r><I><B>bla bla </B>barfoo</I></r><S>foo bar </S>foo .<r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r><I><b>testtris</b><B>asdf<c>asd </c><PL><B><EM>asdf </EM>asdf</B>asdf<U>abc <r> </r></U>" <TT>        </TT> a"</PL><S>FOO<PL><B>bar</B></PL>POI</S><PL>"
+jiggy	jiggyfoo<I>stuffstuff</I>"
+foofoo jiggy	barstufffoobarfoo"
+barbar"
+stuffbar	jiggyfoostuff<I>jiggy </I><g><4>foo
+jiggyjiggy<6></6><U> <3>bar</3><U>foo</U></U>foo bar</4></g><5><EM>foo	</EM>stuff</5>stuff	<9>stuff</9>bar<9>jiggy	</9>
+jiggy bar<5>foo</5>	jiggy
+foobarstuff	foobarbarbarjiggyfoo bar
+<g>bar
+stuff</g>hi<EM>there</EM></PL>foo
+bla bla<TT>foo bar </TT></B></I><TT>truc</TT>
+</PL>foo<PL> bar </PL> gee<PL><r><I><B>
+bla bla </B>barfoo
+</I></r><S>foo bar </S>foo .
+<r>aaa<g>bbb<b>ccc</b>ddd</g>eee
+</r>~<U> 111 <U> 222 </U> 111a </U> =~<U><B><U>2B</U>1B</B></U>= <I><B>asdf </B></I>asdf <B>fdsa </B><EM>ab cd </EM>ab cd</PL>foo<PL> bar </PL>       gee<PL></PL>foo<PL> bar </PL> gee<PL><U> <U>op </U></U>x<I>x<B>y </B>y</I>z'"'
+jiggy	foojiggy jiggy"
+jiggy	foojiggy jiggy""
+jiggy	jiggyfoo<I>stuffstuff</I>"
+foofoo jiggy	barstufffoobarfoo foo	jiggy"""
+barbar"
+stuffbar	jiggyfoo stuffbar
+foo""stuff<I>jiggy </I><g><4>foo
+jiggyjiggy<6></6><U> <3>bar</3><U>foo</U></U>foo bar</4></g><5><EM>foo	</EM>stuff</5>stuff
+stuff""stuff	<9>stuff</9>stuff	<1>stuff</1>""bar<9>jiggy	</9>
+jiggy barfoo"" <y>bar	stuffjiggy
+</y><EM>barjiggy bar</EM>""<5>foo</5>	jiggy
+foobar jiggy	stuff<c>stuff<U>bar</U>bar	barbar<S>foo</S></c>""stuff	foobarbarbarjiggyfoo bar
+<g>bar
+stuff	</g>stufffoostuffstuff""stufffoo<c>foojiggy</c>stuff	<g><U><6>	jiggy
+</6> bar</U><c>jiggy foobar</c></g>jiggystuff
+bar""
+jiggy	foojiggy jiggyjiggyjiggy
+jiggystuff"""
+jiggy	jiggyfoo<I>stuffstuff</I>"
+foofoo jiggy	barstufffoobarfoo foo	jiggy	jiggy""stuff<I>jiggy </I><g><4>foo
+jiggyjiggy<6></6><U> <3>bar</3><U>foo</U></U>foo bar</4></g><5><EM>foo	</EM>stuff</5>stuff
+stuffstuff	""stuff	<9>stuff</9>stuff	<1>stuff</1>barjiggyfoofoo""bar<9>jiggy	</9>
+jiggy barfoobar"" <y>bar	stuffjiggy
+</y><EM>barjiggy bar</EM>barbar<S>stuff<2>foo
+jiggy</2>jiggy</S>""<5>foo</5>	jiggy
+foobar jiggy	stuff<c>stuff<U>bar</U>bar	barbar<S>foo </S></c>stuff
+bar""stuff	foobarbarbarjiggyfoo bar
+<g>bar
+stuff	</g>stufffoostuffstuffjiggyfoo	""stufffoo<c>foojiggy</c>stuff	<g><U><6>	jiggy
+</6> bar</U><c>jiggy foobar</c></g>jiggystuff
+barstuffjiggy	jiggy
+""
+jiggy	foojiggy jiggyjiggyjiggy
+jiggystuff bar""<2><I>jiggybar</I></2>""	jiggybarjiggy""foo foo""stuffjiggy
+bar""
+jiggybar
+bar<5>
+jiggy</5>""<1>jiggy</1>jiggystuffjiggy""<TT> jiggy</TT>	"" bar foo	""jiggy jiggy<5>bar</5>""""jiggy	<EM><S>stuff
+</S><g>foo
+</g>jiggy
+foo</EM>""<1>jiggy <b>bar </b></1>"" stuff""stuff
+stuff<0> jiggy</0>""barbar
+stuffjiggybar""foo"" barbar""foo	stuff
+jiggy
+foo
+""stuffstuffjiggystuff""foo	stuff<B>jiggybarbar</B>""
+<r>foo
+</r>""
+barbar
+""foobar bar""jiggy bar""bar	stufffoo""
+jiggystuff ""<b><S>foofoojiggy </S>barbar</b>""
+<S>jiggy	bar</S>""	bar<2> stuff</2><b>	foo</b>""
+<c>jiggystuffbar
+jiggy
+</c>stuff""jiggystuff<TT>jiggy</TT>"" foojiggybarfoojiggybar""stuff<6><U>
+</U></6>""stuff
+bar	<g>bar foo</g>"" <g>foo	<m>jiggystuff</m></g>"" bar""<7>foostuff<8>
+foostuff</8></7>""
+<9>jiggybar<5>bar</5></9>""
+stuffjiggy	bar""jiggy	<S>jiggybar</S>""jiggybar stuff""stuff<5>	bar</5> foo""stuff
+""<y>foostuff
+</y>jiggy""
+foojiggyjiggy	foo	<S>bar</S>"" <c><I>jiggyjiggy bar</I></c>"" <EM><6><2><I>stuffbarstuff	</I></2><r> bar</r></6><EM>""<9> bar</9>foo	<5> bar
+</5>""<y>bar</y>jiggy""	stuffbar"" <B>jiggystuff<8>bar</8></B>""<S><1>	</1>stuff	barjiggystuff</S>""stuff</EM>stuffjiggyjiggy</EM>"" <c>stuff
+jiggyjiggystuff</c>""jiggy"" bar<3>stufffoofoo</3>""""bar
+stuff""	<b>stuff
+</b>""	bar	<0><1>bar</1></0>""
+jiggy""foo ""stuff<U>foo</U><2>stuffstuff</2>bar""<B>bar	jiggy</B>""foobar
+""stuffbar"""" foostuff<9>stuff
+</9>"<b>hi<r><EM>therethere</EM></r>hi</b><I><B>bla bla <TT>   	 foo bar </TT></B></I><TT>truc</TT>: <B>B </B>(bold</PL>test default case<PL> bar </PL> gee<PL> </PL>test already shortened with PL <PL> bar </PL> gee<PL> </PL>test bloated PL bar gee<PL> </PL>test with heavier left<PL> bar <TT><S> gee<PL> </PL>test with heavier right</S></TT> bar </PL> gee<PL> </PL>test with heavier middle<PL><I> bar </I></PL> gee<PL>: <B>B </B>(bold""
+jiggy	jiggyfoo<I>stuffstuff</I>"
+foofoo jiggy	barstufffoobarfoo foo	jiggy	jiggy
+foo
+foo"""
+barbar"
+stuffbar	jiggyfoo stuffbar
+foo</PL>
+
+
+<PL><y>
+foobarfoostuff</y>""stuff<I>jiggy </I><g><4>foo
+jiggyjiggy<6></6><U> <3>bar</3><U>foo</U></U>foo bar</4></g><5><EM>foo	</EM>stuff</5>stuff
+stuffstuff	<r>stuff</r>""stuff	<9>stuff</9>stuff	<1>stuff</1>barjiggyfoofoo<b><1>
+barbar stuff<6><B> barjiggy</B></6></1>foo</b>""bar<9>jiggy	</9>
+jiggy barfoobar<r>jiggystuff</r></PL>   <PL><I> bar
+jiggy<7>	foo
+<y><U>	jiggyjiggy</U>jiggy</y></7><r>	stuff</r>jiggy
+jiggy</I>"" <y>bar	stuffjiggy
+</y><EM>barjiggy bar</EM>barbar<S>stuff<2>foo
+jiggy</2>jiggy</S>""<5>foo</5>	jiggy
+foobar jiggy	stuff<c>stuff<U>bar</U>bar	barbar<S>foo </S></c>stuff
+bar<9>
+foo</9>""stuff	foobarbarbarjiggyfoo bar
+<g>bar
+stuff	</g>stufffoostuffstuffjiggyfoo	stuffbar""stufffoo<c>foojiggy</c>stuff	<g><U><6>	jiggy
+</6> bar</U><c>jiggy foobar</c></g>jiggystuff
+barstuffjiggy	jiggy
+jiggy	jiggyjiggy""
+jiggy	foojiggy jiggyjiggyjiggy
+jiggystuff barjiggyjiggy jiggy<3>foo
+foojiggy</3><B>foo
+foo stuff</B>""<2><I>jiggybar</I><5>barbar</5></2>""	jiggybarjiggyfoo""foofoobar<m>bar<b>foo</b></m>""stuffjiggy
+barfoofoojiggy""
+jiggybar
+bar<5>
+jiggy</5>""<1>jiggy</1>jiggystuffjiggybarstuff ""<TT> jiggy</TT>	jiggy
+bar<8><U>	jiggy jiggy</U></8>"" bar foo	jiggy	barjiggy stuff""jiggy jiggy<5>bar</5>
+<8>foo</8>foostuff	""
+<B>foo</B>""jiggy
+barfoo""jiggy<TT>bar</TT><c><7>bar</7> jiggy</c>""jiggy	<EM><S>stuff
+</S><g>foo
+</g>jiggy
+foo </EM>stuff""<1>jiggy <b>bar </b></1>jiggy
+<m>stuff</m>"" stuffstuff""stuff
+stuff<0> jiggy</0>""barbar
+stuffjiggybarstuff</PL>   <PL>stuff""foostuff<4>
+barjiggy<c>bar</c></4>""	barbarstuff
+<c>foofoo</c>""foo	stuff
+jiggy
+foo
+jiggy""stuffstuffjiggystuff<6><B>	stuff
+foo </B>barfoo</6>""jiggystuff</PL>    <PL><m>
+<3>bar</3></m>""foo	stuff<B>jiggybarbar</B>jiggy	barbar""
+<r>foo
+</r>stuff foo""
+jiggyjiggy<5>stuff <7>jiggy<m><2><I><c> stuff
+<g><B>foo</B></g><0>	jiggy</0></c><9>jiggy</9></I><8>
+foobar	jiggystuff jiggystuff</8><g><U>barjiggy</U> <7>stuff<y>jiggy	</y>jiggy	stuff<0>barstuffjiggy<TT><B>jiggy			</B></TT><6>
+jiggy	stuff foo
+jiggy
+<S>stuff
+jiggyfoo</S></6>	bar
+jiggy</0></7> foo</g></2></m><8>jiggy
+jiggy<1>	jiggy stuff</1></8></7>	foo</5>
+bar
+<9> bar</9><S>stuff</S>""
+barbar
+<9>	jiggy</9>	jiggy
+""foobar bar foo bar""bar	stufffoo<b><I>foo
+stuff</I></b>bar""
+jiggystuff stuffjiggy""<b><S>foofoojiggy </S>barbar</b><I>jiggy</I>foo	<I>bar stuff</I>""
+<S>jiggy	bar</S>foo bar""	bar<2> stuff</2><b>	foo
+</b>""	stuff""
+<c>jiggystuffbar
+jiggy
+</c>stuff<7>stuff</7>foo""jiggystuff<TT>jiggy</TT>stuff
+foo
+"" foojiggybarfoojiggybar
+bar"</PL>foo<PL> bar </PL>     gee<PL></PL>foo<PL> bar </PL> geefoo<PL> bar </PL>       gee  <PL></PL>foo<PL> bar </PL> gee  foo  <PL> bar </PL>       gee  <PL><I><b>xxx</b>yyy</I><b>aaa</b><w>WWW<k>BBB</k></w></PL>foo<PL> bar </PL> gee<PL>.<B>hithere<I>foo bar</I></B></PL>foo<PL> bar </PL>gee<PL>"</PL>foo<PL> bar </PL>gee<PL>"foo<I>Italic</I>" <S>foo bar </S>FOO "<g><U> </U></g>ill<I><B>foo </B>bar<B>bla bla<TT>   foo bar   </TT><PL><TT>truc</TT>" "" <U> </U>"" ill"</PL>bla bla <TT>   foo bar   </TT></B></I><TT>truc</TT>" <B>hello there </B>3spc_pastthis " <r>xxx <b>yyy </b></r><EM>xxx </EM>yyy <EM>zzz </EM>"stuff ""	bar
+""<I>barbar	bar</I>""
+jiggy<TT><2>
+    barstuffjiggy
+
+
+
+</2><PL><5>
+<1>bar</1>stuffbar</5>"" <S>jiggy</S>""jiggybar stuff
+""""<6>jiggybar<m><U><8> </8>jiggystuff</U></m><0> bar</0></6>""	</PL><m>    jiggyfoo    jiggy</m></TT>""jiggy <7>jiggy</7>"" ""bar<7> </7>"" stuff	<EM>foo</EM>""jiggystufffoo	<1><y><I>	foo	jiggystuff	stuff </I></y><9>jiggyjiggy</9></1>""<7>stuffjiggyfoo</7>""<7>foojiggy
+</7>""<2>bar<5>stuff</5></2>"<b>b<c>a</c>d
+</b><5><r>a<6><b>b</b><3>c</3></6></r>d</5><r><5>a<b><6>b</6><w>d</w></b></5>c</r></PL>foo<PL> bar <TT><S> gee<PL></PL>gee</S></TT>bar</PL>foo<PL><B>a<b>c <c>d </c>e <PL>f
+</PL></b>a<b>c</b><U> <c>d</c> <PL><b><B>e </B>f
+</b><EM>x<S>x</S>x </EM><r>xxx <b>yyy </b></r><EM>xxx </EM>yyy <EM>zzz </EM><B>xxx yyy </B><r>xxx yyy </r><I>xxx </I>yyy <I>zzz </I><b><TT><r> xxx  </r>yyy  </TT></b><B>
+xxx <I>yyy </I>zzz </B><U> xxx <U> yyy </U></U><r>
+<U> xxx <b> </b> yyy </U></r><EM>
+xxx </EM><S>yyy </S><r><I><TT>bla bla   </TT> barfoo </I>xxx </r><b>yyy </b><EM>xxx </EM>yyy <EM>zzz </EM><B>xxx yyy </B><r>xxx yyy </r><EM>xxx <S>yyy </S>a
+</EM><I>xxx </I>yyy <I>zzz </I><b><TT><r> xxx  </r>yyy  </TT></b><B>
+xxx <I>yyy </I>zzz </B><U> xxx <U> yyy </U></U><r>
+<U> xxx <b> </b> yyy </U></r><S>
+<TT>foo<PL>bar</PL>gee</TT>
+aaa bbb </S>ccc . <S>ddd eee </S>fff ." <S>aaa bbb </S>ccc . <S>ddd eee </S>fff ."<I>abc def </I><r>x </r><g>y </g><S><B>foo
+<PL>test
+</PL>bar
+<PL><TT><r>r<g>g<b>b</b>g</g>r
+
+</r>redundancy elimination
+changing <I><B>foo
+</B></I>into <I><B>foo 
+
+
+</B></I>overlap inversion
+changing <I><B>bla blafoo bar </B></I>truc 
+into <I><B>bla blafoo bar </B></I>truc 
+
+
+PL shortcut
+changing <S><I>foo </I></S>bar  <S><I>gee 
+</I></S>into <S><I>foo<PL> bar </PL> gee 
+
+
+</I></S>whitespace simplification
+changing <r><I><B>bla bla     </B>barfoo 
+</I></r>into <r><I><B>bla bla </B>barfoo 
+
+
+</I></r>EM elimination
+changing  <S>foo  bar     </S>foo  . 
+into  <S>foo bar </S>foo . 
+
+
+color nesting
+changing <r>aaa<g>bbb<b>ccc</b>ddd</g>eee 
+</r>into <r>aaa<g>bbb<b>ccc</b>ddd</g>eee 
+</r></TT><1>hoge<3>hoge</3>hoge<3>hoge</3>hoge<9>hoge</9> hoge<9>hoge</9>hoge<5>hoge</5>hoge<g>hoge</g>hoge</1><4>hoge<I>hoge</I>hoge <y>hoge<k>hoge</k>hoge </y>hoge <w>hoge<m>hoge</m>hoge<EM>hoge<7>hoge<1>hoge</1>hoge<c>hoge </c>hoge</7>hoge</EM>hoge</w>hogehogehoge<m>hoge</m>hogehoge<2> hoge<1> hoge</1>hoge<r>hoge<EM>hoge</EM>hoge</r>hoge</2>hoge hogehoge<k>hoge</k>hoge<g>hoge</g>hoge<S>hoge</S>hogehoge<y>hoge</y>hoge<9>hoge<TT>hoge</TT>hoge</9>hogehogehoge<S>hoge<w>hoge</w>hoge<U>hoge<6>hoge <0>hoge</0>hoge </6>hoge</U>hoge</S>hoge<b>hoge<5>hoge<6>hoge<0>hoge<w>hoge</w>hoge<I>hoge</I>hoge</0>hoge<g>hoge</g>hoge</6>hoge </5>hoge<3>hoge</3>hoge</b>hoge<r>hogehoge<y>hoge</y>hoge <w>hoge</w>hogehoge</r>hogehoge <6>hoge<8>hoge<1>hoge<3>hoge</3>hoge</1>hoge</8>hoge<U>hoge</U>hoge</6>hogehoge<2>hoge<1>hoge<U>hoge</U>hoge</1>hoge</2> hoge<8>hoge</8>hoge<w>hoge </w>hoge<3>hoge</3>hoge<g>hoge<8>hoge</8>hoge<0>hogehoge hoge</0>hoge<1> hoge</1>hoge</g>hoge<TT>hoge<EM>hoge<S>hoge<y>hoge</y>hoge hogehoge</S>hoge </EM>hoge<7>hoge</7></TT></4><EM><B> asdf </B></EM><y>hoge<EM>hoge<TT>hoge</TT>hoge<1>hoge<b>hoge<g>hoge</g>hoge<w>hoge</w>hoge</b>hoge</1>hoge<1>hoge</1>hoge<TT>hoge</TT>hoge</EM>hoge<4>hoge<2> hoge </2>hoge </4>hogehoge<1>hoge </1>hoge<5>hoge</5></y><EM> asdf </EM><S>adsf <TT><I>test default case<PL>two</PL>threetest already shortened with PL <PL>four</PL>fivetest bloated PL sixseventest with heavier left<PL>eight<TT><S>ninetest with heavier right</S></TT>ten</PL>eleventest with heavier middle<PL><I>twelve</I></PL>thirteen<PL>bah<7> </7>foobahfoobah foo<TT><S>gee<I>foo</I><PL>
+<TT><B><I> asdf   asdf </I><PL><b><r><g><S>ccc<8>ccc</8><1><I><y>aaaccc</y><U><B><4>dddeeeeee</4><r><U><7>dddccc</7>bbb</U></r></B></U></I></1></S></g><6><U><w>eee</w>eee<k><U>ddd<7><S><B>bbb<c>ddd</c><PL><S><m><3><y> bbb</y>bbb </3></m><TT><w> bbb</w>ccc</TT></S></PL></B></S></7></U></k></U></6>xxx </r>yyy </b><EM>xxx </EM>yyy <EM>zzz </EM><B>xxx yyy </B><r>xxx yyy </r><EM>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz </I><b><TT><r> xxx  </r>yyy  </TT></b><B>
+xxx <I>yyy </I>zzz </B><U> xxx <U> yyy </U></U>
+<r><U> xxx <b> </b> yyy </U></r>
+</PL>    asdf    </B>a d     <B>asdf   </B></TT><B>hello </B></PL>gee</S></TT>bar</PL>foo<PL><r>
+r<g>g<b>b</b>g</g>r</r>redundancy eliminationchanging <I><B>foo<PL>into </PL>foo <PL>overlap inversionchanging </PL>bla bla<TT>foo bar </TT><PL><TT>truc</TT> into </PL>bla bla<TT>foo bar </TT></B></I><TT>truc</TT> PL shortcutchanging </PL>foo<PL> bar </PL> gee<PL> into </PL>foo<PL> bar </PL> gee<PL> whitespace simplificationchanging <r><I><B>bla bla </B>barfoo </I></r>into <r><I><B>bla bla </B>barfoo </I></r>EM eliminationchanging <S>foo bar </S>foo . into <S>foo bar </S>foo . color nestingchanging <r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r>into <r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r></PL>gee</I><PL>bar</PL>foo</TT>
+</S><U><U><U><TT><S><I>gee</I></S></TT>bar<TT><S>foo</S></TT><PL>
+a d <B>asdf </B><TT> a   d     <B>asdf   <PL>"<6><B>6 Online stuff</B></6>The following Web pages may be of interest to you:Contest home page: <TT><U><b>http://cristal.inria.fr/ICFP2001/prog-contest/</b><PL>FAQ: </PL><b>http://cristal.inria.fr/ICFP2001/prog-contest/faq.html</b><PL>News: </PL><b>http://cristal.inria.fr/ICFP2001/prog-contest/news.html</b><PL>Document checker and equivalence tester:</PL><b>http://cristal.inria.fr/ICFP2001/prog-contest/validator.html</b><PL>Procedure for submitting entries:</PL><b>http://cristal.inria.fr/ICFP2001/prog-contest/procedure.html</b></U><PL><B><6>7 Good luck</6></B>Have fun !<EM>This document was translated from L<c>A</c>T<g>E</g>X by<b><U>H<c><2>E</2><b>V</b><2>E</2></c>A</U></b>.</EM>"<6>hoge <3>hoge</3>hoge <9>hoge<7>hoge</7>hoge</9>hoge<r>hoge<I>hogehogehogehogehoge</I>hoge</r>hoge <TT>hoge</TT>hoge<y>hoge<b>hoge<U>hoge</U>hoge</b>hoge<1>hoge</1>hoge<0>hoge</0> hoge</y>hoge <c>hoge<TT>hoge</TT>hoge</c>hoge<8>hoge<b>hoge</b>hoge </8>hoge<c>hoge<y>hogehoge</y></c></6><I><B>bla bla<TT>foo bar </TT><PL><TT>truc</TT></PL>bla bla<TT>foo bar </TT></B></I></PL>truc</TT><y><2>bbb<r><7><S><8> bbb</8><TT><5>aaa</5><y><B><g><1><4><U>   </U></4>eee  </1></g><I>aaa</I></B></y></TT></S><w><EM>eee</EM><4>aaa<k><9><I>fffddd</I></9>fff</k></4></w></7></r></2></y>ccc<EM><r><8><U><S><PL>ccc</PL><9>bbb</9><0>ccc </0></S></U>bbb</8></r>xxx <S>yyy </S></EM><r>xxx </r><b>yyy </b><EM>xxx <S>yyy </S>zzz
+</EM>a d </PL>asdf</B></TT> asdf<r><U>aaa<g>bbb<b>ccc</b>ddd</g>eee</U></r><EM> xxx <S>yyy </S>zzz </EM>"<TT>hoge<y>hoge<1>hogehogehoge<c>hoge<w>hoge<S>hoge </S>hoge<g>hoge<0> hoge</0>hoge</g>hoge</w>hoge</c>hoge</1>hoge<PL>hoge </PL> hoge</y>hoge</TT>hoge <2>hoge<I>hoge</I>hoge</2>hoge<TT>hoge<4>hoge <9> hoge<7>hoge</7>hoge<b>hoge<EM>hoge<w>hoge</w>hoge</EM>hoge</b>hoge</9>hogehogehoge<9> hoge<w>hoge<c>hoge</c>hoge<1>hoge</1>hoge</w>hoge</9>hoge </4>hoge<2> hoge<5>hoge<b>hoge </b>hoge<g>hoge</g>hoge</5>hoge<3>hoge<U>hoge<w>hogehogehoge<EM>hoge</EM>hoge<EM>hoge<U>hogehogehoge</U>hoge<1>hoge<S>hoge</S>hoge hoge<y>hoge</y>hoge<EM>hoge</EM>hoge hoge</1>hoge</EM>hogehogehoge</w>hoge</U>hoge<m>hoge</m>hoge<c>hoge<b>hoge<w>hoge</w>hoge<5>hoge</5>hoge</b>hoge</c>hoge</3>hoge <PL>hoge<r>hoge</r>hoge</PL>hoge <y>hoge<9>hoge</9>hogehogehoge</y>hoge<r>hoge</r>hoge<8>hoge</8>hoge<r>hoge</r>hoge<8>hoge</8>hoge<7>hoge</7>hoge</2>hoge</TT>hoge<TT>hoge<y>hoge<8> hoge </8>hoge</y>hoge<7>hoge<r>hoge<b>hoge<w>hoge</w>hoge </b>hoge</r>hoge</7> hoge </TT>"</PL>hi<PL><9>x</9><r>x</r><B>x</B>y<B>z<I>hello world!</I></B>This is
+a
+test
+for
+<TT> TrueType  and  spaces  therein.
+And newlines.
+</TT> Sideways removing <I>empty tags </I>Testing underlining maxing out </PL>underlined thrice</U></U></U>
+and with no body end of documentEmptyness and more
+</PL>Emphasis </B>test </S>with <EM>with </EM>emphasis At least handle <2>color</2> tags as booleans.try bold with a space in it.
+Check that PL resets <B>state this should be bold </B>not emphasized <EM>larded with spaces
+</EM><r>xxx yyy </r>Color with white spaces in it without underlines as or with underline as <r><U> </U>
+xxx yyy </r>Color test: <g>green <r>red </r>green <r>red <b>expensive blue</b>red</r></g><3>expensive three</3><1> one </1>Size test: <2> <3> three </3></2> <2> two <3> three </3> two </2><I><B>bolditalic</B>Italic</I><0>A</0> x <EM>xxx <S>yyy </S>zzz </EM><B>Wenn ich <TT>   dd d   d </TT> dann<EM>So </EM></B>!"#$%&'()*+<7> </7> </PL><m><6><S><9><y><6> <1><b><0><8><k>,-./</k>012<m><5><PL>34	<3> </3>567</PL></5>89</m><4><PL>:;=?<r>@ ABCDEF</r></PL></4><U><TT>	</TT></U>G</8> HIJKLMNO</0>PQRSTUVWXY</b>Z[\]^_`abc</1><m><U>	</U><b>d<TT>ef	
+ghi<m>jklm<y><2><I>
+
+
+ 	
+ 
+		n
+opq
+
+
+rs
+
+</I></2></y></m>tuvwx</TT> </b></m><r><8><2>yz{|</2>	</8></r><w>}~!"#$<0>%<r></r> &'()*+,-<1>.</1></0></w></6></y>	/012</9><g>345</g></S></6></m></U><I>A</I><U>B</U><EM>A<S>N</S>A</EM><S>N</S></B><0>a</0><1>b</1>" cow
+<w>moosplatfoobarblat</w>"" <c>basmoo</c>squeak""	<k>fooblubblatbar
+foobar </k>""<0>
+</0>hmmmsqueak""splat <6>blopcow</6>""
+bar<TT><I>foo<U>bas</U></I></TT>"" squeak<2>moofoobarsplat</2>
+""	<w>hmmmfoo </w>"aaa<r><2><B><U>fff<1><U><9><4>ccc</4>eee</9><c><7>bbb</7><S>bbb</S></c><g><PL><S><k> <5>bbbeee</5></k><TT><I><3>fff</3>eee</I></TT></S></PL></g><m><0>fff</0></m></U></1></U>fff</B></2></r>fff<TT><U>cccccc</U><y><1><PL>ccc</PL><g><6>bbb </6></g></1></y><r><2> <9>ddd</9></2></r><PL><3> three </3><2> <1> one </1></2><b>
+three </b><r>one </r><U> ddsf </U> "<U><I><3><7>bar</7>splat</3><PL>""splatblub<TT>blub</TT>
+"" blatblop
+bar<3>moocow</3>""bas
+foosqueak""moo
+moosqueak
+""squeak
+blub moofoo"" bar
+barsqueak""blop
+bashmmmblatbas""blatsqueak""foo
+moo""
+foo
+blop""
+squeak	bar
+""fooblatbasbar""foobarbar"" <r>blat moo<y>blop</y></r>""hmmmblubbashmmmsplat"" cow bas""	mooblat""bar<k><7>blub
+blop</7></k>"<6>foo<5>bar</5>goo</6>"splat blat"" foobasblubsqueak	blub""<2>	splatsplat	barfoo</2>"<3> three <2> <1> one </1></2></3><b>
+three one <U> three <g> </g></U> one </b><r>red<b><g><U>something <b> three </b> </U></g> one </b>red
+</r><U> ddsf </U><B> <7> aaa<g>fff</g></7></B><w><EM><S><8><g><B><0>ccc</0>aaa<r>eee</r></B></g><U><U><3><y>bbb</y><9><r> <4><m>eee<0>eee</0></m>ccc</4></r><6><PL>ddd<S>aaa<y>bbb</y><9><r>aaa</r>bbbaaa</9></S></PL></6><m><B>fff</B></m></9></3>fff</U></U></8> </S><4><U><B><7>eee</7><TT>ddd</TT></B></U></4></EM></w><1>ddd </1><k><5><m><I><c>ddd</c><S>bbbbbb</S></I></m><6>ccc</6><7><S><8>eee <4>cccddd</4><w>bbb</w></8><c><I><4>bbb</4>aaa </I></c></S><y>aaa</y></7><I><1>bbb</1><m><S>fff</S></m><0>bbb</0></I></5><2><B><TT>ccc</TT><3> </3><U><U><S><I><c><m><9>aaa</9>aaabbb</m>eeefff</c><3>bbbbbbddd</3><6>fff</6></I></S></U></U></B></2></k><8>bbb</8><k><9><TT><8>eee</8>bbb</TT><r>cccbbb<6><S><I>ccc</I></S></6></r></9></k>xXXX</PL><B>zzz<PL><b><r> xxx </r>yyy </b><EM>xxx </EM>yyy <EM>zzz </EM><B>xxx yyy </B><r>xxx yyy </r><EM>xxx </EM><S>yyy </S><I>xxx </I>yyy <I>zzz </I><TT>Annexes <B>.  Extremist Burma totality Patricia <8>raters</8> indoors 
+ diabetic accordingly <b>addendum </b><8>armful chap symbolized <U>elucidated massed</U> coo crackled</8> .  Sculpture .  Bloodied <y>hail </y></B><9>
+</9> </TT> </PL>foo</B></I><U><0><r>aaa</r><I><B>bla bla<TT>foo bar </TT></B></I><TT>truc</TT><g>bbb</g> </0> </U></U>"</PL>Annexes <B>.  Extremist Burma totality Patricia <8>raters</8> indoors 
+ diabetic accordingly <b>addendum </b><8>armful chap symbolized <U>elucidated massed</U> coo crackled</8> .  Sculpture .  Bloodied <y>hail </y><I><9>
+</9> <PL>
+""<S>. Swarmed stabilities <U>. <TT>Impinging</TT> lend roundedness hypertext <U>drum pale</U> drift <B>accompanists </B>sap barley <5>bumblebees</5> <9>mails</9> <5>. Plantations . <U>Informal</U> upholds hire hydrodynamic Shylockian </5></U></S>
+""splatblat	moo""<6>splat
+bas</6>""bar	splat<7>blop</7>blatcowblop""<8>cow	<3>
+foobas	</3>foo</8>blopblop	hmmm<3><B>blop	</B>foobar	<b>hmmm	blub<r><I>blat </I><U>	moo</U><I> cowsplatfoobar
+squeak<5> </5>cowblat </I></r></b></3>""
+splat barsqueaksqueak bar<8>	<4><I><EM>cow</EM>splat</I>foofoo <g>moosplatblubblat	<0>moo	</0>blat</g><0></0>foo	barsplat
+splatblub<y>hmmm
+<w>splat </w></y>foobarfoo<r><I>bar	</I></r></4></8>"<2><r>eee</r><9><y><7><m>aaa</m>bbb</7><U>fff<3><w><TT><I><B>fff<g><4>eee<9><PL><m>ddd</m><0><I> bbb<r>eeefff</r></I></0></PL></9></4></g></B></I></TT></w>fff</3></U></y><0><I><EM> <3> </3><U><U>aaa</U></U></EM></I></0><w><5> </5>aaa</w></9></2>fff<I><B>bla bla </B></I></PL>                          foo bar </I></B>truc </TT><m> <3> <1>bbbcccdddaaa</1></3><r><B><6><TT><w><y>bbb</y><PL><9><8> </8>ccc</9> </PL></w><5>ddd <g><U>eee<c><3><PL>ccc</PL></3></c></U></g>fff</5></TT></6> <3> </3></B><k><9><U><S><I><g><2><4> </4>bbb</2></g>ddd</I></S></U></9></k><9><I> <4><TT><EM><y><w>aaa<1>ddd</1>eeeeee</w>ddd</y><7>ccc</7></EM><U><5>dddeee</5><y><0>aaa</0> </y></U><PL><EM><y>dddbbb</y><3><c>ddd</c>ddd</3></EM></PL><6>bbbeee </6></TT></4></I> fff</9></r></m></PL>foo<PL> bar </PL> gee<PL></PL>foo<PL> bar </PL> gee</S></I><m><2>ccc</2></m></EM><k><3>ccc </3></k></TT><3><y>bbb<8>ddd eeeaaaddd<7>ddd <S>aaa<8>dddfff</8><m><3>aaa</3></m><w><I>aaa</I></w></S></7></8></y><2>bbb</2></3><c><0> eee <9>aaaccc</9><r>fff</r>fff</0></c><U><B>fff<k>fff</k></B></U><8><r><4>eeecccbbb<U><U><U><TT><EM><9><1>aaa</1><w>bbb</w></9><y><I>ccc</I></y><k><8> </8></k></EM></TT></U></U></U></4><S>ddd<m><3>fff</3></m></S></r><9>ccc</9><k><U><S><I>aaa<3>aaa</3>ccceee<r><6><U><TT><B><1>fff</1><c>ccc</c>aaa </B></TT></U></6></r></I></S></U></k></8></PL>stuff</EM><0>more</0></B></I>
+</PL>foo<PL> bar </PL> gee<PL><b><r>aaa<g>bbb<b>ccc</b>ddd</g>eee </r>xxx yyy </b>xxx <U><I><B> yyy </B></I></U>
+</PL>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<PL><S>abcde
+abcde
+</S>a<EM>b</EM>c<EM>d</EM>e
+a<EM>b</EM>c<EM>d<EM>e
+<S>c
+c
+</S>c
+c
+<B>xxx yyy xxx yyy </B><S>xxx yyy </S></EM>x <EM>y </EM>z </EM></PL>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<PL><b><r>aaa<g>bbb<b>ccc</b>ddd</g>eee xxxxx yyyyy
+</r>xy
+</b><B>xyz
+</B><S>xyz
+</S><I>xyz
+</I><TT>xyz</TT>
+0<I>abcde</I>f
+<S>xxxzz
+xxxzz
+</S><I>xxyyyyyy
+</I><EM>xxyyyyyy
+</EM></PL>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<r><PL>aaa<g>bbb<b>ccc</b>ddd</g>eee</PL></r>foo<PL> bar </PL> gee<PL><r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r><1>dddeee</1><4>ccceee<U><EM><9>eee</9><r><S><k><B>ddd<w><5>aaaeee</5></w>fffccc</B></k><I><g>aaa</g><U><TT><m>eeeaaa </m><7>dddddd</7></TT></U></I><w><5><B>fff</B></5></w></S></r></EM></U></4><TT>ddd<c><0>bbb</0></c><y><4><S><5>eee </5><U><B>ddd</B></U></S></4></y></TT><w><5><0> <U> </U></0>fff</5></w></PL><m><9> aaa<U><B><4><w><5>bbb</5></w>aaa</4> <6>fff</6></B></U></9></m><PL><m><k><7>fff</7></k><EM><g>aaa</g>aaa</EM><1><g>bbb</g><U><I><B> <7><TT><r>dddeeedddbbb</r><0>fff</0></TT></7></B></I></U></1></m><3> three </3><2> <1> one </1></2><b>
+three one <U> three <g> </g></U> one <r>red<b><g><U>something <b> three </b> </U></g> one </b>red
+</r><U> three <g> </g></U> <U><I><B>one</B></I></U></b> <U> ddsf </U> <8>eeecccddd<y>ccc<c><B>aaa</B><U><TT><2><w><B><g><9>eee ddd</9>bbb</g> <7><I><EM>bbb<S>bbb</S></EM></I></7><8><PL><6>aaa</6> </PL></8></B></w>bbb</2><B>aaa <4> </4><m><6><EM>eee<U> ccc<7>eee</7></U></EM></6></m></B></TT></U></c></y></8><TT>bbb<m><2>ccc</2><c><7><EM>bbb<k>bbbcccdddaaa</k></EM>fff</7><PL></PL><S><y><k><3>bbb</3><w><PL><0><m><9>eee</9></m>eeebbb<r><8><I><1>ddd</1><S>bbb<y>aaaccc</y><7>fffeee<m><U>eee</U></m></7></S></I></8></r></0> </PL><0><y>dddeee</y>eee</0><4>eee<m><3>bbb<r><5>aaa</5></r></3></m>fffbbbfff</4><PL></PL><4>aaa</4></w><9>eee</9></k><7><U><8>aaaccc</8>aaa</U></7></y><3><B><PL>eee</PL><2> eee</2><4>aaa</4><PL><7><8><5>ccc<g>fff</g></5>bbbeee</8>ccc</7><I>ccceee</I><w>fff</w></PL></B></3></S></c></m></TT>ccc<c><B>ccc</B><1>aaa</1><6>ccc<k>ccc<8><U>ddd ddd<y><TT><w>aaa</w><4> </4><9><I>aaa<S>ddd</S></I></9></TT></y></U><9> </9></8>eee<5><r>ccc</r><2>eee</2></5></k></6></c>ddd<7>ddd</7><9> </9><m><6><U> </U></6></m></PL>test default case<PL>two</PL>threetest already shortened with PL <PL>four</PL>fivetest bloated PL sixseventest with heavier left</I><PL>eight</PL>ninetest with heavier right<I><PL>ten</PL>eleventest with heavier middle<PL><I>twelve</I></PL>thirteen<PL>
+<3> three </3><2> <1> one </1></2><b>
+three one <U> three <g> </g></U> one <r>red<b><g><U>something <b> three </b> </U></g> one </b>red
+</r><U> three <g> </g></U></b><I><B><b> <U>one</U></b> bolditalic<g>bolditalicgreen
+</g><PL><U> ddsf </U> <3> three <2> <1> one </1></2></3><b>
+three one <U> three <g> </g></U> one <r>red<b><g><U>something <b> three </b> </U></g> one </b>red
+</r><U> three <g> </g></U></b></PL><b> <U>one</U></b> bolditalic<U><g>bolditalicgreen</g><PL>
+<U> ddsf </U> <3> three <2> <1> one </1></2></3><b>
+three one <U> three <g> </g></U> one <r>red<b><g><U>something <b> three </b> </U></g> one </b>red
+</r><U> three <g> </g></U></b> </PL><b>one</b></U> bolditalic<g><U>bolditalicgreen</U></g>
+bolditalic<U><g>bolditalicgreen</g><PL><U>test</U>
+<U>test</U></PL>bolditalic</U><g>bolditalicgreen
+</g></B></I><U> ddsf </U> </PL>foo<PL> bar </PL> gee</I></S></TT>clean</PL>foo<PL>clean</PL>bla bla<TT>foo bar <PL><TT>truc</TT>clean<r><I><B>bla bla </B>barfoo</I></r>clean<S>foo bar </S>foo clean<r>aaa<g>bbb<b>ccc</b>ddd</g>eee</r>clean</PL></TT><g><5><c><r>bbb</r>bbb<S>eee<w>bbb</w></S></c><PL><m><3><1>ccc</1>ccc<0>bbb</0><c><7><TT><S><B>bbb<6> </6></B></S></TT><w><4>aaa</4></w></7></c><B><k>bbb</k><8><TT>dddbbb</TT></8></B></3></m><U><y><7><U>eee<TT>bbb<c><9>bbb</9></c></TT></U></7></y>fff</U></PL></5></g><U>foo<PL><U><U><0><r>aaa</r><I><B>bla bla<TT>foo bar </TT></B></I><TT>truc</TT><g>bbb</g> </0> </U></U><I><B>foobla bla<TT>foo bar</TT></B></I>Hello<U> </U>Hello<U><B> bold</B></U> <3> three <2> <1> one </1></2></3><b>
+three one <U> three <g> </g></U> one <r>red<b><g><U>something <b> three </b> </U></g> one </b>red
+</r><U> three <g> </g></U></b> </PL><b>one</b></U><g> <U><r> </r> </U></g>
+bolditalic<g><U>bolditalicgreen</U></g>
+bolditalic<U><g>bolditalicgreen</g><PL><U>test</U>
+<U>test</U></PL>bolditalic</U><g>bolditalicgreen
+</g></B></I><U> ddsf </U><b> foo
+<5><S> fom
+</S>fom
+ni!
+fish
+ni!
+<c>bar
+<6><U> </U></6></c> </5></b>

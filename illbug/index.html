@@ -1,0 +1,25 @@
+<html><head><title>Illustrator 7.0/8.0/9.0 BeginData Bug</title></head>
+<body>
+New information:  Illustrator 7.0 can also generate bad BeginData/EndData
+sections with bad byte counts.  The fixill.pl script (below) has been
+updated to fix these too.  These files will cause dvips 5.90
+problems, but I hope to fix this problem too somehow.
+
+Illustrator versions 8.0 and 9.0 generate invalid DSC at the top
+of their files, and this causes dvips to reject these files
+when comment elision (-K) is turned on.
+Essentially, the byte count in the hex thumbnail section is
+flagrantly incorrect.<p>
+
+I have prepared a detailed <a href="README">bug report</a> with
+associated <a href="bug.tar.gz">data files</a>.<p>
+
+I am testing a patch to dvips that works around this problem for
+the next release of dvips.  If you want you can try using
+<a href="output.diffs">patch</a> to dvips 5.86e.<p>
+
+If you have broken EPSF files, I have written a Perl script that may
+fix them.  It is available <a href="fixill.pl">here</a>, or, if
+your system insists on executing scripts with the PL extension,
+you can also get it <a href="fixill.pl.txt">here</a> as text.
+</body>

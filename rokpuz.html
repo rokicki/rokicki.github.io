@@ -1,0 +1,191 @@
+<html><head><title>Puzzle</title>
+<style>
+html {
+  touch-action: manipulation;
+}
+</style>
+<script>
+function getCanvas() {
+   return document.getElementById("canvas") ;
+}
+var bx = 1 ;
+var by = 0 ;
+var w = 1 ;
+var h = 1 ;
+var xoff = 0 ;
+var yoff = 0 ;
+var xm = 0 ;
+var ym = 0 ;
+var fs = 3 ;
+var pieces = [
+" M A", "    ", "  MO", " DNI", "  CA",
+"ER Y", "IC  ", "A R ", " R K", "    ",
+"   J", "   K", "C EN", "  NE", "  TH",
+" O S", "    ", "L L ", "    ", "O M ",
+"GE F", "RH  ", "AR  ", "D   ", "A S "
+] ;
+var wat = [] ;
+function redraw() {
+   var iswin = true ;
+   for (var i=0; iswin && i<25; i++) {
+      if (pieces[wat[i]] != pieces[i])
+         iswin = false ;
+   }
+   var c = getCanvas() ;
+   var ctx = c.getContext("2d");
+   w = c.width ;
+   h = c.height ;
+   ctx.clearRect(0, 0, w, h) ;
+   xm = w/5 ;
+   ym = h/5 ;
+   ctx.strokeStyle = "#000000" ;
+   ctx.font = "30px helvetica"; 
+   ctx.textAlign = "center" ;
+   for (var y=0; y<5; y++) {
+      for (var x=0; x<5; x++) {
+         ctx.save() ;
+         ctx.translate(x*xm, y*ym) ;
+         ctx.beginPath() ;
+         ctx.moveTo(fs, fs) ;
+         ctx.lineTo(fs, ym-fs) ;
+         ctx.lineTo(xm-fs, ym-fs) ;
+         ctx.lineTo(xm-fs, fs) ;
+         ctx.closePath() ;
+         if (y == by && x == bx) {
+            ctx.fillStyle = "#cccccc" ;
+            ctx.save() ;
+            ctx.fill() ;
+            ctx.restore() ;
+         } else {
+            if (iswin) {
+               ctx.save() ;
+               ctx.fillStyle = "#88ff88" ;
+               ctx.fill() ;
+               ctx.restore() ;
+            }
+            var s = pieces[wat[x+5*y]] ;
+            for (yy=0; yy<2; yy++) {
+               for (xx=0; xx<2; xx++) {
+                  var c = s[xx+2*yy] ;
+                  if (c != " ") {
+                     ctx.fillText(c, (2*xx+1)*xm/4, (2*yy+1.3)*ym/4) ;
+                  }
+               }
+            }
+         }
+         ctx.stroke() ;
+         ctx.restore() ;
+      }
+   }
+/*
+   ctx.save() ;
+   ctx.lineWidth = 1 ;
+   ctx.translate(xm/2, ym/2) ;
+   ctx.translate(xoff, yoff) ;
+   ctx.strokeStyle = "#c0c0c0" ;
+   for (var i=0; i<n; i++) {
+      ctx.beginPath() ;
+      if (yused[i] < 2) {
+         ctx.strokeStyle = "#80ff80" ;
+      } else if (yused[i] == 2) {
+         ctx.strokeStyle = "#c0c0c0" ;
+      } else {
+         ctx.strokeStyle = "#800000" ;
+      }
+      ctx.moveTo(0, i*xm) ;
+      ctx.lineTo((n-1)*ym, i*xm) ;
+      ctx.stroke() ;
+      ctx.beginPath() ;
+      if (xused[i] < 2) {
+         ctx.strokeStyle = "#80ff80" ;
+      } else if (xused[i] == 2) {
+         ctx.strokeStyle = "#c0c0c0" ;
+      } else {
+         ctx.strokeStyle = "#800000" ;
+      }
+      ctx.moveTo(i*xm, 0) ;
+      ctx.lineTo(i*xm, (n-1)*xm) ;
+      ctx.stroke() ;
+   }
+   ctx.strokeStyle = "#000000" ;
+*/
+}
+function getMousePosition(c, e) {
+   var r = c.getBoundingClientRect() ;
+   var x = e.clientX - r.left ;
+   var y = e.clientY - r.top ;
+   return {x:x, y:y} ;
+}
+function mouse(e, click) {
+   var c = getCanvas() ;
+   var downxy = getMousePosition(c, e) ;
+   var x = downxy.x ;
+   var y = downxy.y ;
+   clicked = -1 ;
+   if (x < 0 || y < 0 || x >= w || y >= h) {
+   } else {
+      doclick(Math.floor(x/xm), Math.floor(y/ym)) ;
+   }
+   redraw() ;
+}
+function mouseclick(e) {
+   mouse(e, 1) ;
+}
+function doclick(x, y) {
+   if (x != bx && y != by)
+      return ;
+   if (x == bx && y == by)
+      return ;
+   while (x != bx || y != by) {
+      var nx = bx + Math.sign(x-bx) ;
+      var ny = by + Math.sign(y-by) ;
+      var z1 = bx + 5 * by ;
+      var z2 = nx + 5 * ny ;
+      var t = wat[z1] ;
+      wat[z1] = wat[z2] ;
+      wat[z2] = t ;
+      bx = nx ;
+      by = ny ;
+   }
+   update() ;
+}
+function keydown(e) {
+   var kc = e.keyCode ;
+   redraw() ;
+}
+function start() {
+   var c = getCanvas() ;
+   c.addEventListener("mousedown", mouseclick, false) ;
+   wat = [] ;
+   for (var i=0; i<25; i++)
+      wat.push(i) ;
+   for (var i=0; i<25; i++) {
+      var j = Math.floor(i + (25 - i) * Math.random()) ;
+      var t = wat[i] ;
+      wat[i] = wat[j] ;
+      wat[j] = t ;
+   }
+   bx = -1 ;
+   while (bx < 0) {
+      var x = Math.floor(5 * Math.random()) ;
+      var y = Math.floor(5 * Math.random()) ;
+      if (pieces[wat[x+5*y]] == "    ") {
+         bx = x ;
+         by = y ;
+      }
+   }
+   redraw() ;
+}
+function update() {
+   redraw() ;
+}
+//c.addEventListener("mousemove", mousemove, false) ;
+//c.addEventListener("keydown", keydown, false);
+//
+//   Construction routines.
+//
+</script><body onload="start();">
+Family Puzzle.  You can always solve it.<br>
+<canvas id="canvas" width="600" height="600" tabindex=1>
+</canvas><br>
+</body></html>

@@ -1,0 +1,17 @@
+body { font-family: Arial, Helvetica, sans-serif; }
+div.title { font-size: larger; font-weight: bold; }
+div.section { font-size: larger; font-weight: bold; }
+div.stack { margin-left: 20px; margin-right: 20px; }
+p.indent { text-indent: 2em; }
+p.quote { margin-left: 20px; margin-right: 20px; }
+p.timeline { text-indent: -2em; margin-left: 2em; } 
+pre { margin-left: 20px; margin-right: 20px; }
+table { margin-left: auto; margin-right: auto;
+        border-collapse: collapse; border: 1px solid; }
+th { border: 1px solid; text-align: center; font-weight: bold;
+     padding-left: 0.5em; padding-right: 0.5em;  }
+td { border: 1px solid; text-align: right;
+     padding-left: 0.5em; padding-right: 0.5em;  }
+img { float: right; margin: 10px 10px 10px 10px; }
+td.lefttd { text-align: left; }
+td.centertd { text-align: center; }

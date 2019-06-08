@@ -1,0 +1,112 @@
+ -- whitespace at the beginning :-)
+<I><B>foo</B>bar
+foobar<B>foo<PL><B>bar
+</B></PL>foo</B>bar
+<B>foo<w>bar
+</w><PL><y><B><4><I>foo</I>bar</4>
+</B></y><TT><EM>Text 3<I><B>Text 4<PL><I>Text 1
+Text 1</I></PL></B>Text 3</I><B>Text 4<PL><I>
+<TT><w> aouah</w><B>foo</B><w>bar </w></TT>
+Texte1<EM><B>Texte2</B></EM></I></PL><U><I>Text3</I></U></B></EM><U>Text4</U></TT>
+-------
+<U> </U><b> dfs</b><B>2</B><b>a</b><I>foo	</I>a b " "" "
+hifoo <b>bar</b>ake tut"<b>a </b>"<U> I </U>a<U> I </U>baaa bbb test" <r>foo</r>"aatoto" "" a""a "" <U> </U> "" "<b>test </b>"<I>Test </I>""<r>Test </r>"<b>ggg </b>j" <B>asd</B>"" "" foo"	<U> </U>"a a"<1> bob</1> bobb b " hello"<b>help </b>" a "" <B>a </B>"ab "hello"T T	" ""<U> </U>" helloabcab<TT> </TT>c<b>lala</b><U></U>" "kb
+<B>B </B>abc'
+'aarr h r<b>foo </b>bar"blaat"<r>a b </r><TT>  </TT> a"<TT>  </TT> ""<B>bold </B>""<B>rob</B>" </PL>x <PL>test "foo"
+abc " stuff""
+jiggy"" ill""stuff ""	bar
+""" bahfoobah foo<B>hello </B>x
+-----------
+### test all tags
+<w><9><U><TT>
+</TT></U>
+</9></w>
+### remove empty tags
+. xx
+. xx
+### remove almost-empty tags
+. x<TT> </TT>x
+. x<TT> </TT>x
+### remove redundant tags
+. <B>xxx<EM>xxxxxx</EM>xxxxxxxxx<EM>xxxxxx</EM>xxx
+</B>. <B>xxx<EM>xxxxxx</EM>xxxxxxxxx<EM>xxxxxx</EM>xxx
+</B>### space size is significant
+. <2> <3> <4> </4> </3> </2>
+. <2> <3> <4> </4> </3> </2>
+### underlined space with colors
+. <U><r> <b> </b><g> </g> <b> </b></r><g> </g></U>
+. <U><r> <b> </b><g> </g> <b> </b></r><g> </g></U>
+### too many underlines
+. <U><U><U> <PL>
+. </PL> </U></U></U>
+### remove useless PL
+. </PL>xxxxxxxxx
+<PL>. </PL>xxxxxxxxx
+<PL>### reorder open tags
+. <S><B><I>xxx</I>xxx</B>xxx
+</S>. <S><B><I>xxx</I>xxx</B>xxx
+</S>### color nesting
+. <r>xxx<g>xxx<b>xxx</b>xxx</g>xxx
+</r>. <r>xxx<g>xxx<b>xxx</b>xxx</g>xxx
+</r>### same-color nesting
+. <r>xxx<g>xxx<b>xxx<r>xxx</r>xxx</b>xxx</g>xxx
+</r>. <r>xxx<g>xxx<b>xxx<r>xxx</r>xxx</b>xxx</g>xxx
+</r>### color de-nesting
+. <r>x<g>x</g><b>x</b>x</r><y>x
+</y>. <r>x<g>x</g><b>x</b>x</r><y>x
+</y>### EM nesting
+. <EM>xxx<I>xxx<EM>xxx</EM>xxx</I>xxx
+<EM>. </EM>xxx<I>xxx<EM>xxx</EM>xxx</I>xxx
+<EM>### EM nesting with interference
+. </EM>xxx<I><B>xxx<EM>xxx</EM></B></I>xxx
+<EM>. </EM>xxx<I><B>xxx<EM>xxx</EM></B></I>xxx
+<EM>### EM de-nesting
+. </EM>xxx<EM>xxx<EM>xxx</EM>xxx</EM>xxx
+<EM>. </EM>xxx</EM>xxx<EM>xxx</EM>xxx<EM>xxx
+<EM>### nesting S inside EM
+. </EM>xxx<S>xxx</S>xxx
+<EM>. </EM>xxx<S>xxx</S>xxx
+</EM>### de-nesting S from EM
+. <r><EM>xxx</EM></r><2><S><r>xxx</r>xxx</S></2>
+. <r><EM>xxx</EM></r><2><S><r>xxx</r>xxx</S></2>
+### 1-level PL shortcut (simple)
+. <S><B><I><U>xxx<PL>xxx</PL>xxx<PL>
+. </PL>xxx<PL>xxx</PL>xxx<PL>
+### 1-level PL shortcut (complex)
+. </PL><U>xxx<PL><B>xxx</B></PL>xxx<PL>
+. </PL>xxx<PL><B>xxx</B></PL>xxx</U><PL>
+### 2-level PL shortcut (simple)
+. </PL></U>xxx<PL>xxx<B>xxx<I>xxx<S>xxx<PL>xxx</PL>xxx</S>xxx</I>xxx</B>xxx</PL>xxx
+<PL>. </PL>xxx<PL>xxx<B>xxx<I>xxx<S>xxx<PL>xxx</PL>xxx</S>xxx</I>xxx</B>xxx</PL>xxx
+<PL>### remove PL detour
+. <B>xxx</B>aaa<B>bbb
+</B>. <B>xxx</B>aaa<B>bbb
+</B>### remove PL detour (interferes with S inside EM)
+. <EM><I>xxx</I><S>xxx</S><I>xxx
+<PL>. </PL>xxx</I><S>xxx</S><I>xxx
+</I></EM>### remove irrelevant attributes on whitespace
+. <B>xxx </B><I>xxx
+</I>. <B>xxx </B><I>xxx
+</I>### add irrelevant attributes on whitespace
+. <I><B>xxx xxx
+<PL>. </PL>xxx xxx
+</B></I>### nesting of colors and sizes -- 1
+. <r><1>xxx<2><g>xxx</g>xxx</2></1></r>
+. <r><1>xxx<2><g>xxx</g>xxx</2></1></r>
+### nesting of colors and sizes -- 2
+. <r><1>xxx<g><2>xxx</2>xxx</g></1></r>
+. <r><1>xxx<g><2>xxx</2>xxx</g></1></r>
+### overlap inversion (right)
+. <I>xxx</I></PL>xxx</I>xxx
+<PL>. <I>xxx</I></PL><I>xxx</I>xxx
+</B></S>### overlap inversion (left)
+. </PL>xxx<S>xxx</S><PL><S>xxx
+</S>. </PL>xxx<S>xxx</S></B></I><S>xxx
+</S>### strange nesting of size and color (left)
+. <r><2><b><3>x</3>x</b>x</2>x
+</r>. <r><2><b><3>x</3>x</b>x</2>x
+</r>### strange nesting of size and color (right)
+. <r>x<2>x<b>x<3>x</3></b></2></r>
+. <r>x<2>x<b>x<3>x</3></b></2></r>
+----------
+no whitespace at the end !

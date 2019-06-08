@@ -1,0 +1,367 @@
+<html><head><title>Tom Rokicki's ICFP 2001 Programming Contest Entry</title>
+</head><body>
+This year's
+<a href="http://cristal.inria.fr/ICFP2001/prog-contest/">programming contest</a>
+was a blast.  Excellent, challenging
+problem; lots of good thought, learned a lot.  The major thing I learned
+was to get your theory correct before you start programming.  I had a
+bug in an underlying assumption that did not make itself known until
+just a few hours before termination of the contest, and I could not
+recover.
+<p>
+Turns out neither of my entries made it past the first round.  Bugs in both.
+Too bad.  Nonetheless, here's my writeup, just because I enjoyed the problem
+so much.  The code I submitted had all of these features but with
+a whole lotta bugs.
+<p>
+Results of my program (after substantial post-contest improvement);
+does your program find the optimal results below?
+These results are from a 450MHz Celeron.
+<center>
+<table border=1 cellpadding=2>
+<tr><td>Input file</td><td>Best result</td><td>Savings</td><td>Runtime</td></tr>
+<tr><td>000-example</td><td><a href="000-example.txt">13,058 bytes (optimal)</a></td><td>884 bytes</td><td>5.73s</td></tr>
+<tr><td>003-third-step</td><td><a href="003-third-step.txt">4,068 bytes (optimal)</a></td><td>1,480 bytes</td><td>24.4s</td></tr>
+<tr><td>004-random</td><td><a href="004-random.txt">9,999 bytes (optimal)</a></td><td>3,021 bytes</td><td>6h 41m 11.21s</td></tr>
+<tr><td>005-icfp2000</td><td><a href="005-icfp2000.txt">57,200 bytes (optimal)</a></td><td>7,736 bytes</td><td>2h 42m 28.4s</td></tr>
+<tr><td>006-exhaustive</td><td><a href="006-exhaustive.txt">242,363 bytes (best so far)</a></td><td>1,027,013 bytes</td><td>&nbsp;</td></tr>
+<tr><td>100-hand</td><td><a href="100-hand.txt">3,383 bytes (optimal)</a></td><td>1,009 bytes</td><td>15.03s</td></tr>
+<tr><td>101-validate-big</td><td><a href="101-validate-small.txt">78,819 bytes (best so far)</a></td><td>56,062 bytes</td><td>&nbsp;</td></tr>
+<tr><td>102-validate-small</td><td><a href="101-validate-small.txt">78,819 bytes (best so far)</a></td><td>18,664 bytes</td><td>&nbsp;</td></tr>
+<tr><td>103-the-random-returns</td><td><a href="103-the-random-returns.txt">5,138 bytes (optimal)</a></td><td>6,247 bytes</td><td>16m 19.84s</td></tr>
+<tr><td>200-hevea</td><td><a href="200-hevea.txt">1,460,856 bytes (best so far)</a></td><td>1,178,486 bytes</td><td>&nbsp;</td></tr>
+<tr><td>201-suite</td><td><a href="201-suite.txt">21,540 bytes (optimal)</a></td><td>7,274 bytes</td><td>13m 46.15s</td></tr>
+<tr><td>202-hand-again</td><td><a href="100-hand.txt">3,383 bytes (optimal)</a></td><td>1,009 bytes</td><td>15.03s</td></tr>
+<tr><td>203-fractal-big</td><td><a href="203-fractal-big.txt">140,975 bytes (best so far)</a></td><td>784,894 bytes</td><td>&nbsp;</td></tr>
+</table>
+</center>
+Note that 101 and 102 are equivalent, as are 100 and 202.
+
+<h1>Goals and Features</h1>
+
+After reading this year's programming challenge, I set the following
+goals:
+<ul>
+<li>Generate the optimal output if there is sufficient time.
+</li>
+<li>Always generate a better solution than the one given.
+</li>
+<li>Take advantage of common subsequences.
+</li>
+</ul>
+My solution, which was not complete in time for submission, has the
+following features and phases:
+<ul>
+<li>Collapse sequences of compatibly decorated spaces and printables
+into a single token.
+</li>
+<li>Maintain the original nesting information; perform optimization
+from the bottom of the tree up.  If interrupted early, we'll have
+optimized the lower, cheaper levels, and done essentially peephole
+optimization on the higher levels.
+</li>
+<li>Use a dynamic programming solution, optimizing subsequences by
+increasing length.
+</li>
+<li>Recognize common subsequences and reuse rather than recalculate
+the solutions for these.  [Removed in the latest version.]
+</li>
+<li>Recognize when optimal nested sequences can be collapsed
+immediately, reducing the effective length of the remaining
+optimization problem.  [Removed in the latest version;
+this appears to be a false optimization,
+leading to non-optimal results in some cases.]
+</li>
+<li>While optimizing the original nesting structure, only consider
+those subsequences relevant according to that nesting structure,
+rather than optimizing subsequences strictly by increasing length.
+</li>
+</ul>
+Since there is a dynamic programming solution that runs in polynomial
+time, and since 180 seconds of a 1GHz processor is an awful lot of
+computing horsepower, it made sense to me to try to get as close to
+the true optimal as possible, rather than just try a bunch of
+tree rewriting heuristics.
+
+<h3>Collapsing identically decorated subsequences</h3>
+
+The first step is to parse the input, interpreting the tags and
+generating a sequence of tokens.  Each token is a pair containing
+the decorations for that token and the characters that should be
+generated.  This phase also does whitespace compression.
+<p>
+Each token has a state.  That state includes the decorations
+for that token and a bit indicating whether the token has a printable
+character in it or is composed solely of spaces.
+<p>
+We extended the set of sizes (0..9) with an additional value
+(F) indicating the root size.  We extended the set of colors with
+two additional values, (F) indicating the root color, and (E)
+indicating the ability to use any color (for spaces that are not
+underlined).
+<p>
+Two adjacent characters can be included in the same token if their
+decorations are compatible.  Since color does not matter for
+spaces that are not underlined, and the B, EM, TT, I, S attributes
+do not matter for spaces in general, we wrote a function congruent()
+between two states to indicate whether they are compatible or not.
+<p>
+Building the sequence of tokens then consisted of parsing the
+input, deciding for each character if it needs to be output
+(whitespace suppression), and then adding that character to the
+last token or starting a new token.
+<p>
+We added sentinel tokens at the front and back consisting of
+the default decorations and marked as having characters to simply
+a lot of code.
+
+<h3>Maintaining initial nesting structure</h3>
+
+In order to be able to generate output on demand, even when we
+have not completed the optimization, and to guarantee that that
+output is at least as good as the original input, we needed to
+maintain the initial nesting structure.  With the original
+nesting structure, we could always generate output quickly
+performing only quick linear optimizations.
+<p>
+It turned out that writing the code to maintain this nesting
+structure was one of the most difficult parts of the project,
+although it shouldn't have been.  The problem was that the
+characters in a token can come from differently nested
+subdocuments, with different decorations (due to spaces).
+<p>
+Also, I really messed up in building the operations for composing
+subdocuments into documents.  In my submission, I had the
+notions of left- and right-rotations.  Let us define a
+subsequence to be one with no outer tags; that is, it does not
+begin with a tag and end with a matching close tag.  (This is
+true of subsequences in my program).  A right rotation of
+subsequences s1 and s2 would generate s1 alpha s2 alpha', where
+alpha is a sequence of open tags, and alpha' is the sequence
+of matching close tags.  A left rotation would generate
+beta s1 beta' s2.  I thought all documents could be composed of
+rotations from their subsequences.  If you need to do
+alpha s1 alpha' beta s2 beta', you just rotate s1 under the
+preceding subsequence s0, and ditto s2.
+<p>
+Turns out this was wrong, and I did not realize that until
+a few hours before the end of the contest.  But by that time,
+rotations were all over my code and I could not easily fix
+things.
+<p>
+The current code properly uses just the adjacency operator.
+That is, given two subsequences s1 and s2, the adjacency
+operator generates the combined subsequence
+alpha s1 alpha' beta s2 beta' for various values of alpha and
+beta.  We'll give more details on this in the next section.
+<p>
+If we see a sequence of adjacent (but not nested) tokens
+a b c d e, for instance, we reduce it to a binary tree of
+adjacent tokens.  We could reduce it to (for instance)
+((((a b) c) d) e), but in order to obtain more opportunities
+for optimization of short subsequences, we instead reduce it
+into a balanced binary tree (((a b) (c d)) e).
+
+<h3>Dynamic programming based optimization</h3>
+
+This problem is almost a classical dynamic programming problem.
+If I have optimized the length of all subsequences shorter than
+n, I can find the optimal length of all subsequences of length
+n just by considering all pairwise compositions of subsequences
+of length less than n.
+<p>
+Remember, we defined a subsequence to be one without any
+outer matched tags.  We did this to give us maximum freedom on
+the state that a subsequence can be in.  It turns out that
+there are typically not too many states that can be generated
+in this fashion by optimal subsequences, and we only track
+those states.
+<p>
+So essentially we build a big table of opt[i][len][state],
+where i is the index of the leftmost token of the subsequence,
+and len is the count of tokens in the subsequence, and state
+is the required state that the subsequence must be interpreted
+in.
+<p>
+Rather than enumerating all states, we only list those states
+that are relevant for a particular subsequence.  A state is
+relevant for a particular subsequence if there is no optimal
+encoding for that subsequence with matched tags at the front
+and back.  [We only approximate this relevance metric, but
+that's an implementation detail.]
+<p>
+For instance, the original input &lt;r&gt;&lt;B&gt;x&lt;/B&gt;&lt;/r&gt; is a red
+bold x in the root size.  The subsequence corresponding to
+this single token is (red, default size, bold, "x").  Note
+there are no tags in this subsequence, just a state.
+<p>
+Another token, generated perhaps by &lt;1&gt;&lt;B&gt;&lt;I&gt;y&lt;/I&gt;&lt;/B&gt;&lt;/1&gt;,
+generates the subsequence (default color, size 1, bold, italic, "y").
+<p>
+In order to generate a subsequence comprising these two, we
+figure out the differences in decorations, and enumerate the
+possible ways that the two subsequences can be combined.
+There are three orthogonal parts to this:  color, size, and
+other.
+<p>
+For instance, for color, the state of the enclosing subsequence
+must be the root color.  There is no way to go from a state of
+a defined color (red) to the root color using tags.  So we
+know that, with respect to color, the subsequence must look
+like "&lt;r&gt;x&lt;/r&gt;y", and that the color of the subsequence must
+be root.
+<p>
+If both tokens had a defined color, we would have two different
+possible enclosing states with respect to color, with the
+two different relevant tags.
+<p>
+Size is done the same, and again, the combined subsequence
+context must be root size, and the tags with respect to size
+must be "x&lt;1&gt;y&lt;/1&gt;".
+<p>
+The other tags are slightly more complicated.  We consider all
+possibilities using PL and not using PL for the other attributes.
+If we don't use PL, we only consider the differences in the
+attributes.  In this case, the possibilties are:
+<ul>
+<li>
+"x&lt;I&gt;y&lt;/I&gt;" with a combined state of bold;
+</li>
+<li>
+"x&lt;PL&gt;&lt;B&gt;&lt;I&gt;y&lt;/I&gt;&lt;/B&gt;&lt;/PL&gt;" with a combined state of bold; obviously
+inferior to the previous one and thus eliminated immediately;
+</li>
+<li>
+"&lt;PL&gt;&lt;B&gt;x&lt;/B&gt;&lt;/PL&gt;y" with a combined state of italic bold; this
+one cannot be eliminated immediately.
+</li>
+</ul>
+Those are the only relevant contexts.  So for the above case, there
+are only two reasonable ways to compose x and y:
+<ul>
+<li>
+"&lt;r&gt;x&lt;/r&gt;&lt;I&gt;&lt;1&gt;y&lt;/1&gt;&lt;/I&gt;" with a combined state of bold;
+</li>
+<li>
+"&lt;PL&gt;&lt;B&gt;&lt;r&gt;x&lt;/r&gt;&lt;/B&gt;&lt;/PL&gt;&lt;1&gt;y&lt;/1&gt;" with a combined state of italic bold.
+</li>
+</ul>
+There can be up to 16 possible combinations for subsequences of length
+2 (!) when colors, sizes, use of PL, and the EM possibilities are
+taken into account; this potential number of combinations increases
+dramatically with the length of the subsequences.
+Fortunately, it is common for there to be few actual possibilities,
+and the worst case is limited by the total number of possible states,
+which is on the order of 10^4.
+<p>
+Spaces complicate things a fair bit here, but not horribly, and we
+won't bore you with the details.
+
+<h3>Recognizing common subsequences</h3>
+
+If the sequence of tokens a..b is statewise-identical (obviously
+the characters themselves do not have to match) to the sequence of
+tokens c..d, then obviously opt[a][|a..b|] is the same as
+opt[c][|c..d|].  We recognize common subsequences and take
+advantage of this instead of recomputing.
+
+<h3>Collapsing optimal subsequences</h3>
+
+New information:  this does not work!  It seems to work, and does
+help a lot in improving the runtime, but can lead to suboptimal
+solutions!  The simplest case I can find in which this breaks
+is
+<p>
+   &lt;2&gt;a&lt;TT&gt;p&lt;5&gt;p&lt;PL&gt;&lt;2&gt;9&lt;/2&gt;&lt;8&gt;p&lt;5&gt;S&lt;/5&gt;&lt;/8&gt;&lt;/PL&gt;z&lt;/5&gt;r&lt;/TT&gt;&lt;/2&gt;
+<p>
+One subtle but very powerful optimization is the immediate collapse
+of subexpressions that are mincost-optimal.  We define the mincost
+as the cost of the shortest tags necessary to transition from the
+state of one token to the next.  Thus, between the token &lt;B&gt;x&lt;/B&gt;
+and y, we need at least a &lt;B&gt; and &lt;/B&gt; in any subsequence where
+they are adjacent.  A &lt;PL&gt; could be used too (if the outer state
+were bold) but that would not be mincost.  For &lt;B&gt; and &lt;/B&gt;, we use
+a mincost of 7; we charge the length of both the beginning and end tags.
+We compute the mincost between each pair of tokens.
+<p>
+If we find a subsequence a alpha b, where the states of a and b are
+the same, and they contain a character (and thus don't have any
+don't cares in any portion of the state),
+and the cost of this subsequence is half the sum of the mincost
+values for all adjacent tokens in the subsequence, then we know
+that we can collapse that subsequence into just a immediately;
+we do not need to consider any subsequences that break up this
+subsequence.  For instance, in x&lt;B&gt;y&lt;/B&gt;z, the mincost between
+x and y is 7, and between y and z is seven.  Also, x and z are
+in the same state.  We know we can consider this to be just the
+single token x; there are no solutions better than those
+solutions containing x&lt;B&gt;y&lt;/B&gt;z.
+But this optimization allows us to collapse common
+things very effectively.
+
+<h3>Data structure optimizations</h3>
+
+Remember when we said we were building a data structure
+opt[i][len][state]?  The data structure we use is actually
+opt[i][len] points to a tuple (basecost, list), where basecost
+is the shortest subsequence length, and each element of the
+list is (state, split, inccost).  The state is stored in 16 bits,
+inccost in a byte (how much more expensive this state is than
+the basecost; can't be more than about 70 because that's the
+worst case to transition from one state to another), and split
+(the length of the left hand side of the optimal solution for
+this subsequence in this length) we only actually store mod 255.
+(We can recompute it when we need it.)
+Thus, typically,
+each (state-&gt;cost) entry takes only four bytes of RAM.
+
+<h3>State of the code</h3>
+
+When writing code like this, I prototype in Perl and code in C.  The
+<a href="opt.pl.txt">prototype in Perl</a>
+mostly works; I've tested it on all sorts of random
+input.  For instance, to optimize example.txt to the best case of
+13058 bytes takes less than 13 seconds on my slow 450 MHz machine.
+Note that this version has a false optimization in it, so it does
+not always generate the optimal result; it also has at least one
+bug that has been fixed into the C version.
+<p>
+I have downcoded most of it 
+<a href="opt.c.txt">into C</a>.  This version
+optimizes example.txt in 6 seconds on my slow 450MHz machine.
+<p>
+Interesting things you will find in the C version include
+fractal iteration (to minimize swapping when the heap exceeds
+physical memory), a clever binary search using bitwise logic
+(simpler and faster than the conventional one), the use of
+Shell sort with good increments (taken almost literally
+from Harbison and Steele), as well as the more usual
+dynamic arrays, queues, hash tables, and the like.  All of
+this is not yet documented, but it will be soon.
+<p>
+I also plan to
+write an OCaml version just so I can get in touch with my
+inner functional programmer.  (I'm an old Scheme hacker but I've
+not been gloriously delighted with the state of Scheme these
+days.)
+<p>
+<a href="Radical1.tar.gz">My buggy lightning submission</a> and
+<a href="Radical2.tar.gz">my buggy regular submission</a> are given
+here for completeness.  You'll notice quite a difference between
+these submissions and the code given above; I've spent a lot of
+time past the contest fixing up these programs.  One reason is
+that my submissions were so lame, and another is just because
+it's such an interesting problem.
+<p>
+In all the code, I use a 16-bit state variable.  The high nybble
+are the color, with F meaning root color and E meaning any color.
+The next nybble is the size, with F meaning root size.  Bit
+0x80 indicates this state includes a printable character that is
+not shadowed by a PL, so the low bits are important.  Bits 0x40
+and 0x20 are U, bit 0x10 is TT, bit 0x8 is S, bit 0x4 is I, bit 0x2
+is EM, and bit 0x1 is B.  Literal constants in hex litter the
+program; if I were writing this for real, I'd use S|TT|B etc. all
+over instead of all the literal constants.
+<p>
+My email address is rokicki@cs.stanford.edu.
+</body>

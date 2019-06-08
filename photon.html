@@ -1,0 +1,22 @@
+<html><head><title>RL</title></head>
+<body>
+New results:  this CA can be run in n log n, as shown by
+<a href="rl2.c.txt">this code</a>.  Compile and call it with
+an argument of n; it will generate slightly less than the first
+2*n million states.  My machine is tied up
+with another program at the moment, but I've run the first 
+100M states and they are in a <a href="rl2.log.gz">compressed log
+file here</a> (20MB).  It took significantly longer to compress than
+to generate the states themselves!
+You should be able to easily generate at least
+the first 3B states, assuming you have enough swap space.
+You need 256K*n swap, approximately;
+you don't need that much real memory, just swap space, although
+you might run out of virtual address space first.
+<p>
+<a href="rl.log">Here's the old log</a>
+of the photon CA states using the quadratic version.
+We've calculated 10678290 states so far.
+The source is <a href="rl.c.txt">here</a>.
+</body>
+</html>

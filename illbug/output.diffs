@@ -1,0 +1,53 @@
+==== //depot/Build/source.development/TeX/texk/dvipsk/output.c#3 - /space/rokicki/texwork/Build/source.development/TeX/texk/dvipsk/output.c ====
+***************
+*** 349,358 ****
+                           *   or end data, and hope we get it right.  Really
+                           *   the file is malformed.
+                           */
+!                         if (strncmp(possibleDSCLine, "%%BeginBinary", 13) == 0)
+!                            scanForEnd = "%%EndBinary" ;
+!                         else
+!                            scanForEnd = "%%EndData" ;
+                       }
+                       while ('0' <= *p && *p <= '9') {
+                          size = size * 10 + *p - '0' ;
+--- 349,355 ----
+                           *   or end data, and hope we get it right.  Really
+                           *   the file is malformed.
+                           */
+!                         scanForEnd = "Yes" ;
+                       }
+                       while ('0' <= *p && *p <= '9') {
+                          size = size * 10 + *p - '0' ;
+***************
+*** 360,365 ****
+--- 357,370 ----
+                       }
+                       while (*p && *p <= ' ')
+                          p++ ;
++                      if (*p == 'h' || *p == 'H')
++                         /*
++                          *   Illustrator 8 and 9 have bogus byte counts
++                          *   for hex data.  But if it is hex, we assume
++                          *   that it is safe to use ASCII scanning, so
++                          *   we do so.
++                          */
++                         scanForEnd = "Yes" ;
+                       while (*p > ' ') /* ignore Hex/Binary/ASCII */
+                          p++ ;
+                       while (*p && *p <= ' ')
+***************
+*** 373,378 ****
+--- 378,389 ----
+                          } else
+                             ungetc(c, f);
+                       }
++                      if (scanForEnd != 0) {
++                         if (strncmp(possibleDSCLine, "%%BeginBinary", 13) == 0)
++                            scanForEnd = "%%EndBinary" ;
++                         else
++                            scanForEnd = "%%EndData" ;
++                      }
+                       if (scanForEnd == 0) {
+                          if (strncmp(p, "lines", 5) != 0 &&
+                              strncmp(p, "Lines", 5) != 0) {

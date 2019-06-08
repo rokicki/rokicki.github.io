@@ -1,0 +1,252 @@
+ale 50 4
+<r><S>b<8>
+xx <TT>bxx
+x </TT> x
+x</8></S></r>
+x
+xx<r>b <3>
+</3><B> x x </B></r>e<5>b<U>b
+<S>xx
+</S></U></5>
+<U> <TT> <3>    
+<U>b xx</U><B> x
+xx
+xxx<PL><r> x </r>x
+<EM>x</EM>e</PL><U>x</U><PL>xxx</PL><c>e</c>e</B>e</3></TT></U> <9><U>b<U>b
+<r>
+<c> <U>
+<b>
+</b> x<EM>b<6> <5>b<r> <PL>xxx</PL>
+</r><S>x
+</S></5><3>
+</3> </6> x<3>bx </3><I>xx<S>xx
+</S></I>e
+</EM></U><3>xx</3><U>b<PL>x</PL>e</U></c><3> xx</3>e</r><m><4><7> <r>b</r>e<9><B>b<c>b<r>xxx</r>
+</c><k>
+e</k> e<PL>
+<TT>bx<U>x</U><5>b<0>b<I>x
+</I></0>e</5> </TT><g><I>
+x</I>e
+</g><k>xxx<U><S> xx </S><w><EM>x </EM>xxe</w><r>x
+<8><B>
+xxx<PL>bx
+xxxxx </PL>
+xx<TT>x</TT>x
+</B></8>
+e</r></U>bx
+x
+</k>e
+</PL>
+</B></9><TT> x<3> x</3><4><b>
+</b>
+</4>
+<b> 
+x</b> </TT> </7>b<I>x</I>bx
+<PL>b<3>x </3><EM>x </EM><TT>b<U>x</U>e</TT>xx
+<EM>x</EM><S>x
+</S>x x
+<w>xx
+</w></PL>e</4><I>b<r>b<EM>x
+</EM></r></I></m> <EM><3><I> x
+</I><TT>
+x</TT><y>x </y><PL>b
+</PL>
+</3><r> <5>x
+</5>x
+</r>x</EM><PL><2><5>b</5>x
+</2>
+<3> </3> <3><r>b x <TT>
+xe</TT> b
+e</r><B>bb<0><S><I>xx <c>x </c>x x </I></S>e</0>e </B>xx<B>x
+x<2>
+</2>
+x
+</B><U>
+xx</U>x
+<1>
+<9>x</9>e</1><S> x<U>
+<PL>
+x</PL> </U>x
+</S>b<2>b</2>x
+<2><r>x<6> </6></r>e</2>x </3>e</PL> <6>
+<PL><r>b<3> b x e</3>e</r>ee</PL>e</6>
+<1><y><U><S> b<6><PL>b <U>xx</U><EM>b<7><EM>
+xx </EM>e</7>e</EM>e<I>b<4><S>
+<U>x</U> e</S>xe</4>e</I><EM>b</EM>b<3>b<7>
+x<4>
+</4>e</7>xx</3>e<TT> </TT>xx
+<r><EM>x e </EM></r><S>x
+<B>xx
+<r>x<3>x</3>x <1>b xe</1>x<2> xx</2>x<PL>x x </PL><3>
+x e</3></r>x<0> xx
+</0>x<U>
+</U>
+e</B></S>xx
+<I>xx</I><3>bxxx</3>x
+<3>
+</3>x x<S>bx x ex<g>x
+</g><I>x </I>x <3>xxx</3><k><B>bxx
+x
+</B></k></S><3>x</3><c> xx<EM>b</EM></c><1>
+</1><r><B>
+b<5>b<U>x </U>e</5>x<S>b<3>b<y>xx
+</y>x <PL><U>
+e</U><S><B>
+x </B>bx<c>b
+xxe </c>x
+</S>xe
+</PL>x<1>
+</1><c><PL> xxx</PL>e </c></3>
+x b <PL><TT><m><B>
+ x</B>e</m>e</TT></PL>
+e</S></B><w>b<3> x</3>xe </w>b
+<U>bxe</U>
+<3>x</3><S>xx </S><k>x
+</k><4> xxe</4>
+<B><0>b<TT>b<U>
+<PL>b x </PL><U> <PL><U> xx</U>e</PL><c>b<U>bxb
+xe
+e</U> </c>
+x 
+</U>
+x </U>
+xbx  <PL>b<y>b<I>b<3>bxx<U>x </U>x</3>e</I>x</y>x<U>b</U>
+x
+<I><EM>x</EM></I><5> </5> x e<4>
+</4> <U> </U><I>x<7>b
+<3>
+x</3> </7><3><S>
+x
+xe </S><k><9>xx
+</9><PL>b<B>b <r><EM>x</EM></r>e </B></PL></k></3><b>bx
+<7>
+</7><S><1>xx </1>
+xe</S></b>b<3>xx</3><S><b>x
+</b>b<3>b<c>b <U>
+<g>
+<TT> </TT> x</g>x
+</U>e
+</c>xx e <k>b </k>bb
+x
+x<2>x</2>x<2><PL>
+e</PL>e</2><k>xxx </k>xe <k><U><b> x</b> <TT>
+ <1>
+  </1>e</TT><w> <U>bx x</U><PL>x <I>b
+x
+xx
+x e</I></PL></w><r>
+x <PL> x
+</PL></r>x
+x<PL> <7>
+</7> x</PL></U>e</k><8><PL>bxe</PL>x
+</8>
+x
+<b>x
+e</b>e<k>bx <w>x </w>xex<TT>  </TT> <6>bb <PL>x</PL>x <r><PL>x<m>e</m></PL></r><g>e
+</g>xe</6></k><b>
+x </b>bx </3>xx
+<g>x
+</g></S><U>xx</U>e
+</I><B>x
+</B>ee</PL>e</TT></0>e
+</B><I>b </I>x xxxx
+<3> </3> <5><I> x </I></5><S>
+x</S><3>xx</3><I> x
+</I><U>
+<b>
+</b> <m> xxxe</m><U>
+</U>bxe
+</U>x<EM>x </EM><U><B>xx
+</B><2>xx</2>xx<3><S> <b> x
+</b>xxx e
+</S></3>b<I>xx</I>x<k>b
+x
+</k><I>xx
+<g><EM>x<k>x</k></EM></g></I>
+<k>xe</k></U>xxx<U>
+<9>
+x</9></U> b
+<U><EM>
+x
+</EM></U>e
+</r></PL></6></S></U>e</y><3>b<8>x
+</8>
+<8><S>exxx</S>x </8><I>x xx </I>x <2>x
+x</2><y><EM>xx e
+</EM></y>x
+x <c><PL>x
+x <I><2>
+x
+</2><r>
+xx</r></I></PL><6>xx</6><8> </8><PL> <5> </5>e</PL><6> <r>
+x</r></6><PL>
+x</PL>e<6><B> <PL>bx x </PL>x<r>b<PL>x </PL>x<3>b <TT>  
+
+x<7>
+
+</7><I>x</I>e</TT>xe</3><PL>
+x
+xe</PL>xe</r>
+</B></6>
+</c><PL> bx<I>xx
+</I>e</PL>
+</3><y>
+<PL>x x<3> </3>xx
+xx
+xxxxxx <TT>
+</TT>b <S>xx</S><TT><EM>x 
+<U> </U><EM><5><3>x</3>
+
+e</5>x
+</EM>x</EM>e</TT></PL>
+</y><I>x<6> b<EM>xx
+</EM>xe</6></I></1><6>e</6><TT>b<PL>b<U><0>x </0> </U><7> x
+<r>x </r></7>x <y><8>x</8></y>
+<3> xx xxe<S>b<I>b
+x
+</I></S>xx
+b<EM>bx
+</EM>e
+</3></PL>  x</TT></U><r>xx</r>
+</U> <U><3><r>bx<m>xxx</m>
+e</r> x </3><y>
+</y></U><r><I> x</I></r>x<7><B><U><9>b<w>b<PL><S>
+xx
+</S>e</PL></w>e<U> </U></9> </U> x
+</B><EM>x </EM><6>b x
+e</6>x
+<EM>x</EM><U> e</U>
+</7> <U><r>
+x<PL>
+</PL><S>xxe</S><k> <8> x
+</8><I>bx<0>
+x</0></I><TT>x
+
+</TT><1>x</1></k>e</r><U>x</U> </U></9>-------------------------------------------------------------------------
+fractal -width 2 -depth 6 | pessimise
+<S><5><U><0><k><9><U>.</U>.<b>.</b></9>.
+<7><PL>.</PL>.<c>.</c></7></k>.<b><7><I>
+.</I>.<c>.</c></7>.<2><PL>.</PL>.<k>.</k>
+</2></b></0>.<c><2><k><0>.</0>.<6>.</6></k>
+.<b><B>.</B>.<U>.</U></b></2>.<TT><w><U>
+.</U>.<8>.</8></w>.<9><I>.</I>.<w>.</w></9>
+</TT></c></U>.<m><4><U><7><w>.</w>.<B>.
+</B></7>.<1><y>.</y>.<c>.</c></1></U>.
+<y><B><7>.</7>.<w>.</w></B>.<I><g>.</g>.<k>.
+</k></I></y></4>.<3><PL><7><y>.</y>.<w>.
+</w></7>.<b><5>.</5>.<8>.</8></b></PL>.<I><6>
+<TT>.</TT>.<k>.</k></6>.<B><1>.</1>.<6>.
+</6></B></I></3></m></5>.<8><m><0><I><6>
+<U>.</U>.<k>.</k></6>.<2><PL>.</PL>.<y>.
+</y></2></I>.<b><PL><4>.</4>.</PL>.
+.<B><5>.</5>.<1>.</1></B></b></0>.<U><TT><B>
+<g>.</g>.<c>.</c></B>.<7><y>.</y>.<U>
+.</U></7></TT>.<c><6><b>.</b>.<w>.</w></6>
+.<TT><k>.</k>.<b>.</b></TT></c></U></m>.
+<TT><5><g><B><9>.</9>.<w>.</w></B>.<8><U>
+.</U>.<m>.</m></8></g>.<w><1><B>.</B>.
+<r>.</r></1>.<0><U>.</U>.<U>.</U></0></w></5>
+.<m><I><0><b>.</b>.<g>.</g></0>.<r><4>.</4>
+.<PL>.</PL></r></I>.<9><g><I>.</I>.<U>.</U></g>
+.<y><7>.</7>.<PL>.</PL></y></9></m></TT>
+</8></S>

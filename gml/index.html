@@ -1,0 +1,96 @@
+<html><title>Tomas Rokicki's 2000 ICFP Entry</title>
+<body>
+<h1>A Ray Tracer in 470 Lines of Perl?</h1>
+I decided to try my hand at the 
+<a href="http://www.cs.cornell.edu/icfp/">2000 ICFP</a>
+since I always enjoy the
+contests.  And this year was the most fun of all; I learned a lot!
+To see the images I got, look <a href="images.html">here</a>.
+<p>
+I'd never written a ray tracer before, so the task description
+taught me a lot.  And I came up with what I thought were some pretty
+clever tricks---but I'm sure they aren't original.
+<p>
+I decided to write this in Perl since that's the language I can
+prototype code in the fastest.  I also decided to cut some corners;
+there was no way I could win given the time constraints I had (I
+have a job!) and that I was a one-man team and that I had never
+done anything in ray tracing before.  So I didn't worry about error
+checking the input, and I didn't implement the strong typing
+(floats vs ints).  These parts just weren't interesting to me.
+<p>
+Implementing the language was trivial; I simply translated the GML
+into Perl.  Since Perl supports closures, lexical variables,
+and first-class functions,
+this was very easy, and it provided some speed since Perl is quite
+fast as an interpreter.
+<p>
+Implementing the renderer was more difficult.  I am very familiar
+with affine transformations in general (from PostScript), but not
+with ray tracing or how angles get distorted, etc.  So I ended up
+reinventing a lot of stuff, like how to map a normal.  (I knew how
+to map a point and a vector, but was delighted with how elegant
+mapping a normal turns out to be; use the transpose of the inverse
+matrix!)
+<p>
+One neat trick I came up with was dealing with inverse transformations.
+I did not want to compute matrix inverses, even of 4x4 matrices, because
+it's difficult and ugly code.  So instead, I computed both the forward
+and inverse matrix on each transformation step, and kept both with
+the transformed objects!
+<p>
+Surface acne just wasn't a problem at all because I only considered
+surfaces that were facing the proper way.  No need for kludges like
+epsilons; just make sure the ray actually bounces off the visible
+surface of the object rather than the underside.  You won't find
+any numerical kludges in my code.
+<p>
+Because my renderer was so slow (being in Perl and all), I made it
+generate intermediate files at 1/8th, 1/4th, and 1/2 the resolution
+so I could check on its progress and correctness without waiting for
+the full resolution.
+<p>
+Of course, I did the usual sphere bounding test on all objects, but
+other than that, didn't really do anything for performance.  Because
+of Perl, I'm already about 100x slower than a compiled language so
+there's little hope of recovering sufficient speed.
+<p>
+At entry time, I thought I had a complete if slow Tier 2 entry
+(if you ignore the fact that I don't do strong typing); that is, each
+valid Tier 2 image should render correctly, but ones that cause
+runtime errors would not necessarily throw an error.  Well I was
+wrong.  There were at least five errors in my program:
+<p>
+<ul>
+<li>  My z-depth computation was wrong; I wasn't scaling it properly
+with the object transformations.  This was the major bug.  For simple
+unscaled objects, it worked fine, but when you scaled an object, you
+would get improper occlusions.  This didn't make a difference for
+any tests but the golf test, and I didn't test against that one for
+time reasons and because I didn't support CSG.
+</li>
+<li>  I had a sign error in my speculative lighting computation.  This
+didn't make much difference for the small simple images, but it did
+matter for dice, for instance.
+</li>
+<li>  I didn't catch Perl parse errors correctly.  This only mattered
+for incorrect GML programs.
+</li>
+<li>  I didn't handle the Tier-3 spotlight command.  (I support all
+Tier-3 commands; I just don't implement all of them correctly.)
+</li>
+<li>  I forgot to binmode the output file; this only affects you if you
+run on DOS or NT or Win2K or something like that.
+</li>
+</ul>
+I patched these up in the code <a href=gml.pl.txt>here</a>; my original
+submission as a gzipped tar file is <a href=gml.tar.gz>here</a>.
+The total came to about 470 lines of code.  It would be fairly
+straightforward to cut the number of lines down significantly, but
+I'll save that for an obfuscated Perl contest.
+<p>
+All in all, I tremendously enjoyed this contest and I applaud everyone
+who entered and especially the judges!
+<p>
+I can be contacted at rokicki@cs.stanford.edu.
+</body></html>

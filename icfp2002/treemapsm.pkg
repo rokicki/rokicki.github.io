@@ -1,0 +1,1111 @@
+[
+  ((60,12),[
+  Mk {uid=189, dest=(38,87), weight=900}
+  ]),
+  ((22,72),[
+  Mk {uid=100, dest=(77,48), weight=379}
+  ]),
+  ((45,50),[
+  Mk {uid=156, dest=(50,27), weight=310}
+  ]),
+  ((14,45),[
+  Mk {uid=190, dest=(4,93), weight=535}
+  ]),
+  ((30,75),[
+  Mk {uid=236, dest=(26,81), weight=319}
+  ]),
+  ((68,20),[
+  Mk {uid=369, dest=(25,39), weight=53}
+  ]),
+  ((44,54),[
+  Mk {uid=109, dest=(26,18), weight=738}
+  ]),
+  ((62,36),[
+  Mk {uid=307, dest=(66,66), weight=920},
+  Mk {uid=299, dest=(37,6), weight=109}
+  ]),
+  ((75,43),[
+  Mk {uid=87, dest=(57,51), weight=171}
+  ]),
+  ((60,76),[
+  Mk {uid=107, dest=(35,41), weight=474}
+  ]),
+  ((16,93),[
+  Mk {uid=255, dest=(70,81), weight=766}
+  ]),
+  ((65,56),[
+  Mk {uid=345, dest=(73,2), weight=301},
+  Mk {uid=222, dest=(4,87), weight=156}
+  ]),
+  ((55,77),[
+  Mk {uid=37, dest=(25,79), weight=402}
+  ]),
+  ((2,92),[
+  Mk {uid=377, dest=(55,56), weight=687}
+  ]),
+  ((8,44),[
+  Mk {uid=78, dest=(55,69), weight=266}
+  ]),
+  ((28,8),[
+  Mk {uid=52, dest=(2,87), weight=293}
+  ]),
+  ((20,41),[
+  Mk {uid=146, dest=(11,36), weight=374}
+  ]),
+  ((20,33),[
+  Mk {uid=81, dest=(73,58), weight=61}
+  ]),
+  ((12,14),[
+  Mk {uid=164, dest=(20,87), weight=621}
+  ]),
+  ((60,13),[
+  Mk {uid=136, dest=(18,88), weight=226}
+  ]),
+  ((32,44),[
+  Mk {uid=331, dest=(60,29), weight=285}
+  ]),
+  ((55,22),[
+  Mk {uid=117, dest=(45,86), weight=958}
+  ]),
+  ((50,18),[
+  Mk {uid=229, dest=(64,78), weight=600}
+  ]),
+  ((15,26),[
+  Mk {uid=338, dest=(73,20), weight=981}
+  ]),
+  ((32,28),[
+  Mk {uid=243, dest=(17,81), weight=594}
+  ]),
+  ((40,39),[
+  Mk {uid=34, dest=(13,75), weight=60}
+  ]),
+  ((72,16),[
+  Mk {uid=83, dest=(53,64), weight=376}
+  ]),
+  ((35,80),[
+  Mk {uid=226, dest=(53,60), weight=716}
+  ]),
+  ((28,33),[
+  Mk {uid=287, dest=(30,74), weight=289}
+  ]),
+  ((52,82),[
+  Mk {uid=180, dest=(28,32), weight=388}
+  ]),
+  ((12,86),[
+  Mk {uid=258, dest=(30,21), weight=127}
+  ]),
+  ((73,92),[
+  Mk {uid=155, dest=(25,46), weight=866}
+  ]),
+  ((33,88),[
+  Mk {uid=290, dest=(62,81), weight=613}
+  ]),
+  ((6,21),[
+  Mk {uid=152, dest=(40,79), weight=690}
+  ]),
+  ((16,3),[
+  Mk {uid=15, dest=(15,64), weight=878}
+  ]),
+  ((5,17),[
+  Mk {uid=10, dest=(20,37), weight=43}
+  ]),
+  ((6,93),[
+  Mk {uid=36, dest=(60,30), weight=650}
+  ]),
+  ((20,42),[
+  Mk {uid=32, dest=(60,8), weight=654}
+  ]),
+  ((10,63),[
+  Mk {uid=123, dest=(65,66), weight=947}
+  ]),
+  ((43,12),[
+  Mk {uid=182, dest=(21,12), weight=652}
+  ]),
+  ((47,20),[
+  Mk {uid=1, dest=(48,42), weight=906}
+  ]),
+  ((55,31),[
+  Mk {uid=2, dest=(12,51), weight=314}
+  ]),
+  ((38,21),[
+  Mk {uid=88, dest=(49,24), weight=52}
+  ]),
+  ((47,12),[
+  Mk {uid=267, dest=(17,50), weight=831}
+  ]),
+  ((72,33),[
+  Mk {uid=309, dest=(24,78), weight=765}
+  ]),
+  ((70,81),[
+  Mk {uid=45, dest=(23,42), weight=98}
+  ]),
+  ((35,81),[
+  Mk {uid=357, dest=(12,62), weight=622},
+  Mk {uid=49, dest=(42,33), weight=504}
+  ]),
+  ((77,21),[
+  Mk {uid=323, dest=(72,60), weight=567}
+  ]),
+  ((43,92),[
+  Mk {uid=13, dest=(37,24), weight=816}
+  ]),
+  ((35,57),[
+  Mk {uid=68, dest=(47,10), weight=47}
+  ]),
+  ((26,66),[
+  Mk {uid=95, dest=(78,62), weight=11}
+  ]),
+  ((48,72),[
+  Mk {uid=40, dest=(2,69), weight=999}
+  ]),
+  ((43,68),[
+  Mk {uid=60, dest=(7,16), weight=399}
+  ]),
+  ((48,64),[
+  Mk {uid=181, dest=(37,68), weight=511}
+  ]),
+  ((69,90),[
+  Mk {uid=259, dest=(11,60), weight=348}
+  ]),
+  ((55,87),[
+  Mk {uid=246, dest=(50,14), weight=455}
+  ]),
+  ((5,50),[
+  Mk {uid=249, dest=(60,36), weight=44}
+  ]),
+  ((69,66),[
+  Mk {uid=328, dest=(7,87), weight=460}
+  ]),
+  ((4,54),[
+  Mk {uid=332, dest=(24,90), weight=227}
+  ]),
+  ((9,42),[
+  Mk {uid=316, dest=(56,21), weight=379}
+  ]),
+  ((10,80),[
+  Mk {uid=112, dest=(63,36), weight=37}
+  ]),
+  ((52,20),[
+  Mk {uid=343, dest=(38,76), weight=719}
+  ]),
+  ((12,16),[
+  Mk {uid=278, dest=(65,42), weight=667}
+  ]),
+  ((33,42),[
+  Mk {uid=64, dest=(77,30), weight=638}
+  ]),
+  ((20,19),[
+  Mk {uid=175, dest=(2,93), weight=798}
+  ]),
+  ((25,15),[
+  Mk {uid=115, dest=(10,14), weight=254}
+  ]),
+  ((55,40),[
+  Mk {uid=29, dest=(23,26), weight=816}
+  ]),
+  ((33,26),[
+  Mk {uid=70, dest=(7,16), weight=269}
+  ]),
+  ((54,60),[
+  Mk {uid=5, dest=(12,63), weight=25}
+  ]),
+  ((15,36),[
+  Mk {uid=173, dest=(55,53), weight=272}
+  ]),
+  ((32,46),[
+  Mk {uid=205, dest=(2,10), weight=77}
+  ]),
+  ((37,42),[
+  Mk {uid=111, dest=(28,27), weight=103}
+  ]),
+  ((22,75),[
+  Mk {uid=250, dest=(35,18), weight=458}
+  ]),
+  ((40,49),[
+  Mk {uid=48, dest=(24,51), weight=987}
+  ]),
+  ((72,18),[
+  Mk {uid=177, dest=(67,24), weight=237}
+  ]),
+  ((54,36),[
+  Mk {uid=344, dest=(68,33), weight=238}
+  ]),
+  ((45,29),[
+  Mk {uid=76, dest=(23,66), weight=142}
+  ]),
+  ((18,56),[
+  Mk {uid=176, dest=(58,70), weight=233}
+  ]),
+  ((68,15),[
+  Mk {uid=293, dest=(31,84), weight=55}
+  ]),
+  ((75,54),[
+  Mk {uid=261, dest=(67,50), weight=18}
+  ]),
+  ((67,27),[
+  Mk {uid=105, dest=(20,55), weight=604}
+  ]),
+  ((17,68),[
+  Mk {uid=210, dest=(8,72), weight=770}
+  ]),
+  ((25,87),[
+  Mk {uid=272, dest=(4,39), weight=912}
+  ]),
+  ((58,36),[
+  Mk {uid=283, dest=(75,57), weight=382}
+  ]),
+  ((76,18),[
+  Mk {uid=360, dest=(13,72), weight=84}
+  ]),
+  ((43,69),[
+  Mk {uid=378, dest=(5,12), weight=84}
+  ]),
+  ((2,15),[
+  Mk {uid=133, dest=(46,63), weight=658}
+  ]),
+  ((48,57),[
+  Mk {uid=219, dest=(27,86), weight=23}
+  ]),
+  ((55,88),[
+  Mk {uid=294, dest=(15,44), weight=915}
+  ]),
+  ((5,51),[
+  Mk {uid=6, dest=(6,87), weight=819}
+  ]),
+  ((78,58),[
+  Mk {uid=275, dest=(5,42), weight=233}
+  ]),
+  ((5,19),[
+  Mk {uid=336, dest=(15,70), weight=975}
+  ]),
+  ((4,39),[
+  Mk {uid=230, dest=(58,54), weight=468}
+  ]),
+  ((43,30),[
+  Mk {uid=63, dest=(62,45), weight=255}
+  ]),
+  ((60,40),[
+  Mk {uid=144, dest=(29,24), weight=333}
+  ]),
+  ((20,36),[
+  Mk {uid=137, dest=(68,84), weight=77}
+  ]),
+  ((4,9),[
+  Mk {uid=98, dest=(25,77), weight=555}
+  ]),
+  ((10,57),[
+  Mk {uid=131, dest=(75,50), weight=357}
+  ]),
+  ((60,16),[
+  Mk {uid=241, dest=(63,52), weight=660}
+  ]),
+  ((65,12),[
+  Mk {uid=79, dest=(40,72), weight=7}
+  ]),
+  ((63,52),[
+  Mk {uid=197, dest=(45,24), weight=214}
+  ]),
+  ((38,15),[
+  Mk {uid=16, dest=(66,27), weight=206}
+  ]),
+  ((44,90),[
+  Mk {uid=55, dest=(77,58), weight=296}
+  ]),
+  ((28,52),[
+  Mk {uid=216, dest=(37,22), weight=304}
+  ]),
+  ((30,87),[
+  Mk {uid=59, dest=(5,43), weight=772}
+  ]),
+  ((36,63),[
+  Mk {uid=150, dest=(36,48), weight=387}
+  ]),
+  ((70,83),[
+  Mk {uid=154, dest=(60,93), weight=375}
+  ]),
+  ((27,64),[
+  Mk {uid=289, dest=(3,32), weight=26}
+  ]),
+  ((26,84),[
+  Mk {uid=217, dest=(4,57), weight=230}
+  ]),
+  ((45,38),[
+  Mk {uid=335, dest=(63,52), weight=505},
+  Mk {uid=104, dest=(16,75), weight=217}
+  ]),
+  ((67,52),[
+  Mk {uid=317, dest=(27,80), weight=458}
+  ]),
+  ((57,81),[
+  Mk {uid=101, dest=(40,12), weight=303}
+  ]),
+  ((48,90),[
+  Mk {uid=125, dest=(22,75), weight=975}
+  ]),
+  ((66,72),[
+  Mk {uid=284, dest=(25,72), weight=729}
+  ]),
+  ((65,76),[
+  Mk {uid=355, dest=(72,86), weight=661}
+  ]),
+  ((48,58),[
+  Mk {uid=196, dest=(32,54), weight=999}
+  ]),
+  ((5,52),[
+  Mk {uid=334, dest=(53,93), weight=432}
+  ]),
+  ((4,48),[
+  Mk {uid=371, dest=(13,78), weight=921}
+  ]),
+  ((8,72),[
+  Mk {uid=25, dest=(23,21), weight=301}
+  ]),
+  ((10,10),[
+  Mk {uid=353, dest=(48,34), weight=917}
+  ]),
+  ((40,11),[
+  Mk {uid=185, dest=(63,94), weight=549}
+  ]),
+  ((10,90),[
+  Mk {uid=209, dest=(54,51), weight=507}
+  ]),
+  ((52,14),[
+  Mk {uid=145, dest=(60,7), weight=279}
+  ]),
+  ((65,21),[
+  Mk {uid=314, dest=(66,12), weight=551}
+  ]),
+  ((72,60),[
+  Mk {uid=71, dest=(22,28), weight=716}
+  ]),
+  ((42,27),[
+  Mk {uid=237, dest=(75,56), weight=229}
+  ]),
+  ((15,46),[
+  Mk {uid=348, dest=(45,46), weight=859}
+  ]),
+  ((38,24),[
+  Mk {uid=80, dest=(12,20), weight=90}
+  ]),
+  ((23,57),[
+  Mk {uid=352, dest=(33,75), weight=88}
+  ]),
+  ((73,16),[
+  Mk {uid=260, dest=(72,2), weight=567}
+  ]),
+  ((55,18),[
+  Mk {uid=212, dest=(75,80), weight=568}
+  ]),
+  ((45,55),[
+  Mk {uid=321, dest=(77,20), weight=709}
+  ]),
+  ((57,90),[
+  Mk {uid=9, dest=(50,58), weight=602}
+  ]),
+  ((17,94),[
+  Mk {uid=247, dest=(43,32), weight=473}
+  ]),
+  ((47,87),[
+  Mk {uid=354, dest=(18,20), weight=502}
+  ]),
+  ((5,45),[
+  Mk {uid=167, dest=(18,3), weight=481}
+  ]),
+  ((66,3),[
+  Mk {uid=329, dest=(73,56), weight=390}
+  ]),
+  ((5,29),[
+  Mk {uid=253, dest=(52,76), weight=22}
+  ]),
+  ((65,6),[
+  Mk {uid=31, dest=(3,45), weight=479}
+  ]),
+  ((8,57),[
+  Mk {uid=269, dest=(30,64), weight=232}
+  ]),
+  ((7,2),[
+  Mk {uid=305, dest=(12,87), weight=369}
+  ]),
+  ((10,83),[
+  Mk {uid=33, dest=(46,33), weight=666}
+  ]),
+  ((50,63),[
+  Mk {uid=326, dest=(72,15), weight=316}
+  ]),
+  ((23,66),[
+  Mk {uid=18, dest=(40,88), weight=368}
+  ]),
+  ((22,94),[
+  Mk {uid=149, dest=(13,69), weight=637}
+  ]),
+  ((45,72),[
+  Mk {uid=38, dest=(56,27), weight=545}
+  ]),
+  ((27,90),[
+  Mk {uid=140, dest=(35,10), weight=76}
+  ]),
+  ((63,54),[
+  Mk {uid=370, dest=(47,9), weight=548}
+  ]),
+  ((69,30),[
+  Mk {uid=304, dest=(74,45), weight=779}
+  ]),
+  ((36,81),[
+  Mk {uid=273, dest=(23,92), weight=777}
+  ]),
+  ((68,34),[
+  Mk {uid=350, dest=(38,82), weight=397}
+  ]),
+  ((35,77),[
+  Mk {uid=85, dest=(54,93), weight=682}
+  ]),
+  ((17,87),[
+  Mk {uid=62, dest=(54,63), weight=477}
+  ]),
+  ((75,57),[
+  Mk {uid=312, dest=(47,16), weight=810},
+  Mk {uid=232, dest=(35,36), weight=273}
+  ]),
+  ((20,6),[
+  Mk {uid=375, dest=(53,70), weight=620}
+  ]),
+  ((18,2),[
+  Mk {uid=106, dest=(77,34), weight=760}
+  ]),
+  ((52,4),[
+  Mk {uid=188, dest=(28,50), weight=556}
+  ]),
+  ((42,8),[
+  Mk {uid=220, dest=(68,46), weight=312}
+  ]),
+  ((75,3),[
+  Mk {uid=20, dest=(50,84), weight=264}
+  ]),
+  ((9,54),[
+  Mk {uid=158, dest=(40,84), weight=79}
+  ]),
+  ((20,71),[
+  Mk {uid=92, dest=(25,81), weight=930}
+  ]),
+  ((30,26),[
+  Mk {uid=4, dest=(12,62), weight=587}
+  ]),
+  ((20,63),[
+  Mk {uid=27, dest=(25,46), weight=417}
+  ]),
+  ((12,44),[
+  Mk {uid=97, dest=(46,6), weight=739}
+  ]),
+  ((35,30),[
+  Mk {uid=367, dest=(42,51), weight=405}
+  ]),
+  ((33,70),[
+  Mk {uid=21, dest=(13,50), weight=3}
+  ]),
+  ((16,60),[
+  Mk {uid=142, dest=(5,34), weight=369}
+  ]),
+  ((12,28),[
+  Mk {uid=184, dest=(65,18), weight=489}
+  ]),
+  ((25,43),[
+  Mk {uid=242, dest=(70,89), weight=269}
+  ]),
+  ((51,36),[
+  Mk {uid=7, dest=(70,50), weight=214}
+  ]),
+  ((17,16),[
+  Mk {uid=86, dest=(30,83), weight=432}
+  ]),
+  ((10,68),[
+  Mk {uid=120, dest=(27,33), weight=785}
+  ]),
+  ((65,31),[
+  Mk {uid=201, dest=(50,7), weight=17}
+  ]),
+  ((56,24),[
+  Mk {uid=199, dest=(73,76), weight=584}
+  ]),
+  ((36,90),[
+  Mk {uid=244, dest=(13,92), weight=629}
+  ]),
+  ((32,58),[
+  Mk {uid=327, dest=(7,28), weight=215}
+  ]),
+  ((71,66),[
+  Mk {uid=11, dest=(13,40), weight=480}
+  ]),
+  ((77,26),[
+  Mk {uid=46, dest=(54,78), weight=226}
+  ]),
+  ((53,68),[
+  Mk {uid=248, dest=(66,63), weight=444}
+  ]),
+  ((13,2),[
+  Mk {uid=274, dest=(15,38), weight=260}
+  ]),
+  ((6,51),[
+  Mk {uid=342, dest=(62,63), weight=915}
+  ]),
+  ((17,6),[
+  Mk {uid=153, dest=(62,78), weight=718}
+  ]),
+  ((78,78),[
+  Mk {uid=265, dest=(4,51), weight=701}
+  ]),
+  ((22,40),[
+  Mk {uid=280, dest=(22,38), weight=820}
+  ]),
+  ((22,24),[
+  Mk {uid=292, dest=(73,78), weight=234}
+  ]),
+  ((18,21),[
+  Mk {uid=162, dest=(38,56), weight=351}
+  ]),
+  ((30,19),[
+  Mk {uid=82, dest=(72,94), weight=854}
+  ]),
+  ((43,34),[
+  Mk {uid=362, dest=(35,51), weight=24}
+  ]),
+  ((24,72),[
+  Mk {uid=351, dest=(60,8), weight=760}
+  ]),
+  ((25,28),[
+  Mk {uid=47, dest=(28,15), weight=841}
+  ]),
+  ((23,84),[
+  Mk {uid=130, dest=(23,52), weight=159}
+  ]),
+  ((47,34),[
+  Mk {uid=302, dest=(15,31), weight=513}
+  ]),
+  ((40,86),[
+  Mk {uid=251, dest=(35,75), weight=809}
+  ]),
+  ((45,82),[
+  Mk {uid=358, dest=(70,6), weight=592}
+  ]),
+  ((69,24),[
+  Mk {uid=252, dest=(30,38), weight=502}
+  ]),
+  ((37,39),[
+  Mk {uid=203, dest=(28,94), weight=665}
+  ]),
+  ((4,12),[
+  Mk {uid=77, dest=(58,80), weight=967}
+  ]),
+  ((3,40),[
+  Mk {uid=339, dest=(52,26), weight=404}
+  ]),
+  ((67,56),[
+  Mk {uid=320, dest=(48,36), weight=401}
+  ]),
+  ((67,48),[
+  Mk {uid=277, dest=(27,42), weight=169}
+  ]),
+  ((9,72),[
+  Mk {uid=42, dest=(10,26), weight=213}
+  ]),
+  ((65,9),[
+  Mk {uid=271, dest=(77,33), weight=965}
+  ]),
+  ((50,10),[
+  Mk {uid=103, dest=(36,42), weight=985}
+  ]),
+  ((14,30),[
+  Mk {uid=54, dest=(42,30), weight=960}
+  ]),
+  ((8,2),[
+  Mk {uid=300, dest=(74,57), weight=250}
+  ]),
+  ((40,15),[
+  Mk {uid=206, dest=(37,68), weight=971}
+  ]),
+  ((57,30),[
+  Mk {uid=221, dest=(72,3), weight=950}
+  ]),
+  ((32,92),[
+  Mk {uid=286, dest=(48,70), weight=734}
+  ]),
+  ((50,74),[
+  Mk {uid=285, dest=(13,12), weight=780}
+  ]),
+  ((17,18),[
+  Mk {uid=3, dest=(42,92), weight=449}
+  ]),
+  ((50,66),[
+  Mk {uid=337, dest=(78,64), weight=85}
+  ]),
+  ((32,84),[
+  Mk {uid=148, dest=(63,28), weight=933}
+  ]),
+  ((50,58),[
+  Mk {uid=19, dest=(55,15), weight=175}
+  ]),
+  ((32,76),[
+  Mk {uid=266, dest=(47,39), weight=934}
+  ]),
+  ((54,90),[
+  Mk {uid=224, dest=(63,74), weight=118}
+  ]),
+  ((15,58),[
+  Mk {uid=333, dest=(72,18), weight=473}
+  ]),
+  ((46,63),[
+  Mk {uid=172, dest=(23,48), weight=561}
+  ]),
+  ((47,27),[
+  Mk {uid=376, dest=(62,94), weight=923}
+  ]),
+  ((23,69),[
+  Mk {uid=214, dest=(6,60), weight=308}
+  ]),
+  ((45,75),[
+  Mk {uid=347, dest=(47,70), weight=944}
+  ]),
+  ((38,28),[
+  Mk {uid=134, dest=(51,36), weight=455}
+  ]),
+  ((37,48),[
+  Mk {uid=301, dest=(33,12), weight=563}
+  ]),
+  ((77,44),[
+  Mk {uid=198, dest=(52,52), weight=973}
+  ]),
+  ((78,16),[
+  Mk {uid=128, dest=(58,27), weight=36}
+  ]),
+  ((67,57),[
+  Mk {uid=127, dest=(24,24), weight=866}
+  ]),
+  ((58,58),[
+  Mk {uid=349, dest=(75,54), weight=333}
+  ]),
+  ((62,3),[
+  Mk {uid=361, dest=(5,53), weight=296},
+  Mk {uid=35, dest=(17,62), weight=821}
+  ]),
+  ((74,9),[
+  Mk {uid=372, dest=(25,24), weight=336},
+  Mk {uid=322, dest=(50,26), weight=429}
+  ]),
+  ((8,69),[
+  Mk {uid=141, dest=(37,45), weight=272}
+  ]),
+  ((32,21),[
+  Mk {uid=227, dest=(75,2), weight=867}
+  ]),
+  ((22,26),[
+  Mk {uid=318, dest=(28,48), weight=205}
+  ]),
+  ((36,21),[
+  Mk {uid=245, dest=(25,16), weight=852},
+  Mk {uid=218, dest=(63,32), weight=269}
+  ]),
+  ((20,74),[
+  Mk {uid=291, dest=(40,71), weight=701}
+  ]),
+  ((70,33),[
+  Mk {uid=174, dest=(58,14), weight=558}
+  ]),
+  ((17,51),[
+  Mk {uid=61, dest=(15,62), weight=512}
+  ]),
+  ((43,52),[
+  Mk {uid=231, dest=(48,62), weight=134}
+  ]),
+  ((67,10),[
+  Mk {uid=187, dest=(8,93), weight=969}
+  ]),
+  ((42,80),[
+  Mk {uid=124, dest=(5,68), weight=130}
+  ]),
+  ((24,90),[
+  Mk {uid=282, dest=(45,62), weight=66}
+  ]),
+  ((70,17),[
+  Mk {uid=143, dest=(70,46), weight=826}
+  ]),
+  ((52,27),[
+  Mk {uid=12, dest=(37,46), weight=534}
+  ]),
+  ((49,12),[
+  Mk {uid=99, dest=(38,21), weight=623}
+  ]),
+  ((25,54),[
+  Mk {uid=298, dest=(38,90), weight=37}
+  ]),
+  ((65,50),[
+  Mk {uid=147, dest=(77,42), weight=208}
+  ]),
+  ((10,87),[
+  Mk {uid=121, dest=(70,51), weight=148}
+  ]),
+  ((60,38),[
+  Mk {uid=17, dest=(15,90), weight=644}
+  ]),
+  ((65,42),[
+  Mk {uid=256, dest=(23,78), weight=832}
+  ]),
+  ((48,24),[
+  Mk {uid=359, dest=(3,18), weight=623}
+  ]),
+  ((15,67),[
+  Mk {uid=66, dest=(65,60), weight=395}
+  ]),
+  ((46,72),[
+  Mk {uid=84, dest=(11,42), weight=541}
+  ]),
+  ((63,66),[
+  Mk {uid=341, dest=(78,62), weight=919}
+  ]),
+  ((69,42),[
+  Mk {uid=276, dest=(66,75), weight=131}
+  ]),
+  ((62,94),[
+  Mk {uid=166, dest=(2,86), weight=564}
+  ]),
+  ((28,58),[
+  Mk {uid=356, dest=(71,72), weight=385}
+  ]),
+  ((67,66),[
+  Mk {uid=65, dest=(32,16), weight=170}
+  ]),
+  ((68,38),[
+  Mk {uid=161, dest=(43,57), weight=758}
+  ]),
+  ((66,78),[
+  Mk {uid=168, dest=(78,72), weight=594}
+  ]),
+  ((7,50),[
+  Mk {uid=171, dest=(22,27), weight=196}
+  ]),
+  ((68,2),[
+  Mk {uid=281, dest=(43,78), weight=329}
+  ]),
+  ((10,32),[
+  Mk {uid=183, dest=(77,21), weight=724}
+  ]),
+  ((12,72),[
+  Mk {uid=26, dest=(31,60), weight=588}
+  ]),
+  ((30,54),[
+  Mk {uid=72, dest=(68,94), weight=646}
+  ]),
+  ((53,40),[
+  Mk {uid=313, dest=(70,85), weight=871}
+  ]),
+  ((22,27),[
+  Mk {uid=296, dest=(23,74), weight=992}
+  ]),
+  ((52,60),[
+  Mk {uid=193, dest=(17,81), weight=907}
+  ]),
+  ((60,71),[
+  Mk {uid=366, dest=(4,75), weight=801}
+  ]),
+  ((53,24),[
+  Mk {uid=179, dest=(58,93), weight=205}
+  ]),
+  ((18,24),[
+  Mk {uid=129, dest=(10,33), weight=31}
+  ]),
+  ((17,44),[
+  Mk {uid=51, dest=(78,9), weight=850}
+  ]),
+  ((75,22),[
+  Mk {uid=89, dest=(20,83), weight=385}
+  ]),
+  ((17,36),[
+  Mk {uid=363, dest=(60,58), weight=951}
+  ]),
+  ((15,84),[
+  Mk {uid=69, dest=(73,40), weight=736}
+  ]),
+  ((73,54),[
+  Mk {uid=24, dest=(70,89), weight=203}
+  ]),
+  ((46,81),[
+  Mk {uid=208, dest=(35,4), weight=817}
+  ]),
+  ((32,86),[
+  Mk {uid=113, dest=(15,72), weight=333}
+  ]),
+  ((15,68),[
+  Mk {uid=73, dest=(65,53), weight=844}
+  ]),
+  ((37,82),[
+  Mk {uid=178, dest=(63,9), weight=180}
+  ]),
+  ((72,66),[
+  Mk {uid=379, dest=(13,42), weight=396}
+  ]),
+  ((77,70),[
+  Mk {uid=132, dest=(63,69), weight=92}
+  ]),
+  ((55,48),[
+  Mk {uid=116, dest=(15,42), weight=292}
+  ]),
+  ((62,87),[
+  Mk {uid=192, dest=(72,30), weight=581}
+  ]),
+  ((58,92),[
+  Mk {uid=170, dest=(46,54), weight=694}
+  ]),
+  ((77,38),[
+  Mk {uid=74, dest=(68,78), weight=413}
+  ]),
+  ((3,51),[
+  Mk {uid=364, dest=(27,90), weight=841},
+  Mk {uid=122, dest=(51,66), weight=729}
+  ]),
+  ((59,48),[
+  Mk {uid=365, dest=(33,72), weight=352}
+  ]),
+  ((66,87),[
+  Mk {uid=58, dest=(65,3), weight=40}
+  ]),
+  ((45,4),[
+  Mk {uid=200, dest=(23,81), weight=513}
+  ]),
+  ((8,15),[
+  Mk {uid=279, dest=(5,79), weight=559}
+  ]),
+  ((5,91),[
+  Mk {uid=263, dest=(2,27), weight=350}
+  ]),
+  ((7,27),[
+  Mk {uid=325, dest=(12,16), weight=858}
+  ]),
+  ((15,21),[
+  Mk {uid=311, dest=(8,38), weight=833}
+  ]),
+  ((30,55),[
+  Mk {uid=194, dest=(55,56), weight=733}
+  ]),
+  ((25,80),[
+  Mk {uid=14, dest=(58,57), weight=37}
+  ]),
+  ((42,90),[
+  Mk {uid=239, dest=(22,76), weight=217}
+  ]),
+  ((52,45),[
+  Mk {uid=119, dest=(13,3), weight=472}
+  ]),
+  ((70,19),[
+  Mk {uid=373, dest=(52,39), weight=958}
+  ]),
+  ((50,93),[
+  Mk {uid=211, dest=(55,44), weight=346}
+  ]),
+  ((47,70),[
+  Mk {uid=139, dest=(45,84), weight=92}
+  ]),
+  ((10,89),[
+  Mk {uid=114, dest=(20,72), weight=344}
+  ]),
+  ((65,44),[
+  Mk {uid=262, dest=(54,39), weight=412}
+  ]),
+  ((50,77),[
+  Mk {uid=268, dest=(17,20), weight=666}
+  ]),
+  ((55,81),[
+  Mk {uid=235, dest=(47,6), weight=463}
+  ]),
+  ((42,58),[
+  Mk {uid=228, dest=(78,87), weight=961},
+  Mk {uid=204, dest=(64,90), weight=884}
+  ]),
+  ((50,69),[
+  Mk {uid=41, dest=(42,56), weight=977}
+  ]),
+  ((47,54),[
+  Mk {uid=102, dest=(26,81), weight=266}
+  ]),
+  ((15,77),[
+  Mk {uid=195, dest=(47,3), weight=847}
+  ]),
+  ((54,93),[
+  Mk {uid=118, dest=(53,48), weight=315}
+  ]),
+  ((64,48),[
+  Mk {uid=30, dest=(43,60), weight=207}
+  ]),
+  ((37,75),[
+  Mk {uid=324, dest=(35,15), weight=22}
+  ]),
+  ((8,32),[
+  Mk {uid=56, dest=(8,54), weight=931}
+  ]),
+  ((5,68),[
+  Mk {uid=315, dest=(38,56), weight=35}
+  ]),
+  ((76,6),[
+  Mk {uid=202, dest=(7,72), weight=743}
+  ]),
+  ((63,21),[
+  Mk {uid=374, dest=(20,17), weight=259}
+  ]),
+  ((18,50),[
+  Mk {uid=57, dest=(17,39), weight=789}
+  ]),
+  ((44,51),[
+  Mk {uid=240, dest=(30,35), weight=547}
+  ]),
+  ((52,54),[
+  Mk {uid=93, dest=(78,78), weight=581}
+  ]),
+  ((12,58),[
+  Mk {uid=96, dest=(73,68), weight=263}
+  ]),
+  ((53,26),[
+  Mk {uid=297, dest=(55,18), weight=681}
+  ]),
+  ((76,12),[
+  Mk {uid=169, dest=(49,84), weight=257}
+  ]),
+  ((75,24),[
+  Mk {uid=225, dest=(13,60), weight=776}
+  ]),
+  ((42,75),[
+  Mk {uid=213, dest=(15,54), weight=27}
+  ]),
+  ((64,81),[
+  Mk {uid=303, dest=(70,3), weight=635}
+  ]),
+  ((72,76),[
+  Mk {uid=8, dest=(25,69), weight=321}
+  ]),
+  ((68,81),[
+  Mk {uid=234, dest=(62,6), weight=320}
+  ]),
+  ((78,44),[
+  Mk {uid=157, dest=(65,5), weight=85}
+  ]),
+  ((37,76),[
+  Mk {uid=138, dest=(78,34), weight=786}
+  ]),
+  ((77,64),[
+  Mk {uid=288, dest=(45,48), weight=654}
+  ]),
+  ((30,9),[
+  Mk {uid=238, dest=(78,56), weight=800}
+  ]),
+  ((6,81),[
+  Mk {uid=186, dest=(30,89), weight=131}
+  ]),
+  ((44,9),[
+  Mk {uid=165, dest=(75,30), weight=47}
+  ]),
+  ((10,51),[
+  Mk {uid=50, dest=(10,7), weight=550}
+  ]),
+  ((50,31),[
+  Mk {uid=264, dest=(52,72), weight=928}
+  ]),
+  ((40,60),[
+  Mk {uid=257, dest=(10,43), weight=293}
+  ]),
+  ((23,18),[
+  Mk {uid=306, dest=(73,58), weight=96},
+  Mk {uid=75, dest=(78,63), weight=694}
+  ]),
+  ((18,51),[
+  Mk {uid=270, dest=(43,76), weight=152}
+  ]),
+  ((35,53),[
+  Mk {uid=53, dest=(62,6), weight=814}
+  ]),
+  ((60,82),[
+  Mk {uid=215, dest=(52,84), weight=830}
+  ]),
+  ((60,74),[
+  Mk {uid=207, dest=(65,22), weight=912}
+  ]),
+  ((25,66),[
+  Mk {uid=330, dest=(29,12), weight=733}
+  ]),
+  ((29,90),[
+  Mk {uid=319, dest=(12,51), weight=321}
+  ]),
+  ((47,72),[
+  Mk {uid=223, dest=(9,30), weight=306}
+  ]),
+  ((57,27),[
+  Mk {uid=44, dest=(64,42), weight=224}
+  ]),
+  ((63,86),[
+  Mk {uid=67, dest=(63,74), weight=977}
+  ]),
+  ((68,66),[
+  Mk {uid=110, dest=(47,15), weight=793}
+  ]),
+  ((68,58),[
+  Mk {uid=28, dest=(60,46), weight=109}
+  ]),
+  ((4,18),[
+  Mk {uid=39, dest=(23,72), weight=961}
+  ]),
+  ((2,74),[
+  Mk {uid=94, dest=(40,8), weight=779}
+  ]),
+  ((6,90),[
+  Mk {uid=23, dest=(5,10), weight=625}
+  ]),
+  ((5,86),[
+  Mk {uid=340, dest=(58,48), weight=64}
+  ]),
+  ((13,80),[
+  Mk {uid=160, dest=(47,69), weight=822}
+  ]),
+  ((32,18),[
+  Mk {uid=91, dest=(50,31), weight=276}
+  ]),
+  ((37,22),[
+  Mk {uid=368, dest=(77,94), weight=509}
+  ]),
+  ((12,92),[
+  Mk {uid=191, dest=(46,42), weight=124},
+  Mk {uid=163, dest=(52,20), weight=649}
+  ]),
+  ((40,37),[
+  Mk {uid=135, dest=(27,76), weight=200}
+  ]),
+  ((37,14),[
+  Mk {uid=151, dest=(38,75), weight=487}
+  ]),
+  ((30,58),[
+  Mk {uid=346, dest=(37,82), weight=850}
+  ]),
+  ((18,44),[
+  Mk {uid=310, dest=(2,64), weight=632}
+  ]),
+  ((58,40),[
+  Mk {uid=126, dest=(67,68), weight=215}
+  ]),
+  ((60,75),[
+  Mk {uid=254, dest=(72,38), weight=99}
+  ]),
+  ((33,86),[
+  Mk {uid=233, dest=(15,40), weight=934}
+  ]),
+  ((24,87),[
+  Mk {uid=43, dest=(38,50), weight=20}
+  ]),
+  ((55,92),[
+  Mk {uid=159, dest=(75,33), weight=388},
+  Mk {uid=90, dest=(50,69), weight=490}
+  ]),
+  ((55,84),[
+  Mk {uid=22, dest=(37,2), weight=437}
+  ]),
+  ((15,88),[
+  Mk {uid=308, dest=(32,28), weight=726}
+  ]),
+  ((77,82),[
+  Mk {uid=295, dest=(5,41), weight=477},
+  Mk {uid=108, dest=(19,72), weight=758}
+  ])
+]

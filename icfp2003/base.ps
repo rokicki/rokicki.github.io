@@ -1,0 +1,21 @@
+%!PS
+/Helvetica findfont 12 scalefont setfont
+/cs { dup stringwidth pop -0.5 mul -4 rmoveto show } def
+/ls { dup stringwidth pop -1 mul -4 rmoveto show } def
+/rs { 0 -4 rmoveto show } def
+250 250 translate
+150 0 moveto 150 150 lineto -150 150 lineto -150 0 lineto
+0 -150 lineto closepath gsave 0.9 setgray fill grestore stroke
+-170 0 moveto 170 0 lineto stroke
+0 -170 moveto 0 170 lineto stroke
+0 180 moveto (A) cs
+0 -180 moveto (B) cs
+180 0 moveto (R) rs
+-180 0 moveto (L) ls
+-160 160 moveto (AL) rs
+160 160 moveto (AR) rs
+-5 160 moveto 0 170 lineto 5 160 lineto stroke
+-5 -160 moveto 0 -170 lineto 5 -160 lineto stroke
+160 -5 moveto 170 0 lineto 160 5 lineto stroke
+-160 -5 moveto -170 0 lineto -160 5 lineto stroke
+showpage

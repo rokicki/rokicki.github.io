@@ -1,0 +1,285 @@
+Implementation of HashLife
+
+This document describes some notes on the implementation of hashlife
+that is used in both hlife and golly.  Some of the technological
+considerations underlying these decisions are changing, and it is
+worthwhile to reconsider some of the design decisions as we move to
+a 64-bit multithreaded world.
+
+The first part of this document describes things as they are.
+The second part discusses possible improvements.
+
+* Basic Structures and Hashtable *
+
+A golly hashlife node currently looks like this:
+
+struct node {
+   struct node *next ; // chained hash pointer
+   struct node *nw, *ne, *sw, *se ; // quadtree pointers
+   struct node *res ; // result
+} ;
+
+On a 32-bit platform, that's 24 bytes; on a 64-bit platform, that's
+48 bytes.
+
+Golly allocates nodes in contiguous blocks of 1000 to minimize any
+memory loss due to malloc overhead.
+
+Golly uses a hashtable that looks like:
+
+node **hashtable ;
+
+That is, the hashtable is an array of pointers to the first element of
+a chain.  Until golly nears the memory limit set by the user, the
+average chain length is kept relatively short (an average of 1 for a
+full hashtable; an average of about 0.5 right after a resize, which
+means an average of 0.75 during running.)  Once memory fills, the
+average chain length is extended so more nodes fit in memory; for a
+full memory, the average chain length is set to be 4.
+
+In practice, most garbage collections free about 99% of the nodes, so
+the average chain length after a garbage collection is nearly 0.
+Thus, once memory fills and garbage collection starts, the average
+chain length overall hovers somewhere around 2.
+
+Golly uses a move-to-front heuristic on the hash chains that minimizes
+the impact of the long chains.  Further, since about 90% of the
+hashtable lookups succeed, it is relatively rare to walk the entire
+chain.
+
+With a full hashtable and an average chain length of 4, the hashtable
+header pointer array itself requires about one byte per node.  Thus,
+the total memory consumption in golly per node is very close to 25
+bytes.
+
+I performed a set of experiments during 2002 and 2003 (I believe) to
+determine the best chain length.  An average chain length of two (when
+memory was full) decreased the number of nodes that could fit in
+memory by about 4%, and thus increased the number of garbage
+collections somewhat, and ended up making the program very slightly
+slower.  An average chain length of eight made the chain searches
+start to take more time.  I found, at that time, with the machines I
+had and the benchmark patterns I chose, that four was the best option.
+
+In general, hashlife spends all of its time doing hash table lookups.
+About 90% of the lookups succeed; about 10% fail.  For every failed
+hashtable lookup, there will be a hashtable insert.
+
+A typical hashtable lookup involves two memory misses; the first in
+the hashtable chain header array itself, and the second in the first
+node of the chain (which is usually the result node).  In general,
+hashlife tends to be memory bound; most of the time is spent waiting
+for results from memory access.
+
+For very large memories (gigabytes), on modern processors, each main
+data miss also involves a TLB miss, and servicing that TLB miss
+usually requires yet another data miss (to access the leaf level pages
+of the page table).  Use of 4K pages really hurts hashlife; I hope we
+can get large page support at some point in time.  (The x86 hardware
+supports it, but the operating systems typically make it very
+difficult to use.)
+
+In hlife and the hlifealgo algorithm in Golly, we use leaf nodes that
+hold an 8x8 array of cells.  These leaf nodes are the same size as
+regular nodes, and store the result of the 8x8 array advanced by 2 and
+advanced by 1.  In the ghashbase algorithm in Golly (which supports
+multistate algorithms), the leaf nodes are just nodes that hold four
+byte-sized states and no result information.
+
+In practice for most patterns and rules, the leaf cells have no
+significant impact on performance; all work is typically done at
+higher levels.
+
+The hash function that is used is simply:
+
+#define node_hash(a,b,c,d) (((int)d)+3*(((int)c)+3*(((int)b)+3*((int)a)+3)))
+
+That is, we use a linear combination of the addresses of the nodes
+themselves, multiplied by (1, 3, 9, 27).  This simplistic hash
+function appears to work well, yielding a good distribution of chain
+lengths.  It may be worthwhile changing this function to permit more
+concurrent computation (perhaps using factors (1, 3, 17, 257) for
+instance, and not chaining the multiplications).
+
+* Result Caching *
+
+We cache the results for each node directly in the node itself.  The
+reason we do this is that most nodes in a hashlife computation have a
+result computed for them; if we were to store the result in a separate
+table, we would introduce significant additional memory (and time)
+overhead.  This means we are restricted to a single result per node.
+
+The generation calculation always proceeds by some power of two.
+In a pure, traditional hashlife, the result node of a node that is
+2^k x 2^k will always be advanced 2^{k-2}.  In our hashlife, we
+permit the step size to be an arbitrary power of two, so for some
+nodes the result stored in the res field may represent a smaller
+step.  For instance, if the step size is 1024, then all nodes up to
+4096 x 4096 will use the traditional 2^{k-2} step size, but all
+nodes larger than this will use a step size of 1024.
+
+This means that if the step size is changed, we have to walk all of
+the nodes and invalidate the result if the step size for that node
+size has changed.  To make this faster in some common cases, we
+maintain an array of up to 1024 nodes that have "nontraditional" step
+sizes.  This way if the increment is changed in such a way that only a
+small number of nodes have nontraditional sizes, and only those might
+need to be invalidated, we can directly access those and invalidate
+them without walking the entire universe.  (This only works for
+increasing the step size; we should enhance this to work for
+decreasing the step size too by simply keeping the most recent largest
+1024 nodes that have had results calculated for them.  This is a
+relatively simple change and will make some step size changes when
+decreasing the step size *much* faster.  We should also make this
+array not be a constant size, but rather a fraction of the main memory
+size, say 0.5%, so very large memory sizes can benefit from this more.)
+
+* Bit Twiddling *
+
+At various points, hashlife needs to walk the tree structure and
+collect information.  In order to mark which nodes have been visited
+and which have not, we will sometimes twiddle the low order bit of the
+next field or the res field.  This means that all nodes must be on
+even addresses for now.  We could have used some sort of external bit
+vector, or an external hash set, but neither option was considered
+sufficiently practical or sufficiently fast.  Take into account that
+the nodes are not completely contiguous, so computing an index for
+a particular node address is not straightforward.
+
+Similarly, we will hijack the next field to hold more verbose
+information.  Whenever we do this, we start by pulling the
+"tree of interest" out of the hashtable completely, so that we can
+use the next field with impunity; after the operation completes,
+we rehash the tree of interest.  Because of this, when one of
+these operations is underway, we cannot perform other operations
+that require the hashtable.
+
+The following operations use the mark bit in the next field:
+
+   - Garbage collection (we mark nodes that are reachable)
+
+   - Increment changing (or cache clearing)
+
+The following operations use the mark bit in the res field:
+
+   - Population counting (also stores the population in the next field)
+
+   - Writing a macrocell (we store the node index in the next field)
+
+* Garbage Collection *
+
+When memory fills, we must reclaim some nodes.  We do this in a very
+simple way that attempts to be fast and encourages spatial and
+temporal locality.
+
+First, we walk the stack of active references, recursively marking
+those that are in use.  This walk only touches the reachable nodes,
+so the time required is proportional to the live nodes; this tends
+to be 1% or less so it is usually pretty fast.  For some patterns
+when run for days or weeks, the live set can increase to be a
+substantial fraction of the total nodes, in which case this marking
+phase can take substantially longer.
+
+Next, we completely zero the hashtable chain header array.  We then
+walk the blocks of nodes we have allocated (a block is one of the
+1024-element node chunks we malloc'd), and either rehash that node
+(if it is marked, and thus reachable), or add that node to the free
+list.
+
+The walk of the blocks in order is critical to maintaining the spatial
+and temporal locality which enhances the effectiveness of the
+processor caches.  In addition, walking the blocks by a sequential
+scan also makes the garbage collection itself faster.
+
+This policy of freeing every node that is not reachable from the
+current call stack tends to free a lot of useful work, that then must
+be redone as needed.  I have not been able to come up with a better
+policy; some policies are better for some patterns, but on average
+this simple policy is the best I've been able to find.  Certainly
+more experimentation is called for here.
+
+* Multithreading *
+
+A big opportunity is the use of multithreading for hashlife.  The main
+obstacle here is the rate at which the hashtable is accessed (several
+million times per second).  Some locking scheme needs to be introduced
+or designed, or else some lock-free hashtable adopted.  Further, some
+resolution for when two threads need the result of the same node must
+be introduced.  With dual-core processors common, and quad-core
+processors not unusual, this would potentially give a dramatic
+improvement in what can be computed.
+
+Initially, garbage collection can remain single-threaded, since it
+does not currently take a substantial portion of the computation
+time.  Long-term, we might want to multithread this too.
+
+This would not be an easy task; several options need to be considered,
+and implemented, and compared.  Further, if we do attempt a lock-free
+datastructure, we'd have to be *very* careful that it is indeed
+correct, and not just empirically correct.
+
+* Open Hashing and Indexed Nodes *
+
+The transition from 32-bit to 64-bit environments means also that we
+are transitioning from a cramped, fragmented virtual address space to
+a huge, unfragmented address space.  This means that rather than
+allocate memory in small chunks, as the current implementation must in
+order to work around the noncontiguous address space 32-bit Windows
+and 32-bit Linux provides, we can instead allocate all nodes at once,
+as one contiguous region.
+
+The downside of a 64-bit environment is every pointer becomes
+eight bytes.  Thus, golly right now would then use an average of
+50 bytes, rather than 25, for each node.
+
+But a contiguous allocation of nodes makes using indices rather than
+pointers simple.  So if we use 32-bit indices rather than 64-bit
+pointers, we can retain the 25-byte efficiency of the 32-bit platform
+while permitting memory use up to 4B nodes (which is about 100GB of
+memory).
+
+In addition, contiguous memory allows the consideration of open
+hashing and its variants (cuckoo hashing, for instance).  The gain of
+using open hashing would be (ideally) a single miss per lookup, rather
+than two.
+
+The problem with open hashing is typically open hashing works best
+when the hashtable utilization is low.  If we keep utilization low, we
+cannot store as many nodes, so we have to garbage collect more
+frequently, throwing away useful work.  Striking a balance here is a
+real challenge, but there are good opportunities.
+
+* Reference Counts *
+
+One solution to the problem of garbage collection throwing away a lot
+of useful work is to always maintain a full hashtable; keep memory
+filled with nodes with results, rather than filling memory, then
+throwing away almost all those results with an aggressive garbage
+collection.  We can do this by using reference counts and garbage
+collect based on those reference counts incrementally.  The
+incremental garbage collection has the additional benefit of
+permitting golly to run more smoothly without those annoying garbage
+collection pauses.
+
+Using reference counts has two downsides.  First, the size of the node
+structure increases from 24 bytes to 28 bytes.  Secondly, maintaining
+those reference counts introduces both a lot of additional CPU
+instructions and a fair number of additional memory misses.
+
+I have implemented this and experimented with it (in a 32-bit golly
+environment), and so far it seems a wash.  Some patterns run somewhat
+faster, but some run somewhat slower; in general, the difference is
+not usually discernable.
+
+Certainly it is worth further experimentation and exploration; I am
+sure improvements can be made to my reference-counted implementation.
+
+* What Else? *
+
+What other improvements should be added to this note?
+
+Some possible ideas:
+
+   - Make hashlife work on tori or bounded universes.
+
+   - Some sort of generational gc.

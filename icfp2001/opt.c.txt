@@ -1,0 +1,1090 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+#include <math.h>
+void *mcalloc(int a, int b) {
+   void *r = calloc(a, b) ;
+   if (r == 0) {
+      fprintf(stderr, "No memory?\n") ;
+      abort() ;
+   }
+   return r ;
+}
+void *mrealloc(void *p, int osize, int newsize) {
+   void *r = mcalloc(1, newsize) ;
+   memcpy(r, p, osize) ;
+   free(p) ;
+   return r ;
+}
+typedef struct stack {
+   int *ar ;
+   int size, capacity ;
+} stack ;
+stack *newstack() {
+   return (stack *)mcalloc(sizeof(struct stack), 1) ;
+}
+void resize(stack *s) {
+   int newsize = s->capacity + 10 + s->capacity / 2 ;
+   s->ar = mrealloc(s->ar, s->capacity * sizeof(int), newsize * sizeof(int)) ;
+   s->capacity = newsize ;
+}
+void push(stack *s, int v) {
+   if (s->capacity <= s->size)
+      resize(s) ;
+   s->ar[s->size++] = v ;
+}
+void settop(stack *s, int v) {
+   s->ar[s->size-1] = v ;
+}
+void set(stack *s, int i, int v) {
+   while (s->capacity <= i)
+      resize(s) ;
+   s->ar[i] = v ;
+   if (s->size < i)
+      s->size = i ;
+}
+int get(stack *s, int i) {
+   return s->ar[i] ;
+}
+int pop(stack *s) {
+   return s->ar[--(s->size)] ;
+}
+int top(stack *s) {
+   return s->ar[(s->size)-1] ;
+}
+stack *states, *scopestack, *childnext, *children, *output, *stateat,
+      *outscope, *atstate, *atlen ;
+int begscope = 0 ;
+int pos = 1 ;
+int state ;
+void freestack(stack *s) {
+   free(s->ar) ;
+   free(s) ;
+}
+char *strbuf, *strp, *outstr ;
+int strbuflen ;
+void addchar(int c) {
+   if (strp + 1 >= strbuf + strbuflen) {
+      int newlen = strbuflen + 10 + strbuflen / 2 ;
+      int opos = strp - strbuf ;
+      strbuf = mrealloc(strbuf, strbuflen, newlen) ;
+      strp = strbuf + opos ;
+      strbuflen = newlen ;
+   }
+   *strp++ = c ;
+}
+void newoutput(int state) {
+   addchar(0) ;
+   push(output, state) ;
+}
+#define INF 10000000
+int lastspacedec = -1 ;
+int doop(int op, int state) {
+   switch(op) {
+case 'B':  return state | 1 ;
+case 'E':  return (state & 8) ? state : (state ^ 2) ;
+case 'I':  return state | 4 ;
+case 'P':  return state & 0xff80 ;
+case 'S':  return (state | 8) & ~2 ;
+case 'T':  return state | 0x10 ;
+case 'U':  return ((state & 0x60) == 0x60) ? state : (state + 0x20) ;
+case '0': case '1': case '2': case '3': case '4': case '5': case '6':
+case '7': case '8': case '9':
+           return (state & 0xf0ff) | ((op - '0') << 8) ;
+case 'r':  return (state & 0xfff) | 0x0000 ;
+case 'g':  return (state & 0xfff) | 0x1000 ;
+case 'b':  return (state & 0xfff) | 0x2000 ;
+case 'c':  return (state & 0xfff) | 0x3000 ;
+case 'm':  return (state & 0xfff) | 0x4000 ;
+case 'y':  return (state & 0xfff) | 0x5000 ;
+case 'k':  return (state & 0xfff) | 0x6000 ;
+case 'w':  return (state & 0xfff) | 0x7000 ;
+default: abort() ;
+   }
+}
+int relevant(int st) {
+   if (st & 0x80)
+      return 0xffff ;
+   if ((st & 0xf080) == 0xe000)
+      return 0xf70 ;
+   return 0xff70 ;
+}
+int congruent(int st1, int st2) {
+   int rel = relevant(st1) & relevant(st2) ;
+   return !((st1 ^ st2) & rel) ;
+}
+void readdoc() {
+   int c ;
+   while ((c = getchar()) != EOF) {
+      if (c == '<') {
+         c = getchar() ;
+         if (c == '/') {
+            int ss = top(scopestack) ;
+            state = pop(states) ;
+            set(childnext, begscope, get(children, ss)) ;
+            set(children, ss, begscope) ;
+            begscope = pop(scopestack) ;
+         } else {
+            push(states, state) ;
+            push(scopestack, begscope) ;
+            begscope = pos++ ;
+            set(children, begscope, -1) ;
+            state = doop(c, state) ;
+         }
+         set(stateat, begscope, state) ;
+         while ((c = getchar()) != '>') ;
+      } else if (c <= ' ') {
+         int wstate = state & 0xfff0 ;
+         if ((state & 0x60) == 0) {
+            wstate &= 0xfff ;
+            wstate |= 0xe000 ;
+         }
+         if (!congruent(top(output), wstate)) {
+            newoutput(wstate) ;
+            set(outscope, output->size, begscope) ;
+            addchar(c) ;
+         } else {
+            if (lastspacedec != wstate || (wstate & 0x10))
+               addchar(c) ;
+         }
+         lastspacedec = wstate ;
+      } else {
+         int cstate = state | 0x80 ;
+         if (!congruent(top(output), cstate))
+            newoutput(cstate) ;
+         else
+            settop(output, cstate) ;
+         set(outscope, output->size, begscope) ;
+         addchar(c) ;
+         lastspacedec = -1 ;
+      }
+   }
+   {
+      int cstate = state | 0x80 ;
+      if (!congruent(top(output), cstate))
+         push(output, cstate) ;
+      else
+         settop(output, cstate) ;
+   }
+   set(outscope, output->size, begscope) ;
+   addchar(0) ;
+}
+int nodepull ;
+int debug = 0 ;
+int collapseseq(int mstateat, stack *nodes, int *sawcharp) ;
+int collapsetwo(int mstateat, int onenode, int twonode, int *sawcharp) ;
+int collapse(int begscope, int *sawcharp) {
+   int mstateat = get(stateat, begscope) ;
+   int sawchar = 0 ;
+   stack *nodes = newstack() ;
+   int i, node = 0 ;
+   int nc = 0 ;
+   stack *mychildren = newstack() ;
+ if (debug) fprintf(stderr, "Collapsing %x scope %d\n", mstateat, begscope) ;
+   i = get(children, begscope) ;
+   while (i != -1) {
+      push(mychildren, i) ;
+      i = get(childnext, i) ;
+   }
+   i = mychildren->size ;
+   while (1) {
+      int twonode = -1 ;
+      if (nodepull < output->size && get(outscope, nodepull+1) == begscope) {
+ if (debug) fprintf(stderr, "Pulling node %d for scope %d\n", nodepull, begscope) ;
+         twonode = nodepull++ ;
+         sawchar |= get(output, twonode) & 0x80 ;
+      } else if (i > 0) {
+         int childscope = get(mychildren, --i) ;
+         twonode = collapse(childscope, &sawchar) ;
+      } else
+         break ;
+      if (twonode != -1) {
+         int tc = ~(nc + 1) & nc ;
+         push(nodes, twonode) ;
+         while (tc) {
+            int twonode = pop(nodes) ;
+            int onenode = pop(nodes) ;
+            push(nodes, collapsetwo(mstateat | sawchar, onenode, twonode,
+                                    &sawchar)) ;
+            tc >>= 1 ;
+         }
+         nc++ ;
+      }
+   }
+   while (nodes->size > 1) {
+      int twonode = pop(nodes) ;
+      int onenode = pop(nodes) ;
+      push(nodes, collapsetwo(mstateat | sawchar, onenode, twonode, &sawchar)) ;
+   }
+   if (nodes->size)
+      node = pop(nodes) ;
+   else
+      node = -1 ;
+   freestack(nodes) ;
+   *sawcharp |= sawchar & 0x80 ;
+   freestack(mychildren) ;
+ if (debug) fprintf(stderr, "Returning from %x scope %d\n", mstateat, begscope) ;
+   return node ;
+}
+typedef struct entry {
+   unsigned char split, cost ;
+   unsigned short state ;
+} entry ;
+typedef struct opthead {
+   int basecost ;
+   entry entries[0] ;
+} opthead ;
+opthead ***opt ;
+int asstacks = 2 ;
+int *a ;
+entry *lookupopt(int i, int len, int state, int *cost) {
+   entry *r = 0 ;
+   opthead *oh = 0 ;
+ if (debug) fprintf(stderr, "Looking up %d %d %x\n", i, len, state) ;
+   if (len >= asstacks) {
+      stack *s = (stack *)(opt[len]) ;
+      int j=0, b ;
+      // use binary search
+      for (b=2; b<s->size; b <<= 1) ;
+      for (; b>=2; b >>= 1) {
+         if (j + b < s->size && get(s, j + b) <= i)
+            j += b ;
+      }
+      if (get(s, j) == i)
+         oh = (opthead *)get(s, j+1) ;
+   } else {
+      oh = opt[len][i] ;
+   }
+   if (oh == 0) {
+      fprintf(stderr, "Couldn't find entry header!\n") ;
+      abort() ;
+   }
+   r = oh->entries ;
+   while (r->split != 0 && r->state != state)
+      r++ ;
+   if (r == 0 || r->split == 0) {
+      fprintf(stderr, "Couldn't find split! %d %d %x\n", i, len, state) ;
+      abort() ;
+   }
+   if (cost)
+      *cost = oh->basecost + (int)(r->cost) ;
+   return r ;
+}
+opthead *lookopt(int len, int i) {
+   stack *s ;
+   int j=0, b ;
+   if (len < asstacks)
+      return opt[len][i] ;
+   s = (stack *)(opt[len]) ;
+   if (s == 0)
+      return 0 ;
+   // use binary search
+   for (b=2; b<s->size; b <<= 1) ;
+   for (; b>=2; b >>= 1) {
+      if (j + b < s->size && get(s, j + b) <= i)
+         j += b ;
+   }
+   if (get(s, j) == i)
+      return (opthead *)get(s, j+1) ;
+   return 0 ;
+}
+entry base[65536] ;             // while we work; major static 
+unsigned short entries[11000] ; // used entries; sized for max # states
+int nentries = 0 ;              // how many entries are live
+int basecost = 0 ;
+void *entrychunk = 0 ;
+int entrymemleft = 0 ;
+/* this is where most of our memory goes */
+/* we use 4M to trigger glibc's mmap allocation so we can get >900M */
+opthead *entrymalloc(int n) {
+   int siz = sizeof(opthead) + n * sizeof(entry) + 4 ;
+   opthead *r ;
+   if (siz < entrymemleft) {
+      r = entrychunk ;
+      entrychunk = ((char *)entrychunk) + siz ;
+      entrymemleft -= siz ;
+      return r ;
+   } else if (siz >= 8192) {
+      return mcalloc(siz, 1) ;
+   } else {
+      r = mcalloc(4000000, 1) ;
+      entrychunk = ((char *)r) + siz ;
+      entrymemleft = 4000000 - siz ;
+      return r ;
+   }
+}
+int worst ;
+/* this will be called n*(n+3)/2 times; used to do percentages */
+int percentages = 0 ;
+double bcount = 0 ;
+double btarget = 200 ;
+double btotal = 0 ;
+opthead *buildentries() {
+   int i ;
+   int minbase = INF ;
+   opthead *r = entrymalloc(nentries) ;
+   entry *e ;
+   bcount++ ;
+   if (percentages && bcount * 100.0 / btotal >= btarget) {
+      btarget = floor(bcount * 100 / btotal) ;
+      fprintf(stderr, "{%lg%%}", btarget) ;
+      btarget++ ;
+   }
+ if (debug) fprintf(stderr, "Building for %d entries.\n", nentries) ;
+   if (nentries > worst)
+      worst = nentries ;
+   if (nentries == 0) {
+      fprintf(stderr, "No entries?") ;
+      abort() ;
+   }
+   for (i=0; i<nentries; i++) {
+      entry *e = base + entries[i] ;
+      if (e->cost < minbase)
+         minbase = e->cost ;
+   }
+   r->basecost = basecost + minbase ;
+   for (i=0; i<nentries; i++) {
+      e = base + entries[i] ;
+      e->cost -= minbase ;
+      r->entries[i] = base[entries[i]] ;
+      base[entries[i]].split = 0 ;
+   }
+   e = &(r->entries[i]) ;
+   e->split = 0 ;
+   nentries = 0 ;
+   return r ;
+}
+int simpcost[256] ;
+stack *pendingclosetags ;
+void init() {
+   int i ;
+   states = newstack() ;
+   scopestack = newstack() ;
+   stateat = newstack() ;
+   set(stateat, 0, 0xff80) ;
+   children = newstack() ;
+   childnext = newstack() ;
+   set(children, 0, -1) ;
+   output = newstack() ;
+   push(output, 0xff80) ;
+   state = 0xff00 ;
+   outscope = newstack() ;
+   push(outscope, 0) ;
+   push(outscope, 0) ;
+   atlen = newstack() ;
+   atstate = newstack() ;
+   for (i=0; i<256; i++) {
+      simpcost[i] = ((i & 0x10) ? 9 : 0) + ((i & 8) ? 7 : 0) +
+                    ((i & 4) ? 7 : 0) + (((i & 0xa) == 2) ? 9 : 0) +
+                    ((i & 1) ? 7 : 0) + ((i & 0x60) >> 5) * 7 ;
+   }
+   for (i=0; i<65536; i++)
+      base[i].split = 0 ;
+   pendingclosetags = newstack() ;
+}
+int refinepl(int st1, int st2) {
+   int rel = relevant(st1) ;
+   st2 &= 0xff00 ;
+   return (st1 & rel) | (st2 & ~rel) ;
+}
+int transcost(int st1, int st2) {
+   int rel = relevant(st2) ;
+   int reldiff = (st1 ^ st2) & rel ;
+   int cost = 0 ;
+   int uudiff ;
+   if (reldiff & 0xf000) {
+      if ((st2 & 0xf000) != 0xe000) {
+         if ((st2 & 0xf000) == 0xf000)
+            return INF ;
+         cost = 7 ;
+      }
+   }
+   if (reldiff & 0xf00) {
+      if ((st2 & 0xf00) == 0xf00)
+         return INF ;
+      cost += 7 ;
+   }
+   uudiff = ((st2 & 0x60) - (st1 & 0x60)) / 32 ;
+   if (((reldiff & st1 & ~st2) & 0x1d) || uudiff < 0)
+      return cost + 9 + simpcost[st2 & 0x7f] ;
+   return cost + simpcost[(uudiff << 5) + (reldiff & 0x1f)] ;
+}
+entry possib[20] ;
+entry *adj_slow(int st1, int st2) {
+   int rel = relevant(st1) & relevant(st2) ;
+   int reldiff = (st1 ^ st2) & rel ;
+   int charbit = (st1 | st2) & 0x80 ;
+   entry *ep = possib ;
+   entry *newep = 0 ;
+   int pl1 = 9 + simpcost[st1 & 255] ;
+   int pl2 = 9 + simpcost[st2 & 255] ;
+ if (debug) fprintf(stderr, "In adj_slow for %x %x\n", st1, st2) ;
+   if (((st1 ^ st2) & 0x7f) == 0) {
+      ep->state = (st1 & 0x7f) | charbit ;
+      ep->cost = 0 ;
+      ep->split = 1 ;
+      ep++ ;
+   } else {
+      int uudiff = ((st1 & 0x60) - (st2 & 0x60)) / 32 ;
+      int uustate = 0 ;
+      int othercost = 0 ;
+      int i, j, sc ;
+      if (uudiff < 0) {
+         othercost = -7 * uudiff ;
+         uustate = st1 & 0x60 ;
+      } else {
+         othercost = 7 * uudiff ;
+         uustate = st2 & 0x60 ;
+      }
+      uustate |= charbit ;
+      sc = simpcost[reldiff & 0x1f] + othercost ;
+      ep->state = refinepl(st1, st2) & 0xff ;
+      ep->cost = pl2 ;
+      ep->split = 1 ;
+      ep++ ;
+      ep->state = refinepl(st2, st1) & 0xff ;
+      ep->cost = pl1 ;
+      ep->split = 1 ;
+      ep++ ;
+      if ((reldiff & 0xa) == 0xa) {
+         ep->state = (st1 & st2 & 0x1f) | 2 | uustate ;
+         ep->cost = sc ;
+         ep->split = 1 ;
+         ep++ ;
+      } else if ((st1 & 0x80) == 0) {
+         ep->state = ((st1 | 0xf) & st2 & 0x1f) | uustate ;
+         ep->cost = sc ;
+         ep->split = 1 ;
+         ep++ ;
+      } else if ((st2 & 0x80) == 0) {
+         ep->state = ((st2 | 0xf) & st1 & 0x1f) | uustate ;
+         ep->cost = sc ;
+         ep->split = 1 ;
+         ep++ ;
+      } else {
+         ep->state = (st1 & st2 & 0x1f) | uustate ;
+         ep->cost = sc ;
+         ep->split = 1 ;
+         ep++ ;
+         if ((reldiff & 0xa) == 2) {
+            ep->state = (ep-1)->state ^ 2 ;
+            ep->cost = sc ;
+            ep->split = 1 ;
+            ep++ ;
+         }
+      }
+      for (i=0; possib+i<ep; i++) {
+         for (j=0; possib+j<ep; j++) {
+            if (i != j && possib[i].cost >= possib[j].cost) {
+               int cost = transcost(possib[i].state, possib[j].state) +
+                          possib[j].cost ;
+               if (cost <= possib[i].cost) {
+                  ep-- ;
+                  possib[i] = *ep ;
+                  i-- ;
+                  break ;
+               }
+            }
+         }
+      }
+   }
+   ep->split = 0 ;
+   newep = mcalloc(4 + sizeof(entry) * (ep - possib), 1) ;
+   memcpy(newep, possib, 4 + sizeof(entry) * (ep - possib)) ;
+   return newep ;
+}
+entry *adjcache[65536] ;
+entry *adj(int st1, int st2) {
+   int m = ((st1 & 255) << 8) | (st2 & 255) ;
+   if (adjcache[m] == 0) {
+      adjcache[((st2 & 255) << 8) | (st1 & 255)] =
+                              adjcache[m] = adj_slow(st1, st2) ;
+   }
+   return adjcache[m] ;
+}
+void adjstates(int st1, int st2) {
+   int rel = relevant(st1) & relevant(st2) ;
+   int reldiff = (st1 ^ st2) & rel ;
+   int xcost = 0 ;
+   int cp[3], sp[3] ;
+   entry *el, *ep ;
+   int i, j ;
+   if ((st1 ^ st2) & 0xf000) {
+      if ((st1 & 0xf000) == 0xe000) {
+         cp[0] = st2 & 0xf000 ;
+         cp[1] = -1 ;
+      } else if ((st2 & 0xf000) == 0xe000) {
+         cp[0] = st1 & 0xf000 ;
+         cp[1] = -1 ;
+      } else if ((st1 & 0xf000) == 0xf000 || (st2 & 0xf000) == 0xf000) {
+         xcost += 7 ;
+         cp[0] = 0xf000 ;
+         cp[1] = -1 ;
+      } else {
+         xcost += 7 ;
+         cp[0] = st1 & 0xf000 ;
+         cp[1] = st2 & 0xf000 ;
+         cp[2] = -1 ;
+      }
+   } else {
+      cp[0] = st1 & 0xf000 ;
+      cp[1] = -1 ;
+   }
+   if (reldiff & 0xf00) {
+      xcost += 7 ;
+      if ((st1 & 0xf00) == 0xf00 || (st2 & 0xf00) == 0xf00) {
+         sp[0] = 0xf00 ;
+         sp[1] = -1 ;
+      } else {
+         sp[0] = st1 & 0xf00 ;
+         sp[1] = st2 & 0xf00 ;
+         sp[2] = -1 ;
+      }
+   } else {
+      sp[0] = st1 & 0xf00 ;
+      sp[1] = -1 ;
+   }
+   el = adj(st1, st2) ;
+   ep = possib ;
+   for (i=0; cp[i] >= 0; i++) {
+      for (j=0; sp[j] >= 0; j++) {
+         int bits = cp[i] | sp[j] ;
+         entry *e ;
+         for (e=el; e->split != 0; e++) {
+ if (debug) fprintf(stderr, "[%x %d %d]\n", ep->state, ep->cost, ep->split) ;
+            ep->state = e->state | bits ;
+            ep->cost = e->cost + xcost ;
+            ep->split = 1 ;
+            ep++ ;
+         }
+      }
+   }
+ if (debug) fprintf(stderr, "Found %d entries.\n", ep-possib) ;
+ if (debug) {
+   int i ;
+   for (i=0; possib+i<ep; i++)
+    fprintf(stderr, "%x %d %d\n", possib[i].state, possib[i].cost,
+            possib[i].split) ;
+ }
+   ep->split = 0 ;
+}
+void findbestdual(int thisstate, int start, int len, int split,
+                  int *leftstate, int *rightstate, int *midstate,
+                  int *costp, int *splitp) {
+   entry *e1, *e2, *e3 ;
+   int best = INF ;
+   for (; split < len; split += 255) {
+      opthead *g1 = lookopt(split, start) ;
+      opthead *g2 = lookopt(len-split, start+split) ;
+      if (g1 == 0 || g2 == 0)
+         continue ;
+      for (e1=g1->entries; e1->split != 0; e1++) {
+         for (e2=g2->entries; e2->split != 0; e2++) {
+            int costadd = g1->basecost + e1->cost +
+                          g2->basecost + e2->cost ;
+            adjstates(e1->state, e2->state) ;
+            for (e3=possib; e3->split != 0; e3++) {
+               int cost = e3->cost + costadd + transcost(thisstate, e3->state) ;
+               if (cost < best) {
+                  *leftstate = e1->state ;
+                  *rightstate = e2->state ;
+                  *midstate = e3->state ;
+                  *costp = cost ;
+                  *splitp = split ;
+                  best = cost ;
+               }
+            }
+         }
+      }
+   }
+   if (best == INF) {
+      fprintf(stderr, "Couldn't find dual\n") ;
+      abort() ;
+   }
+}
+void findbestadj(int leftstate, int rightstate, int newstate,
+                 int *midstate, int *cost) {
+   int best = INF ;
+   entry *e, *beste = 0 ;
+      if (debug) fprintf(stderr, "Looking for adj for %x %x %x\n",
+                                            leftstate, rightstate, newstate) ;
+   adjstates(leftstate, rightstate) ;
+   for (e = possib; e->split != 0; e++) {
+      int cost = transcost(newstate, e->state) + e->cost ;
+ if (debug) fprintf(stderr, "  found %x %d\n", e->state, e->cost) ;
+      if (cost < best) {
+         beste = e ;
+         best = cost ;
+      }
+   }
+   if (beste == 0) {
+      fprintf(stderr, "Couldn't find adj for %x %x %x\n",
+                                            leftstate, rightstate, newstate) ;
+      abort() ;
+   }
+   *midstate = beste->state ;
+   *cost = best ;
+}
+int collapsetwo(int mstateat, int onenode, int twonode, int *sawcharp) {
+   int newlen = get(atlen, onenode) + get(atlen, twonode) ;
+   int midstate, cost, ret ;
+   stack *s ;
+ if (debug) fprintf(stderr, "Combining %d %d %x with %d %d %x\n",
+                         onenode, get(atlen, onenode), get(atstate, onenode),
+                         twonode, get(atlen, twonode), get(atstate, twonode)) ;
+   findbestadj(get(atstate, onenode), get(atstate, twonode), mstateat,
+                     &midstate, &cost) ;
+   lookupopt(onenode, get(atlen, onenode), get(atstate, onenode), &ret) ;
+   cost += ret ;
+   lookupopt(twonode, get(atlen, twonode), get(atstate, twonode), &ret) ;
+   cost += ret ;
+   cost -= transcost(mstateat, midstate) ;
+   if (opt[newlen] == 0)
+      opt[newlen] = (opthead **)newstack() ;
+   s = (stack *)opt[newlen] ;
+   push(s, onenode) ;
+   {
+      entry *e = base + midstate ;
+      nentries = 1 ;
+      entries[0] = midstate ;
+      e->state = midstate ;
+      e->split = 1 + (get(atlen, onenode) - 1) % 255 ;
+      e->cost = 0 ;
+      basecost = cost ;
+   }
+   push(s, (int)buildentries()) ;
+   set(atlen, onenode, newlen) ;
+   set(atstate, onenode, midstate) ;
+   return onenode ;
+}
+int collapseseq(int mstateat, stack *nodes, int *sawcharp) {
+ if (debug) fprintf(stderr, "In collapseseq for %x (%d nodes)\n",
+                    mstateat, nodes->size) ;
+ if (debug) {
+    int i ;
+    for (i=0; i<nodes->size; i++) {
+       fprintf(stderr, " [%d %d]", get(nodes, i), get(atlen, get(nodes, i))) ;
+    }
+    fprintf(stderr, "\n") ;
+ }
+   while (1) {
+      stack *r ;
+      int i ;
+      if (nodes->size == 0) {
+         *sawcharp |= mstateat & 0x80 ;
+         freestack(nodes) ;
+         return -1 ;
+      }
+      if (nodes->size == 1) {
+         int node = get(nodes, 0) ;
+         *sawcharp |= mstateat & 0x80 ;
+         freestack(nodes) ;
+         return node ;
+      }
+      r = newstack() ;
+      for (i=0; i+1<nodes->size; i += 2) {
+         int onenode = collapsetwo(mstateat, get(nodes, i), get(nodes, i+1),
+                                   sawcharp) ;
+         push(r, onenode) ;
+      }
+      if (i < nodes->size)
+         push(r, get(nodes, i)) ;
+      freestack(nodes) ;
+      nodes = r ;
+   }
+}
+void geninittree() {
+   int i, j ;
+   opt = (opthead ***)mcalloc(sizeof(opthead **), 1+output->size) ;
+   opt[1] = (opthead **)mcalloc(sizeof(opthead *), output->size) ;
+   a = output->ar ;
+   for (i=0; i<output->size; i++) {
+      int state = a[i] ;
+      entry *e = base + state ;
+      nentries = 1 ;
+      entries[0] = state ;
+      e->state = state ;
+      e->split = 1 ;
+      opt[1][i] = buildentries() ;
+      set(atlen, i, 1) ;
+      set(atstate, i, state) ;
+   }
+   if (debug)
+   for (i=0; i<output->size; i++) {
+      fprintf(stderr, ": %d %x\n", get(outscope, i+1), get(output, i)) ;
+   }
+   i = collapse(0, &j) ;
+   freestack(scopestack) ;
+   freestack(children) ;
+   freestack(childnext) ;
+   freestack(stateat) ;
+   freestack(outscope) ;
+   freestack(atstate) ;
+   freestack(atlen) ;
+}
+char *nextstr() {
+   char *r = outstr ;
+   outstr += strlen(outstr) + 1 ;
+   return r ;
+}
+FILE *outfile ;
+void tagflush() {
+   int i ;
+   for (i=0; i<pendingclosetags->size; i++) {
+      putc('<', outfile) ;
+      putc('/', outfile) ;
+      fputs((char *)get(pendingclosetags, i), outfile) ;
+      putc('>', outfile) ;
+   }
+   pendingclosetags->size = 0 ;
+}
+char *colorcode[] = { "r", "g", "b", "c", "m", "y", "k", "w" } ;
+char *sizecode[] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" } ;
+void transition(int st1, int st2, int dir) {
+   int diff = st1 ^ st2 ;
+   char *buf[20], **p = buf ;
+   int uudiff ;
+ if (debug) fprintf(stderr, "Transition from %x to %x %d\n", st1, st2, dir) ;
+   if ((st2 & 0x80) == 0)
+      diff &= 0xff70 ;
+   if ((diff & 0xf000) != 0 &&
+       ((st1 & 0xf000) < 0xe000 || (st2 & 0xf000) < 0xe000) &&
+        ((st2 & 0xf000) != 0xe000)) {
+      if ((st2 & 0xf000) >= 0x8000) {
+         fprintf(stderr, "Color reduction.\n") ;
+         abort() ;
+      }
+      *p++ = colorcode[st2 >> 12] ;
+   }
+   if ((diff & 0xf00) != 0) {
+      if ((st2 & 0xf00) >= 0xa00) {
+         fprintf(stderr, "Size reduction.\n") ;
+         abort() ;
+      }
+      *p++ = sizecode[(st2 & 0xf00) >> 8] ;
+   }
+   uudiff = ((st2 & 0x60) - (st1 & 0x60)) / 32 ;
+   if (uudiff < 0 || (diff & st1 & ~st2 & 0x1d)) {
+      *p++ = "PL" ;
+      diff = st2 & 0x1f ;
+      uudiff = (st2 & 0x60) / 32 ;
+   }
+   while (uudiff > 0) {
+      *p++ = "U" ;
+      uudiff-- ;
+   }
+   if (diff & 0x10)
+      *p++ = "TT" ;
+   if (diff & 8)
+      *p++ = "S" ;
+   if (diff & 4)
+      *p++ = "I" ;
+   if ((diff & 0xa) == 2)
+      *p++ = "EM" ;
+   if (diff & 1)
+      *p++ = "B" ;
+   if (dir) {
+      char **q ;
+      for (q=p-1; q>=buf; q--)
+         push(pendingclosetags, (int)*q) ;
+   } else {
+      char **q=buf ;
+      while (q < p && pendingclosetags->size &&
+             *q == (char *)top(pendingclosetags)) {
+         q++ ;
+         pop(pendingclosetags) ;
+      }
+      if (q < p)
+         tagflush() ;
+      for (; q<p; q++) {
+         putc('<', outfile) ;
+         fputs(*q, outfile) ;
+         putc('>', outfile) ;
+      }
+   }
+}
+void genoutput(int thisstate, int start, int len) {
+   int cost ;
+   entry *data = lookupopt(start, len, thisstate, &cost) ;
+ if (debug) fprintf(stderr, "Generating output %d %d (%x)\n", start, len, thisstate) ;
+   if (len == 1) {
+      transition(thisstate, a[start], 0) ;
+      tagflush() ;
+      fputs(nextstr(), outfile) ;
+      transition(thisstate, a[start], 1) ;
+   } else {
+      int midstate, leftstate, rightstate, split ;
+      findbestdual(thisstate, start, len, data->split,
+                   &leftstate, &rightstate, &midstate, &cost, &split) ;
+      transition(thisstate, midstate, 0) ;
+      transition(midstate, leftstate, 0) ;
+      genoutput(leftstate, start, split) ;
+      transition(midstate, leftstate, 1) ;
+      transition(midstate, rightstate, 0) ;
+      genoutput(rightstate, start + split, len - split) ;
+      transition(midstate, rightstate, 1) ;
+      transition(thisstate, midstate, 1) ;
+   }
+}
+void genout() {
+   int cost ;
+   outstr = strbuf ;
+   lookupopt(0, output->size, 0xff80, &cost) ;
+   genoutput(0xff80, 0, output->size) ;
+}
+stack *flatten(int len) {
+   stack *s = (stack *)opt[len] ;
+   int i ;
+   opt[len] = (opthead **)mcalloc(sizeof(opthead *), output->size-len+1) ;
+   if (s != 0)
+      for (i=0; i<s->size; i += 2)
+         opt[len][get(s, i)] = (opthead *)get(s, i+1) ;
+   asstacks = len + 1 ;
+   return s ;
+}
+void elim(int neededstate) {
+   int i, j, gap, temp, cost ;
+/* sort entries by increasing cost */
+   for (gap=4; gap<=nentries; gap = 3 * gap + 1) ;
+   for (gap /= 3; gap > 0; gap /= 3) {
+      for (i=gap; i<nentries; i++) {
+         temp = entries[i] ;
+         for (j=i-gap; j>=0 &&
+                       base[entries[j]].cost > base[temp].cost; j -= gap)
+            entries[j+gap] = entries[j] ;
+         entries[j+gap] = temp ;
+      }
+   }
+/* elim.  it's quadratic, but we try to do it in a good order. */
+   for (gap=nentries-1; gap; gap--) {
+      for (i=0; i+gap<nentries; i++) {
+         j = i + gap ;
+         cost = transcost(entries[j], entries[i]) + base[entries[i]].cost ;
+         if (cost <= base[entries[j]].cost) {
+            if (entries[j] == neededstate) {
+               base[entries[j]].split = base[entries[i]].split ;
+               base[entries[j]].cost = cost ;
+            } else {
+               base[entries[j]].split = 0 ;
+               entries[j] = entries[--nentries] ;
+               i-- ; // do this one again.
+            }
+         }
+      }
+   }
+}
+int magickey ;
+#define MAGICHASH (312193)
+typedef struct quick {
+   unsigned short left, right ;
+   int cost ;
+   int magickey ;
+} quick ;
+quick magichash[MAGICHASH] ;
+void optimizelen(int i, int len) {
+   int j ;
+   int lowbase = INF ;
+   // find an initial candidate for the low base.
+   opthead *oh = opt[len][i] ; // ignore for now
+   entry *needede = 0 ;
+   opthead *g1, *g2 ;
+   int nbase ;
+   magickey++ ;
+ if (debug) fprintf(stderr, "Optimizelen %d %d\n", i, len) ;
+   for (j=1; j<len; j++) {
+      g1 = opt[j][i] ;
+      g2 = opt[len-j][i+j] ;
+      nbase = g1->basecost + g2->basecost ;
+      if (nbase < lowbase)
+         lowbase = nbase ;
+   }
+   basecost = lowbase ;
+   if (oh) {
+      needede = oh->entries ;
+      base[needede->state] = *needede ;
+      base[needede->state].cost = oh->basecost + needede->cost - basecost ;
+      entries[nentries++] = needede->state ;
+   }
+   for (j=1; j<len; j++) {
+      entry *e1, *e2, *e3 ;
+      g1 = opt[j][i] ;
+      g2 = opt[len-j][i+j] ;
+      nbase = g1->basecost + g2->basecost ;
+      for (e1=g1->entries; e1->split != 0; e1++) {
+         for (e2=g2->entries; e2->split != 0; e2++) {
+            int costadd = g1->basecost + e1->cost +
+                          g2->basecost + e2->cost - basecost ;
+            int h = (e1->state * 7 + e2->state) % MAGICHASH ;
+            quick *t = magichash + h ;
+            if (t->magickey == magickey && t->left == e1->state &&
+                t->right == e2->state && t->cost <= costadd) {
+               continue ;
+            }
+            t->magickey = magickey ;
+            t->left = e1->state ;
+            t->right = e2->state ;
+            t->cost = costadd ;
+ if (debug) fprintf(stderr, "Looking at %x %x\n", e1->state, e2->state) ;
+            adjstates(e1->state, e2->state) ;
+            for (e3=possib; e3->split != 0; e3++) {
+               int cost = e3->cost + costadd ;
+  if (debug)fprintf(stderr, "Cost is %d\n", cost) ;
+               if (base[e3->state].split == 0) {
+                  if (cost <= 255) {
+  if (debug)fprintf(stderr, "Adding new.\n") ;
+                     base[e3->state] = *e3 ;
+                     base[e3->state].cost = cost ;
+                     base[e3->state].split = (1 + (j - 1) % 255) ;
+                     entries[nentries++] = e3->state ;
+                  }
+               } else if (base[e3->state].cost >= cost) {
+  if (debug)fprintf(stderr, "Updating old.\n") ;
+                  base[e3->state] = *e3 ;
+                  base[e3->state].cost = cost ;
+                  base[e3->state].split = (1 + (j - 1) % 255) ;
+               }
+            }
+         }
+      }
+   }
+   elim(needede ? needede->state : -1) ;
+   opt[len][i] = buildentries() ;
+}
+long maxsecs ;
+void starttimer() {
+   struct timeval tv ;
+   gettimeofday(&tv, 0) ;
+   maxsecs = tv.tv_sec + maxsecs - 10 ;
+}
+long nextfileoutput = 0x70000000 ;
+long fileoutputinterval = 0 ;
+char *fileoutname ;
+int pingpong = '1' ;
+int needfile ;
+void genintermediate() {
+   char filename[1000] ;
+   struct timeval tv ;
+   gettimeofday(&tv, 0) ;
+   nextfileoutput = tv.tv_sec + fileoutputinterval ;
+   sprintf(filename, "%s-%c", fileoutname, pingpong) ;
+   fprintf(stderr, "[->%s", filename) ;
+   outfile = fopen(filename, "w") ;
+   if (outfile == 0) {
+      fprintf(stderr, "Can't open %s\n", filename) ;
+      abort() ;
+   }
+   genout() ;
+   pingpong = '1' + '2' - pingpong ;
+   fprintf(stderr, ":%ld]", ftell(outfile)) ;
+   fclose(outfile) ;
+   outfile = stdout ;
+   needfile = 0 ;
+}
+int checktimer() {
+   struct timeval tv ;
+   gettimeofday(&tv, 0) ;
+   if (tv.tv_sec > nextfileoutput)
+      needfile = 1 ;
+   return tv.tv_sec > maxsecs ;
+}
+void optimize() {
+   int len, i ;
+   for (len=2; len<=output->size; len++) {
+      stack *s = flatten(len) ;
+      int n = 0 ;
+      if (s) {
+         int slen ;
+         int j = 0 ;
+         fprintf(stderr, "%d:", len) ;
+         worst = 0 ;
+         for (j=0; j<s->size; j += 2) {
+            opthead *oh = (opthead *)get(s, j+1) ;
+            entry *e = oh->entries ;
+            int leftstate, rightstate, midstate, cost, split ;
+            int x=0, y=0, maxx, maxy ;
+            i = get(s, j) ;
+            findbestdual(e->state, i, len, e->split,
+                         &leftstate, &rightstate, &midstate, &cost, &split) ;
+            maxx = split ;
+            maxy = len - split ;
+            while (1) {
+               int lobx, loby ;
+               optimizelen(i+split-x-1, x+y+2) ;
+               if (checktimer())
+                  return ;
+AGAIN:         lobx = ~x & (x + 1) ;
+               loby = ~y & (y + 1) ;
+               if (lobx <= loby) {
+                  if (x + 1 < maxx) {
+                     x++ ;
+                     y &= -lobx ;
+                  } else if (y + 1 < maxy) {
+                     x |= lobx ;
+                     goto AGAIN ;
+                  } else {
+                     break ;
+                  }
+               } else {
+                  if (y + 1 < maxy) {
+                     y++ ;
+                     x &= -loby-loby ;
+                  } else if (x + 1 < maxx) {
+                     y |= loby ;
+                     goto AGAIN ;
+                  } else {
+                     break ;
+                  }
+               }
+            }
+            if (needfile)
+               genintermediate() ;
+         }
+         n = s->size / 2 ;
+         freestack(s) ;
+      }
+      if (n) {
+         if (n == 1)
+            fprintf(stderr, "%d ", worst) ;
+         else
+            fprintf(stderr, "%d(%d) ", worst, n) ;
+      }
+   }
+   fprintf(stderr, "\n") ;
+}
+int main(int argc, char *argv[]) {
+   while (argc > 1 && argv[1][0] == '-') {
+      argc-- ;
+      argv++ ;
+      switch(argv[0][1]) {
+case 't':
+         fileoutputinterval = 60 * 10 ;
+         fileoutname = argv[1] ;
+         nextfileoutput = 0 ;
+         argc-- ;
+         argv++ ;
+         break ;
+case 'p':
+         percentages++ ;
+         break ;
+default:
+         fprintf(stderr, "Bad option %s\n", argv[0]) ;
+         abort() ;
+      }
+   }
+   if (argc < 2 || sscanf(argv[1], "%ld", &maxsecs) != 1)
+      maxsecs = 1000000000 ;
+   starttimer() ;
+   init() ;
+   readdoc() ;
+   fprintf(stderr, "Read %d tokens.\n", output->size) ;
+   if (percentages) {
+      btarget = 1.0 ;
+      btotal = output->size * (double)(output->size + 3) / 2 ;
+   }
+   geninittree() ;
+   optimize() ;
+   fprintf(stderr, "\n") ;
+   outfile = stdout ;
+   genout() ;
+   exit(0) ;
+}

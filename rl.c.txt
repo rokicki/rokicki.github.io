@@ -1,0 +1,36 @@
+/** simulate *r* */
+#include <stdio.h>
+unsigned int u[1000010] ;
+int main(int argc, char *argv[]) {
+   int pos = 1 ;
+   int gen = 0 ;
+   int isr = 0 ;
+   u[0] = 5 ;
+   while (gen < 32000000) {
+      int len = 2 + gen / 32 ;
+      int i, t ;
+      unsigned int prev ;
+      if (isr)
+         printf("R\n") ;
+      else
+         printf("L\n") ;
+      fflush(stdout) ;
+      if (isr) {
+         pos++ ;
+         t = pos ;
+      } else {
+         t = pos - 1 ;
+      }
+      if (u[t >> 5] & (1 << (t & 31)))
+         isr = ! isr ;
+      prev = 0 ;
+      for (i=0; i<len; i++) {
+         unsigned int o = u[i] ;
+         u[i] ^= (o << 1) | (prev >> 31) ;
+         prev = o ;
+      }
+      u[pos >> 5] &= ~(1 << (pos & 31)) ;
+      gen++ ;
+   }
+   return 0 ;
+}

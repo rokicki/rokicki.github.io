@@ -1,0 +1,81 @@
+* sim.c, sim.h:
+
+Simulates the game
+
+arguments:
+	sim [-p] worldfile ant1 ant2 [trace]
+
+worldfile, ant1 and ant2 are the input files.
+
+Placing a 0 as the [trace] option will suppress output of the trace file.
+
+Using "all" as the worldfile will run the simulation on the files
+worlds/sample[0..9].world, for each assignment of ants to colours, and
+tally the results.  The trace file will only be written for the first
+simulation.
+
+If ant1 or ant2 are .antc files, then the compiler antc.pl is called to
+compile the file to a .ant file first.
+
+The -p option will send the trace information to stdout, so it can be piped
+to AntSim as follows:
+
+sim -p worldfile ant1 ant2 | java AntSim - 4 1
+
+
+* antc.pl:
+
+arguments:
+	perl antc.pl input.antc
+
+
+Compiler for an extended version of the ant language.  Takes a .antc
+input file and produces a .ant file as required for the problem.
+
+Allows macros, if and while constructions, and labels.
+
+We have many of our ants written in the .antc language in the ants/
+directory.  The syntax is similar to a greatly simplified C.  Using macros in m4 simplifies matters greatly.
+
+
+* AntSim.java:
+
+Plays back the game in a graphical format, using a trace file output by
+sim.c.
+
+arguments:
+	java AntSim tracefile gridsize autogo
+
+tracefile is the input files, or "-" to read from stdin.
+Gridsize is the required size of each cell.
+autogo will start the playback automatically.
+A negative value for delay indicates that the screen only be redrawn every -delay instructions of the trace file.
+
+
+* tourn.pl (old version tournament.pl)
+
+Given a list of ants, plays a round-robin tournament between them using
+sim.c, and tabulates the results.
+
+* generate_ant_identification.cpp
+
+This tool produces .antc code for an initialization routine that determines
+the initial position of the each ant on the hill.
+
+
+* pnc.pl
+
+A netcat-like tool in perl.
+
+
+* verify.cpp
+
+Verifies that a .ant file matches the grammar, and that all state
+references are valid.
+
+
+* ant.png
+A screen shot of our visualization tool
+
+* tourney.txt
+The final standings of most of our ants

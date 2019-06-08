@@ -1,0 +1,170 @@
+Some recent Methuselah results.
+
+The page http://www.math.ucdavis.edu/~dean/RLE/methuselahs.html
+is really the best reference at the moment; this just summarizes
+some of the new ones I've found.  As far as I can tell I've
+improved the results for 8, 10, 11, and 12-18.
+
+Records Summary:
+
+Start  Run
+Pop    Length
+ 5     1,105      R-pentomino relative
+ 6     1,108      R-pentomino relative
+ 7     5,206      Acorn
+ 8     7,467      See below
+ 9    17,410      Bunnies relative
+10    17,423      Bunnies relative; see below
+11    17,465      Bunnies relative; see below
+12-15 23,334      See below
+16    23,335      See below
+17-18 24,146      See below
+19+   28,786      Iowana: World record holder
+
+Nick Gotts shared some absolutely amazing patterns that, with as
+few as 16 cells, last far longer than anything listed here.
+They work by constructing a puffer that shoots backwards gliders
+at a mass of junk; the puffer outruns the growth of the junk
+and the gliders just keep coming in and perturbing things.
+They have much larger bounding boxes however, so it's not clear
+if the qualify as "compact" patterns.  It's like, we need for
+every value of (area of bounding box) x (number of on cells)
+the best result.
+
+14 February 2005:
+
+#Life
+....*
+....**
+**.**
+*
+
+Eight on-cells, stabilizes at generation 7,467, final population
+952, which puts it squarely between acorn and bunnies.
+
+#Life
+.*
+**.*
+....**
+*..*
+*
+*
+
+Ten on-cells, stabilizes at generation 17,423, final population 1749.
+
+16 February 2005:
+
+#Life
+***...*
+.*.*.**
+.**....*
+.***
+
+This one has an initial population of 14, final population of 2501,
+and runs 19,084 generations.
+
+#Life
+*.*.*.*
+***..**
+*...**
+.*..*
+*
+
+Another; initial 15; final 2327; runs 18,342 generations.
+
+#Life
+*.*.***
+**.*
+**.*.**
+*.*.***
+*
+
+Another; initial 19; final 3195; runs 20,533 generations.
+
+17 February 2005:
+
+#Life
+....****
+****...*
+*.*.**
+.**.*.*
+*
+
+Another; initial 18; final 2323; runs 17,870 generations.
+
+#Life
+**..*.*
+*.*.***
+*.**..*
+.***..*
+*
+
+Another; initial 18; final 2364; runs 18,194 generations.
+
+#Life
+..**.*.*
+**....**
+*.**.*.*
+*.*.*
+
+Another; initial 16; final 2475; runs 17,642 generations.
+
+#Life
+.**...**
+**.....*
+*..***.*
+**..**
+
+Another; initial 16; final 2390; runs 19,523 generations.
+
+#Life
+.**.**.*
+**..*..*
+*.*...**
+***...**
+*
+
+Another; initial 19; final 2862; runs 18,648 generations.
+
+#Life
+*.***
+*....*
+*.*.*
+.*..*
+
+Another; initial 11; final 1749; runs 17,465 generations.
+
+19 February 2005:
+
+#Life
+....***
+...*
+*.....*
+.**..*.*
+.*.*
+
+Another; initial 12; final 2898; runs 23,334 generations.
+
+20 February 2005:
+
+#Life
+......**
+..*.*.**
+...**..*.*
+**.*.*.*
+.
+...*
+
+Another; initial 16; final 2898; runs 23,335 generations (predecessor of
+the one listed above)
+
+27 February 2005:
+
+#Life
+*...***
+.*.*..**
+*.*.**.*
+*..*.*
+..*
+
+Initial 17; final 2418; runs 24,146 generations.

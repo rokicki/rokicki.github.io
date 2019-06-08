@@ -1,0 +1,123 @@
+<html><head><title>Witnesses</title>
+<link rel="stylesheet" type="text/css" href="dot.css"/>
+</head><body>
+<div class="section">Witnesses:</div>
+<p>
+Can you find any +5 witnesses smaller
+than 42?  (I'm currently trying to prove a length 45 and a length
+41 candidate.)  Can you find a smaller +3 witness than 19, or a smaller
++4 witness than 26?
+</p><p class=indent>
+(These witnesses prove that f(n) &gt;= sollen.  Note that a "good"
+witness will be one that can be exhaustively proved reasonably
+fast; some stacks take much longer than others to prove.  I have
+run all the ones listed here exhaustively.)  lbound is a lower
+bound of f(n) for n&gt;14.  The value shown is the length of an
+existing solution to the sequence shown.  All of these witnesses
+have been proven by me.
+</p>
+<table><tr><td>n</td><td>lbound</td><td class="centertd">stack</td><tr>
+<tr><td colspan=3 class="centertd">&lt;1</td></tr>
+<tr><td>1</td><td>0</td><td class="lefttd">1</td></tr>
+<tr><td>2</td><td>1</td><td class="lefttd">2 1</td></tr>
+<tr><td>3</td><td>3</td><td class="lefttd">1 3 2</td></tr>
+<tr><td>4</td><td>4</td><td class="lefttd">2 4 1 3</td></tr>
+<tr><td>5</td><td>5</td><td class="lefttd">2 5 3 1 4</td></tr>
+<tr><td colspan=3 class="centertd">+1</td></tr>
+<tr><td>6</td><td>7</td><td class="lefttd">4 6 2 5 1 3</td></tr>
+<tr><td>7</td><td>8</td><td class="lefttd">1 5 2 7 4 6 3</td></tr>
+<tr><td>8</td><td>9</td><td class="lefttd">6 3 7 4 8 1 5 2</td></tr>
+<tr><td>9</td><td>10</td><td class="lefttd">1 7 5 3 8 6 9 4 2</td></tr>
+<tr><td>10</td><td>11</td><td class="lefttd">1 3 5 2 4 6 8 10 7 9</td></tr>
+<tr><td colspan=3 class="centertd">+2</td></tr>
+<tr><td>11</td><td>13</td><td class="lefttd">1 11 3 6 9 4 7 10 5 8 2</td></tr>
+<tr><td>12</td><td>14</td><td class="lefttd">1 10 2 12 4 6 8 5 9 7 11 3</td></tr>
+<tr><td>13</td><td>15</td><td class="lefttd">1 10 3 12 2 11 9 6 8 4 13 7 5</td></tr>
+<tr><td>14</td><td>16</td><td class="lefttd">1 14 12 4 7 10 5 8 11 6 9 3 13 2</td></tr>
+<tr><td>15</td><td>17</td><td class="lefttd">1 14 12 4 7 10 5 8 11 6 9 3 13 15 2</td></tr>
+<tr><td>16</td><td>18</td><td class="lefttd">1 14 12 4 7 10 5 8 11 6 9 3 15 13 16 2</td></tr>
+<tr><td>17</td><td>19</td><td class="lefttd">16 12 9 14 11 8 13 10 15 7 17 4 6 2 5 1 3</td></tr>
+<tr><td>18</td><td>20</td><td class="lefttd">1 10 13 8 3 6 4 7 5 2 12 9 11 14 16 18 15 17</td></tr>
+<tr><td colspan=3 class="centertd">+3</td></tr>
+<tr><td>19</td><td>22</td><td class="lefttd">1 3 7 5 2 6 4 8 12 14 10 13 11 9 15 18 16 19 17</td></tr>
+<tr><td>20</td><td>23</td><td class="lefttd">1 5 2 7 4 6 3 8 14 11 13 10 12 9 15 20 17 19 16 18</td></tr>
+<tr><td>21</td><td>24</td><td class="lefttd">1 3 7 5 2 6 4 8 10 14 12 9 13 11 15 17 21 19 16 20 18</td></tr>
+<tr><td>22</td><td>25</td><td class="lefttd">11 1 9 4 7 2 5 8 3 6 10 12 22 14 19 16 21 18 15 20 17 13</td></tr>
+<tr><td>23</td><td>26</td><td class="lefttd">1 4 8 3 6 2 7 5 9 14 11 13 16 12 10 15 17 22 20 23 19 21 18</td></tr>
+<tr><td>24</td><td>27</td><td class="lefttd">4 6 2 5 1 3 7 9 11 8 12 10 14 18 16 13 17 15 19 23 20 22 24 21</td></tr>
+<tr><td>25</td><td>28</td><td class="lefttd">2 6 4 1 5 3 7 9 13 11 8 12 10 14 16 20 18 15 19 17 21 23 25 22 24</td></tr>
+<tr><td colspan=3 class="centertd">+4</td></tr>
+<tr><td>26</td><td>30</td><td class="lefttd">1 5 3 7 4 2 6 8 12 14 10 13 11 9 15 21 19 17 20 16 18 22 25 23 26 24</td></tr>
+<tr><td>27</td><td>31</td><td class="lefttd">1 5 3 7 4 2 6 8 12 14 10 13 11 9 15 21 19 17 20 16 18 22 27 25 23 26 24</td></tr>
+<tr><td>28</td><td>32</td><td class="lefttd">1 5 2 7 4 6 3 8 14 11 13 10 12 9 15 19 21 18 16 20 17 22 26 23 28 25 27 24</td></tr>
+<tr><td>29</td><td>33</td><td class="lefttd">6 3 8 5 2 7 4 1 9 13 16 11 14 17 12 15 10 18 24 22 20 23 21 19 25 27 29 26 28</td></tr>
+<tr><td>30</td><td>34</td><td class="lefttd">1 5 8 3 6 9 4 7 2 10 14 17 12 15 18 13 16 11 19 25 23 21 24 22 20 26 28 30 27 29</td></tr>
+<tr><td>31</td><td>35</td><td class="lefttd">19 11 16 13 18 15 12 17 14 10 2 7 4 9 6 3 8 5 1 20 26 24 22 25 23 21 27 29 31 28 30</td></tr>
+<tr><td>32</td><td>36</td><td class="lefttd">1 7 5 3 6 4 2 8 16 10 12 14 11 13 15 9 17 23 21 19 22 20 18 24 32 26 28 30 27 29 31 25</td></tr>
+<tr><td>33</td><td>37</td><td class="lefttd">1 6 3 8 5 2 7 4 9 14 11 16 13 10 15 12 17 25 22 19 24 21 18 23 20 26 31 28 33 30 27 32 29</td></tr>
+<tr><td>34</td><td>38</td><td class="lefttd">1 9 6 3 8 5 2 7 4 10 15 12 17 14 11 16 13 18 23 20 25 22 19 24 21 26 34 31 28 33 30 27 32 29</td></tr>
+<tr><td>35</td><td>39</td><td class="lefttd">1 7 5 3 6 4 2 8 14 12 10 13 11 9 15 21 19 17 20 18 16 22 28 26 24 27 25 23 29 35 33 31 34 32 30</td></tr>
+<tr><td>36</td><td>40</td><td class="lefttd">15 9 11 13 10 12 14 8 2 4 6 3 5 7 1 16 22 20 18 21 19 17 23 29 27 25 28 26 24 30 36 34 32 35 33 31</td></tr>
+<tr><td>37</td><td>41</td><td class="lefttd">30 23 17 19 21 18 20 22 16 1 7 5 3 6 4 2 8 14 12 10 13 11 9 15 29 27 25 28 26 24 31 37 35 33 36 34 32</td></tr>
+<tr><td>38</td><td>42</td><td class="lefttd">31 24 26 28 25 27 29 15 9 11 13 10 12 14 8 2 4 6 3 5 7 1 16 22 20 18 21 19 17 23 30 32 38 36 34 37 35 33</td></tr>
+<tr><td>39</td><td>43</td><td class="lefttd">32 30 23 17 19 21 18 20 22 16 1 7 5 3 6 4 2 8 14 12 10 13 11 9 15 29 27 25 28 26 24 31 33 39 37 35 38 36 34</td></tr>
+<tr><td>40</td><td>44</td><td class="lefttd">1 3 5 2 4 6 8 10 7 9 11 13 15 12 14 16 18 20 17 19 21 23 25 22 24 26 28 30 27 29 31 33 35 32 34 36 38 40 37 39</td></tr>
+<tr><td>41</td><td>45</td><td class="lefttd">1 6 3 8 5 2 7 4 9 14 11 16 13 10 15 12 17 25 22 19 24 21 18 23 20 26 31 28 33 30 27 32 29 34 39 36 41 38 35 40 37</td></tr>
+<tr><td colspan=3 class="centertd">+5</td></tr>
+<tr><td>42</td><td>47</td><td class="lefttd">1 7 5 3 6 4 2 8 12 15 10 13 16 11 14 9 17 21 24 19 22 25 20 23 18 26 30 33 28 31 34 29 32 27 35 37 40 36 39 42 38 41</td></tr>
+<tr><td>43</td><td>?</td><td class="lefttd">?</td></tr>
+<tr><td>44</td><td>49</td><td class="lefttd">6 3 8 5 2 7 4 1 9 13 16 11 14 17 12 15 10 18 22 25 20 23 26 21 24 19 27 31 34 29 32 35 30 33 28 36 40 43 38 41 44 39 42 37</td></tr>
+<tr><td>45</td><td>50</td><td class="lefttd">1 5 8 3 6 9 4 7 2 10 14 17 12 15 18 13 16 11 19 23 26 21 24 27 22 25 20 28 32 35 30 33 36 31 34 29 37 41 44 39 42 45 40 43 38</td></tr>
+</table>
+<p class=indent>
+What we know about f(n):
+</p><div>
+   f(n) &gt;= n+1 for n &gt;= 6
+</div><p>
+We have proved the above values for f(n) up to f(14)=16.
+For 15..50, all we have is witnesses for lower bounds.
+</p><div>
+   f(n) &gt;= 15n/14 for n divisible by 14 (H&S)
+</div><div>
+   f(n) &gt;= 17n/16 for n divisible by 16 (G&P)
+</div><div>
+   f(n+1) &gt;= f(n)
+</div><div>
+   f(n) &gt;= f(n+1)-2
+</div><p>
+This is about all we know.  I believe the H&S result also
+includes (though they do not state this in their paper) that
+</p><div>
+   f(n) &gt;= n+(n-7)/14 for n==7 mod 14
+</div><p>
+I also believe the H&S and G&P results combine, since the
+proof is essentially identical, allowing us to say that
+</p><div>
+   f(n+m) &gt;= 15n/14 + 17m/16 for n divisible by 14 and m divisible by 16
+</div><p>
+This helps us fill in some of the discrete gaps.  Further, combining
+the above two, we also know that
+</p><div>
+   f(n+m) &gt;= n+(n-7)/14 + 17m/16 for n==7 mod 14 and m divisible by 16
+</div><p>
+For high values of n, where G&P no longer contributes, and H&S
+dominates, we can set the following bounds:
+</p><div>
+   f(14*k+i) &gt;= 14*k+i + k - v(i), 0&lt;=i&lt;14
+</div>
+<table><tr><td>i</td><td>v(i)</td></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>3</td></tr>
+<tr><td>4</td><td>3</td></tr>
+<tr><td>5</td><td>2</td></tr>
+<tr><td>6</td><td>1</td></tr>
+<tr><td>7</td><td>0</td></tr>
+<tr><td>8</td><td>1</td></tr>
+<tr><td>9</td><td>2</td></tr>
+<tr><td>10</td><td>3</td></tr>
+<tr><td>11</td><td>3</td></tr>
+<tr><td>12</td><td>2</td></tr>
+<tr><td>13</td><td>1</td></tr>
+</table></body></html>
