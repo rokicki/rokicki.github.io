@@ -1,0 +1,111 @@
+#!/usr/local/bin/perl -w
+$dummy = 0 ;
+$ndelta = 4 ;
+$dx = 0 ;
+$dy = -1 ;
+sub simstep {
+   @ntodo = () ;
+   while (@todo) {
+      $y = pop @todo ;
+      $x = pop @todo ;
+      if ($w[$x][$y] eq "L" || $w[$x][$y] eq "1") {
+         push @ntodo, ($x, $y) ;
+         $w[$x][$y] = ($w[$x][$y] eq "L" ? "1" : "2") ;
+         for ($i=1; $i<5; $i++) {
+            $x += $dx ;
+            $y += $dy ;
+            last if $w[$x][$y] ne " " ;
+            $w[$x][$y] = "1" ;
+            $burnt++ ;
+            push @ntodo, ($x, $y) ;
+         }
+      } elsif ($w[$x][$y] eq "2" || $w[$x][$y] eq "F") {
+         $w[$x][$y] = "D" ;
+      }
+   }
+   @todo = @ntodo ;
+   $t = $dx ;
+   $dx = - $dy ;
+   $dy = $t ;
+}
+sub save {
+   @ww = map { [@{$_}] } @w ;
+   @ss = ($dx, $dy, $burnt) ;
+   @stodo = @todo ;
+}
+sub restore {
+   @w = map { [@{$_}] } @ww ;
+   ($dx, $dy, $burnt) = @ss ;
+   @todo = @stodo ;
+}
+for ($i=1; $i<=100; $i++) {
+   for ($j=1; $j<=50; $j++) {
+      $w[$i][$j] = " " ;
+   }
+}
+for ($i=0; $i<=101; $i++) {
+   $w[$i][0] = "B" ;
+   $w[$i][51] = "B" ;
+}
+for ($j=0; $j<=51; $j++) {
+   $w[0][$j] = "B" ;
+   $w[101][$j] = "B" ;
+}
+$border = 500 ;
+for ($i=3; $border > 0 && $i<=100; $i += $ndelta) {
+   for ($j=1; $border > 0 && $j<=50; $j++) {
+      if ($i + $j - 1 <= 100) {
+         $border-- ;
+         $w[$i+$j-1][$j] = "X" ;
+      }
+   }
+   $ndelta = 9 - $ndelta ;
+}
+sub lightning {
+   for ($i=0; $i<5; $i++) {
+      my ($x, $y) ;
+      do {
+         $x = 1 + int rand 100 ;
+         $y = 1 + int rand 50 ;
+      } while ($w[$x][$y] eq "L") ;
+      if ($w[$x][$y] eq " ") {
+         $w[$x][$y] = "L" ;
+         $burnt++ ;
+      }
+      push @todo, ($x, $y) ;
+   }
+}
+for ($day = 0 ; $day < 100; $day++) {
+   lightning() ;
+   save() ;
+   my @pairs = @todo ;
+   my @consider = () ;
+   while (@pairs) {
+      my $fy = pop @pairs ;
+      my $fx = pop @pairs ;
+      restore() ;
+      if ($w[$fx][$fy] eq "1" || $w[$fx][$fy] eq "2" || $w[$fx][$fy] eq "L") {
+         $w[$fx][$fy] = "F" ;
+         while (@todo) {
+            simstep() ;
+         }
+         push @consider, [$burnt, $fx, $fy] ;
+      }
+   }
+   restore() ;
+   @consider = sort { $b->[0] <=> $a->[0] } @consider ;
+   for ($i=0; @consider && $i<4; $i++) {
+      ($dummy, $fx, $fy) = @{pop @consider} ;
+#print "F($fx,$fy) " ;
+      $w[$fx][$fy] = "F" ;
+   }
+   simstep() ;
+#  print "At $day burnt $burnt\n" ;
+#  for ($y=1; $y<=50; $y++) {
+#     for ($x=1; $x<=100; $x++) {
+#        print $w[$x][$y] ;
+#     }
+#     print "\n" ;
+#  }
+}
+print "$burnt\n" ;

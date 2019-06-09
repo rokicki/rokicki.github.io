@@ -1,0 +1,125 @@
+<html><title>Tom Rokicki's Solution to Fires</title><body>
+<h1>
+Here's my solution to the Fire puzzle.
+</h1>
+<img src="drawboard2.gif" hspace=10 vspace=10 align=left>
+<h3>
+Results as of Tue Dec 26 12:26:30 2000:
+</h3>
+
+With long-lived cisterns, from 72673 simulations, I
+see an average of 625.267 burnt spots with a standard
+deviation of 51.7576.
+
+<p>
+With short-lived cisterns, from 38178 simulations, I
+see an average of 796.589 burnt spots with a standard
+deviation of 68.8697.
+
+<p>
+With no cisterns, from 10378 simulations, I
+see an average of 1493.75 burnt spots with a standard
+deviation of 84.8651.
+
+<h3>
+The key ideas from the layout are:
+</h3>
+
+Diagonal rows of cisterns work better to enclose
+fires than orthogonal rows.  This is because the
+fires tend to spread orthogonally, and also because
+diagonal rows block the fire in two directions at
+once, where orthogonal rows only block the fire
+in one direction.
+
+<p>
+Divide the forest into areas of high cistern
+density, where the cisterns by themselves do a
+pretty good job of keeping the fire from spreading,
+and low cistern density.  If lightning strikes
+uniformly, for every day with five strikes, some
+will fall in the high density parts and some will
+fall in the low density parts.  Let the fireman
+protect the low density parts, and let the cisterns
+do a good job in the high density parts.  It is
+unlikely that all five strikes will occur in the
+low density parts.
+
+<p>
+With tight diagonals, there is no need to
+completely enclose an area; the diagonals will
+do a good job of keeping a fire close.
+
+<p>
+The exact spacing of the diagonal rows I
+calculated by integrating the impact of fire
+at a particular location with the different
+wind directions, multiplied by the probability
+that that would be the best possible location
+not to fight.
+
+<h3>
+To determine what fires to fight:
+</h3>
+
+First, figure out where the lightning will
+strike.
+
+<p>
+Then, for every location that either is
+currently burning, or that lightning will
+strike, consider how many total squares are
+burnt if you fight just that square and no
+others, by projecting the simulation forward
+in time (with no further lightning strikes)
+until everything quiesces.
+
+<p>
+Select the fire with the greatest impact.
+Fight that fire.
+
+<p>
+Now, repeat the analysis, to select the next
+fire to fight, and so on until you are fighting
+four fires.
+
+<p>
+Since we already have a simulator, it's trivial
+to use the simulator to simulate ahead different
+scenarios like this, to help us make the
+correct decision.
+
+<h3>
+Text description of the layout:
+</h3>
+
+Draw downsloping diagonal lines starting (from
+the top) at columns three, eight, twelve, and
+seventeen.  Draw downsloping diagonal lines
+starting (from the left) at rows three, eight,
+twelve, seventeen, twenty-one, twenty-six, and
+thirty (the last diagonal line will not reach
+the right side).  The widths of the gaps between
+the diagonal rows alternate between 4 and 3.
+
+<p>
+Use the same layout for both approaches (a cistern
+is good forever, and a cistern is only good for
+the first advancing fire).
+
+<h3>
+Simulation code:
+</h3>
+
+The simulators were written in Perl.  It would be
+straightforward to make them much, much faster, but
+I'd rather just throw the computer cycles at it.<br>
+
+<a href="sim2.pl.txt">The simulator with long-lived cisterns.</a><br>
+
+<a href="sim2c1.pl.txt">The simulator with short-lived cisterns.</a><br>
+
+<a href="sim2noc.pl.txt">The simulator with no cisterns.</a><br>
+
+-tom
+</body></html>

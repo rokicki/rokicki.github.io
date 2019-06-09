@@ -1,0 +1,128 @@
+#!/usr/local/bin/perl -w
+$dummy = 0 ;
+$ndelta = 4 ;
+sub z {
+   my ($x, $y) = @_ ;
+   return $x + 102 * $y ;
+}
+sub x {
+   my $z = shift ;
+   return $z % 102 ;
+}
+sub yy {
+   my $z = shift ;
+   return int($z/102) ;
+}
+$maxsize = 102 * 52 ;
+$dx = 0 ;
+$dy = -1 ;
+$dz = z($dx, $dy) ;
+sub simstep {
+   @ntodo = () ;
+   while (@todo) {
+      $z = pop @todo ;
+      $t = substr($w, $z, 1) ;
+      if ($t eq "L" || $t eq "1") {
+         push @ntodo, $z ;
+         substr($w, $z, 1) = ($t eq "L" ? "1" : "2") ;
+         for ($i=1; $i<5; $i++) {
+            $z += $dz ;
+            last if substr($w, $z, 1) ne " " ;
+            substr($w, $z, 1) = "1" ;
+            $burnt++ ;
+            push @ntodo, $z ;
+         }
+      } elsif ($t eq "2" || $t eq "F") {
+         substr($w, $z, 1) = "D" ;
+      }
+   }
+   @todo = @ntodo ;
+   $t = $dx ;
+   $dx = - $dy ;
+   $dy = $t ;
+   $dz = z($dx, $dy) ;
+}
+sub save {
+   $ww = $w ;
+   @ss = ($dx, $dy, $dz, $burnt) ;
+   @stodo = @todo ;
+}
+sub restore {
+   $w = $ww ;
+   ($dx, $dy, $dz, $burnt) = @ss ;
+   @todo = @stodo ;
+}
+$w = " " x $maxsize ;
+for ($i=0; $i<=101; $i++) {
+   substr($w, z($i, 0), 1) = "B" ;
+   substr($w, z($i, 51), 1) = "B" ;
+}
+for ($j=0; $j<=51; $j++) {
+   substr($w, z(0, $j), 1) = "B" ;
+   substr($w, z(101, $j), 1) = "B" ;
+}
+$border = 0 ;
+for ($i=-15; $border > 0 && $i<=100; $i += $ndelta) {
+   for ($j=1; $border > 0 && $j<=50; $j++) {
+      if ($i + $j - 1 >= 1 && $i + $j - 1 <= 100) {
+         $border-- ;
+         substr($w, z($i+$j-1, $j), 1) = "X" ;
+      }
+   }
+   $ndelta = 9 - $ndelta ;
+}
+sub lightning {
+   for ($i=0; $i<5; $i++) {
+      my ($x, $y, $z) ;
+      do {
+         $x = 1 + int rand 100 ;
+         $y = 1 + int rand 50 ;
+         $z = z($x, $y) ;
+      } while (substr($w, $z, 1) eq "L") ;
+      if (substr($w, $z, 1) eq " ") {
+         substr($w, $z, 1) = "L" ;
+         $burnt++ ;
+      }
+      push @todo, $z ;
+   }
+}
+for ($day = 0 ; $day < 100; $day++) {
+   lightning() ;
+AGAIN:
+   for ($needed=4; $needed>0;) {
+      save() ;
+      my @pairs = @todo ;
+      my @consider = () ;
+      while (@pairs) {
+         my $fz = pop @pairs ;
+         restore() ;
+         $t = substr($w, $fz, 1) ;
+         if ($t eq "1" || $t eq "2" || $t eq "L") {
+            substr($w, $fz, 1) = "F" ;
+            while (@todo) {
+               simstep() ;
+            }
+            push @consider, [$burnt, $fz] ;
+         }
+      }
+      restore() ;
+      @consider = sort { $b->[0] <=> $a->[0] } @consider ;
+      @chosen = () ;
+      for ($i=0; @consider && $i<$needed; $i++) {
+         ($dummy, $fz) = @{pop @consider} ;
+#print "F($fx,$fy) " ;
+         for ($j=0; $j<@chosen; $j++) {
+            if (abs(x($chosen[$j]) - x($fz)) <= 10 &&
+                abs(yy($chosen[$j]) - yy($fz)) <= 10) {
+               next AGAIN ;
+            }
+         }
+         substr($w, $fz, 1) = "F" ;
+         $needed-- ;
+         push @chosen, $fz ;
+      }
+      $needed = 0 if @chosen == 0 ;
+   }
+   simstep() ;
+}
+print "$burnt\n" ;
