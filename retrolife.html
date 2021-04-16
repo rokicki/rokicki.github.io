@@ -1,0 +1,197 @@
+<html><head><title>Puzzle</title>
+<style>
+html {
+  touch-action: manipulation;
+}
+</style>
+<script>
+var n=6 ;
+var fs=3 ;
+var g0=[] ;
+var g1=[] ;
+var d0 ;
+var d1 ;
+var ed ;
+var hints = false ;
+var forward = true ;
+function getCanvas() {
+   return document.getElementById("canvas") ;
+}
+function redraw() {
+   var c = getCanvas() ;
+   var ctx = c.getContext("2d");
+   w = c.width ;
+   h = c.height ;
+   ctx.clearRect(0, 0, w, h) ;
+   xm = w/n ;
+   ym = h/n ;
+   ctx.strokeStyle = "#cccccc" ;
+   for (var y=0; y<n; y++) {
+      for (var x=0; x<n; x++) {
+         ctx.save() ;
+         ctx.translate(x*xm, y*ym) ;
+         ctx.beginPath() ;
+         ctx.moveTo(fs, fs) ;
+         ctx.lineTo(fs, ym-fs) ;
+         ctx.lineTo(xm-fs, ym-fs) ;
+         ctx.lineTo(xm-fs, fs) ;
+         ctx.closePath() ;
+         if (hints && (d1[x][y] != g1[x][y])) {
+            ctx.fillStyle = "#ffbbbb" ;
+            ctx.save() ;
+            ctx.fill() ;
+            ctx.restore() ;
+         }
+         ctx.stroke() ;
+         if (d1[x][y]) {
+            ctx.beginPath();
+            ctx.arc(xm*0.5, xm*0.5, 0.5*(xm-fs), 0, 2*Math.PI, false) ;
+            ctx.fillStyle = '#000000';
+            ctx.fill();
+         }
+         ctx.beginPath();
+         ctx.arc(xm*0.5, xm*0.5, 0.4*(xm-fs), 0, 2*Math.PI, false) ;
+         ctx.fillStyle = '#ffffff' ;
+         ctx.fill();
+         ctx.beginPath();
+         ctx.arc(xm*0.5, xm*0.5, 0.3*(xm-fs), 0, 2*Math.PI, false) ;
+         if (d0[x][y]) {
+            ctx.fillStyle = '#000000';
+         } else {
+            ctx.fillStyle = '#ffffff';
+         }
+         ctx.fill();
+         ctx.restore() ;
+      }
+   }
+}
+function getMousePosition(c, e) {
+   var r = c.getBoundingClientRect() ;
+   var x = e.clientX - r.left ;
+   var y = e.clientY - r.top ;
+   return {x:x, y:y} ;
+}
+function mouse(e, click) {
+   var c = getCanvas() ;
+   var downxy = getMousePosition(c, e) ;
+   var x = downxy.x ;
+   var y = downxy.y ;
+   clicked = -1 ;
+   if (x < 0 || y < 0 || x >= w || y >= h) {
+   } else {
+      doclick(Math.floor(x/xm), Math.floor(y/ym)) ;
+   }
+   redraw() ;
+}
+function mouseclick(e) {
+   mouse(e, 1) ;
+}
+function doclick(x, y) {
+   if (x < 0 || x >= n || y < 0 || y >= n)
+      return ;
+   ed[x][y] = 1 - ed[x][y] ;
+   dogen() ;
+   update() ;
+}
+function keydown(e) {
+   var kc = e.keyCode ;
+   redraw() ;
+}
+function dogen() {
+   for (var i=0; i<n; i++) {
+      for (var j=0; j<n; j++) {
+         var cnt = 0 ;
+         for (var dx=-1; dx<=1; dx++) {
+            var ii = i + dx ;
+            if (ii < 0 || ii >= n) {
+               continue ;
+            }
+            for (var dy=-1; dy<=1; dy++) {
+               var jj = j + dy ;
+               if (jj < 0 || jj >= n) {
+                  continue ;
+               }
+               cnt += g0[ii][jj] ;
+            }
+         }
+         cnt -= g0[i][j] ;
+         if (cnt == 3 || (cnt == 2 && g0[i][j])) {
+            g1[i][j] = 1 ;
+         } else {
+            g1[i][j] = 0 ;
+         }
+      }
+   }
+}
+function getempty() {
+   var r = [] ;
+   for (var i=0; i<n; i++) {
+      r.push([]) ;
+      for (var j=0; j<n; j++) {
+         r[i].push(0) ;
+      }
+   }
+   return r ;
+}
+function copy(v) {
+   var r = [] ;
+   for (var i=0; i<n; i++) {
+      r.push([]) ;
+      for (var j=0; j<n; j++) {
+         r[i].push(v[i][j]) ;
+      }
+   }
+   return r ;
+}
+function start() {
+   var c = getCanvas() ;
+   c.addEventListener("mousedown", mouseclick, false) ;
+   g0 = getempty() ;
+   g1 = getempty() ;
+   for (var i=1; i+1<n; i++) {
+      for (var j=1; j+1<n; j++) {
+         if (Math.random() < 0.5) {
+            g0[i][j] = 1 ;
+         }
+      }
+   }
+   dogen() ;
+   if (forward) {
+      d0 = copy(g0) ;
+      d1 = getempty() ;
+      ed = d1 ;
+   } else {
+      g0 = getempty() ;
+      d0 = g0 ;
+      d1 = copy(g1) ;
+      ed = d0 ;
+      dogen() ;
+   }
+   redraw() ;
+}
+function update() {
+   redraw() ;
+}
+function hintOption() {
+   var el = document.getElementById("hints") ;
+   if (el) {
+      hints = el.checked ;
+      redraw() ;
+   }
+}
+function forwardOption() {
+   var el = document.getElementById("forward") ;
+   if (el) {
+      forward = el.checked ;
+      start() ;
+   }
+}
+</script><body onload="start();">
+Games in the Key of Life.
+<span id=movecount></span>
+<button id=restart onclick="start()">Play Again</button>
+<input type=checkbox onclick="hintOption()" id=hints> Hints
+<input type=checkbox onclick="forwardOption()" id=forward checked> Forward<br>
+<canvas id="canvas" width="600" height="600" tabindex=1>
+</canvas><br>
+</body></html>
