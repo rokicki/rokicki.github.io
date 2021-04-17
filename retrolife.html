@@ -114,6 +114,7 @@ function keydown(e) {
    redraw() ;
 }
 function dogen() {
+   var pop = 0 ;
    for (var i=0; i<n; i++) {
       for (var j=0; j<n; j++) {
          var cnt = 0 ;
@@ -133,11 +134,13 @@ function dogen() {
          cnt -= g0[i][j] ;
          if (cnt == 3 || (cnt == 2 && g0[i][j])) {
             g1[i][j] = 1 ;
+            pop++ ;
          } else {
             g1[i][j] = 0 ;
          }
       }
    }
+   return pop ;
 }
 function getempty() {
    var r = [] ;
@@ -165,18 +168,19 @@ function start(d) {
       n = 5 ;
    if (n > 40)
       n = 40 ;
-   var c = getCanvas() ;
-   c.addEventListener("mousedown", mouseclick, false) ;
-   g0 = getempty() ;
-   g1 = getempty() ;
-   for (var i=1; i+1<n; i++) {
-      for (var j=1; j+1<n; j++) {
-         if (Math.random() < 0.3) {
-            g0[i][j] = 1 ;
+   while (1) {
+      g0 = getempty() ;
+      g1 = getempty() ;
+      for (var i=1; i+1<n; i++) {
+         for (var j=1; j+1<n; j++) {
+            if (Math.random() < 0.3) {
+               g0[i][j] = 1 ;
+            }
          }
       }
+      if (dogen() != 0)
+         break ;
    }
-   dogen() ;
    if (forward) {
       d0 = copy(g0) ;
       d1 = getempty() ;
@@ -189,6 +193,11 @@ function start(d) {
       dogen() ;
    }
    redraw() ;
+}
+function firststart() {
+   var c = getCanvas() ;
+   c.addEventListener("mousedown", mouseclick, false) ;
+   start(0) ;
 }
 function update() {
    redraw() ;
@@ -207,7 +216,7 @@ function forwardOption() {
       start(0) ;
    }
 }
-</script><body onload="start(0);">
+</script><body onload="firststart()">
 Games in the Key of Life.
 <span id=movecount></span>
 <button id=restart onclick="start(0)">Play Again</button>
