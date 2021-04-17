@@ -1,4 +1,4 @@
-<html><head><title>Puzzle</title>
+<html><head><title>Retrolife Puzzle</title>
 <style>
 html {
   touch-action: manipulation;
@@ -13,7 +13,7 @@ var d0 ;
 var d1 ;
 var ed ;
 var hints = false ;
-var forward = true ;
+var forward = false ;
 function getCanvas() {
    return document.getElementById("canvas") ;
 }
@@ -26,6 +26,17 @@ function redraw() {
    xm = w/n ;
    ym = h/n ;
    ctx.strokeStyle = "#cccccc" ;
+   var score = 0 ;
+   for (var y=0; y<n; y++) {
+      for (var x=0; x<n; x++) {
+         if (d1[x][y] != g1[x][y]) {
+            score++ ;
+         }
+      }
+   }
+   var el = document.getElementById("score") ;
+   if (el)
+      el.innerText = score ;
    for (var y=0; y<n; y++) {
       for (var x=0; x<n; x++) {
          ctx.save() ;
@@ -36,8 +47,10 @@ function redraw() {
          ctx.lineTo(xm-fs, ym-fs) ;
          ctx.lineTo(xm-fs, fs) ;
          ctx.closePath() ;
+         var white = "#ffffff" ;
          if (hints && (d1[x][y] != g1[x][y])) {
             ctx.fillStyle = "#ffbbbb" ;
+            white = "#ffbbbb" ;
             ctx.save() ;
             ctx.fill() ;
             ctx.restore() ;
@@ -51,14 +64,14 @@ function redraw() {
          }
          ctx.beginPath();
          ctx.arc(xm*0.5, xm*0.5, 0.4*(xm-fs), 0, 2*Math.PI, false) ;
-         ctx.fillStyle = '#ffffff' ;
+         ctx.fillStyle = white ;
          ctx.fill();
          ctx.beginPath();
          ctx.arc(xm*0.5, xm*0.5, 0.3*(xm-fs), 0, 2*Math.PI, false) ;
          if (d0[x][y]) {
             ctx.fillStyle = '#000000';
          } else {
-            ctx.fillStyle = '#ffffff';
+            ctx.fillStyle = white ;
          }
          ctx.fill();
          ctx.restore() ;
@@ -143,14 +156,19 @@ function copy(v) {
    }
    return r ;
 }
-function start() {
+function start(d) {
+   n += d ;
+   if (n < 5)
+      n = 5 ;
+   if (n > 40)
+      n = 40 ;
    var c = getCanvas() ;
    c.addEventListener("mousedown", mouseclick, false) ;
    g0 = getempty() ;
    g1 = getempty() ;
    for (var i=1; i+1<n; i++) {
       for (var j=1; j+1<n; j++) {
-         if (Math.random() < 0.5) {
+         if (Math.random() < 0.3) {
             g0[i][j] = 1 ;
          }
       }
@@ -183,15 +201,19 @@ function forwardOption() {
    var el = document.getElementById("forward") ;
    if (el) {
       forward = el.checked ;
-      start() ;
+      start(0) ;
    }
 }
-</script><body onload="start();">
+</script><body onload="start(0);">
 Games in the Key of Life.
 <span id=movecount></span>
-<button id=restart onclick="start()">Play Again</button>
+<button id=restart onclick="start(0)">Play Again</button>
+<button id=restart onclick="start(-1)">Smaller</button>
+<button id=restart onclick="start(1)">Bigger</button>
 <input type=checkbox onclick="hintOption()" id=hints> Hints
-<input type=checkbox onclick="forwardOption()" id=forward checked> Forward<br>
+<!-- <input type=checkbox onclick="forwardOption()" id=forward> Forward -->
+Score: <span id=score></span>
+<br>
 <canvas id="canvas" width="600" height="600" tabindex=1>
 </canvas><br>
 </body></html>
