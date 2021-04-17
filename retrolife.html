@@ -3,6 +3,14 @@
 html {
   touch-action: manipulation;
 }
+button {
+  min-width: 100px;
+  min-height: 30px;
+}
+input.larger {
+  min-width: 20px;
+  min-height: 20px;
+}
 </style>
 <script>
 var n=6 ;
@@ -222,7 +230,7 @@ Games in the Key of Life.
 <button id=restart onclick="start(0)">Play Again</button>
 <button id=restart onclick="start(-1)">Smaller</button>
 <button id=restart onclick="start(1)">Bigger</button>
-<input type=checkbox onclick="hintOption()" id=hints checked> Hints
+<input type=checkbox onclick="hintOption()" id=hints checked class=larger> Hints
 <!-- <input type=checkbox onclick="forwardOption()" id=forward> Forward -->
 Score: <span id=score></span>
 <br>
