@@ -25,7 +25,6 @@ function redraw() {
    ctx.clearRect(0, 0, w, h) ;
    xm = w/n ;
    ym = h/n ;
-   ctx.strokeStyle = "#cccccc" ;
    var score = 0 ;
    for (var y=0; y<n; y++) {
       for (var x=0; x<n; x++) {
@@ -34,6 +33,10 @@ function redraw() {
          }
       }
    }
+   if (score == 0)
+      ctx.strokeStyle = "#00ff00" ;
+   else
+      ctx.strokeStyle = "#cccccc" ;
    var el = document.getElementById("score") ;
    if (el)
       el.innerText = score ;
