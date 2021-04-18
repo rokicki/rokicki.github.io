@@ -1,20 +1,8 @@
-<html><head><title>Retrolife Puzzle</title>
-<style>
-html {
-  touch-action: manipulation;
-}
-button {
-  min-width: 100px;
-  min-height: 30px;
-}
-input.larger {
-  min-width: 20px;
-  min-height: 20px;
-}
-canvas {
-   max-width: 100%;
-}
-</style>
+<html><head>
+<meta charset="utf8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<title>Retrolife Puzzle</title>
 <script>
 var n=6 ;
 var fs=3 ;
@@ -229,18 +217,109 @@ function forwardOption() {
       start(0) ;
    }
 }
-</script><body onload="firststart()">
-Games in the Key of Life.
-<span id=movecount></span>
-<button id=restart onclick="start(0)">Play Again</button>
-<button id=restart onclick="start(-1)">Smaller</button>
-<button id=restart onclick="start(1)">Bigger</button>
-<input type=checkbox onclick="hintOption()" id=hints checked class=larger> Hints
-<!-- <input type=checkbox onclick="forwardOption()" id=forward> Forward -->
-Score: <span id=score></span>
-<br>
+</script>
+<style>
+html {
+   touch-action: manipulation;
+}
+body {
+  display: grid;
+  grid-template-areas: 
+  "title title"
+  "config config"
+  "board board"
+  "restart giveup"
+  "smaller bigger"
+  "description description";
+  gap: 0.5em;
+  font-size: 1rem;
+  padding: 0.5em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  max-width: 600px;
+}
+body > * {
+  overflow: hidden;
+}
+input[type=checkbox] {
+   vertical-align: middle;
+}
+button {
+  font-size: 100%;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #888;
+  border-radius: 0.25em;
+  appearance: none;
+  -webkit-appearance: none;
+}
+#title {
+  padding: 0.5em;
+  display: grid;
+  place-content: center;
+  text-decoration: underline;
+}
+.centered {
+  display: grid;
+  place-content: center;
+}
+.right-align {
+  text-align: right;;
+}
+.vertical-center {
+  display: grid;
+  align-items: center;
+}
+
+#board canvas {
+  width: 600px;
+  max-width: calc(min(100%, 75vh));
+}
+
+#config {
+   width: 100%;
+}
+#config td:first-child {
+   text-align: right;
+}
+#config td {
+   width: 50%;
+}
+
+#description {
+  padding: 0.5em;
+  line-height: 1.5em;
+}
+
+#title         { grid-area: title; }
+#config        { grid-area: config; }
+#restart       { grid-area: restart; }
+#giveup        { grid-area: giveup; }
+#bigger        { grid-area: bigger; }
+#score         { grid-area: score; }
+#board         { grid-area: board; }
+#smaller       { grid-area: smaller; }
+#bigger        { grid-area: bigger; }
+#description   { grid-area: description; }
+</style>
+<body onload="firststart()">
+<div id="title">
+Games in the Key of Life
+</div>
+<table id="config">
+   <tr><td><labe for="hints">Hints:</label></td><td><input type=checkbox onclick="hintOption()" id=hints checked class=larger></td></tr>
+   <tr><td>Score:</td><td><span id=score></span></td></tr>
+</table>
+<div id="board" class="centered">
 <canvas id="canvas" width="600" height="600" tabindex=1>
 </canvas><br>
+</div>
+<button id="restart" onclick="start(0)">🔄 Play Again</button>
+<button id="giveup" onclick="" disabled>⏹ Give Up</button>
+<button id="smaller" onclick="start(-1)">➖ Smaller grid</button>
+<button id="bigger" onclick="start(1)">➕ Bigger grid</button>
+<div id="description">
 Try to reduce the score to zero!  The big outlined circles are Life's
 next generation, and the little solid circles (which you can create by
 clicking) are the current generation.  Figure out what current generation
@@ -250,5 +329,6 @@ red.  Turn hints off to make it more difficult!<br>
 Life rules:  one or fewer neighbors cause a cell to die of loneliness;
 two or three neighbors allow a living cell to survive; three neighbors
 cause a dead cell to be born; four or more neighbors cause death due
-to overpopulation.<br>
+to overpopulation.
+</div>
 </body></html>
