@@ -25,6 +25,8 @@ var d1 ;
 var ed ;
 var hints = true ;
 var forward = false ;
+var w = 1 ;
+var h = 1 ;
 function getCanvas() {
    return document.getElementById("canvas") ;
 }
@@ -94,8 +96,8 @@ function redraw() {
 }
 function getMousePosition(c, e) {
    var r = c.getBoundingClientRect() ;
-   var x = e.clientX - r.left ;
-   var y = e.clientY - r.top ;
+   var x = (e.clientX - r.left) * w / (r.right - r.left) ;
+   var y = (e.clientY - r.top) * h / (r.bottom - r.top) ;
    return {x:x, y:y} ;
 }
 function mouse(e, click) {
